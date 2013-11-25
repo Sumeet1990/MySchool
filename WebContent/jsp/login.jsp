@@ -1,12 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Login</title>
 </head>
-<body>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/loginStylesheet.css"
+	type="text/css">
+	<script type="text/javascript"
+	src="${pageContext.request.contextPath}/javascript/jQuery1.9.js"></script>
 
+<body>
+	<s:form id="login" action="user" method="GET">
+		<h1>MY SCHOOL</h1>
+			<s:textfield id="inputs" name="username" label="User name"/> 
+			<s:textfield id="inputs" name="password" label="Password"/>
+			<s:submit  id="actions" label="Log in"/>
+	</s:form>
 </body>
 </html>
