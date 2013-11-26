@@ -10,8 +10,9 @@
  
     <package name="default" extends="struts-default" namespace="/">
         <action name="user"
-            class="com.myschool.user.action.UserAction">
-            <result name="success">jsp/sucess.jsp</result>
+            class="userClass">
+            <result name="success" type="redirect">jsp/SchoolLandingPage.jsp</result>
+            <result name="failure">jsp/Login.jsp</result>
         </action>
     </package>
 </struts>
