@@ -1,10 +1,6 @@
 package com.myschool.user.action;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.struts2.ServletActionContext;
-
+import com.myschool.user.dto.UserDetailsDTO;
 import com.myschool.user.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -12,6 +8,8 @@ import com.opensymphony.xwork2.ActionSupport;
 public class UserAction extends ActionSupport {
     private String username;
     private String password;
+    private String errorMesage;
+    private String userRoleName;
 
     private UserService userService;
     
@@ -24,14 +22,17 @@ public class UserAction extends ActionSupport {
 	}
 
 	public String execute() {
-           
-		boolean valid = userService.verifyLoginCredentials(username, password);
-		HttpServletRequest reqeust = ServletActionContext.getRequest();
+		UserDetailsDTO userDetailsDTO = new   UserDetailsDTO();
+		boolean valid = userService.verifyLoginCredentials(username, password, userDetailsDTO);
 		if(valid)
+		{
+			setErrorMesage("");
+			setUserRoleName(userService.getUserRoleName(userDetailsDTO.getUserRoleId()));
 			return "success";
+		}
 		else
 		{
-			reqeust.setAttribute("message", "Invalid credentials please try again");
+			setErrorMesage("Invalid credentials please try again");
 			return "failure";
 		}
     }
@@ -51,5 +52,21 @@ public class UserAction extends ActionSupport {
     public void setPassword(String password) {
         this.password = password;
     }
+
+	public String getErrorMesage() {
+		return errorMesage;
+	}
+
+	public void setErrorMesage(String errorMesage) {
+		this.errorMesage = errorMesage;
+	}
+
+	public String getUserRoleName() {
+		return userRoleName;
+	}
+
+	public void setUserRoleName(String userRoleName) {
+		this.userRoleName = userRoleName;
+	}
 }
 

@@ -9,9 +9,13 @@
     <constant name="struts.devMode" value="false" />
  
     <package name="default" extends="struts-default" namespace="/">
+    <result-types>
+            <result-type name="tiles"
+                class="org.apache.struts2.views.tiles.TilesResult" />
+        </result-types>
         <action name="user"
             class="userClass">
-            <result name="success" type="redirect">jsp/SchoolLandingPage.jsp</result>
+            <result name="success" type="tiles">/SchoolLandingPage.tiles</result>
             <result name="failure">jsp/Login.jsp</result>
         </action>
     </package>

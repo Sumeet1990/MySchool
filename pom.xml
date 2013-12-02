@@ -61,7 +61,22 @@
       <artifactId>servlet-api</artifactId>
       <version>2.5</version>
     </dependency>            
+           
+<!-- Struts2 Tiles jar -->
+<dependency>
+	<groupId>org.apache.struts</groupId>
+	<artifactId>struts2-tiles-plugin</artifactId>
+	<version>2.3.15.3</version>
+</dependency>
             
+<!-- JSP Servelet error in JSP page (eclipse) --> 
+<dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jsp-api</artifactId>
+        <version>2.0</version>
+        <scope>provided</scope>
+    </dependency>
+   
 </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>

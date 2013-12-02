@@ -20,6 +20,7 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 			if(userDetailsList != null && userDetailsList.size() > 0) {
 				UserDetails userDetails = userDetailsList.get(0);
 				userDetailsDTO.setPassword(userDetails.getPassword());
+				userDetailsDTO.setUserRoleId(userDetails.getUserRoleId());
 				System.out.println("Verify credentials --------------");
 			}
 			return userDetailsDTO;

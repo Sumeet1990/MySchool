@@ -1,9 +1,13 @@
 package com.myschool.user.service;
 
+import com.myschool.user.dto.UserDetailsDTO;
+
 
 public interface UserService {
    
-	boolean verifyLoginCredentials(String username, String password);
+	boolean verifyLoginCredentials(String username, String password, UserDetailsDTO userDetailsDTO);
+
+	String getUserRoleName(Integer integer);
 
 }
 
