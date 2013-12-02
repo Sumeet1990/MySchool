@@ -37,15 +37,18 @@
 #flyout_menu li:hover, #flyout_menu li.active { background: #5FD367; }
 
 #flyout_menu a {
-	background: url(../images/arrow.gif) no-repeat center right;
     color: #FFF;
     line-height: 160%;
     padding: 16px 8px 16px 18px;
     width: 164px; }
 
 #flyout_menu ul ul li {
-	background: #006C6C url(../images/arrow.gif) no-repeat center right;
+	background: #006C6C;
 	border-bottom: 1px solid #007171; }
+	
+ #imageTag{
+	background: url(../images/arrow.gif) no-repeat center right;
+}
 
 #flyout_menu ul ul li:hover { background: #5FD367; }
 
