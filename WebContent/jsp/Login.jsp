@@ -5,12 +5,15 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/loginStylesheet.css"
 	type="text/css">
+	<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/textBox_button.css"
+	type="text/css">
 </head>
-<body>
-	<s:form id="login" action="user" method="POST">
+<body background="${pageContext.request.contextPath}/images/school_main.jpg">
+	<s:form id="login" action="login" method="POST">
 		<h1>MY SCHOOL</h1>
-			<s:textfield id="inputs" name="username" label="User name"/> 
-			<s:password id="inputs" name="password" label="Password"/>
+			<s:textfield id="inputs" key="username" name="username" label="User name" /> 
+			<s:password id="inputs" key="password" name="password" label="Password" />
 			<s:submit  id="actions" value="Log in"/>
 
 			<s:if test="#errorMesage!=''">

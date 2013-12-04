@@ -3,11 +3,13 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
  
-	<bean name="userClass" class="com.myschool.user.action.UserAction" >
-	<property name="userService" ref="userService"></property>
+	<bean name="loginClass" class="com.myschool.user.action.LoginAction" >
+	<property name="loginService" ref="loginService"></property>
+	</bean>
+	<bean name="schoolClass" class="com.myschool.user.action.SchoolClassAction" >
 	</bean>
 	
-	<bean name="userService" class="com.myschool.user.service.UserServiceImpl" >
+	<bean name="loginService" class="com.myschool.user.service.LoginServiceImpl" >
 	<property name="userDAO" ref="userDAO"></property>
 	</bean>
 	<bean name="userDAO" class="com.myschool.user.dao.UserDAOImpl" >

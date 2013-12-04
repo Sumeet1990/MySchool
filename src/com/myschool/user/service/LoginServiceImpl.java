@@ -5,7 +5,7 @@ import org.apache.commons.lang.xwork.StringUtils;
 import com.myschool.user.dao.UserDAO;
 import com.myschool.user.dto.UserDetailsDTO;
 
-public class UserServiceImpl implements UserService {
+public class LoginServiceImpl implements LoginService {
 
 	UserDAO userDAO;
 

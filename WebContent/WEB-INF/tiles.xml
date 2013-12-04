@@ -12,4 +12,10 @@
     <definition name="/SchoolLandingPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/SchoolLandingPage.jsp" />
     </definition>
+    <definition name="/SchoolClassAction.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/SchoolClass.jsp" />
+    </definition>
+     <definition name="/globalError.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/GlobalError.jsp" />
+    </definition>
 </tiles-definitions>
