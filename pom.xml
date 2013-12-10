@@ -76,7 +76,25 @@
         <version>2.0</version>
         <scope>provided</scope>
     </dependency>
-   
+   <!-- Logging log4j -->
+   <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+        
+      <!-- AOP Spring -->
+      <dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.6.11</version>
+		</dependency>
+ 
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.6.11</version>
+		</dependency>
 </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
