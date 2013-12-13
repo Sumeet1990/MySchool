@@ -24,7 +24,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	public String execute() {
 		UserDetailsDTO userDetailsDTO = new UserDetailsDTO();
 
-			boolean valid = loginService.verifyLoginCredentials(username,
+			boolean valid = loginService.getLoginCredentials(username,
 					password, userDetailsDTO);
 			if (valid) {
 				setErrorMesage("");

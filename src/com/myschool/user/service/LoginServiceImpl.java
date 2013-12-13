@@ -17,7 +17,7 @@ public class LoginServiceImpl implements LoginService {
 		this.userDAO = userDAO;
 	}
 
-	public boolean verifyLoginCredentials(String username, String password,
+	public boolean getLoginCredentials(String username, String password,
 			UserDetailsDTO userDetailsDTO) {
 		userDetailsDTO = userDAO.getLoginCredentials(username);
 
