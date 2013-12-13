@@ -1,7 +1,8 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Login</title>
+<title><s:property value="getText('login.title')"/></title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/loginStylesheet.css"
 	type="text/css">
@@ -10,10 +11,10 @@
 	type="text/css">
 </head>
 <body background="${pageContext.request.contextPath}/images/school_main.jpg">
-	<s:form id="login" action="login" method="POST">
-		<h1>MY SCHOOL</h1>
-			<s:textfield id="inputs" key="username" name="username" label="User name" /> 
-			<s:password id="inputs" key="password" name="password" label="Password" />
+	<s:form id="login" action="login" method="post">
+		<h1><s:property value="getText('global.schoolname')"/></h1>
+			<s:textfield id="inputs" key="login.username" name="username"/> 
+			<s:password id="inputs" key="login.password" name="password"/>
 			<s:submit  id="actions" value="Log in"/>
 
 			<s:if test="#errorMesage!=''">
