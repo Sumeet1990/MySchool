@@ -15,7 +15,16 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<bean name="userDAO" class="com.myschool.user.dao.UserDAOImpl" >
 	  <property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
-
+	<bean id="propertyConfigurer"
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+		<property name="searchSystemEnvironment"  value="true"/>
+		<property name="locations">
+            <list>
+                <value>WEB-INF/jdbc.properties</value>
+            </list>
+        </property>
+    </bean>
 	<!--  -->
 <bean id="sessionFactory"
 	class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
@@ -36,10 +45,10 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 </bean>
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<property name="username" value="school" />
-		<property name="password" value="school" />
+		<property name="driverClassName" value="${db.driveClassName}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
 	</bean>
 
 </beans>

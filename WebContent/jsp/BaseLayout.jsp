@@ -7,15 +7,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-<table style="width: 100%;height: 100%;">
-    <tr>
+<table height="100%">
+    <tr height="10%">
         <td align="center" background="${pageContext.request.contextPath}/images/background_img.jpg" ><tiles:insertAttribute name="header" />
         </td>
     </tr>
-    <tr style="width: 100%;height: 80%;">
+    <tr height="80%">
         <td ><tiles:insertAttribute name="body" /></td>
     </tr>
-    <tr style="bottom: 0;">
+    <tr height="10%" style="bottom: 0;">
         <td style="width:100%; " background="${pageContext.request.contextPath}/images/background_img.jpg"><tiles:insertAttribute name="footer" />
         </td>
     </tr>

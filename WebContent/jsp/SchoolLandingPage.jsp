@@ -9,6 +9,9 @@
 </s:url>
 <s:url action="SchoolClassModifyAction.action" var="classmodifyaction">
 </s:url>
+<table>
+<tr>
+<td width="40%">
 <div id='flyout_menu'>
 <ul >
    <li ><s:a id="imageTag" href='#'><span>Class</span></s:a>
@@ -91,5 +94,17 @@
       </li>
 </ul>
 </div>
+</td>
+<td width="60%">
+<div>
+<p>
+<s:property value="getText('school.para1')"/><br><br>
+<s:property value="getText('school.para2')"/><br><br>
+<s:property value="getText('school.para3')"/><br><br>
+</p>
+</div>
+</td>
+</tr>
+</table>
 </body>
 </html>
