@@ -9,14 +9,14 @@
 <body>
 <table height="100%">
     <tr height="10%">
-        <td align="center" background="${pageContext.request.contextPath}/images/background_img.jpg" ><tiles:insertAttribute name="header" />
+        <td align="center" background="${pageContext.request.contextPath}/images/school_main.jpg" ><tiles:insertAttribute name="header" />
         </td>
     </tr>
     <tr height="80%">
         <td ><tiles:insertAttribute name="body" /></td>
     </tr>
     <tr height="10%" style="bottom: 0;">
-        <td style="width:100%; " background="${pageContext.request.contextPath}/images/background_img.jpg"><tiles:insertAttribute name="footer" />
+        <td style="width:100%; " background="${pageContext.request.contextPath}/images/school_main.jpg"><tiles:insertAttribute name="footer" />
         </td>
     </tr>
     
