@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-<table height="100%">
+<table height="100%" width="100%">
     <tr height="10%">
         <td align="center" background="${pageContext.request.contextPath}/images/school_main.jpg" ><tiles:insertAttribute name="header" />
         </td>

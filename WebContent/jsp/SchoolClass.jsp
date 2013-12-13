@@ -16,7 +16,7 @@
 </s:if>
 <s:else>
 <s:textfield id="inputs" name="section"  required="true" label="Section"></s:textfield>
-<s:select style="width: 400px;" id="inputs" list="classTeacherList" name="classTeacher" label="Class Teacher"></s:select>
+<s:select style="width: 400px;" id="inputs" list="classTeacherMap" name="classTeacher" label="Class Teacher"></s:select>
 </s:else>
 <s:submit id="actions" value="%{actionType}"></s:submit>
 </s:form>

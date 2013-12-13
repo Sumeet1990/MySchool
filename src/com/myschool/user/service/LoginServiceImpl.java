@@ -1,5 +1,7 @@
 package com.myschool.user.service;
 
+import java.util.Map;
+
 import org.apache.commons.lang.xwork.StringUtils;
 
 import com.myschool.user.dao.UserDAO;
@@ -38,5 +40,4 @@ public class LoginServiceImpl implements LoginService {
 
 		return "Management";
 	}
-
 }
