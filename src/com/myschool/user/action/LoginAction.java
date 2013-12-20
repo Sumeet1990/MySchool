@@ -9,10 +9,11 @@ import com.myschool.user.dto.UserDetailsDTO;
 import com.myschool.user.service.LoginService;
 import com.opensymphony.xwork2.ActionSupport;
 
+/*
+ * 
+ */
 public class LoginAction extends ActionSupport implements SessionAware {
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	private String username;
 	private String password;
@@ -20,40 +21,52 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	private String userRoleName;
 	private Map<String, Object> session;
 	private LoginService loginService;
-
+	
+	/*
+	 * (non-Javadoc)
+	 * @see com.opensymphony.xwork2.ActionSupport#execute()
+	 */
 	public String execute() {
 		UserDetailsDTO userDetailsDTO = new UserDetailsDTO();
 
 			boolean valid = loginService.getLoginCredentials(username,
 					password, userDetailsDTO);
-			if (valid) {
-				setErrorMesage("");
+			
+			if(valid) {
+				setErrorMesage(StringUtils.EMPTY);
 				setUserRoleName(loginService.getUserRoleName(userDetailsDTO
 						.getUserRoleId()));
 
 				session.put("userName", getUsername());
 				session.put("userRole", getUserRoleName());
+				
 				return "success";
 			} else {
-				session.remove("userName");
-				session.remove("userRole");
-				setMessage("Invalid credentials please try again");
+				if(session.containsKey("userName")) {
+					session.remove("userName");
+					session.remove("userRole");
+				}
 				
+				setMessage("Invalid credentials please try again");
 				return "failure";
 			}
 	}
-
+	
+	/*
+	 * 
+	 */
 	private void setMessage(final String msg) {
-		if(getErrorMesage().isEmpty())
-		{
+		if(getErrorMesage().isEmpty()) {
 			setErrorMesage( msg);
 		}
-		else
-		{
+		else {
 			setErrorMesage("");
 		}
 	}
-
+	
+	/*
+	 * 
+	 */
 	public String home() {
 			if (StringUtils.isNotBlank((String) session.get("userName"))) {
 				setErrorMesage("");
@@ -61,19 +74,27 @@ public class LoginAction extends ActionSupport implements SessionAware {
 				userRoleName = (String) session.get("userRole");
 				return "success";
 			} else {
-				session.remove("userName");
-				session.remove("userRole");
+				if(session.containsKey("userName")) {
+					session.remove("userName");
+					session.remove("userRole");
+				}
 				
 				setMessage("Invalid credentials please try again");
 				return "failure";
 			}		
 	}
-
+	
+	/*
+	 * 
+	 */
 	public String logout() {		
+		if(session.containsKey("userName")) {
 			session.remove("userName");
 			session.remove("userRole");
-			setMessage("You are successfully logged out !");
-			return "failure";
+		}
+		
+		setMessage("You are successfully logged out !");
+		return "failure";
 	}
 
 	public String getUsername() {

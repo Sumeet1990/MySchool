@@ -10,7 +10,23 @@ import com.myschool.user.dto.UserDetailsDTO;
 public class LoginServiceImpl implements LoginService {
 
 	UserDAO userDAO;
+	
+	public boolean getLoginCredentials(String username, String password,
+			UserDetailsDTO userDetailsDTO) {
+		userDetailsDTO = userDAO.getLoginCredentials(username);
 
+		if (userDetailsDTO != null &&
+				StringUtils.equals(userDetailsDTO.getPassword(), password)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public String getUserRoleName(Integer userRoleId) {
+		return "Management";
+	}
+	
 	public UserDAO getUserDAO() {
 		return userDAO;
 	}
@@ -19,25 +35,4 @@ public class LoginServiceImpl implements LoginService {
 		this.userDAO = userDAO;
 	}
 
-	public boolean getLoginCredentials(String username, String password,
-			UserDetailsDTO userDetailsDTO) {
-		userDetailsDTO = userDAO.getLoginCredentials(username);
-
-		if (userDetailsDTO != null
-				&& StringUtils.isNotBlank(userDetailsDTO.getPassword())) {
-			if (userDetailsDTO.getPassword().equals(password)) {
-				return true;
-			} else {
-				return false;
-			}
-		}
-
-		return false;
-
-	}
-
-	public String getUserRoleName(Integer userRoleId) {
-
-		return "Management";
-	}
 }

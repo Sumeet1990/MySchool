@@ -14,8 +14,14 @@
 				class="org.apache.struts2.views.tiles.TilesResult" />
 		</result-types>
 		
+		<interceptors>
+    		<interceptor name="mySchoolSessionInterceptor"
+        		class="com.myschool.session.interceptor.MySchoolSessionInterceptor" />
+		</interceptors>
+				
 		<global-results>
   			<result name="globalError" type="tiles">/GlobalError.tiles</result>
+  			<result name="sessionTimeout">jsp/Login.jsp</result>
 		</global-results>
 		
 		<global-exception-mappings>
@@ -29,21 +35,22 @@
 		</action>
 
 		<action name="home" class="loginClass" method="home">
-			<result name="success" type="tiles">/SchoolLandingPage.tiles
-			</result>
+			<interceptor-ref name="mySchoolSessionInterceptor"/>
+			<result name="success" type="tiles">/SchoolLandingPage.tiles</result>
 			<result name="failure">jsp/Login.jsp</result>
 			<result name="input">jsp/Login.jsp</result>
 		</action>
 
 		<action name="logout" class="loginClass" method="logout">
-			<result name="success" type="tiles">/SchoolLandingPage.tiles
-			</result>
+			<interceptor-ref name="mySchoolSessionInterceptor"/>
+			<result name="success" type="tiles">/SchoolLandingPage.tiles</result>
 			<result name="failure">jsp/Login.jsp</result>
 			<result name="input">jsp/Login.jsp</result>
 		</action>
 
 		<action name="SchoolClass*Action"  class="schoolClassAction">
 			<param name="actionType">{1}</param>
+			<interceptor-ref name="mySchoolSessionInterceptor"/>
 			<result type="tiles" name="success">/SchoolClassAction.tiles</result>
 			<result name="input">/SchoolClassAction.tiles</result>
 		</action>
