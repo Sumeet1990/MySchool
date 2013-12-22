@@ -15,10 +15,17 @@
 		</result-types>
 		
 		<interceptors>
-    		<interceptor name="mySchoolSessionInterceptor"
-        		class="com.myschool.session.interceptor.MySchoolSessionInterceptor" />
+    		<interceptor name="commonSessionInterceptor"
+        		class="com.myschool.interceptors.CommonSessionInterceptor" />
+        	<interceptor name="commonLoginInterceptor"
+        		class="com.myschool.interceptors.CommonLoginInterceptor" />
+        	
+        	<interceptor-stack name="mySchoolCommonInterceptors">
+                <interceptor-ref name="commonSessionInterceptor"/>
+                <interceptor-ref name="commonLoginInterceptor"/>
+            </interceptor-stack>        	
 		</interceptors>
-				
+						
 		<global-results>
   			<result name="globalError" type="tiles">/GlobalError.tiles</result>
   			<result name="sessionTimeout">jsp/Login.jsp</result>
@@ -35,14 +42,14 @@
 		</action>
 
 		<action name="home" class="loginClass" method="home">
-			<interceptor-ref name="mySchoolSessionInterceptor"/>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result name="success" type="tiles">/SchoolLandingPage.tiles</result>
 			<result name="failure">jsp/Login.jsp</result>
 			<result name="input">jsp/Login.jsp</result>
 		</action>
 
 		<action name="logout" class="loginClass" method="logout">
-			<interceptor-ref name="mySchoolSessionInterceptor"/>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result name="success" type="tiles">/SchoolLandingPage.tiles</result>
 			<result name="failure">jsp/Login.jsp</result>
 			<result name="input">jsp/Login.jsp</result>
@@ -50,7 +57,7 @@
 
 		<action name="SchoolClass*Action"  class="schoolClassAction">
 			<param name="actionType">{1}</param>
-			<interceptor-ref name="mySchoolSessionInterceptor"/>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result type="tiles" name="success">/SchoolClassAction.tiles</result>
 			<result name="input">/SchoolClassAction.tiles</result>
 		</action>

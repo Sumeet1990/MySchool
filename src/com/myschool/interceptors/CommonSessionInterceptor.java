@@ -1,4 +1,4 @@
-package com.myschool.session.interceptor;
+package com.myschool.interceptors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -14,10 +14,11 @@ import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
  * @author
  *
  */
-public class MySchoolSessionInterceptor extends AbstractInterceptor implements StrutsStatics {
+public class CommonSessionInterceptor extends AbstractInterceptor implements StrutsStatics {
 
 	@Override
 	public String intercept(ActionInvocation invocation) throws Exception {
+		System.out.println("Session interceptor....");
 		final ActionContext context = invocation.getInvocationContext();
 		HttpServletRequest request = (HttpServletRequest) context.get(HTTP_REQUEST);
 		

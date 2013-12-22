@@ -15,7 +15,7 @@ public class TeachingStaffDAOImpl extends HibernateDaoSupport implements Teachin
 
 	public List<TeachingStaffDTO> getClassTeachers() {
 
-		List<TeachingStaffDTO> teachingStaffDTOLst = new ArrayList<>();
+		List<TeachingStaffDTO> teachingStaffDTOLst = new ArrayList<TeachingStaffDTO>();
 		List<TeachingStaff> teachingStaffsLst =  getHibernateTemplate().find("from TeachingStaff where classTeacherFlag='YES'");
 		if(teachingStaffsLst != null && teachingStaffsLst.size() > 0) {
 			TeachingStaff teachingStaff = teachingStaffsLst.get(0);
