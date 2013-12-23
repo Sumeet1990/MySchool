@@ -3,11 +3,11 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
  
-	<bean name="userDAO" class="com.myschool.user.dao.UserDAOImpl" >
+	<bean name="userDAO" class="com.myschool.dao.UserDAOImpl" >
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
-	<bean name="teachingStaffDAO" class="com.myschool.user.dao.TeachingStaffDAOImpl" >
+	<bean name="teachingStaffDAO" class="com.myschool.dao.TeachingStaffDAOImpl" >
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
@@ -16,8 +16,8 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		<property name="dataSource" ref="dataSource"/>
 		<property name="annotatedClasses">
 			<list>
-				<value>com.myschool.user.beans.UserDetails</value>
-				<value>com.myschool.user.beans.TeachingStaff</value>
+				<value>com.myschool.beans.UserDetails</value>
+				<value>com.myschool.beans.TeachingStaff</value>
 			</list>
 		</property>		
 		<property name="hibernateProperties">

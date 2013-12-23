@@ -1,4 +1,4 @@
-package com.myschool.user.dto;
+package com.myschool.dto;
 
 public class UserDetailsDTO {
     private String username;

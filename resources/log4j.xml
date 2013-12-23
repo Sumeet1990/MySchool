@@ -1,40 +1,46 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" > 
+	 
+ <log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'> 
+	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender"> 
+		<layout class="org.apache.log4j.PatternLayout"> 
+			<param name="ConversionPattern" value="%d %-5p %c{1}:%L %m %n" /> 
+			<!-- ConversionPattern format specification 
+			%d      inserts the date; you can specify the format (%d{yyyy-MM-dd HH:mm:ss,SSS}) 
+			%-5p    inserts the priority log level, 5 characters, left justified 
+			%c{1}   inserts the name of the class 
+			%L      inserts the line number 
+			%m      inserts the user message 
+			%n      inserts the separator (for example, a new line) 
+			--> 
+		</layout> 
+   	</appender> 
 
-<!-- ===================================================================== -->
-<!--                                                                       -->
-<!--  Log4j Configuration                                                  -->
-<!--                                                                       -->
-<!-- ===================================================================== -->
+	<appender name="fileAppender" class="org.apache.log4j.RollingFileAppender"> 
+		<param name="MaxFileSize" value="5MB" /> 
+		<param name="MaxBackupIndex" value="10" /> 
+		<param name="File" value="C:/Logs/mySchoolLog.log" />  
+		<param name="Append" value="true" />
+		
+		<layout class="org.apache.log4j.PatternLayout"> 
+			<param name="ConversionPattern" value="%d %-5p %c{1}:%L %m %n" /> 
+		</layout> 
+	</appender> 
 
-<!-- $Id: log4j.xml 56612 2006-09-07 15:12:39Z thomas.diesler@jboss.com $ -->
+	<!--sets the priority log level for org.springframework--> 
+	<!-- <logger name="org.springframework"> 
+		<level value="debug"/> 
+	</logger> --> 
+	
+	<!--sets the priority log level for com.myschool--> 
+    <logger name= "com.myschool"> 
+	    <level value="debug"/>
+	</logger> 
 
-<!--
-   | For more configuration infromation and examples see the Jakarta Log4j
-   | owebsite: http://jakarta.apache.org/log4j
- -->
-
-<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
-
-   
-
-   <!-- APPENDER - console appender is defined, but not used -->
-   <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
-     <param name="Target" value="System.out"/>
-     <param name="Threshold" value="INFO"/>
-     <layout class="org.apache.log4j.PatternLayout">
-       <param name="ConversionPattern"
-              value="%d:%t:%p:%c{2}:%m%n"/>
-     </layout>
-   </appender>
-
-   <root>
-      <!-- After jBoss server reads this log4j file, it will stop writing to Console -->
-      <!-- appender-ref ref="CONSOLE"/ -->
-      
-      <appender-ref ref="CONSOLE"/>
-   </root>
-<!-- 
-This will show errors in console
- -->
-</log4j:configuration>
+	<!--sets the default priority log level--> 
+    <root> 
+        <priority value="ALL"></priority> 
+        <appender-ref ref="consoleAppender"/> 
+		<appender-ref ref="fileAppender"/> 
+	</root> 
+</log4j:configuration> 

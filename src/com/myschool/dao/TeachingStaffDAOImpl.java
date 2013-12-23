@@ -1,12 +1,12 @@
-package com.myschool.user.dao;
+package com.myschool.dao;
 
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.myschool.user.beans.TeachingStaff;
-import com.myschool.user.dto.TeachingStaffDTO;
+import com.myschool.beans.TeachingStaff;
+import com.myschool.dto.TeachingStaffDTO;
 
 
 public class TeachingStaffDAOImpl extends HibernateDaoSupport implements TeachingStaffDAO{

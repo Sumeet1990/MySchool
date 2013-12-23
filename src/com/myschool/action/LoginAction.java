@@ -1,12 +1,14 @@
-package com.myschool.user.action;
+package com.myschool.action;
 
 import java.util.Map;
 
-
+import org.apache.log4j.Logger;
+//import org.apache.log4j.xml.DOMConfigurator;
 import org.apache.commons.lang.xwork.StringUtils;
 import org.apache.struts2.interceptor.SessionAware;
-import com.myschool.user.dto.UserDetailsDTO;
-import com.myschool.user.service.LoginService;
+
+import com.myschool.dto.UserDetailsDTO;
+import com.myschool.service.LoginService;
 import com.opensymphony.xwork2.ActionSupport;
 
 /*
@@ -15,6 +17,9 @@ import com.opensymphony.xwork2.ActionSupport;
 public class LoginAction extends ActionSupport implements SessionAware {
 	
 	private static final long serialVersionUID = 1L;
+	
+	private static Logger log = Logger.getLogger(LoginAction.class);
+	
 	private String username;
 	private String password;
 	private String errorMesage;
@@ -28,28 +33,30 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	 */
 	public String execute() {
 		UserDetailsDTO userDetailsDTO = new UserDetailsDTO();
+		//DOMConfigurator.configure("log4j.xml");
+		log.debug("################# login Execute");
+		
+		boolean valid = loginService.getLoginCredentials(username,
+				password, userDetailsDTO);
+		log.debug("################## valid :"+valid);
+		if(valid) {
+			setErrorMesage(StringUtils.EMPTY);
+			setUserRoleName(loginService.getUserRoleName(userDetailsDTO
+					.getUserRoleId()));
 
-			boolean valid = loginService.getLoginCredentials(username,
-					password, userDetailsDTO);
+			session.put("userName", getUsername());
+			session.put("userRole", getUserRoleName());
 			
-			if(valid) {
-				setErrorMesage(StringUtils.EMPTY);
-				setUserRoleName(loginService.getUserRoleName(userDetailsDTO
-						.getUserRoleId()));
-
-				session.put("userName", getUsername());
-				session.put("userRole", getUserRoleName());
-				
-				return "success";
-			} else {
-				if(session.containsKey("userName")) {
-					session.remove("userName");
-					session.remove("userRole");
-				}
-				
-				setMessage("Invalid credentials please try again");
-				return "failure";
+			return "success";
+		} else {
+			if(session.containsKey("userName")) {
+				session.remove("userName");
+				session.remove("userRole");
 			}
+			
+			setMessage("Invalid credentials please try again");
+			return "failure";
+		}
 	}
 	
 	/*

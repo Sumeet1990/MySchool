@@ -1,4 +1,4 @@
-package com.myschool.user.beans;
+package com.myschool.beans;
 
 import java.io.Serializable;
 
@@ -8,16 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="USER_ROLE")
-public class UserRole implements Serializable{
+@Table(name="SUBJECT_CODES")
+public class SubjectCodes implements Serializable{
 
-	
 @Id
-@Column(name="USER_ROLE_ID")
-Integer userRoleId;
+@Column(name="SUBJECT_CODE")
+String subjectCode;
 
-@Column(name="USER_ROLE_NAME")
-String userRoleName;
+@Column(name="SUBJECT_NAME")
+String subjectName;
 
 @Column(name="CREATED_USER_ID")
 String createdUserId;
@@ -31,20 +30,20 @@ String createdDateAndTime;
 @Column(name="MODIFIED_DATE_AND_TIME")
 String modifiedDateAndTime;
 
-public Integer getUserRoleId() {
-	return userRoleId;
+public String getSubjectCode() {
+	return subjectCode;
 }
 
-public void setUserRoleId(Integer userRoleId) {
-	this.userRoleId = userRoleId;
+public void setSubjectCode(String subjectCode) {
+	this.subjectCode = subjectCode;
 }
 
-public String getUserRoleName() {
-	return userRoleName;
+public String getSubjectName() {
+	return subjectName;
 }
 
-public void setUserRoleName(String userRoleName) {
-	this.userRoleName = userRoleName;
+public void setSubjectName(String subjectName) {
+	this.subjectName = subjectName;
 }
 
 public String getCreatedUserId() {

@@ -1,4 +1,4 @@
-package com.myschool.user.beans;
+package com.myschool.beans;
 
 import java.io.Serializable;
 
@@ -8,21 +8,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="SCHOOL_CLASS")
-public class SchoolClass implements Serializable{
+@Table(name="USER_ROLE")
+public class UserRole implements Serializable{
 
+	
 @Id
-@Column(name="CLASS_ID")
-String classId;
+@Column(name="USER_ROLE_ID")
+Integer userRoleId;
 
-@Column(name="CLASS_NAME")
-String className;
-
-@Column(name="SECTION")
-String section;
-
-@Column(name="TEACHING_STAFF_ID")
-String teachingStaffId;
+@Column(name="USER_ROLE_NAME")
+String userRoleName;
 
 @Column(name="CREATED_USER_ID")
 String createdUserId;
@@ -36,36 +31,20 @@ String createdDateAndTime;
 @Column(name="MODIFIED_DATE_AND_TIME")
 String modifiedDateAndTime;
 
-public String getClassId() {
-	return classId;
+public Integer getUserRoleId() {
+	return userRoleId;
 }
 
-public void setClassId(String classId) {
-	this.classId = classId;
+public void setUserRoleId(Integer userRoleId) {
+	this.userRoleId = userRoleId;
 }
 
-public String getClassName() {
-	return className;
+public String getUserRoleName() {
+	return userRoleName;
 }
 
-public void setClassName(String className) {
-	this.className = className;
-}
-
-public String getSection() {
-	return section;
-}
-
-public void setSection(String section) {
-	this.section = section;
-}
-
-public String getTeachingStaffId() {
-	return teachingStaffId;
-}
-
-public void setTeachingStaffId(String teachingStaffId) {
-	this.teachingStaffId = teachingStaffId;
+public void setUserRoleName(String userRoleName) {
+	this.userRoleName = userRoleName;
 }
 
 public String getCreatedUserId() {

@@ -1,4 +1,4 @@
-package com.myschool.user.beans;
+package com.myschool.beans;
 
 import java.io.Serializable;
 
@@ -8,15 +8,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="SUBJECT_CODES")
-public class SubjectCodes implements Serializable{
+@Table(name="CLASS_SUBJECTS")
+public class ClassSubjects implements Serializable{
 
 @Id
-@Column(name="SUBJECT_CODE")
-String subjectCode;
+@Column(name="SUBJECT_ID")
+String subjectId;
 
-@Column(name="SUBJECT_NAME")
-String subjectName;
+@Column(name="CLASS_NAME")
+String className;
+
+@Column(name="SUBJECT_CODES")
+String subjectCodes;
+
+@Column(name="TOTAL SUBJECTS")
+Integer totalSubjects;
 
 @Column(name="CREATED_USER_ID")
 String createdUserId;
@@ -30,20 +36,36 @@ String createdDateAndTime;
 @Column(name="MODIFIED_DATE_AND_TIME")
 String modifiedDateAndTime;
 
-public String getSubjectCode() {
-	return subjectCode;
+public String getSubjectId() {
+	return subjectId;
 }
 
-public void setSubjectCode(String subjectCode) {
-	this.subjectCode = subjectCode;
+public void setSubjectId(String subjectId) {
+	this.subjectId = subjectId;
 }
 
-public String getSubjectName() {
-	return subjectName;
+public String getClassName() {
+	return className;
 }
 
-public void setSubjectName(String subjectName) {
-	this.subjectName = subjectName;
+public void setClassName(String className) {
+	this.className = className;
+}
+
+public String getSubjectCodes() {
+	return subjectCodes;
+}
+
+public void setSubjectCodes(String subjectCodes) {
+	this.subjectCodes = subjectCodes;
+}
+
+public Integer getTotalSubjects() {
+	return totalSubjects;
+}
+
+public void setTotalSubjects(Integer totalSubjects) {
+	this.totalSubjects = totalSubjects;
 }
 
 public String getCreatedUserId() {

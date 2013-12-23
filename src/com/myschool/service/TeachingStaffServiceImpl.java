@@ -1,11 +1,11 @@
-package com.myschool.user.service;
+package com.myschool.service;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.myschool.user.dao.TeachingStaffDAO;
-import com.myschool.user.dto.TeachingStaffDTO;
+import com.myschool.dao.TeachingStaffDAO;
+import com.myschool.dto.TeachingStaffDTO;
 
 public class TeachingStaffServiceImpl implements TeachingStaffService {
 

@@ -1,10 +1,10 @@
-package com.myschool.user.action;
+package com.myschool.action;
 
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.myschool.user.service.TeachingStaffService;
+import com.myschool.service.TeachingStaffService;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class SchoolClassAction extends ActionSupport{

@@ -1,8 +1,8 @@
-package com.myschool.user.dao;
+package com.myschool.dao;
 
 import java.util.List;
 
-import com.myschool.user.dto.TeachingStaffDTO;
+import com.myschool.dto.TeachingStaffDTO;
 
 
 public interface TeachingStaffDAO{

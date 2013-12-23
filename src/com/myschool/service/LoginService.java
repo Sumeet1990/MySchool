@@ -1,8 +1,8 @@
-package com.myschool.user.service;
+package com.myschool.service;
 
 import java.util.Map;
 
-import com.myschool.user.dto.UserDetailsDTO;
+import com.myschool.dto.UserDetailsDTO;
 
 
 public interface LoginService {

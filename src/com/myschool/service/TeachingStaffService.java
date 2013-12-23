@@ -1,4 +1,4 @@
-package com.myschool.user.service;
+package com.myschool.service;
 
 import java.util.Map;
 

@@ -1,6 +1,6 @@
-package com.myschool.user.dao;
+package com.myschool.dao;
 
-import com.myschool.user.dto.UserDetailsDTO;
+import com.myschool.dto.UserDetailsDTO;
 
 
 public interface UserDAO {

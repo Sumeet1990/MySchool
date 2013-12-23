@@ -1,11 +1,11 @@
-package com.myschool.user.service;
+package com.myschool.service;
 
 import java.util.Map;
 
 import org.apache.commons.lang.xwork.StringUtils;
 
-import com.myschool.user.dao.UserDAO;
-import com.myschool.user.dto.UserDetailsDTO;
+import com.myschool.dao.UserDAO;
+import com.myschool.dto.UserDetailsDTO;
 
 public class LoginServiceImpl implements LoginService {
 
