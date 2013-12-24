@@ -1,10 +1,12 @@
 package com.myschool.action;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.myschool.service.TeachingStaffService;
+import com.myschool.beans.SchoolClass;
+import com.myschool.service.SchoolClassService;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class SchoolClassAction extends ActionSupport{
@@ -15,16 +17,63 @@ public class SchoolClassAction extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	private String schoolClassName;
 	private String section;
-	private String actionType;
-	private Map<String,String> classTeacherMap;
+	private String actionTypeValue;
+	private String classTeacher;
+	private String errorMessage;
+	List<SchoolClass> schoolClassLst;
+
+	private Map<Long,String> classTeacherMap;
 	@Autowired
-	TeachingStaffService classteacherService;
+	SchoolClassService classteacherService;
 	
 	public String execute()
 	{
 		try{
 		classTeacherMap = getClassteacherService().getClassTeachersList();
-		System.out.println("-------End of class teacher");
+		}catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		return SUCCESS;
+	}
+	
+	public String performCreate()
+	{
+		try{
+		 setSchoolClassLst(getClassteacherService().createSchoolClass(getSchoolClassName(), getSection(), getClassTeacher()));
+		
+		 if(getSchoolClassLst() != null)
+		 {
+			 setErrorMessage("");
+			 return SUCCESS;
+		 }else
+		 {
+			 setErrorMessage(getSchoolClassName()+" already exist's, Please choose some other name !");
+			 return "failure";
+		 }
+		
+		}catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		return "failure";
+	}
+	
+	public String performView()
+	{
+		try{
+		classTeacherMap = getClassteacherService().getClassTeachersList();
+		}catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		return SUCCESS;
+	}
+	
+	public String performModify()
+	{
+		try{
+		classTeacherMap = getClassteacherService().getClassTeachersList();
 		}catch (Exception e)
 		{
 			e.printStackTrace();
@@ -32,11 +81,11 @@ public class SchoolClassAction extends ActionSupport{
 		return SUCCESS;
 	}
 
-	public TeachingStaffService getClassteacherService() {
+	public SchoolClassService getClassteacherService() {
 		return classteacherService;
 	}
 
-	public void setClassteacherService(TeachingStaffService classteacherService) {
+	public void setClassteacherService(SchoolClassService classteacherService) {
 		this.classteacherService = classteacherService;
 	}
 
@@ -56,19 +105,43 @@ public class SchoolClassAction extends ActionSupport{
 		this.section = section;
 	}
 
-	public String getActionType() {
-		return actionType;
-	}
-
-	public void setActionType(String actionType) {
-		this.actionType = actionType;
-	}
-
-	public Map<String,String> getClassTeacherMap() {
+	public Map<Long,String> getClassTeacherMap() {
 		return classTeacherMap;
 	}
 
-	public void setClassTeacherMap(Map<String,String> classTeacherMap) {
+	public void setClassTeacherMap(Map<Long,String> classTeacherMap) {
 		this.classTeacherMap = classTeacherMap;
 	}
+
+	public String getClassTeacher() {
+		return classTeacher;
+	}
+
+	public void setClassTeacher(String classTeacher) {
+		this.classTeacher = classTeacher;
+	}
+	public List<SchoolClass> getSchoolClassLst() {
+		return schoolClassLst;
+	}
+
+	public void setSchoolClassLst(List<SchoolClass> schoolClassLst) {
+		this.schoolClassLst = schoolClassLst;
+	}
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getActionTypeValue() {
+		return actionTypeValue;
+	}
+
+	public void setActionTypeValue(String actionTypeValue) {
+		this.actionTypeValue = actionTypeValue;
+	}
+
 }

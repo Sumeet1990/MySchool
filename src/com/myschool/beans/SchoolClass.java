@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,9 +13,9 @@ import javax.persistence.Table;
 @Table(name="SCHOOL_CLASS")
 public class SchoolClass implements Serializable{
 
-@Id
+@Id @GeneratedValue(strategy=GenerationType.AUTO)
 @Column(name="CLASS_ID")
-String classId;
+Long classId;
 
 @Column(name="CLASS_NAME")
 String className;
@@ -22,7 +24,7 @@ String className;
 String section;
 
 @Column(name="TEACHING_STAFF_ID")
-String teachingStaffId;
+Long teachingStaffId;
 
 @Column(name="CREATED_USER_ID")
 String createdUserId;
@@ -36,11 +38,12 @@ String createdDateAndTime;
 @Column(name="MODIFIED_DATE_AND_TIME")
 String modifiedDateAndTime;
 
-public String getClassId() {
+
+public Long getClassId() {
 	return classId;
 }
 
-public void setClassId(String classId) {
+public void setClassId(Long classId) {
 	this.classId = classId;
 }
 
@@ -60,11 +63,11 @@ public void setSection(String section) {
 	this.section = section;
 }
 
-public String getTeachingStaffId() {
+public Long getTeachingStaffId() {
 	return teachingStaffId;
 }
 
-public void setTeachingStaffId(String teachingStaffId) {
+public void setTeachingStaffId(Long teachingStaffId) {
 	this.teachingStaffId = teachingStaffId;
 }
 

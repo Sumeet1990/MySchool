@@ -11,30 +11,47 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
+	<bean name="schoolClassDAO" class="com.myschool.dao.SchoolClassDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
 	<bean id="sessionFactory"
 			class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 		<property name="annotatedClasses">
 			<list>
-				<value>com.myschool.beans.UserDetails</value>
-				<value>com.myschool.beans.TeachingStaff</value>
+				<value>com.myschool.beans.ClassSubjects
+				</value>
+				<value>com.myschool.beans.StaffAddress
+				</value>
+				<value>com.myschool.beans.StudentAddress
+				</value>
+				<value>com.myschool.beans.StudentDetails
+				</value>
+				<value>com.myschool.beans.StudentReport
+				</value>
+				<value>com.myschool.beans.SubjectCodes
+				</value>
+				<value>com.myschool.beans.TeachingStaff
+				</value>
+				<value>com.myschool.beans.SchoolClass
+				</value>
+				<value>com.myschool.beans.TutionFeePayment
+				</value>
+				<value>com.myschool.beans.TutionFeeStructude
+				</value>
+				<value>com.myschool.beans.UserDetails
+				</value>
+				<value>com.myschool.beans.UserRole</value>
 			</list>
 		</property>		
-		<property name="hibernateProperties">
-			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
-				<prop key="hibernate.current_session_context_class">thread</prop>
-				<prop key="hbm2ddl.auto">update</prop>
-			</props>
-		</property>
-	</bean>
-	
-	<bean id="dataSource"
-			class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="${db.driveClassName}" />
-		<property name="url" value="${db.url}" />
-		<property name="username" value="${db.username}" />
-		<property name="password" value="${db.password}" />
-	</bean>
-	
+			</bean>
+			<bean id="dataSource"
+					class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+				<property name="driverClassName" value="${db.driveClassName}" />
+				<property name="url" value="${db.url}" />
+				<property name="username" value="${db.username}" />
+				<property name="password" value="${db.password}" />
+			</bean>
+
 </beans>

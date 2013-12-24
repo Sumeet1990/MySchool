@@ -32,7 +32,7 @@
 
 #inputs:focus
 {
-    background-color: #fff;
+    background: #ff9;
     border-color: #e8c291;
     outline: none;
     -moz-box-shadow: 0 0 0 1px #e8c291 inset;
@@ -109,4 +109,45 @@
     float: right;
     line-height: 35px;
     margin-left: 10px;
+}
+.toolTip
+{
+background: white;
+position: absolute;
+align-content: center;
+left: 43%;
+top: 165px;
+margin: 8px;
+padding: 8px;
+border: 1px solid blue;
+display:none;
+font-style: italic;
+}
+
+#Icon
+{
+	position: absolute;
+}
+
+#pleaseWaitScreen
+{
+position: absolute;
+background: black;
+opacity: 0.3;
+width: 100%;
+height: 100%;
+top: 0;
+display: none;
+}
+#pleaseWaitScreen h2
+{
+top:300px;
+position: relative;
+color: white;
+text-align: center;
+font-size: 30px;
+}
+.required
+{
+	color:red;
 }

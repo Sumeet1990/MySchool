@@ -16,6 +16,12 @@
     <definition name="/SchoolClassAction.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/SchoolClass.jsp" />
     </definition>
+     <definition name="/SchoolClassActionSucess.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/SchoolClass.jsp" />
+    </definition>
+     <definition name="/SchoolClassCreateView.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/SchoolClassCreateView.jsp" />
+    </definition>
      <definition name="/GlobalError.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/GlobalError.jsp" />
     </definition>

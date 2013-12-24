@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -13,7 +15,7 @@ public class TeachingStaff implements Serializable{
 
 @Id
 @Column(name="TEACHING_STAFF_ID")
-String teachingStaffId;
+Long teachingStaffId;
 
 @Column(name="TEACHING_STAFF_TITLE")
 String teachingStaffTitle;
@@ -57,11 +59,24 @@ String createdDateAndTime;
 @Column(name="MODIFIED_DATE_AND_TIME")
 String modifiedDateAndTime;
 
-public String getTeachingStaffId() {
+@OneToOne
+@JoinColumn(referencedColumnName="TEACHING_STAFF_ID")
+private SchoolClass schoolClass;
+
+
+public SchoolClass getSchoolClass() {
+	return schoolClass;
+}
+
+public void setSchoolClass(SchoolClass schoolClass) {
+	this.schoolClass = schoolClass;
+}
+
+public Long getTeachingStaffId() {
 	return teachingStaffId;
 }
 
-public void setTeachingStaffId(String teachingStaffId) {
+public void setTeachingStaffId(Long teachingStaffId) {
 	this.teachingStaffId = teachingStaffId;
 }
 

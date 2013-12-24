@@ -17,7 +17,7 @@
    	</appender> 
 
 	<appender name="fileAppender" class="org.apache.log4j.RollingFileAppender"> 
-		<param name="MaxFileSize" value="5MB" /> 
+		<param name="MaxFileSize" value="10MB" /> 
 		<param name="MaxBackupIndex" value="10" /> 
 		<param name="File" value="C:/Logs/mySchoolLog.log" />  
 		<param name="Append" value="true" />
@@ -39,7 +39,7 @@
 
 	<!--sets the default priority log level--> 
     <root> 
-        <priority value="ALL"></priority> 
+        <priority value="DEBUG"></priority> 
         <appender-ref ref="consoleAppender"/> 
 		<appender-ref ref="fileAppender"/> 
 	</root> 

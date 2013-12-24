@@ -19,8 +19,9 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		</property>
 	</bean>
 		
-	<bean name="classteacherServiceTarget" class="com.myschool.service.TeachingStaffServiceImpl" >
+	<bean name="classteacherServiceTarget" class="com.myschool.service.SchoolClassServiceImpl" >
 		<property name="teachingStaffDAO" ref="teachingStaffDAO"></property>
+		<property name="schoolClassDAO" ref="schoolClassDAO"></property>
 	</bean>
 	
 	<bean id="classteacherService"

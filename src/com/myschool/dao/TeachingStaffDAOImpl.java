@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import com.myschool.beans.SchoolClass;
 import com.myschool.beans.TeachingStaff;
 import com.myschool.dto.TeachingStaffDTO;
 
@@ -16,14 +17,18 @@ public class TeachingStaffDAOImpl extends HibernateDaoSupport implements Teachin
 	public List<TeachingStaffDTO> getClassTeachers() {
 
 		List<TeachingStaffDTO> teachingStaffDTOLst = new ArrayList<TeachingStaffDTO>();
-		List<TeachingStaff> teachingStaffsLst =  getHibernateTemplate().find("from TeachingStaff where classTeacherFlag='YES'");
+		List<TeachingStaff> teachingStaffsLst =  getHibernateTemplate().find("from TeachingStaff where classTeacherFlag = 'YES' and teachingStaffStatus='ACTIVE'");
+		
 		if(teachingStaffsLst != null && teachingStaffsLst.size() > 0) {
-			TeachingStaff teachingStaff = teachingStaffsLst.get(0);
-			TeachingStaffDTO teachingStaffDTO = new TeachingStaffDTO();
-			teachingStaffDTO.setTeachingStaffId(teachingStaff.getTeachingStaffId());
-			teachingStaffDTO.setTeachingStaffGivenFullName(teachingStaff.getTeachingStaffGivenFullName());
-			teachingStaffDTOLst.add(teachingStaffDTO);
-			System.out.println("Verify credentials --------------");
+			for (TeachingStaff teachingStaffObj : teachingStaffsLst ) {
+				SchoolClass schoolClass = 	teachingStaffObj.getSchoolClass();
+				if(schoolClass == null || (schoolClass != null && schoolClass.getTeachingStaffId() == null)) {
+					TeachingStaffDTO teachingStaffDTO = new TeachingStaffDTO();
+					teachingStaffDTO.setTeachingStaffId(teachingStaffObj.getTeachingStaffId());
+					teachingStaffDTO.setTeachingStaffGivenFullName(teachingStaffObj.getTeachingStaffGivenFullName());
+					teachingStaffDTOLst.add(teachingStaffDTO);
+				}
+			}
 		}
 		return teachingStaffDTOLst;
 	}

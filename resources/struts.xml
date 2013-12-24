@@ -13,14 +13,48 @@
 			<result-type name="tiles"
 				class="org.apache.struts2.views.tiles.TilesResult" />
 		</result-types>
-		
 		<interceptors>
     		<interceptor name="commonSessionInterceptor"
         		class="com.myschool.interceptors.CommonSessionInterceptor" />
         	<interceptor name="commonLoginInterceptor"
         		class="com.myschool.interceptors.CommonLoginInterceptor" />
         	
+        	<interceptor-stack name="allYourParamsAreBelongToUsStack">
+			    <interceptor-ref name="exception"/>
+			    <interceptor-ref name="alias"/>
+			    <interceptor-ref name="servletConfig"/>
+			    <interceptor-ref name="i18n"/>
+			 <!-- THE TRICK: NOW PREPARE() WILL FIND EVERYTHING SET -->     
+			    <interceptor-ref name="staticParams"/>
+			    <interceptor-ref name="actionMappingParams"/>
+			    <interceptor-ref name="params">
+			        <param name="excludeParams">dojo\..*,^struts\..*,^session\..*,^request\..*,^application\..*,^servlet(Request|Response)\..*,parameters\...*</param>
+			    </interceptor-ref>
+			 <!-- END OF THE TRICK -->
+			    <interceptor-ref name="prepare"/>
+			    <interceptor-ref name="chain"/>
+			    <interceptor-ref name="scopedModelDriven"/>
+			    <interceptor-ref name="modelDriven"/>
+			    <interceptor-ref name="fileUpload"/>
+			    <interceptor-ref name="checkbox"/>
+			    <interceptor-ref name="multiselect"/>
+			    <interceptor-ref name="staticParams"/>
+			    <interceptor-ref name="actionMappingParams"/>
+			    <interceptor-ref name="params">
+			        <param name="excludeParams">dojo\..*,^struts\..*,^session\..*,^request\..*,^application\..*,^servlet(Request|Response)\..*,parameters\...*</param>
+			    </interceptor-ref>
+			    <interceptor-ref name="conversionError"/>
+			    <interceptor-ref name="validation">
+			        <param name="excludeMethods">input,back,cancel,browse</param>
+			    </interceptor-ref>
+			    <interceptor-ref name="workflow">
+			        <param name="excludeMethods">input,back,cancel,browse</param>
+			    </interceptor-ref>
+			    <interceptor-ref name="debugging"/>
+			</interceptor-stack>
+        	
         	<interceptor-stack name="mySchoolCommonInterceptors">
+        		<interceptor-ref name="allYourParamsAreBelongToUsStack"></interceptor-ref>
                 <interceptor-ref name="commonSessionInterceptor"/>
                 <interceptor-ref name="commonLoginInterceptor"/>
             </interceptor-stack>        	
@@ -56,10 +90,19 @@
 		</action>
 
 		<action name="SchoolClass*Action"  class="schoolClassAction">
+			<param name="actionTypeValue">{1}</param>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result type="tiles" name="SUCCESS">/SchoolClassAction.tiles</result>
+			<result name="failure">/SchoolClassAction.tiles</result>
+			<result name="input">/SchoolClassAction.tiles</result>
+		</action>
+
+		<action name="ClassOperation*Action"  class="schoolClassAction" method="perform{1}">
 			<param name="actionType">{1}</param>
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
-			<result type="tiles" name="success">/SchoolClassAction.tiles</result>
-			<result name="input">/SchoolClassAction.tiles</result>
+			<result type="tiles" name="success">/SchoolClassCreateView.tiles</result>
+			<!-- <result name="failure">/SchoolClassActionSucess.tiles</result>
+			<result name="input">/SchoolClassActionSucess.tiles</result> -->
 		</action>
 
 	</package>

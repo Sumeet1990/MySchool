@@ -4,7 +4,7 @@ package com.myschool.dto;
 public class TeachingStaffDTO{
 
 
-String teachingStaffId;
+Long teachingStaffId;
 String teachingStaffTitle;
 String teachingStaffGivenFullName;
 String teachingStaffSurname;
@@ -20,11 +20,11 @@ String modifiedUserId;
 String createdDateAndTime;
 String modifiedDateAndTime;
 
-public String getTeachingStaffId() {
+public Long getTeachingStaffId() {
 	return teachingStaffId;
 }
 
-public void setTeachingStaffId(String teachingStaffId) {
+public void setTeachingStaffId(Long teachingStaffId) {
 	this.teachingStaffId = teachingStaffId;
 }
 

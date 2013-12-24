@@ -1,27 +1,88 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-<title><s:property value="getText('login.title')"/></title>
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/loginStylesheet.css"
-	type="text/css">
-	<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/textBox_button.css"
-	type="text/css">
-</head>
-<body background="${pageContext.request.contextPath}/images/school_main.jpg">
-<h1 style="top: 50px;color: greenyellow;"><s:property value="getText('global.schoolname')"/></h1>
-	<s:form id="login" action="login" method="post">
-		<h1><s:property value="getText('global.login')"/></h1>
-			<s:textfield id="inputs" key="login.username" name="username"/> 
-			<s:password id="inputs" key="login.password" name="password"/>
-			<s:submit  id="actions" value="Log in"/>
+<!-----Meta----->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>My School</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="My School Form" />
+    <meta name="keywords" content="My School Form" />
+    <meta name="author" content="Ishan" />
+    
+<!--Stylesheets-->
+<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/fonts/pacifico/stylesheet.css" rel="stylesheet" type="text/css" />
+<!--Scripts-->
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/schoolCommon.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jQuery1.9.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<!--Sliding icons-->
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".username").focus(function() {
+		$(".user-icon").css("left","-48px");
+	});
+	$(".username").blur(function() {
+		$(".user-icon").css("left","0px");
+	});
+	
+	$(".password").focus(function() {
+		$(".pass-icon").css("left","-48px");
+	});
+	$(".password").blur(function() {
+		$(".pass-icon").css("left","0px");
+	});
+});
+</script>
 
-			<s:if test="#errorMesage!=''">
-			<h3 style="color:red;"><s:property  value="errorMesage"/></h3>
-			</s:if>
-	</s:form>
+</head>
+<body>
+
+	<div class="heading">
+    	<s:property value="getText('global.schoolname')"/>
+    </div>
+    
+<div id="wrapper">
+	<!--Sliding icons-->
+    <div class="user-icon"></div>
+    <div class="pass-icon"></div>
+    <!--END Sliding icons-->
+
+<!--login form inputs-->
+<s:form name="login-form" id="login-form" action="login" method="post">
+	<!--Header-->
+    <div class="header">
+    <h1><s:property value="getText('global.login')"/></h1>
+     <s:if test="#errorMesage!=''">
+    <span style="color:red;font-size: 16px;"><s:property  value="errorMesage"/></span>
+	</s:if>
+    </div>
+    <!--END header-->
+	
+	<!--Input fields-->
+    <div class="content">
+    <s:textfield cssClass="input username" placeholder="Username"  autofocus="autofocus" theme="simple" scope="page" name="username" onkeyup="upperCaseThetext('username')" tabindex="1"/> 
+			<s:password cssClass="input password" placeholder="Password" name="password" theme="simple"  scope="page" tabindex="2"/>
+			
+    </div>
+    <!--END Input fields-->
+    
+    <!--Buttons-->
+    <div class="footer">
+    <s:submit  id="button" value="Log in" theme="simple"  scope="page" onclick="showTransparentScreen()" tabindex="3"/>
+    <!--Register button--><input type="submit" name="submit" value="Forgot" class="register" /><!--END Register button-->
+    </div>
+    <!--END Buttons-->
+
+</s:form>
+<!--end login form-->
+
+</div>
+
+<!--bg gradient--><div class="gradient"></div><!--END bg gradient-->
+
 </body>
 </html>
