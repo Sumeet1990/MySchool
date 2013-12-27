@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.xwork.StringUtils;
+
 import com.myschool.beans.SchoolClass;
 import com.myschool.dao.SchoolClassDAO;
 import com.myschool.dao.TeachingStaffDAO;
@@ -39,6 +41,20 @@ public class SchoolClassServiceImpl implements SchoolClassService {
 		{
 			return null;
 		}
+	}
+	
+	@Override
+	public List<SchoolClass> getSchoolFrmClassOrSection(String schoolClassName,
+			String section) {
+		List<SchoolClass> schoolClassLst = null;
+		if(!StringUtils.isBlank(section)) 
+		{
+			schoolClassLst = getSchoolClassDAO().getSchoolClass(schoolClassName, section);
+		}else
+		{
+			schoolClassLst = getSchoolClassDAO().getSchoolClassFromClassName(schoolClassName);
+		}
+		return schoolClassLst;
 	}
 	
 	public TeachingStaffDAO getTeachingStaffDAO() {

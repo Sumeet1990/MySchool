@@ -92,18 +92,23 @@
 		<action name="SchoolClass*Action"  class="schoolClassAction">
 			<param name="actionTypeValue">{1}</param>
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
-			<result type="tiles" name="SUCCESS">/SchoolClassAction.tiles</result>
+			<result type="tiles" name="success">/SchoolClassAction.tiles</result>
 			<result name="failure">/SchoolClassAction.tiles</result>
 			<result name="input">/SchoolClassAction.tiles</result>
 		</action>
 
 		<action name="ClassOperation*Action"  class="schoolClassAction" method="perform{1}">
-			<param name="actionType">{1}</param>
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result type="tiles" name="success">/SchoolClassCreateView.tiles</result>
-			<!-- <result name="failure">/SchoolClassActionSucess.tiles</result>
-			<result name="input">/SchoolClassActionSucess.tiles</result> -->
+			<result name="failure" type="tiles">/SchoolClassAction.tiles</result>
+			<result name="input">/SchoolClassAction.tiles</result>
 		</action>
-
+		<action name="TeachingStaff*action"  class="schoolClassAction" method="performTeachingStaff{1}">
+			<param name="teachingStaffActionType">{1}</param>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result type="tiles" name="success">/TeachingStaffAction.tiles</result>
+			<result name="failure" type="tiles">/TeachingStaffAction.tiles</result>
+			<result name="input">/TeachingStaffAction.tiles</result>
+		</action>
 	</package>
 </struts>

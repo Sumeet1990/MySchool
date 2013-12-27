@@ -19,7 +19,7 @@ public class SchoolClassAction extends ActionSupport{
 	private String section;
 	private String actionTypeValue;
 	private String classTeacher;
-	private String errorMessage;
+	private String errorMessageAlreadyExts;
 	List<SchoolClass> schoolClassLst;
 
 	private Map<Long,String> classTeacherMap;
@@ -44,11 +44,11 @@ public class SchoolClassAction extends ActionSupport{
 		
 		 if(getSchoolClassLst() != null)
 		 {
-			 setErrorMessage("");
+			 setErrorMessageAlreadyExts("");
 			 return SUCCESS;
 		 }else
 		 {
-			 setErrorMessage(getSchoolClassName()+" already exist's, Please choose some other name !");
+			 setErrorMessageAlreadyExts(getSchoolClassName()+" already exist's, Please choose some other name !");
 			 return "failure";
 		 }
 		
@@ -62,7 +62,7 @@ public class SchoolClassAction extends ActionSupport{
 	public String performView()
 	{
 		try{
-		classTeacherMap = getClassteacherService().getClassTeachersList();
+			schoolClassLst = getClassteacherService().getSchoolFrmClassOrSection(getSchoolClassName(),getSection());
 		}catch (Exception e)
 		{
 			e.printStackTrace();
@@ -128,20 +128,20 @@ public class SchoolClassAction extends ActionSupport{
 		this.schoolClassLst = schoolClassLst;
 	}
 
-	public String getErrorMessage() {
-		return errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public String getActionTypeValue() {
 		return actionTypeValue;
 	}
 
 	public void setActionTypeValue(String actionTypeValue) {
 		this.actionTypeValue = actionTypeValue;
+	}
+
+	public String getErrorMessageAlreadyExts() {
+		return errorMessageAlreadyExts;
+	}
+
+	public void setErrorMessageAlreadyExts(String errorMessageAlreadyExts) {
+		this.errorMessageAlreadyExts = errorMessageAlreadyExts;
 	}
 
 }

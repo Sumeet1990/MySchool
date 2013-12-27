@@ -13,6 +13,9 @@ public interface SchoolClassService {
 	Map<Long, String> getClassTeachersList();
 
 	List<SchoolClass> createSchoolClass( final String className,final String sectionName, final String classTeacher) throws ParseException;
+
+	List<SchoolClass> getSchoolFrmClassOrSection(String schoolClassName,
+			String section);
    
 
 }

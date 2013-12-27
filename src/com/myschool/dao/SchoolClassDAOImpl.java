@@ -13,8 +13,6 @@ import com.myschool.util.CommonUtility;
 public class SchoolClassDAOImpl extends HibernateDaoSupport implements SchoolClassDAO{
 
 	AnnotationSessionFactoryBean sessionUtill;
-	private CommonUtility commonUtility;
-	
 	
 	public  List<SchoolClass> getSchoolClass( final String schoolClassName, final String sectionName) {
 
@@ -34,13 +32,10 @@ public class SchoolClassDAOImpl extends HibernateDaoSupport implements SchoolCla
 		schoolClass.setCreatedUserId("1");
 		getHibernateTemplate().save(schoolClass);
 	}
-
-	public CommonUtility getCommonUtility() {
-		return commonUtility;
-	}
-
-	public void setCommonUtility(CommonUtility commonUtility) {
-		this.commonUtility = commonUtility;
+	@Override
+	public List<SchoolClass> getSchoolClassFromClassName(String schoolClassName) {
+		List<SchoolClass> schoolClassesLst = getHibernateTemplate().find("from SchoolClass where className=?", new Object[]{schoolClassName});
+		 return schoolClassesLst;
 	}
 
 }

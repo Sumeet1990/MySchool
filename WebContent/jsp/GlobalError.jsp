@@ -10,6 +10,7 @@
 <body>
 	<center>
 		<h1>Sorry, unexpected exception occurred:</h1>
+		<s:set name="ex" value="%{exception}" scope="page"/>
 	</center>
 </body>
 </html>

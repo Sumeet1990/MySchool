@@ -9,6 +9,8 @@ public interface SchoolClassDAO {
 
 	List<SchoolClass> getSchoolClass( final String schoolClassName, final String sectionName);
 
-	void createSchoolClass(String className, String sectionName,
-			String classTeacherId) throws ParseException; 
+	void createSchoolClass(final String className, final String sectionName,
+			final String classTeacherId) throws ParseException;
+
+	List<SchoolClass> getSchoolClassFromClassName(final String schoolClassName); 
 }

@@ -9,6 +9,13 @@
 </s:url>
 <s:url action="SchoolClassModifyAction.action" var="classmodifyaction">
 </s:url>
+<s:url action="TeachingStaffCreateaction.action" var="teachingstaffcreateaction">
+</s:url>
+<s:url action="TeachingStaffModifyaction.action" var="teachingstaffmodifyaction">
+</s:url>
+<s:url action="TeachingStaffViewaction.action" var="teachingstaffviewaction">
+</s:url>
+
 <table>
 <tr>
 <td width="40%">
@@ -29,13 +36,13 @@
       </li>
    <li><s:a id="imageTag" href='#'><span>Teaching Staff</span></s:a>
       <ul>
-         <li><s:a href='#'><span>Create</span></s:a>
+         <li><s:a href='%{teachingstaffcreateaction}'><span>Create</span></s:a>
            
          </li>
-         <li><s:a href='#'><span>Modify</span></s:a>
+         <li><s:a href='%{teachingstaffmodifyaction}'><span>Modify</span></s:a>
            
          </li>
-         <li><s:a href='#'><span>View</span></s:a>
+         <li><s:a href='%{teachingstaffviewaction}'><span>View</span></s:a>
            
          </li>
       </ul>
