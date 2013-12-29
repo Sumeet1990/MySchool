@@ -34,6 +34,8 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 				</value>
 				<value>com.myschool.beans.TeachingStaff
 				</value>
+				<value>com.myschool.beans.StaffAppointment
+				</value>
 				<value>com.myschool.beans.SchoolClass
 				</value>
 				<value>com.myschool.beans.TutionFeePayment
@@ -44,7 +46,13 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 				</value>
 				<value>com.myschool.beans.UserRole</value>
 			</list>
-		</property>		
+		</property>	
+		<property name="hibernateProperties">
+			<props>
+ 				<prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
+ 				<prop key="hibernate.show_sql">true</prop>
+			 </props>
+		</property>			
 			</bean>
 			<bean id="dataSource"
 					class="org.springframework.jdbc.datasource.DriverManagerDataSource">

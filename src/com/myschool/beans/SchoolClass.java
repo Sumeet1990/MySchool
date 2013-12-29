@@ -13,6 +13,11 @@ import javax.persistence.Table;
 @Table(name="SCHOOL_CLASS")
 public class SchoolClass implements Serializable{
 
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 9155484084074380961L;
+
 @Id @GeneratedValue(strategy=GenerationType.AUTO)
 @Column(name="CLASS_ID")
 Long classId;
