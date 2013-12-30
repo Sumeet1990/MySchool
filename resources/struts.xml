@@ -60,14 +60,14 @@
             </interceptor-stack>        	
 		</interceptors>
 						
-		<global-results>
+<!-- 		<global-results>
   			<result name="globalError" type="tiles">/GlobalError.tiles</result>
   			<result name="sessionTimeout">jsp/Login.jsp</result>
 		</global-results>
 		
 		<global-exception-mappings>
 		  <exception-mapping exception="java.lang.Exception" result="globalError"/>
-		</global-exception-mappings>
+		</global-exception-mappings> -->
 				
 		<action name="login" class="loginClass">
 			<result name="success" type="tiles">/SchoolLandingPage.tiles</result>
