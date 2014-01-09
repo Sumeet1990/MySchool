@@ -4,12 +4,14 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="STUDENT_REPORT")
 public class StudentReport implements Serializable{
 
+@Id
 @Column(name="STUDENT_REPORT_ID")
 String studentReportId;
 
@@ -51,9 +53,6 @@ Integer totalPresentDays;
 
 @Column(name="EXAM_RESULT")
 String examResult;
-
-@Column(name="TOTAL_PRESENT_DAYS")
-Integer totalPresentDays;
 
 @Column(name="TOTAL_WORKING_DAYS")
 Integer totalWorkingDays;
@@ -154,12 +153,6 @@ public String getExamResult(){
 }
 public void setExamResult(String examResult){
  this.examResult=examResult;
-}
-public Integer getTotalPresentDays(){
- return totalPresentDays;
-}
-public void setTotalPresentDays(Integer totalPresentDays){
- this.totalPresentDays=totalPresentDays;
 }
 public Integer getTotalWorkingDays(){
  return totalWorkingDays;

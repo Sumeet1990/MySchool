@@ -4,12 +4,14 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="TRANSPORT_ROUT_DETAILS")
 public class TransportRoutDetails implements Serializable{
 
+@Id
 @Column(name="TRANSPORTATION_ID")
 Integer transportationId;
 

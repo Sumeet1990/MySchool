@@ -9,10 +9,12 @@ import java.io.IOException;
 import org.apache.commons.lang.xwork.StringUtils;
 
 public class SimpleClass {
-	static String javaStr = "package com.myschool.beans;\n\nimport java.io.Serializable;\n"
+	static String COMMON_IMPORTS = "package com.myschool.beans;\n\nimport java.io.Serializable;\n"
 			+ "\nimport javax.persistence.Column;"
 			+ "\nimport javax.persistence.Entity;"
+			+ "\nimport javax.persistence.Id;"
 			+ "\nimport javax.persistence.Table;\n\n";
+	static String javaStr = COMMON_IMPORTS;
 	static String getterSetterClass = "";
 
 	public static void main(String[] args) throws IOException {
@@ -44,7 +46,8 @@ public class SimpleClass {
 							count++;
 
 						} else {
-							generateJavaCode(string);
+							generateJavaCode(string,count);
+							count++;
 						}
 					}
 				} else {
@@ -58,10 +61,7 @@ public class SimpleClass {
 						FileWriter writer = new FileWriter(classFile);
 						writer.write(javaStr);
 						writer.close();
-						javaStr = "package com.myschool.beans;\n\nimport java.io.Serializable;\n"
-								+ "\nimport javax.persistence.Column;"
-								+ "\nimport javax.persistence.Entity;"
-								+ "\nimport javax.persistence.Table;\n\n";
+						javaStr = COMMON_IMPORTS;
 						getterSetterClass="";
 					} else
 						flag = false;
@@ -78,13 +78,17 @@ public class SimpleClass {
 		System.out.println(javaStr);
 	}
 
-	private static void generateJavaCode(String parseStr) {
+	private static void generateJavaCode(String parseStr, int count) {
 
 		String varibaleName = parseStr.substring(parseStr.indexOf("\""),
 				parseStr.lastIndexOf("\"") + 1);
+		if(count == 1)
+		{
+			javaStr = javaStr + "\n@Id";
+		}
 		javaStr = javaStr + "\n@Column(name=" + varibaleName + ")";
 
-		if (parseStr.contains("VARCHAR2")) {
+		if (parseStr.contains("VARCHAR2") ||parseStr.contains("CLOB") ) {
 			javaStr = javaStr + "\nString ";
 			getterSetter(initCapTheString(varibaleName,"Variable").replace("\"", ""),"String");
 		} else if (parseStr.contains("NUMBER")) {

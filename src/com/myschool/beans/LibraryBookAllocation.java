@@ -4,12 +4,14 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="LIBRARY_BOOK_ALLOCATION")
 public class LibraryBookAllocation implements Serializable{
 
+@Id
 @Column(name="TRANSPORTATION_ALLOCATION_ID")
 Integer transportationAllocationId;
 

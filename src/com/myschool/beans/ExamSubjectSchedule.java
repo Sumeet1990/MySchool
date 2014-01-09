@@ -4,12 +4,14 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="EXAM_SUBJECT_SCHEDULE")
 public class ExamSubjectSchedule implements Serializable{
 
+@Id
 @Column(name="EXAM_SUBJECT_SCHEDULE_ID")
 Integer examSubjectScheduleId;
 

@@ -4,12 +4,14 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="GENERAL_EVENTS")
 public class GeneralEvents implements Serializable{
 
+@Id
 @Column(name="GENERAL_EVENT_ID")
 Integer generalEventId;
 

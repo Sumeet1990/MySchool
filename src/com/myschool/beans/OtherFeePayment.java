@@ -4,12 +4,14 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="OTHER_FEE_PAYMENT")
 public class OtherFeePayment implements Serializable{
 
+@Id
 @Column(name="OTHER_FEE_PYNT_ID")
 Integer otherFeePyntId;
 

@@ -4,12 +4,14 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="STAFF_LEAVES")
 public class StaffLeaves implements Serializable{
 
+@Id
 @Column(name="STAFFT_LEAVES_ID")
 Integer stafftLeavesId;
 

@@ -4,12 +4,14 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="TUTION_FEE_PAYMENT")
 public class TutionFeePayment implements Serializable{
 
+@Id
 @Column(name="STUDNT_TUTIN_FEE_PYNT_ID")
 String studntTutinFeePyntId;
 
