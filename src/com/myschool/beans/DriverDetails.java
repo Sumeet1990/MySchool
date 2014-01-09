@@ -34,7 +34,8 @@ String driverStatus;
 @Column(name="DRIVER_QUALIFICATION")
 String driverQualification;
 
-@Column(name="PHOTO")photo;
+@Column(name="PHOTO")
+String photo;
 
 @Column(name="DRIVER_LICENSE_NO")
 String driverLicenseNo;
@@ -132,6 +133,12 @@ public String getDriverQualification(){
 }
 public void setDriverQualification(String driverQualification){
  this.driverQualification=driverQualification;
+}
+public String getPhoto(){
+ return photo;
+}
+public void setPhoto(String photo){
+ this.photo=photo;
 }
 public String getDriverLicenseNo(){
  return driverLicenseNo;

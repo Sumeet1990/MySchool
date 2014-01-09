@@ -61,7 +61,8 @@ Integer studentAddressId;
 @Column(name="ADMISSION_DATE")
 String admissionDate;
 
-@Column(name="PHOTO")photo;
+@Column(name="PHOTO")
+String photo;
 
 @Column(name="TRANSPORTATION_REQUIRED")
 Integer transportationRequired;
@@ -180,6 +181,12 @@ public String getAdmissionDate(){
 }
 public void setAdmissionDate(String admissionDate){
  this.admissionDate=admissionDate;
+}
+public String getPhoto(){
+ return photo;
+}
+public void setPhoto(String photo){
+ this.photo=photo;
 }
 public Integer getTransportationRequired(){
  return transportationRequired;

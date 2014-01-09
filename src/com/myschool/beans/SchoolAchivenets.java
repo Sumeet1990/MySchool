@@ -28,7 +28,8 @@ Integer studentRollNumber;
 @Column(name="ACHIEVEMENT_DATE")
 String achievementDate;
 
-@Column(name="DOCUMENT")document;
+@Column(name="DOCUMENT")
+String document;
 
 @Column(name="CREATED_USER_ID")
 String createdUserId;
@@ -78,6 +79,12 @@ public String getAchievementDate(){
 }
 public void setAchievementDate(String achievementDate){
  this.achievementDate=achievementDate;
+}
+public String getDocument(){
+ return document;
+}
+public void setDocument(String document){
+ this.document=document;
 }
 public String getCreatedUserId(){
  return createdUserId;

@@ -52,7 +52,8 @@ String subjectCodes;
 @Column(name="APPOINTMENT_TYPE_ID")
 Integer appointmentTypeId;
 
-@Column(name="PHOTO")photo;
+@Column(name="PHOTO")
+String photo;
 
 @Column(name="STAFF_ADDRESS_ID")
 Integer staffAddressId;
@@ -153,6 +154,12 @@ public Integer getAppointmentTypeId(){
 }
 public void setAppointmentTypeId(Integer appointmentTypeId){
  this.appointmentTypeId=appointmentTypeId;
+}
+public String getPhoto(){
+ return photo;
+}
+public void setPhoto(String photo){
+ this.photo=photo;
 }
 public Integer getStaffAddressId(){
  return staffAddressId;
