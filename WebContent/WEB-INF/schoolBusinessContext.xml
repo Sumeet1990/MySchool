@@ -19,15 +19,15 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		</property>
 	</bean>
 		
-	<bean name="classteacherServiceTarget" class="com.myschool.service.SchoolClassServiceImpl" >
-		<property name="teachingStaffDAO" ref="teachingStaffDAO"></property>
-		<property name="schoolClassDAO" ref="schoolClassDAO"></property>
+	<bean name="classSectionServiceTarget" class="com.myschool.service.ClassSectionServiceImpl" >
+		<property name="staffDAO" ref="staffDAO"></property>
+		<property name="classSectionDAO" ref="classSectionDAO"></property>
 	</bean>
 	
-	<bean id="classteacherService"
+	<bean id="classSectionService"
 			class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
 		<property name="transactionManager" ref="myTxManager"/>
-		<property name="target" ref="classteacherServiceTarget"/>
+		<property name="target" ref="classSectionServiceTarget"/>
 		<property name="transactionAttributes">
 			<props>
 				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>

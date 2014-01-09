@@ -10,19 +10,22 @@
         <put-attribute name="body" value="" />
         <put-attribute name="footer" value="/jsp/Footer.jsp" />
     </definition>
+     <definition name="/MasterMenuPage.tile" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/MasterMenuPage.jsp" />
+    </definition>
     <definition name="/SchoolLandingPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/SchoolLandingPage.jsp" />
     </definition>
-    <definition name="/SchoolClassAction.tiles" extends="baseLayout">
-        <put-attribute name="body" value="/jsp/SchoolClass.jsp" />
+    <definition name="/ClassSectionPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/ClassSection.jsp" />
     </definition>
-     <definition name="/SchoolClassCreateView.tiles" extends="baseLayout">
-        <put-attribute name="body" value="/jsp/SchoolClassCreateView.jsp" />
+     <definition name="/ClassSectionCreateViewPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/ClassSectionCreateView.jsp" />
     </definition>
-    <definition name="/TeachingStaffAction.tiles" extends="baseLayout">
-        <put-attribute name="body" value="/jsp/TeachingStaff.jsp" />
+    <definition name="/StaffPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/Staff.jsp" />
     </definition>
-     <definition name="/GlobalError.tiles" extends="baseLayout">
+     <definition name="/GlobalErrorPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/GlobalError.jsp" />
     </definition>
 </tiles-definitions>

@@ -71,6 +71,7 @@
 				
 		<action name="login" class="loginClass">
 			<result name="success" type="tiles">/SchoolLandingPage.tiles</result>
+			<result name="usersuccess" type="tiles">/MasterMenuPage.tile</result>
 			<result name="failure">jsp/Login.jsp</result>
 			<result name="input">jsp/Login.jsp</result>
 		</action>
@@ -88,27 +89,35 @@
 			<result name="failure">jsp/Login.jsp</result>
 			<result name="input">jsp/Login.jsp</result>
 		</action>
-
-		<action name="SchoolClass*Action"  class="schoolClassAction">
+		
+		<action name="MasterMenuAction.action"  class="masterMenuAction">
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success" type="tiles">/MasterMenuPage.tiles</result>
+			<result name="success" type="tiles">/SchoolLandingPage.tiles</result>
+			<result name="input" type="tiles">/SchoolLandingPage.tiles</result>
+		</action>
+			
+		<action name="ClassSection*Action"  class="classSectionAction">
 			<param name="actionTypeValue">{1}</param>
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
-			<result type="tiles" name="success">/SchoolClassAction.tiles</result>
-			<result name="failure">/SchoolClassAction.tiles</result>
-			<result name="input">/SchoolClassAction.tiles</result>
+			<result name="success" type="tiles">/ClassSectionPage.tiles</result>
+			<result name="failure" type="tiles">/ClassSectionPage.tiles</result>
+			<result name="input" type="tiles">/ClassSectionPage.tiles</result>
 		</action>
 
-		<action name="ClassOperation*Action"  class="schoolClassAction" method="perform{1}">
+		<action name="ClassOperation*Action"  class="classSectionAction" method="perform{1}">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
-			<result type="tiles" name="success">/SchoolClassCreateView.tiles</result>
-			<result name="failure" type="tiles">/SchoolClassAction.tiles</result>
-			<result name="input">/SchoolClassAction.tiles</result>
+			<result name="success"  type="tiles">/ClassSectionCreateViewPage.tiles</result>
+			<result name="failure" type="tiles">/ClassSectionPage.tiles</result>
+			<result name="input" type="tiles">/ClassSectionPage.tiles</result>
 		</action>
-		<action name="TeachingStaff*action"  class="schoolClassAction" method="performTeachingStaff{1}">
-			<param name="teachingStaffActionType">{1}</param>
+		<action name="Staff*action" class="classSectionAction" method="performStaff{1}">
+			<param name="staffActionType">{1}</param>
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
-			<result type="tiles" name="success">/TeachingStaffAction.tiles</result>
-			<result name="failure" type="tiles">/TeachingStaffAction.tiles</result>
-			<result name="input">/TeachingStaffAction.tiles</result>
+			<result name="success" type="tiles">/StaffPage.tiles</result>
+			<result name="failure" type="tiles">/StaffPage.tiles</result>
+			<result name="input" type="tiles">/StaffPage.tiles</result>
 		</action>
+		
 	</package>
 </struts>

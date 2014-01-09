@@ -7,11 +7,11 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
-	<bean name="teachingStaffDAO" class="com.myschool.dao.TeachingStaffDAOImpl" >
+	<bean name="staffDAO" class="com.myschool.dao.StaffDAOImpl" >
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
-	<bean name="schoolClassDAO" class="com.myschool.dao.SchoolClassDAOImpl" >
+	<bean name="classSectionDAO" class="com.myschool.dao.ClassSectionDAOImpl" >
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
@@ -32,11 +32,11 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 				</value>
 				<value>com.myschool.beans.SubjectCodes
 				</value>
-				<value>com.myschool.beans.TeachingStaff
+				<value>com.myschool.beans.StaffDetails
 				</value>
 				<value>com.myschool.beans.StaffAppointment
 				</value>
-				<value>com.myschool.beans.SchoolClass
+				<value>com.myschool.beans.ClassSection
 				</value>
 				<value>com.myschool.beans.TutionFeePayment
 				</value>

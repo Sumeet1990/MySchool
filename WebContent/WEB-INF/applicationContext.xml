@@ -1,14 +1,11 @@
-<beans xmlns="http://www.springframework.org/schema/beans"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
  
- <import resource="schoolBusinessContext.xml"/>
- <import resource="schoolDatabaseContext.xml"/>
+	<import resource="schoolBusinessContext.xml"/>
+ 	<import resource="schoolDatabaseContext.xml"/>
  
- <bean id="propertyConfigurer"
-        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+ 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true"/>
 		<property name="searchSystemEnvironment"  value="true"/>
 		<property name="locations">
             <list>
@@ -17,14 +14,17 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
         </property>
     </bean>
     
- <!-- Login Action-->
+ 	<!-- Login Action-->
 	<bean name="loginClass" class="com.myschool.action.LoginAction" >
-	<property name="loginService" ref="loginService"></property>
+		<property name="loginService" ref="loginService"></property>
 	</bean>
-		
- <!-- School class Action-->
-	<bean name="schoolClassAction" class="com.myschool.action.SchoolClassAction" >
-		<property name="classteacherService" ref="classteacherService"></property>
+
+ 	<!-- Login Action-->
+	<bean name="masterMenuAction" class="com.myschool.action.MasterMenuAction"></bean>
+			
+ 	<!-- School class Action-->
+	<bean name="classSectionAction" class="com.myschool.action.ClassSectionAction" >
+		<property name="classSectionService" ref="classSectionService"></property>
 	</bean>
 
 </beans>

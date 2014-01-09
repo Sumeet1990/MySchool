@@ -1,0 +1,7 @@
+1) Copy Properties from one bean to another
+
+a) For files having different property names
+	http://java.dzone.com/articles/how-copy-bean-properties
+
+b) For files having same property names
+	http://www.avajava.com/tutorials/lessons/how-do-i-copy-properties-from-one-bean-to-another.html

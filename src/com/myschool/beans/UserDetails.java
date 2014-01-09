@@ -4,25 +4,20 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="USER_DETAILS")
 public class UserDetails implements Serializable{
 
-@Id
-@Column(name="USER_DETAILS_ID")
-String userDetailsId;
+@Column(name="USER_ID")
+Integer userId;
 
 @Column(name="USER_NAME")
 String userName;
 
 @Column(name="PASSWORD")
 String password;
-
-@Column(name="USER_ROLE_ID")
-Integer userRoleId;
 
 @Column(name="USER_GIVEN_FULL_NAME")
 String userGivenFullName;
@@ -39,11 +34,14 @@ String userGender;
 @Column(name="USER_STATUS")
 String userStatus;
 
-@Column(name="USER_MAIL_ID")
-String userMailId;
+@Column(name="INVALID_ATTEMPTS")
+Integer invalidAttempts;
 
-@Column(name="CHANGE_PASSWORD_QUESTION")
-String changePasswordQuestion;
+@Column(name="STAFF_ID")
+Integer staffId;
+
+@Column(name="FORGOT_PASSWORD_QUESTION")
+String forgotPasswordQuestion;
 
 @Column(name="CHANGE_PASSWORD_ANSWER")
 String changePasswordAnswer;
@@ -60,132 +58,101 @@ String createdDateAndTime;
 @Column(name="MODIFIED_DATE_AND_TIME")
 String modifiedDateAndTime;
 
-public String getUserDetailsId() {
-	return userDetailsId;
-}
 
-public void setUserDetailsId(String userDetailsId) {
-	this.userDetailsId = userDetailsId;
+public Integer getUserId(){
+ return userId;
 }
-
-public String getUserName() {
-	return userName;
+public void setUserId(Integer userId){
+ this.userId=userId;
 }
-
-public void setUserName(String userName) {
-	this.userName = userName;
+public String getUserName(){
+ return userName;
 }
-
-public String getPassword() {
-	return password;
+public void setUserName(String userName){
+ this.userName=userName;
 }
-
-public void setPassword(String password) {
-	this.password = password;
+public String getPassword(){
+ return password;
 }
-
-public Integer getUserRoleId() {
-	return userRoleId;
+public void setPassword(String password){
+ this.password=password;
 }
-
-public void setUserRoleId(Integer userRoleId) {
-	this.userRoleId = userRoleId;
+public String getUserGivenFullName(){
+ return userGivenFullName;
 }
-
-public String getUserGivenFullName() {
-	return userGivenFullName;
+public void setUserGivenFullName(String userGivenFullName){
+ this.userGivenFullName=userGivenFullName;
 }
-
-public void setUserGivenFullName(String userGivenFullName) {
-	this.userGivenFullName = userGivenFullName;
+public String getUserSurname(){
+ return userSurname;
 }
-
-public String getUserSurname() {
-	return userSurname;
+public void setUserSurname(String userSurname){
+ this.userSurname=userSurname;
 }
-
-public void setUserSurname(String userSurname) {
-	this.userSurname = userSurname;
+public String getUserDob(){
+ return userDob;
 }
-
-public String getUserDob() {
-	return userDob;
+public void setUserDob(String userDob){
+ this.userDob=userDob;
 }
-
-public void setUserDob(String userDob) {
-	this.userDob = userDob;
+public String getUserGender(){
+ return userGender;
 }
-
-public String getUserGender() {
-	return userGender;
+public void setUserGender(String userGender){
+ this.userGender=userGender;
 }
-
-public void setUserGender(String userGender) {
-	this.userGender = userGender;
+public String getUserStatus(){
+ return userStatus;
 }
-
-public String getUserStatus() {
-	return userStatus;
+public void setUserStatus(String userStatus){
+ this.userStatus=userStatus;
 }
-
-public void setUserStatus(String userStatus) {
-	this.userStatus = userStatus;
+public Integer getInvalidAttempts(){
+ return invalidAttempts;
 }
-
-public String getUserMailId() {
-	return userMailId;
+public void setInvalidAttempts(Integer invalidAttempts){
+ this.invalidAttempts=invalidAttempts;
 }
-
-public void setUserMailId(String userMailId) {
-	this.userMailId = userMailId;
+public Integer getStaffId(){
+ return staffId;
 }
-
-public String getChangePasswordQuestion() {
-	return changePasswordQuestion;
+public void setStaffId(Integer staffId){
+ this.staffId=staffId;
 }
-
-public void setChangePasswordQuestion(String changePasswordQuestion) {
-	this.changePasswordQuestion = changePasswordQuestion;
+public String getForgotPasswordQuestion(){
+ return forgotPasswordQuestion;
 }
-
-public String getChangePasswordAnswer() {
-	return changePasswordAnswer;
+public void setForgotPasswordQuestion(String forgotPasswordQuestion){
+ this.forgotPasswordQuestion=forgotPasswordQuestion;
 }
-
-public void setChangePasswordAnswer(String changePasswordAnswer) {
-	this.changePasswordAnswer = changePasswordAnswer;
+public String getChangePasswordAnswer(){
+ return changePasswordAnswer;
 }
-
-public String getCreatedUserId() {
-	return createdUserId;
+public void setChangePasswordAnswer(String changePasswordAnswer){
+ this.changePasswordAnswer=changePasswordAnswer;
 }
-
-public void setCreatedUserId(String createdUserId) {
-	this.createdUserId = createdUserId;
+public String getCreatedUserId(){
+ return createdUserId;
 }
-
-public String getModifiedUserId() {
-	return modifiedUserId;
+public void setCreatedUserId(String createdUserId){
+ this.createdUserId=createdUserId;
 }
-
-public void setModifiedUserId(String modifiedUserId) {
-	this.modifiedUserId = modifiedUserId;
+public String getModifiedUserId(){
+ return modifiedUserId;
 }
-
-public String getCreatedDateAndTime() {
-	return createdDateAndTime;
+public void setModifiedUserId(String modifiedUserId){
+ this.modifiedUserId=modifiedUserId;
 }
-
-public void setCreatedDateAndTime(String createdDateAndTime) {
-	this.createdDateAndTime = createdDateAndTime;
+public String getCreatedDateAndTime(){
+ return createdDateAndTime;
 }
-
-public String getModifiedDateAndTime() {
-	return modifiedDateAndTime;
+public void setCreatedDateAndTime(String createdDateAndTime){
+ this.createdDateAndTime=createdDateAndTime;
 }
-
-public void setModifiedDateAndTime(String modifiedDateAndTime) {
-	this.modifiedDateAndTime = modifiedDateAndTime;
+public String getModifiedDateAndTime(){
+ return modifiedDateAndTime;
 }
-
+public void setModifiedDateAndTime(String modifiedDateAndTime){
+ this.modifiedDateAndTime=modifiedDateAndTime;
+}
 }

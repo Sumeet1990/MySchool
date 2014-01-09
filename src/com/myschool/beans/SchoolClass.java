@@ -4,32 +4,44 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="SCHOOL_CLASS")
 public class SchoolClass implements Serializable{
 
-/**
-	 * 
-	 */
-	private static final long serialVersionUID = 9155484084074380961L;
+@Column(name="SCHOOL_CLASS_ID")
+Integer schoolClassId;
 
-@Id @GeneratedValue(strategy=GenerationType.AUTO)
-@Column(name="CLASS_ID")
-Long classId;
+@Column(name="SCHOOL_CLASS_NAME")
+String schoolClassName;
 
-@Column(name="CLASS_NAME")
-String className;
+@Column(name="PERIODS_PER_DAY")
+Integer periodsPerDay;
 
-@Column(name="SECTION")
-String section;
+@Column(name="PERIOD_DURATION")
+Integer periodDuration;
 
-@Column(name="TEACHING_STAFF_ID")
-Long teachingStaffId;
+@Column(name="TEACHER_PERIODS_PER_DAY")
+Integer teacherPeriodsPerDay;
+
+@Column(name="MIN_AGE_CRITERIA")
+Integer minAgeCriteria;
+
+@Column(name="MAX_AGE_CRITERIA")
+Integer maxAgeCriteria;
+
+@Column(name="AGE_CRITERIA_MEASURE")
+String ageCriteriaMeasure;
+
+@Column(name="SUBJECT_CODES")
+String subjectCodes;
+
+@Column(name="MAXIMUM_STRENGTH")
+Integer maximumStrength;
+
+@Column(name="CLASS_STATUS")
+String classStatus;
 
 @Column(name="CREATED_USER_ID")
 String createdUserId;
@@ -44,68 +56,94 @@ String createdDateAndTime;
 String modifiedDateAndTime;
 
 
-public Long getClassId() {
-	return classId;
+public Integer getSchoolClassId(){
+ return schoolClassId;
 }
-
-public void setClassId(Long classId) {
-	this.classId = classId;
+public void setSchoolClassId(Integer schoolClassId){
+ this.schoolClassId=schoolClassId;
 }
-
-public String getClassName() {
-	return className;
+public String getSchoolClassName(){
+ return schoolClassName;
 }
-
-public void setClassName(String className) {
-	this.className = className;
+public void setSchoolClassName(String schoolClassName){
+ this.schoolClassName=schoolClassName;
 }
-
-public String getSection() {
-	return section;
+public Integer getPeriodsPerDay(){
+ return periodsPerDay;
 }
-
-public void setSection(String section) {
-	this.section = section;
+public void setPeriodsPerDay(Integer periodsPerDay){
+ this.periodsPerDay=periodsPerDay;
 }
-
-public Long getTeachingStaffId() {
-	return teachingStaffId;
+public Integer getPeriodDuration(){
+ return periodDuration;
 }
-
-public void setTeachingStaffId(Long teachingStaffId) {
-	this.teachingStaffId = teachingStaffId;
+public void setPeriodDuration(Integer periodDuration){
+ this.periodDuration=periodDuration;
 }
-
-public String getCreatedUserId() {
-	return createdUserId;
+public Integer getTeacherPeriodsPerDay(){
+ return teacherPeriodsPerDay;
 }
-
-public void setCreatedUserId(String createdUserId) {
-	this.createdUserId = createdUserId;
+public void setTeacherPeriodsPerDay(Integer teacherPeriodsPerDay){
+ this.teacherPeriodsPerDay=teacherPeriodsPerDay;
 }
-
-public String getModifiedUserId() {
-	return modifiedUserId;
+public Integer getMinAgeCriteria(){
+ return minAgeCriteria;
 }
-
-public void setModifiedUserId(String modifiedUserId) {
-	this.modifiedUserId = modifiedUserId;
+public void setMinAgeCriteria(Integer minAgeCriteria){
+ this.minAgeCriteria=minAgeCriteria;
 }
-
-public String getCreatedDateAndTime() {
-	return createdDateAndTime;
+public Integer getMaxAgeCriteria(){
+ return maxAgeCriteria;
 }
-
-public void setCreatedDateAndTime(String createdDateAndTime) {
-	this.createdDateAndTime = createdDateAndTime;
+public void setMaxAgeCriteria(Integer maxAgeCriteria){
+ this.maxAgeCriteria=maxAgeCriteria;
 }
-
-public String getModifiedDateAndTime() {
-	return modifiedDateAndTime;
+public String getAgeCriteriaMeasure(){
+ return ageCriteriaMeasure;
 }
-
-public void setModifiedDateAndTime(String modifiedDateAndTime) {
-	this.modifiedDateAndTime = modifiedDateAndTime;
+public void setAgeCriteriaMeasure(String ageCriteriaMeasure){
+ this.ageCriteriaMeasure=ageCriteriaMeasure;
 }
-
+public String getSubjectCodes(){
+ return subjectCodes;
+}
+public void setSubjectCodes(String subjectCodes){
+ this.subjectCodes=subjectCodes;
+}
+public Integer getMaximumStrength(){
+ return maximumStrength;
+}
+public void setMaximumStrength(Integer maximumStrength){
+ this.maximumStrength=maximumStrength;
+}
+public String getClassStatus(){
+ return classStatus;
+}
+public void setClassStatus(String classStatus){
+ this.classStatus=classStatus;
+}
+public String getCreatedUserId(){
+ return createdUserId;
+}
+public void setCreatedUserId(String createdUserId){
+ this.createdUserId=createdUserId;
+}
+public String getModifiedUserId(){
+ return modifiedUserId;
+}
+public void setModifiedUserId(String modifiedUserId){
+ this.modifiedUserId=modifiedUserId;
+}
+public String getCreatedDateAndTime(){
+ return createdDateAndTime;
+}
+public void setCreatedDateAndTime(String createdDateAndTime){
+ this.createdDateAndTime=createdDateAndTime;
+}
+public String getModifiedDateAndTime(){
+ return modifiedDateAndTime;
+}
+public void setModifiedDateAndTime(String modifiedDateAndTime){
+ this.modifiedDateAndTime=modifiedDateAndTime;
+}
 }

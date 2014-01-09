@@ -4,30 +4,28 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="STUDENT_REPORT")
 public class StudentReport implements Serializable{
 
-@Id
 @Column(name="STUDENT_REPORT_ID")
 String studentReportId;
 
-@Column(name="STUDENT_FULL_NAME")
-String studentFullName;
+@Column(name="STUDENT_REGISTRATION_ID")
+Integer studentRegistrationId;
 
-@Column(name="STUDENT_DOB")
-String studentDob;
+@Column(name="STUDENT_ROLL_NO")
+String studentRollNo;
 
-@Column(name="STUDENT_GENDER")
-String studentGender;
+@Column(name="SCHOOL_CLASS_NAME")
+String schoolClassName;
 
-@Column(name="CLASS_TEACHER_FULL_NAME")
-String classTeacherFullName;
+@Column(name="SECTION")
+String section;
 
-@Column(name="TEST NAME")
+@Column(name="TEST_NAME")
 String testName;
 
 @Column(name="SUBJECT_CODES_MARKS")
@@ -51,6 +49,12 @@ String grade;
 @Column(name="TOTAL_PRESENT_DAYS")
 Integer totalPresentDays;
 
+@Column(name="EXAM_RESULT")
+String examResult;
+
+@Column(name="TOTAL_PRESENT_DAYS")
+Integer totalPresentDays;
+
 @Column(name="TOTAL_WORKING_DAYS")
 Integer totalWorkingDays;
 
@@ -66,148 +70,125 @@ String createdDateAndTime;
 @Column(name="MODIFIED_DATE_AND_TIME")
 String modifiedDateAndTime;
 
-public String getStudentReportId() {
-	return studentReportId;
-}
 
-public void setStudentReportId(String studentReportId) {
-	this.studentReportId = studentReportId;
+public String getStudentReportId(){
+ return studentReportId;
 }
-
-public String getStudentFullName() {
-	return studentFullName;
+public void setStudentReportId(String studentReportId){
+ this.studentReportId=studentReportId;
 }
-
-public void setStudentFullName(String studentFullName) {
-	this.studentFullName = studentFullName;
+public Integer getStudentRegistrationId(){
+ return studentRegistrationId;
 }
-
-public String getStudentDob() {
-	return studentDob;
+public void setStudentRegistrationId(Integer studentRegistrationId){
+ this.studentRegistrationId=studentRegistrationId;
 }
-
-public void setStudentDob(String studentDob) {
-	this.studentDob = studentDob;
+public String getStudentRollNo(){
+ return studentRollNo;
 }
-
-public String getStudentGender() {
-	return studentGender;
+public void setStudentRollNo(String studentRollNo){
+ this.studentRollNo=studentRollNo;
 }
-
-public void setStudentGender(String studentGender) {
-	this.studentGender = studentGender;
+public String getSchoolClassName(){
+ return schoolClassName;
 }
-
-public String getClassTeacherFullName() {
-	return classTeacherFullName;
+public void setSchoolClassName(String schoolClassName){
+ this.schoolClassName=schoolClassName;
 }
-
-public void setClassTeacherFullName(String classTeacherFullName) {
-	this.classTeacherFullName = classTeacherFullName;
+public String getSection(){
+ return section;
 }
-
-public String getTestName() {
-	return testName;
+public void setSection(String section){
+ this.section=section;
 }
-
-public void setTestName(String testName) {
-	this.testName = testName;
+public String getTestName(){
+ return testName;
 }
-
-public String getSubjectCodesMarks() {
-	return subjectCodesMarks;
+public void setTestName(String testName){
+ this.testName=testName;
 }
-
-public void setSubjectCodesMarks(String subjectCodesMarks) {
-	this.subjectCodesMarks = subjectCodesMarks;
+public String getSubjectCodesMarks(){
+ return subjectCodesMarks;
 }
-
-public Integer getSubjectsFailed() {
-	return subjectsFailed;
+public void setSubjectCodesMarks(String subjectCodesMarks){
+ this.subjectCodesMarks=subjectCodesMarks;
 }
-
-public void setSubjectsFailed(Integer subjectsFailed) {
-	this.subjectsFailed = subjectsFailed;
+public Integer getSubjectsFailed(){
+ return subjectsFailed;
 }
-
-public Integer getTotalMarks() {
-	return totalMarks;
+public void setSubjectsFailed(Integer subjectsFailed){
+ this.subjectsFailed=subjectsFailed;
 }
-
-public void setTotalMarks(Integer totalMarks) {
-	this.totalMarks = totalMarks;
+public Integer getTotalMarks(){
+ return totalMarks;
 }
-
-public Integer getPercentageOfMarks() {
-	return percentageOfMarks;
+public void setTotalMarks(Integer totalMarks){
+ this.totalMarks=totalMarks;
 }
-
-public void setPercentageOfMarks(Integer percentageOfMarks) {
-	this.percentageOfMarks = percentageOfMarks;
+public Integer getPercentageOfMarks(){
+ return percentageOfMarks;
 }
-
-public Integer getRank() {
-	return rank;
+public void setPercentageOfMarks(Integer percentageOfMarks){
+ this.percentageOfMarks=percentageOfMarks;
 }
-
-public void setRank(Integer rank) {
-	this.rank = rank;
+public Integer getRank(){
+ return rank;
 }
-
-public String getGrade() {
-	return grade;
+public void setRank(Integer rank){
+ this.rank=rank;
 }
-
-public void setGrade(String grade) {
-	this.grade = grade;
+public String getGrade(){
+ return grade;
 }
-
-public Integer getTotalPresentDays() {
-	return totalPresentDays;
+public void setGrade(String grade){
+ this.grade=grade;
 }
-
-public void setTotalPresentDays(Integer totalPresentDays) {
-	this.totalPresentDays = totalPresentDays;
+public Integer getTotalPresentDays(){
+ return totalPresentDays;
 }
-
-public Integer getTotalWorkingDays() {
-	return totalWorkingDays;
+public void setTotalPresentDays(Integer totalPresentDays){
+ this.totalPresentDays=totalPresentDays;
 }
-
-public void setTotalWorkingDays(Integer totalWorkingDays) {
-	this.totalWorkingDays = totalWorkingDays;
+public String getExamResult(){
+ return examResult;
 }
-
-public String getCreatedUserId() {
-	return createdUserId;
+public void setExamResult(String examResult){
+ this.examResult=examResult;
 }
-
-public void setCreatedUserId(String createdUserId) {
-	this.createdUserId = createdUserId;
+public Integer getTotalPresentDays(){
+ return totalPresentDays;
 }
-
-public String getModifiedUserId() {
-	return modifiedUserId;
+public void setTotalPresentDays(Integer totalPresentDays){
+ this.totalPresentDays=totalPresentDays;
 }
-
-public void setModifiedUserId(String modifiedUserId) {
-	this.modifiedUserId = modifiedUserId;
+public Integer getTotalWorkingDays(){
+ return totalWorkingDays;
 }
-
-public String getCreatedDateAndTime() {
-	return createdDateAndTime;
+public void setTotalWorkingDays(Integer totalWorkingDays){
+ this.totalWorkingDays=totalWorkingDays;
 }
-
-public void setCreatedDateAndTime(String createdDateAndTime) {
-	this.createdDateAndTime = createdDateAndTime;
+public String getCreatedUserId(){
+ return createdUserId;
 }
-
-public String getModifiedDateAndTime() {
-	return modifiedDateAndTime;
+public void setCreatedUserId(String createdUserId){
+ this.createdUserId=createdUserId;
 }
-
-public void setModifiedDateAndTime(String modifiedDateAndTime) {
-	this.modifiedDateAndTime = modifiedDateAndTime;
+public String getModifiedUserId(){
+ return modifiedUserId;
 }
-
+public void setModifiedUserId(String modifiedUserId){
+ this.modifiedUserId=modifiedUserId;
+}
+public String getCreatedDateAndTime(){
+ return createdDateAndTime;
+}
+public void setCreatedDateAndTime(String createdDateAndTime){
+ this.createdDateAndTime=createdDateAndTime;
+}
+public String getModifiedDateAndTime(){
+ return modifiedDateAndTime;
+}
+public void setModifiedDateAndTime(String modifiedDateAndTime){
+ this.modifiedDateAndTime=modifiedDateAndTime;
+}
 }
