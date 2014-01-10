@@ -27,6 +27,9 @@ String bookName;
 @Column(name="AUTHOR_NAME")
 String authorName;
 
+@Column(name="PUBLISHER_NAME")
+String publisherName;
+
 @Column(name="NO_OF_PAGES")
 Integer noOfPages;
 
@@ -85,6 +88,14 @@ public String getAuthorName(){
 public void setAuthorName(String authorName){
  this.authorName=authorName;
 }
+
+public String getPublisherName() {
+	return publisherName;
+}
+public void setPublisherName(String publisherName) {
+	this.publisherName = publisherName;
+}
+
 public Integer getNoOfPages(){
  return noOfPages;
 }
