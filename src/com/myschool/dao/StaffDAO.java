@@ -5,7 +5,6 @@ import java.util.List;
 import com.myschool.dto.TeachingStaffDTO;
 
 
-public interface StaffDAO{
-
-	List<TeachingStaffDTO> getClassTeachers();
+public interface StaffDAO {
+	
 }

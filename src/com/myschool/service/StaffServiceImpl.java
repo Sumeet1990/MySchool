@@ -13,5 +13,5 @@ import com.myschool.dao.StaffDAO;
 import com.myschool.dto.TeachingStaffDTO;
 
 public class StaffServiceImpl implements StaffService {
-
+	private static Logger log = Logger.getLogger(StaffServiceImpl.class);
 }

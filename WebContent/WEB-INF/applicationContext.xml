@@ -20,7 +20,7 @@
 	</bean>
 
  	<!-- Login Action-->
-	<bean name="masterMenuAction" class="com.myschool.action.MasterMenuAction"></bean>
+	<bean name="configurationMenuAction" class="com.myschool.action.ConfigurationMenuAction"></bean>
 			
  	<!-- School class Action-->
 	<bean name="classSectionAction" class="com.myschool.action.ClassSectionAction" >

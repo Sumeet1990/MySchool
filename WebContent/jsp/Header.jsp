@@ -13,7 +13,7 @@
 <s:url action="logout.action" var="logoutAction" />
 
 <h3 class="textColor" align="right" > 
-<s:property value='#session.userName'/> Logged in as  <s:property value="#session.userRole"/></h3>
+Welcome <s:property value='#session.userName'/></h3>
 <h4  class="textColor" id="timeDisplay" align="right" ></h4>
 <div class="toolTip" id="tooltipId"> </div>
 <s:a style="color:aliceblue;" href="%{homeAction}" > <img id="Icon" style="width: 3%; top:110px; left:10px" src="images/home.png" onmouseout="hideToolTip()" onmouseover="showToolTip('Home','20px','50px')"></s:a>

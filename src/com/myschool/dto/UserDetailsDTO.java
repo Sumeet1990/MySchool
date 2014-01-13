@@ -2,8 +2,7 @@ package com.myschool.dto;
 
 public class UserDetailsDTO {
     private String username;
-    private String password;
-    private Integer userRoleId;
+    private String password;   
  
     public String getUsername() {
         return username;
@@ -19,15 +18,6 @@ public class UserDetailsDTO {
  
     public void setPassword(String password) {
         this.password = password;
-    }
-	
-	public Integer getUserRoleId() {
-		return userRoleId;
-	}
-
-	public void setUserRoleId(Integer userRoleId) {
-		this.userRoleId = userRoleId;
-	}    
-    
+    }	
 }
 

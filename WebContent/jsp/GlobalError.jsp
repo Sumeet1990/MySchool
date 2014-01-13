@@ -9,7 +9,7 @@
 </head>
 <body>
 	<center>
-		<h1>Sorry, unexpected exception occurred:</h1>
+		<h1>Sorry, unexpected exception occurred. Please contact System Administrator</h1>
 		<s:set name="ex" value="%{exception}" scope="page"/>
 	</center>
 </body>

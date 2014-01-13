@@ -13,6 +13,7 @@
 			<result-type name="tiles"
 				class="org.apache.struts2.views.tiles.TilesResult" />
 		</result-types>
+		
 		<interceptors>
     		<interceptor name="commonSessionInterceptor"
         		class="com.myschool.interceptors.CommonSessionInterceptor" />
@@ -60,18 +61,19 @@
             </interceptor-stack>        	
 		</interceptors>
 						
-<!-- 		<global-results>
+ 		<global-results>
   			<result name="globalError" type="tiles">/GlobalError.tiles</result>
   			<result name="sessionTimeout">jsp/Login.jsp</result>
 		</global-results>
 		
 		<global-exception-mappings>
-		  <exception-mapping exception="java.lang.Exception" result="globalError"/>
-		</global-exception-mappings> -->
+			<exception-mapping exception="java.sql.SQLException" result="globalError"/>
+		  	<exception-mapping exception="java.lang.Exception" result="globalError"/>
+		</global-exception-mappings> 
 				
 		<action name="login" class="loginClass">
 			<result name="success" type="tiles">/SchoolLandingPage.tiles</result>
-			<result name="usersuccess" type="tiles">/MasterMenuPage.tile</result>
+			<result name="usersuccess" type="tiles">/ConfigurationMenuPage.tile</result>
 			<result name="failure">jsp/Login.jsp</result>
 			<result name="input">jsp/Login.jsp</result>
 		</action>
@@ -90,9 +92,9 @@
 			<result name="input">jsp/Login.jsp</result>
 		</action>
 		
-		<action name="MasterMenuAction.action"  class="masterMenuAction">
+		<action name="ConfigurationMenuAction.action"  class="configurationMenuAction">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
-			<result name="success" type="tiles">/MasterMenuPage.tiles</result>
+			<result name="success" type="tiles">/ConfigurationMenuPage.tiles</result>
 			<result name="success" type="tiles">/SchoolLandingPage.tiles</result>
 			<result name="input" type="tiles">/SchoolLandingPage.tiles</result>
 		</action>

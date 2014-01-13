@@ -7,11 +7,15 @@
 <tiles-definitions>
     <definition name="baseLayout" template="/jsp/BaseLayout.jsp">
         <put-attribute name="header" value="/jsp/Header.jsp" />
+        <put-attribute name="leftMenu" value="/jsp/LeftMenu.jsp" />
         <put-attribute name="body" value="" />
         <put-attribute name="footer" value="/jsp/Footer.jsp" />
     </definition>
-     <definition name="/MasterMenuPage.tile" extends="baseLayout">
-        <put-attribute name="body" value="/jsp/MasterMenuPage.jsp" />
+     <definition name="/ConfigurationMenuPage.tile" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/ConfigurationMenuPage.jsp" />
+    </definition>
+    <definition name="/FunctionalMenuPage.tile" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/FunctionalMenuPage.jsp" />
     </definition>
     <definition name="/SchoolLandingPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/SchoolLandingPage.jsp" />

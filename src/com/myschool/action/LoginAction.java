@@ -21,7 +21,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	private String username;
 	private String password;
 	private String errorMesage;
-	private String roleName;
 	private Map<String, Object> session;
 	private LoginService loginService;
 		
@@ -41,23 +40,11 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		if(valid) {
 			setErrorMesage(StringUtils.EMPTY);
 			
-			session.put(CommonConstants.USERNAME, getUsername());
-			session.put(CommonConstants.USERROLE, (loginService.getUserRoleName(userDetailsDTO
-					.getUserRoleId())));
-			
-			setRoleName(session.get(CommonConstants.USERROL));
-			
-			if(StringUtils.equalsingorecase(getRoleName(), CommonConstants.ROLE_USER)) {				
-				return CommonConstants.ACTION_USERSUCCESS;			
-			} else if(StringUtils.equalsingorecase(getRoleName(), CommonConstants.ROLE_MANAGEMENT) || 
-					StringUtils.equalsingorecase(getRoleName(), CommonConstants.ROLE_ADMINISTRATOR)) {
-				
-				return SUCCESS;
-			}
+			session.put(CommonConstants.USERNAME, getUsername());			
+			return SUCCESS;
 		} else {
 			if(session.containsKey(CommonConstants.USERNAME)) {
-				session.remove(CommonConstants.USERNAME);
-				session.remove(CommonConstants.USERROLE);
+				session.remove(CommonConstants.USERNAME);				
 			}
 			
 			setMessage("Invalid credentials please try again");
@@ -85,13 +72,11 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			if (StringUtils.isNotBlank((String) session.get(CommonConstants.USERNAME))) {
 				setErrorMesage("");
 				username = (String) session.get(CommonConstants.USERNAME);
-				roleName = (String) session.get(CommonConstants.USERROLE);
 				
 				return SUCCESS;
 			} else {
 				if(session.containsKey(CommonConstants.USERNAME)) {
 					session.remove(CommonConstants.USERNAME);
-					session.remove(CommonConstants.USERROLE);
 				}
 				
 				setMessage("Invalid credentials please try again");
@@ -106,7 +91,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	public String logout() {		
 		if(session.containsKey(CommonConstants.USERNAME)) {
 			session.remove(CommonConstants.USERNAME);
-			session.remove(CommonConstants.USERROLE);
 		}
 		
 		setMessage("You are successfully logged out !");
@@ -135,14 +119,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 	public void setErrorMesage(String errorMesage) {
 		this.errorMesage = errorMesage;
-	}
-
-	public String getRoleName() {
-		return roleName;
-	}
-
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
 	}
 
 	public LoginService getLoginService() {
