@@ -4,26 +4,37 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 	<head>
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/schoolCommon.js"/>
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jQuery1.9.js"/>
-		
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/cssverticalmenu.css"/>		
+		<style type="text/css">
+			* {margin: 0; padding: 0;}
+	
+			body {
+				background: #4EB889;
+				font-family: Nunito, arial, verdana;
+			}
+		</style>
 	</head>
 	
-	<body onload="hideTransparentScreen()">
-		<table height="100%" width="100%">
-    		<tr height="10%">
-        		<td align="center" background="${pageContext.request.contextPath}/images/school_main.jpg" ><tiles:insertAttribute name="header"/></td>
-        	</tr>
-    		<tr height="80%">
-        		<td width="25%"><tiles:insertAttribute name="leftMenu" /></td><td width="75%"><tiles:insertAttribute name="body" /></td>
+	<body>
+		<table height="100%" width="100%"border=1>
+			<tr height="15%">
+        		<td colspan="2" align="center" ><font color="white"><tiles:insertAttribute name="header"/></font></td>
+    		</tr>	
+    		<tr height="75%">
+        		<td width="20%">
+					<tiles:insertAttribute name="leftMenu" />
+				</td>
+				<td width="80%"><pre><tiles:insertAttribute name="body"/></pre></td>
     		</tr>
     		<tr height="10%" style="bottom: 0;">
-        		<td style="width:100%; " background="${pageContext.request.contextPath}/images/school_main.jpg"><tiles:insertAttribute name="footer"/></td>
+        		<td colspan="2" align="center" style="width:100%;">
+        			<font color="white"><tiles:insertAttribute name="footer"/></font>
+        		</td>
     		</tr>
 		</table>
-		<div id="pleaseWaitScreen"><h2><s:property value="getText('global.waitMessage')"/></h2></div>
 	</body>
 </html>
+
+
