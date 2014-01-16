@@ -1,10 +1,8 @@
 package com.myschool.service;
 
-import java.util.Map;
-
 import org.apache.commons.lang.xwork.StringUtils;
+import org.apache.log4j.Logger;
 
-import com.myschool.action.Logger;
 import com.myschool.dao.UserDAO;
 import com.myschool.dto.UserDetailsDTO;
 
@@ -22,5 +20,15 @@ public class LoginServiceImpl implements LoginService {
 		} else {
 			return false;
 		}
-	}	
+	}
+
+	public UserDAO getUserDAO() {
+		return userDAO;
+	}
+
+	public void setUserDAO(UserDAO userDAO) {
+		this.userDAO = userDAO;
+	}
+	
+	
 }

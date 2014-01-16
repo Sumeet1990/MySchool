@@ -18,7 +18,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<bean id="sessionFactory"
 			class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
-		<property name="annotatedClasses">
+		<!-- <property name="annotatedClasses">
 			<list>
 				<value>com.myschool.beans.ClassSubjects
 				</value>
@@ -46,7 +46,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 				</value>
 				<value>com.myschool.beans.UserRole</value>
 			</list>
-		</property>		
+		</property> -->		
 		<property name="hibernateProperties">
 		<props>
 			<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>

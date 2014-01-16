@@ -1,16 +1,6 @@
 package com.myschool.service;
 
-import java.text.ParseException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.commons.lang.xwork.StringUtils;
-
-import com.myschool.beans.ClassSection;
-import com.myschool.dao.ClassSectionDAO;
-import com.myschool.dao.StaffDAO;
-import com.myschool.dto.TeachingStaffDTO;
+import org.apache.log4j.Logger;
 
 public class StaffServiceImpl implements StaffService {
 	private static Logger log = Logger.getLogger(StaffServiceImpl.class);

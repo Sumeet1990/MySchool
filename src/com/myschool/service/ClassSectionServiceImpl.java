@@ -1,18 +1,26 @@
 package com.myschool.service;
 
-import java.text.ParseException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.apache.log4j.Logger;
 
-import org.apache.commons.lang.xwork.StringUtils;
-
-import com.myschool.action.Logger;
-import com.myschool.beans.ClassSection;
 import com.myschool.dao.ClassSectionDAO;
 import com.myschool.dao.StaffDAO;
-import com.myschool.dto.TeachingStaffDTO;
 
-public class ClassSectionServiceImpl implements ClassSectionService {
-	private static Logger log = Logger.getLogger(ClassSectionServiceImpl.class);		
+public class ClassSectionServiceImpl implements ClassSectionService { 
+	private static Logger log = Logger.getLogger(ClassSectionServiceImpl.class);
+	private StaffDAO staffDAO;
+	private ClassSectionDAO classSectionDAO;
+	public StaffDAO getStaffDAO() {
+		return staffDAO;
+	}
+	public void setStaffDAO(StaffDAO staffDAO) {
+		this.staffDAO = staffDAO;
+	}
+	public ClassSectionDAO getClassSectionDAO() {
+		return classSectionDAO;
+	}
+	public void setClassSectionDAO(ClassSectionDAO classSectionDAO) {
+		this.classSectionDAO = classSectionDAO;
+	}
+	
+	
 }
