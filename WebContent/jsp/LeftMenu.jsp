@@ -105,12 +105,13 @@
 			});
 		</script>	
 	</head>
-	
+<s:url var="loadBodyConfig" action="loadActionConfig.action" ></s:url>
+<s:url var="loadBodyFunctional" action="loadActionFunctional.action"></s:url>
 	<body>		
 		<div id="accordian">
 			<ul>
 				<li>
-					<h3 id="cm"><span class="icon-dashboard"></span>Configuration Management</h3>
+					<h3 id="cm"><span class="icon-dashboard"></span><s:a href="%{loadBodyConfig}">Configuration Management</s:a></h3>
 					<ul id="1">
 						<li><a href="#">Administrator</a></li>
 						<li><a href="#">Finance</a></li>
@@ -120,7 +121,7 @@
 					</ul>
 				</li>				
 				<li>
-					<h3 id="fm"><span class="icon-tasks"></span>Functional Management</h3>
+					<h3 id="fm"><span class="icon-tasks"></span><s:a href="%{loadBodyFunctional}">Functional Management</s:a></h3>
 					<ul id="2">
 						<li><a href="#">Administrator</a></li>
 						<li><a href="#">Leave</a></li>

@@ -15,8 +15,8 @@
 		<interceptors>
     		<interceptor name="commonSessionInterceptor"
         		class="com.myschool.interceptors.CommonSessionInterceptor" />
-        	<interceptor name="commonLoginInterceptor"
-        		class="com.myschool.interceptors.CommonLoginInterceptor" />
+        	<!-- <interceptor name="commonLoginInterceptor"
+        		class="com.myschool.interceptors.CommonLoginInterceptor" /> -->
         	
         	<interceptor-stack name="allYourParamsAreBelongToUsStack">
 			    <interceptor-ref name="exception"/>
@@ -55,7 +55,7 @@
         	<interceptor-stack name="mySchoolCommonInterceptors">
         		<interceptor-ref name="allYourParamsAreBelongToUsStack"></interceptor-ref>
                 <interceptor-ref name="commonSessionInterceptor"/>
-                <interceptor-ref name="commonLoginInterceptor"/>
+               <!--  <interceptor-ref name="commonLoginInterceptor"/> -->
             </interceptor-stack>        	
 		</interceptors>
 						
@@ -84,7 +84,7 @@
 		</action>
 
 		<action name="logout" class="loginClass" method="logout">
-			<interceptor-ref name="mySchoolCommonInterceptors"/>
+		<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result name="success" type="tiles">/SchoolLandingPage.tiles</result>
 			<result name="failure">jsp/Login.jsp</result>
 			<result name="input">jsp/Login.jsp</result>
@@ -117,6 +117,16 @@
 			<result name="success" type="tiles">/StaffPage.tiles</result>
 			<result name="failure" type="tiles">/StaffPage.tiles</result>
 			<result name="input" type="tiles">/StaffPage.tiles</result>
+		</action>
+		
+		
+		<action name="loadActionConfig">
+		<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result type="tiles">/LoadConfigPage.tiles</result>
+		</action>
+		<action name="loadActionFunctional">
+		<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result type="tiles">/LoadFunctionalPage.tiles</result>
 		</action>
 		
 	</package>

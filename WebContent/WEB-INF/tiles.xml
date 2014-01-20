@@ -30,4 +30,11 @@
      <definition name="/GlobalErrorPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/GlobalError.jsp" />
     </definition>
+    
+    <definition name="/LoadConfigPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/ConfigurationMenuPage.jsp" />
+    </definition>
+    <definition name="/LoadFunctionalPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/FunctionalMenuPage.jsp" />
+    </definition>
 </tiles-definitions>
