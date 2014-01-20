@@ -59,10 +59,10 @@
             </interceptor-stack>        	
 		</interceptors>
 						
- 		<global-results>
+ 		<!-- <global-results>
   			<result name="globalError" type="tiles">/GlobalError.tiles</result>
   			<result name="sessionTimeout">jsp/Login.jsp</result>
-		</global-results>
+		</global-results> -->
 		
 		<global-exception-mappings>
 			<exception-mapping exception="java.sql.SQLException" result="globalError"/>
