@@ -1,8 +1,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
  
-	<import resource="schoolBusinessContext.xml"/>
- 	<import resource="schoolDatabaseContext.xml"/>
+ <!-- If you have database use this 
+ 	<import resource="schoolBusinessContext.xml"/>-->
+ 	<!-- if you dont have database use this -->
+ 	<import resource="for_no_database_bussiness.xml"/>
+	
+	<!-- If you have database use this 
+ 	<import resource="schoolDatabaseContext.xml"/>-->
+ 	<!-- if you dont have database use this -->
+ 	<import resource="For_no_database_conn.xml"/>
  
  	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="ignoreUnresolvablePlaceholders" value="true"/>

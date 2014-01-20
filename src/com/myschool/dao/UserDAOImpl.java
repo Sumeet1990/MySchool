@@ -8,7 +8,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import com.myschool.dto.UserDetailsDTO;
 
 
-public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
+public class UserDAOImpl /*extends HibernateDaoSupport*/ implements UserDAO {
 	private static Logger log = Logger.getLogger(UserDAOImpl.class);	
 
 	public UserDetailsDTO getLoginCredentials(String username) {

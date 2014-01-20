@@ -6,8 +6,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import org.apache.commons.lang.xwork.StringUtils;
-
 public class GeneratePojo {
 	static String COMMON_IMPORTS = "package com.myschool.beans;\n\nimport java.io.Serializable;\n"
 			+ "\nimport javax.persistence.Column;"
