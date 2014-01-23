@@ -1,9 +1,13 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
-	<head></head>
+	<head>
+	<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/textBox_button.css"
+	type="text/css">
+	</head>
 	<body>
 	<div id="paraCotent">
-						<p style="color: brown;font-style: italic; font-weight: 900;">
+						<p class="paraContentStyle">
 							<s:property value="getText('school.para1')"/><br><br>
 							<s:property value="getText('school.para2')"/><br><br>
 							<s:property value="getText('school.para3')"/><br><br>
