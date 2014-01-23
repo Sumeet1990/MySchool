@@ -112,21 +112,20 @@
 }
 .toolTip
 {
-background: white;
+background: rgb(231, 240, 12);
 position: absolute;
 align-content: center;
-left: 43%;
-top: 165px;
-margin: 8px;
-padding: 8px;
-border: 1px solid blue;
-display:none;
-font-style: italic;
+top:95px;
+display: none;
+font-size: small;
+
 }
 
 #Icon
 {
 	position: absolute;
+	width: 2%; 
+	top:55px;
 }
 
 #pleaseWaitScreen
@@ -150,4 +149,12 @@ font-size: 30px;
 .required
 {
 	color:red;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: url(../images/main_bg.jpg);
 }

@@ -2,18 +2,18 @@
 <html>
 	<head></head>
 	<body>
-		<table>
-			<tr>				
-				<td>
-					<div>
+	<div id="paraCotent">
 						<p style="color: brown;font-style: italic; font-weight: 900;">
 							<s:property value="getText('school.para1')"/><br><br>
 							<s:property value="getText('school.para2')"/><br><br>
 							<s:property value="getText('school.para3')"/><br><br>
 						</p>
-					</div>
-				</td>
-			</tr>
-		</table>
+		</div >
+		<div id="configurationalContent" style="display: none">
+		<%@ include file="ConfigurationMenuPage.jsp" %>
+		</div>
+		<div id="functionalContent" style="display: none">
+		<%@ include file="FunctionalMenuPage.jsp" %>
+		</div>
 	</body>
 </html>

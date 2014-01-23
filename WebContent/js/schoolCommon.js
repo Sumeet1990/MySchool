@@ -21,12 +21,11 @@ function checkTime(i) {
 	return i;
 }
 
-function showToolTip(desc,leftPosition,topPosition)
+function showToolTip(desc,righPosition)
 {
 
 	document.getElementById("tooltipId").innerHTML= desc;
-	document.getElementById("tooltipId").style.left=leftPosition;
-	document.getElementById("tooltipId").style.top=topPosition;
+	document.getElementById("tooltipId").style.right=righPosition;
 	document.getElementById("tooltipId").style.display="block";
 }
 
@@ -46,4 +45,20 @@ function upperCaseThetext(nameTextBx){
 	var value = $("[name='"+nameTextBx+"']").val();
 
 		$("[name='"+nameTextBx+"']").val(value.toUpperCase());
+}
+function manageDivForMenu(id) {
+
+	if (id == 'paraCotent') {
+		$('#paraCotent').show();
+		$('#configurationalContent').hide();
+		$('#functionalContent').hide();
+	} else if (id == 'configurationalContent') {
+		$('#paraCotent').hide();
+		$('#configurationalContent').show();
+		$('#functionalContent').hide();
+	} else if (id == 'functionalContent') {
+		$('#paraCotent').hide();
+		$('#configurationalContent').hide();
+		$('#functionalContent').show();
+	}
 }
