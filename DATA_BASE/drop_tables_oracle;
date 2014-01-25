@@ -1,0 +1,38 @@
+
+select 'drop table '|| table_name || ' cascade constraints ; /' from user_tables;
+
+--------------generate script-------------------
+drop table STAFF_ADDRESS cascade constraints ; /
+drop table STAFF_DETAILS cascade constraints ; /
+drop table USER_ROLE_AND_ACCESS cascade constraints ; /
+drop table STAFF_APPOINTMENT cascade constraints ; /
+drop table USER_DETAILS cascade constraints ; /
+drop table SCHOOL_CLASS cascade constraints ; /
+drop table CLASS_SECTION cascade constraints ; /
+drop table SCHOOL_SUBJECTS cascade constraints ; /
+drop table CLASS_EXAMS cascade constraints ; /
+drop table EXAM_SUBJECT_SCHEDULE cascade constraints ; /
+drop table STUDENT_ADDRESS cascade constraints ; /
+drop table SCHOOL_ACHIVENETS cascade constraints ; /
+drop table TUTION_FEE_STRUCTURE cascade constraints ; /
+drop table TUTION_FEE_PAYMENT cascade constraints ; /
+drop table OTHER_FEE_STRUCTURE cascade constraints ; /
+drop table DRIVER_DETAILS cascade constraints ; /
+drop table LIBRARY_BOOK_CATEGORIES cascade constraints ; /
+drop table LIBRARY_BOOK_DETAILS cascade constraints ; /
+drop table STAFF_LEAVES cascade constraints ; /
+drop table STAFF_ATTENDANCE cascade constraints ; /
+drop table SCHOOL_TIMINGS cascade constraints ; /
+drop table GENERAL_HOLIDAY_LIST cascade constraints ; /
+drop table CLASS_HOLIDAY_LIST cascade constraints ; /
+drop table GENERAL_EVENTS cascade constraints ; /
+drop table CLASS_EVENTS cascade constraints ; /
+drop table STUDENT_REGISTRATION cascade constraints ; /
+drop table STUDENT_CURRENT_DETAILS cascade constraints ; /
+drop table STUDENT_ATTENDANCE cascade constraints ; /
+drop table STUDENT_REPORT cascade constraints ; /
+drop table OTHER_FEE_PAYMENT cascade constraints ; /
+drop table VEHICLE_DETAILS cascade constraints ; /
+drop table TRANSPORT_ROUT_DETAILS cascade constraints ; /
+drop table TRANSPORTATION_ALLOCATION cascade constraints ; /
+drop table LIBRARY_BOOK_ALLOCATION cascade constraints ; /

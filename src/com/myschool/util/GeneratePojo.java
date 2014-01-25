@@ -26,15 +26,25 @@ public class GeneratePojo {
 			BufferedReader in = new BufferedReader(reader);
 			String string;
 			int count = 0;
-			boolean flag = true;
 			while ((string = in.readLine()) != null) {
 				
-				if (!string.contains("CONSTRAINT") && flag) {
-					if (!string.trim().equals("")) {
+				if(string.trim().equals("/"))
+				{
+					count =0;
+					javaStr = javaStr + "\n\n"+getterSetterClass+"}";
+					File classFile = new File(fileDir.getAbsoluteFile() + "\\" + className
+							+ ".java");
+					classFile.createNewFile();
+					FileWriter writer = new FileWriter(classFile);
+					writer.write(javaStr);
+					writer.close();
+					javaStr = COMMON_IMPORTS;
+					getterSetterClass="";
+				}else if (!string.contains("CONSTRAINT") && !string.contains("FOREIGN") && !string.trim().equals("")) {
 						if (count == 0) {
 							String tableName = string.substring(
-									string.indexOf("."),
-									string.indexOf("(") - 1).replace(".", "");
+									string.indexOf("TABLE "),
+									string.indexOf("(") - 1).replace("TABLE ", "");
 							className = initCapTheString(
 									tableName.replace("\"", ""), "Class");
 							javaStr = javaStr + "@Entity\n" + "@Table(name="
@@ -43,27 +53,11 @@ public class GeneratePojo {
 									+ " implements Serializable{\n";
 							count++;
 
-						} else {
+						} else if (string.contains("NUMBER") || string.contains("VARCHAR2")) {
 							generateJavaCode(string,count);
 							count++;
 						}
-					}
-				} else {
-					if (!flag && !string.contains("CONSTRAINT") && string.contains(")")) {
-						flag = true;
-						count = 0;
-						javaStr = javaStr + "\n\n"+getterSetterClass+"}";
-						File classFile = new File(fileDir.getAbsoluteFile() + "\\" + className
-								+ ".java");
-						classFile.createNewFile();
-						FileWriter writer = new FileWriter(classFile);
-						writer.write(javaStr);
-						writer.close();
-						javaStr = COMMON_IMPORTS;
-						getterSetterClass="";
-					} else
-						flag = false;
-				}
+				} 
 			}
 			in.close();
 
