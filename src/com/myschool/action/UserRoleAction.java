@@ -7,8 +7,8 @@ import com.opensymphony.xwork2.ActionSupport;
 /*
  * 
  */
-public class FunctionalMenuAction extends ActionSupport {
+public class UserRoleAction extends ActionSupport {
 	
-	private static Logger log = Logger.getLogger(FunctionalMenuAction.class);	
+	private static Logger log = Logger.getLogger(UserRoleAction.class);	
 	
 }
