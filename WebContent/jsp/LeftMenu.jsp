@@ -1,7 +1,8 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/font-awesome.min.css">
+	
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/font-awesome1.css">
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/leftmenu.css">
 		
 		<script src="${pageContext.request.contextPath}/js/prefixfree-1.0.7.js" type="text/javascript"></script>

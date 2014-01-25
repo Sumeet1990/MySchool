@@ -5,7 +5,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-	<head>			
+	<head>
+				
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/textBox_button.css" type="text/css">
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/schoolCommon.js"></script>
 	</head>
@@ -16,7 +17,7 @@
 				<td height="20%" colspan="2"><tiles:insertAttribute name="header"/></td>
 			</tr>
 			<tr>
-				<td width="20%" height="500"><tiles:insertAttribute name="leftMenu"/></td>
+				<td width="20%" height="520"><tiles:insertAttribute name="leftMenu"/></td>
 				<td><tiles:insertAttribute name="body"/></td>
 			</tr>
 			<tr>
