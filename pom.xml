@@ -34,12 +34,7 @@
 		</dependency>
 
 		<!-- Oracle OJDBC JAR -->
-		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc14</artifactId>
-			<version>10.2.0.4.0</version>
-		</dependency>
-
+		
 		<!-- HIBERNATE JPA -->
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
@@ -71,12 +66,12 @@
 		</dependency>
 
 		<!-- JSP Servelet error in JSP page (eclipse) -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jsp-api</artifactId>
 			<version>2.0</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency> -->
 		<!-- Logging log4j -->
 		<dependency>
 			<groupId>log4j</groupId>
