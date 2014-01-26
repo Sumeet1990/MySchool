@@ -14,6 +14,8 @@
 
 <h3 class="textColor" align="left" > 
 Welcome <s:property value='#session.userName'/></h3>
+<h3 class="textColor" align="left" > 
+Last login: <s:property value='#username'/></h3>
 <h4  class="textColor" id="timeDisplay" align="left" ></h4>
 <div class="toolTip" id="tooltipId"> </div>
 

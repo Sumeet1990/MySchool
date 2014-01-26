@@ -23,17 +23,29 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	private String errorMesage;
 	private java.util.Map<String, Object> session;
 	private LoginService loginService;
-		
+	private UserDetailsDTO userDetailsDTO;
+
+
 	/*
 	 * (non-Javadoc)
 	 * @see com.opensymphony.xwork2.ActionSupport#execute()
 	 */
 	public String execute() {
-		UserDetailsDTO userDetailsDTO = new UserDetailsDTO();
+		userDetailsDTO = new UserDetailsDTO();
 		
 		log.debug("################# login Execute");
-		boolean valid = loginService.getLoginCredentials(username,
+		boolean valid = false;
+		if(!username.trim().equals("") && !password.trim().equals(""))
+		{
+			valid = loginService.getLoginCredentials(username,
 				password, userDetailsDTO);
+		}
+		else
+		{
+			setMessage("Please enter username and password");
+			
+			return "failure";
+		}
 		log.debug("################## valid :"+valid);
 		
 		if(valid) {
@@ -45,9 +57,13 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			if(session.containsKey(CommonConstants.USERNAME)) {
 				session.remove(CommonConstants.USERNAME);				
 			}
-			
-			setMessage("Invalid credentials please try again");
-			
+			if(userDetailsDTO.isLocked())
+			{
+				setMessage("Your account has been locked !");
+			}else
+			{
+				setMessage("Invalid credentials please try again");
+			}
 			return "failure";
 		}
 	}
@@ -128,7 +144,13 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		this.loginService = loginService;
 	}
 
-	
+	public UserDetailsDTO getUserDetailsDTO() {
+		return userDetailsDTO;
+	}
+
+	public void setUserDetailsDTO(UserDetailsDTO userDetailsDTO) {
+		this.userDetailsDTO = userDetailsDTO;
+	}
 	@Override
 	public void setSession(java.util.Map<String, Object> session) {
 		this.session = session;

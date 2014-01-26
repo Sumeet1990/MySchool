@@ -9,16 +9,21 @@ public class CommonUtility {
 	String dateTimeFormat;
 	static SimpleDateFormat formater;
 	
-	public static Date stringToDate( String dateStr) throws ParseException {
+	public static Date stringToDate( String dateStr) {
 		
-		Date date = formater.parse(dateStr);
+		Date date = null;
+		try {
+			date = formater.parse(dateStr);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		return date;
 	}
-	public static String dateToString( Date date) throws ParseException {
+	public static String dateToString( Date date) {
 		formater = new SimpleDateFormat("DD-MMM-yyyy hh:mm");
 			String dateStr = formater.format(date);
-			
 			return dateStr;
 		}
 	public String getDateTimeFormat() {

@@ -13,7 +13,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		<property name="target" ref="loginServiceTarget"/>
 		<property name="transactionAttributes">
 			<props>
-				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+				<!-- <prop key="get*">PROPAGATION_REQUIRED,readOnly</prop> -->
 				<prop key="*">PROPAGATION_REQUIRED</prop>
 			</props>
 		</property>
