@@ -32,9 +32,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		UserDetailsDTO userDetailsDTO = new UserDetailsDTO();
 		
 		log.debug("################# login Execute");
-		boolean valid = true;
-		/*boolean valid = loginService.getLoginCredentials(username,
-				password, userDetailsDTO);*/
+		boolean valid = loginService.getLoginCredentials(username,
+				password, userDetailsDTO);
 		log.debug("################## valid :"+valid);
 		
 		if(valid) {
@@ -57,7 +56,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	 * 
 	 */
 	private void setMessage(final String msg) {
-		if(getErrorMesage().isEmpty()) {
+		if(getErrorMesage() == null || getErrorMesage().isEmpty()) {
 			setErrorMesage( msg);
 		}
 		else {

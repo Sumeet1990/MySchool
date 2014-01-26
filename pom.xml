@@ -33,8 +33,12 @@
 			<version>2.1.8</version>
 		</dependency>
 
-		<!-- Oracle OJDBC JAR -->
-		
+		<!-- if database use this Oracle OJDBC JAR -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc14</artifactId>
+			<version>10.2.0.4.0</version>
+		</dependency>
 		<!-- HIBERNATE JPA -->
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>

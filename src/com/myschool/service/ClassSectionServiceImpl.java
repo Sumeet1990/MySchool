@@ -9,6 +9,7 @@ public class ClassSectionServiceImpl implements ClassSectionService {
 	private static Logger log = Logger.getLogger(ClassSectionServiceImpl.class);
 	private StaffDAO staffDAO;
 	private ClassSectionDAO classSectionDAO;
+	
 	public StaffDAO getStaffDAO() {
 		return staffDAO;
 	}

@@ -18,40 +18,115 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<bean id="sessionFactory"
 			class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
-		<!-- <property name="annotatedClasses">
+		 <property name="annotatedClasses">
 			<list>
-				<value>com.myschool.beans.ClassSubjects
+				<value>
+					com.myschool.beans.ClassEvents</value>
+				<value>
+					com.myschool.beans.ClassExams
 				</value>
-				<value>com.myschool.beans.StaffAddress
+				<value>
+					com.myschool.beans.ClassHolidayList
 				</value>
-				<value>com.myschool.beans.StudentAddress
+				<value>
+					com.myschool.beans.ClassSection
 				</value>
-				<value>com.myschool.beans.StudentDetails
+				<value>
+					com.myschool.beans.DriverDetails
 				</value>
-				<value>com.myschool.beans.StudentReport
+				<value>
+					com.myschool.beans.ExamSubjectSchedule
 				</value>
-				<value>com.myschool.beans.SubjectCodes
+				<value>
+					com.myschool.beans.GeneralEvents
 				</value>
-				<value>com.myschool.beans.StaffDetails
+				<value>
+					com.myschool.beans.GeneralHolidayList
 				</value>
-				<value>com.myschool.beans.StaffAppointment
+				<value>
+					com.myschool.beans.LibraryBookAllocation
 				</value>
-				<value>com.myschool.beans.ClassSection
+				<value>
+					com.myschool.beans.LibraryBookCategories
 				</value>
-				<value>com.myschool.beans.TutionFeePayment
+				<value>
+					com.myschool.beans.LibraryBookDetails
 				</value>
-				<value>com.myschool.beans.TutionFeeStructude
+				<value>
+					com.myschool.beans.OtherFeePayment
 				</value>
-				<value>com.myschool.beans.UserDetails
+				<value>
+					com.myschool.beans.OtherFeeStructure
 				</value>
-				<value>com.myschool.beans.UserRole</value>
+				<value>
+					com.myschool.beans.SchoolAchivenets
+				</value>
+				<value>
+					com.myschool.beans.SchoolClass
+				</value>
+				<value>
+					com.myschool.beans.SchoolSubjects
+				</value>
+				<value>
+					com.myschool.beans.SchoolTimings
+				</value>
+				<value>
+					com.myschool.beans.StaffAddress
+				</value>
+				<value>
+					com.myschool.beans.StaffAppointment
+				</value>
+				<value>
+					com.myschool.beans.StaffAttendance
+				</value>
+				<value>
+					com.myschool.beans.StaffDetails
+				</value>
+				<value>
+					com.myschool.beans.StaffLeaves
+				</value>
+				<value>
+					com.myschool.beans.StudentAddress
+				</value>
+				<value>
+					com.myschool.beans.StudentAttendance
+				</value>
+				<value>
+					com.myschool.beans.StudentCurrentDetails
+				</value>
+				<value>
+					com.myschool.beans.StudentRegistration
+				</value>
+				<value>
+					com.myschool.beans.StudentReport
+				</value>
+				<value>
+					com.myschool.beans.TransportationAllocation
+				</value>
+				<value>
+					com.myschool.beans.TransportRoutDetails
+				</value>
+				<value>
+					com.myschool.beans.TutionFeePayment
+				</value>
+				<value>
+					com.myschool.beans.TutionFeeStructure
+				</value>
+				<value>
+					com.myschool.beans.UserDetails
+				</value>
+				<value>
+					com.myschool.beans.UserRoleAndAccess
+				</value>
+				<value>
+					com.myschool.beans.VehicleDetails
+				</value>
 			</list>
-		</property> -->		
+		</property>	
 		<property name="hibernateProperties">
 		<props>
 			<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
 			<prop key="hibernate.current_session_context_class">thread</prop>
-			<prop key="hbm2ddl.auto">create</prop>
 			<prop key="hibernate.show_sql">true</prop>
 		</props>
 		</property>
