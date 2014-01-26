@@ -5,7 +5,7 @@ import com.myschool.dto.UserDetailsDTO;
 
 public interface UserDAO {
    
-	void getLoginCredentials(String username, UserDetailsDTO userDetailsDTO);
+	UserDetailsDTO getLoginCredentials(String username);
 
 	void updateLoginTimeDetails(UserDetailsDTO userDetailsDTO);
 

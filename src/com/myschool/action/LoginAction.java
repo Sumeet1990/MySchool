@@ -20,6 +20,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	
 	private String username;
 	private String password;
+	private String lastLoginDetails;
 	private String errorMesage;
 	private java.util.Map<String, Object> session;
 	private LoginService loginService;
@@ -31,39 +32,40 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	 * @see com.opensymphony.xwork2.ActionSupport#execute()
 	 */
 	public String execute() {
-		userDetailsDTO = new UserDetailsDTO();
-		
 		log.debug("################# login Execute");
 		boolean valid = false;
-		if(!username.trim().equals("") && !password.trim().equals(""))
-		{
-			valid = loginService.getLoginCredentials(username,
-				password, userDetailsDTO);
-		}
-		else
-		{
-			setMessage("Please enter username and password");
+		if(StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {
+			userDetailsDTO = loginService.retrieveLoginCredentials(username, password);
 			
-			return "failure";
-		}
-		log.debug("################## valid :"+valid);
-		
-		if(valid) {
-			setErrorMesage(StringUtils.EMPTY);
-			
-			session.put(CommonConstants.USERNAME, getUsername());			
-			return SUCCESS;
+			log.debug("################## valid :"+valid);
+			if(userDetailsDTO != null && !userDetailsDTO.isLocked() && userDetailsDTO.isVerificationStatus()) {
+				System.out.println("!!!!! last login : "+userDetailsDTO.getLastLoginDetails());
+				log.debug("!!!!! last login : "+userDetailsDTO.getLastLoginDetails());
+				lastLoginDetails = userDetailsDTO.getLastLoginDetails(); 
+				System.out.println("@@@@@@@ lastLoginDateTIme : "+lastLoginDetails);
+				log.debug("@@@@@@@ lastLoginDateTIme : "+lastLoginDetails);
+				setErrorMesage(StringUtils.EMPTY);
+				session.put(CommonConstants.USERNAME, getUsername());
+				session.put(CommonConstants.LAST_LOGIN_DETAILS, lastLoginDetails);
+				//TODO set Role name in session
+				return SUCCESS;
+			} else {
+				if(session.containsKey(CommonConstants.USERNAME)) {
+					session.remove(CommonConstants.USERNAME);	
+					session.remove(CommonConstants.LAST_LOGIN_DETAILS);
+					//TODO remove Role name in session
+				} 
+				
+				if(userDetailsDTO.isLocked()) {
+					setMessage("Your account has been locked!");
+				} else {
+					setMessage("Invalid credentials please try again");
+				}
+				
+				return "failure";
+			}
 		} else {
-			if(session.containsKey(CommonConstants.USERNAME)) {
-				session.remove(CommonConstants.USERNAME);				
-			}
-			if(userDetailsDTO.isLocked())
-			{
-				setMessage("Your account has been locked !");
-			}else
-			{
-				setMessage("Invalid credentials please try again");
-			}
+			setMessage("Please enter username and password");
 			return "failure";
 		}
 	}
@@ -84,20 +86,22 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	 * 
 	 */
 	public String home() {
-			if (StringUtils.isNotBlank((String) session.get(CommonConstants.USERNAME))) {
-				setErrorMesage("");
-				username = (String) session.get(CommonConstants.USERNAME);
-				
-				return SUCCESS;
-			} else {
-				if(session.containsKey(CommonConstants.USERNAME)) {
-					session.remove(CommonConstants.USERNAME);
-				}
-				
-				setMessage("Invalid credentials please try again");
-				
-				return "failure";
-			}		
+		if (StringUtils.isNotBlank((String) session.get(CommonConstants.USERNAME))) {
+			setErrorMesage(StringUtils.EMPTY);
+			username = (String) session.get(CommonConstants.USERNAME);
+			lastLoginDetails = (String) session.get(CommonConstants.LAST_LOGIN_DETAILS);
+			
+			return SUCCESS;
+		} else {
+			if(session.containsKey(CommonConstants.USERNAME)) {
+				session.remove(CommonConstants.USERNAME);
+				session.remove(CommonConstants.LAST_LOGIN_DETAILS);
+				//TODO remove Role name in session
+			}
+			
+			setMessage("Invalid credentials please try again");				
+			return "failure";
+		}		
 	}
 	
 	/*
@@ -106,6 +110,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	public String logout() {		
 		if(session.containsKey(CommonConstants.USERNAME)) {
 			session.remove(CommonConstants.USERNAME);
+			session.remove(CommonConstants.LAST_LOGIN_DETAILS);
+			//TODO remove Role name in session
 		}
 		
 		setMessage("You are successfully logged out !");
@@ -151,9 +157,18 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	public void setUserDetailsDTO(UserDetailsDTO userDetailsDTO) {
 		this.userDetailsDTO = userDetailsDTO;
 	}
+	
 	@Override
 	public void setSession(java.util.Map<String, Object> session) {
 		this.session = session;
 		
 	}
+
+	public String getLastLoginDetails() {
+		return lastLoginDetails;
+	}
+
+	public void setLastLoginDetails(String lastLoginDetails) {
+		this.lastLoginDetails = lastLoginDetails;
+	}	
 }

@@ -13,10 +13,10 @@
 <s:url action="logout.action" var="logoutAction" />
 
 <h3 class="textColor" align="left" > 
-Welcome <s:property value='#session.userName'/></h3>
+<s:property value="getText('header.welcome')"/> <s:property value='#session.userName'/>, <s:property value="getText('header.role')"/></h3>
 <h3 class="textColor" align="left" > 
-Last login: <s:property value='#username'/></h3>
-<h4  class="textColor" id="timeDisplay" align="left" ></h4>
+<s:property value="getText('header.lastlogin.datetime')"/> : <s:property value='#session.lastLoginDetails'/></h3>
+<s:property value="getText('header.current.datetime')"/> : <h4  class="textColor" id="timeDisplay" align="left" ></h4>
 <div class="toolTip" id="tooltipId"> </div>
 
 <s:a style="color:aliceblue;" href="%{homeAction}" > <img id="Icon" style=" right:110px" src="images/home.png" onmouseout="hideToolTip()" onmouseover="showToolTip('Home','110px')"></s:a>

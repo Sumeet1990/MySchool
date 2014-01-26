@@ -42,6 +42,9 @@ String userStatus;
 @Column(name="INVALID_ATTEMPTS")
 Integer invalidAttempts;
 
+@Column(name="STAFF_ADDRESS_ID")
+Integer staffAddressId;
+
 @Column(name="STAFF_ID")
 Integer staffId;
 
@@ -126,6 +129,12 @@ public Integer getInvalidAttempts(){
 }
 public void setInvalidAttempts(Integer invalidAttempts){
  this.invalidAttempts=invalidAttempts;
+}
+public Integer getStaffAddressId() {
+	return staffAddressId;
+}
+public void setStaffAddressId(Integer staffAddressId) {
+	this.staffAddressId = staffAddressId;
 }
 public Integer getStaffId(){
  return staffId;

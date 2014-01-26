@@ -7,7 +7,9 @@ public class UserDetailsDTO {
     private Integer userRoleId;
     private String lastLoginDetails;
     private boolean locked;
- 
+    private Integer invalidAttempts;
+    private boolean verificationStatus;
+    
     public String getUsername() {
         return username;
     }
@@ -54,6 +56,22 @@ public class UserDetailsDTO {
 
 	public void setLocked(boolean locked) {
 		this.locked = locked;
+	}
+
+	public Integer getInvalidAttempts() {
+		return invalidAttempts;
+	}
+
+	public void setInvalidAttempts(Integer invalidAttempts) {
+		this.invalidAttempts = invalidAttempts;
+	}
+
+	public boolean isVerificationStatus() {
+		return verificationStatus;
+	}
+
+	public void setVerificationStatus(boolean verificationStatus) {
+		this.verificationStatus = verificationStatus;
 	}	
 }
 
