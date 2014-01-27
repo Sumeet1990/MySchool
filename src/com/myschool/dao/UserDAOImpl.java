@@ -36,7 +36,7 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 	public void updateLoginTimeDetails(UserDetailsDTO userDetailsDTO) {		
 		UserDetails userDetails = (UserDetails)getHibernateTemplate().get(UserDetails.class, userDetailsDTO.getUserId());
 		userDetails.setLastLogedinDateTime(CommonUtility.dateToString(new Date()));
-		userDetails.setModifiedUserId(userDetailsDTO.getUserId());
+		userDetails.setModifiedUserId(userDetailsDTO.getUserId().toString());
 		userDetails.setModifiedDateAndTime(userDetails.getLastLogedinDateTime());
 		getHibernateTemplate().update(userDetails);		
 	}
@@ -46,7 +46,7 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 		UserDetails userDetails = (UserDetails)getHibernateTemplate().get(UserDetails.class, userDetailsDTO.getUserId());
 		if(userDetails.getInvalidAttempts() < 3) {
 			userDetails.setInvalidAttempts(userDetails.getInvalidAttempts() + 1);
-			userDetails.setModifiedUserId(userDetailsDTO.getUserId());
+			userDetails.setModifiedUserId(userDetailsDTO.getUserId().toString());
 			userDetails.setModifiedDateAndTime(CommonUtility.dateToString(new Date()));
 			getHibernateTemplate().update(userDetails);
 			userDetailsDTO.setLocked(false);
