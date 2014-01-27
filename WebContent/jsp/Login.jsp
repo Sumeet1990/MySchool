@@ -60,16 +60,15 @@
     					<span style="color:red;font-size: 16px;"><s:property  value="errorMesage"/></span>
 					</s:if>
     			</div>    			
-	
     			<div class="content">
-    				<s:textfield cssClass="input username" placeholder="Username"  autofocus="autofocus" theme="simple" scope="page" name="username" onkeyup="upperCaseThetext('username')" tabindex="1"/> 
-					<s:password cssClass="input password" placeholder="Password" name="password" theme="simple"  scope="page" tabindex="2"/>
+    				<s:textfield cssClass="input username" placeholder="%{getText('login.username')}"  autofocus="autofocus" theme="simple" scope="page" name="username" onkeyup="upperCaseThetext('username')" tabindex="1"/> 
+					<s:password cssClass="input password" placeholder="%{getText('login.password')}" name="password" theme="simple"  scope="page" tabindex="2"/>
 				</div>
     
     			<div class="footer">
-    				<s:submit  id="button" value="Log in" theme="simple"  scope="page" onclick="showTransparentScreen()" tabindex="3"/>
+    				<s:submit  id="button" value="%{getText('login.submit.login')}" theme="simple"  scope="page" onclick="showTransparentScreen()" tabindex="3"/>
     				<!--Register button-->
-    				<input type="submit" name="submit" value="Forgot" class="register" />
+    				<input type="submit" name="submit" value="<s:property  value="getText('login.forgotpassword')"/>" class="register" />
     			</div>
 			</s:form>
 		</div>

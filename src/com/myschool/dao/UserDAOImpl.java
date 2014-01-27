@@ -34,17 +34,21 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 
 	@Override
 	public void updateLoginTimeDetails(UserDetailsDTO userDetailsDTO) {		
-		UserDetails user = (UserDetails)getHibernateTemplate().get(UserDetails.class, userDetailsDTO.getUserId());
-		user.setLastLogedinDateTime(CommonUtility.dateToString(new Date()));		
-		getHibernateTemplate().update(user);		
+		UserDetails userDetails = (UserDetails)getHibernateTemplate().get(UserDetails.class, userDetailsDTO.getUserId());
+		userDetails.setLastLogedinDateTime(CommonUtility.dateToString(new Date()));
+		userDetails.setModifiedUserId(userDetailsDTO.getUserId());
+		userDetails.setModifiedDateAndTime(userDetails.getLastLogedinDateTime());
+		getHibernateTemplate().update(userDetails);		
 	}
 
 	@Override
 	public void updateInvalidAttempts(UserDetailsDTO userDetailsDTO) {		
-		UserDetails user = (UserDetails)getHibernateTemplate().get(UserDetails.class, userDetailsDTO.getUserId());
-		if(user.getInvalidAttempts() < 3) {
-			user.setInvalidAttempts(user.getInvalidAttempts() + 1);
-			getHibernateTemplate().update(user);
+		UserDetails userDetails = (UserDetails)getHibernateTemplate().get(UserDetails.class, userDetailsDTO.getUserId());
+		if(userDetails.getInvalidAttempts() < 3) {
+			userDetails.setInvalidAttempts(userDetails.getInvalidAttempts() + 1);
+			userDetails.setModifiedUserId(userDetailsDTO.getUserId());
+			userDetails.setModifiedDateAndTime(CommonUtility.dateToString(new Date()));
+			getHibernateTemplate().update(userDetails);
 			userDetailsDTO.setLocked(false);
 		} else {
 			userDetailsDTO.setLocked(true);

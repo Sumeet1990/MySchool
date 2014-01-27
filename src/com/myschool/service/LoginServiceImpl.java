@@ -14,18 +14,23 @@ public class LoginServiceImpl implements LoginService {
 		UserDetailsDTO userDetailsDTO = userDAO.getLoginCredentials(username);
 		if (userDetailsDTO != null &&
 				StringUtils.equals(userDetailsDTO.getPassword(), password)) {
-			if(userDetailsDTO.getInvalidAttempts() < 3) {
+			if(userDetailsDTO.getInvalidAttempts() <= 3) {	
+				userDetailsDTO.setVerificationStatus(true);
 				userDetailsDTO.setLocked(false);
 				System.out.println("#################");
 				userDAO.updateLoginTimeDetails(userDetailsDTO);
 				//TODO get role name
 			} else {
 				userDetailsDTO.setLocked(true);
-			}
-			userDetailsDTO.setVerificationStatus(true);
-		} else {
-			userDetailsDTO.setVerificationStatus(false);
-			userDAO.updateInvalidAttempts(userDetailsDTO);
+			}			
+		} else {			
+			if(userDetailsDTO == null) {
+				//TODO SET MESSGE as INVALID USER NAME
+			} else {	
+				userDetailsDTO.setVerificationStatus(false);
+				userDAO.updateInvalidAttempts(userDetailsDTO);
+				//TODO SET MESSGE as INVALID PASSWORD
+			}			
 		}
 		
 		return userDetailsDTO;

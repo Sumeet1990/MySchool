@@ -116,7 +116,10 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 					com.myschool.beans.UserDetails
 				</value>
 				<value>
-					com.myschool.beans.UserRoleAndAccess
+					com.myschool.beans.UserRole
+				</value>
+				<value>
+					com.myschool.beans.UserRoleAccess
 				</value>
 				<value>
 					com.myschool.beans.VehicleDetails

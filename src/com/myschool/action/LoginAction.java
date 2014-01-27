@@ -56,7 +56,11 @@ public class LoginAction extends ActionSupport implements SessionAware {
 					//TODO remove Role name in session
 				} 
 				
-				if(userDetailsDTO.isLocked()) {
+				if(userDetailsDTO ==null)
+				{
+					setMessage("Invalid User Name !");
+				}
+				else if( userDetailsDTO.isLocked()) {
 					setMessage("Your account has been locked!");
 				} else {
 					setMessage("Invalid credentials please try again");
