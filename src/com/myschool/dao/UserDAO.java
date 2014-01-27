@@ -5,11 +5,11 @@ import com.myschool.dto.UserDetailsDTO;
 
 public interface UserDAO {
    
-	UserDetailsDTO getLoginCredentials(String username);
+	void retrieveLoginCredentials(UserDetailsDTO userDetailsDTO);
 
 	void updateSuccessLoginDetails(UserDetailsDTO userDetailsDTO);
 
-	void updateInvalidAttempts(UserDetailsDTO userDetailsDTO);
+	boolean updateInvalidAttempts(UserDetailsDTO userDetailsDTO);
 
 }
 

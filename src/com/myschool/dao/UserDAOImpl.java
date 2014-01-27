@@ -17,13 +17,10 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 	private Map schoolConfigurationMap;
 	private static final String USER_STATUS = "'ACTIVE'";
 	
-	public UserDetailsDTO getLoginCredentials(String username) {
-		UserDetailsDTO userDetailsDTO = null;
-		
+	public void retrieveLoginCredentials(UserDetailsDTO userDetailsDTO) {		
 		//TODO ADD userStatus as ACTIVE in the where clause
-		List<UserDetails> userDetailsList = getHibernateTemplate().find("from UserDetails where userName = ? and userStatus="+USER_STATUS, username);
-		if(userDetailsList != null && userDetailsList.size() > 0) {
-			userDetailsDTO = new UserDetailsDTO();
+		List<UserDetails> userDetailsList = getHibernateTemplate().find("from UserDetails where userName = ? and userStatus="+USER_STATUS, userDetailsDTO.getUsername());
+		if(userDetailsList != null && userDetailsList.size() > 0) {			
 			for(UserDetails userDetails : userDetailsList) {
 				userDetailsDTO.setPassword(userDetails.getPassword());
 				userDetailsDTO.setUserId(userDetails.getUserId());
@@ -32,7 +29,7 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 				userDetailsDTO.setInvalidAttempts(userDetails.getInvalidAttempts());
 			}			
 		}
-		return userDetailsDTO;
+		
 	}
 
 	@Override
@@ -42,21 +39,26 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 		userDetails.setModifiedUserId(userDetailsDTO.getUserId().toString());
 		userDetails.setModifiedDateAndTime(userDetails.getLastLogedinDateTime());
 		userDetails.setInvalidAttempts(0);
+		
 		getHibernateTemplate().update(userDetails);		
 	}
 
 	@Override
-	public void updateInvalidAttempts(UserDetailsDTO userDetailsDTO) {		
+	public boolean updateInvalidAttempts(UserDetailsDTO userDetailsDTO) {		
+		boolean updateFlag = true;
 		UserDetails userDetails = (UserDetails)getHibernateTemplate().get(UserDetails.class, userDetailsDTO.getUserId());
-		if(userDetails.getInvalidAttempts() < Integer.valueOf((String)schoolConfigurationMap.get(CommonConstants.MAX_INVALID_LOGIN_ATTEMPTS))) {
+		if(userDetails.getInvalidAttempts() < Integer.valueOf((String)schoolConfigurationMap
+				.get(CommonConstants.MAX_INVALID_LOGIN_ATTEMPTS))) {
 			userDetails.setInvalidAttempts(userDetails.getInvalidAttempts() + 1);
 			userDetails.setModifiedUserId(userDetailsDTO.getUserId().toString());
 			userDetails.setModifiedDateAndTime(CommonUtility.dateToString(new Date()));
-			getHibernateTemplate().update(userDetails);
-			userDetailsDTO.setLocked(false);
+			
+			getHibernateTemplate().update(userDetails);			
 		} else {
-			userDetailsDTO.setLocked(true);
+			updateFlag = false;
 		}
+		
+		return updateFlag;
 	}
 
 	public Map getSchoolConfigurationMap() {

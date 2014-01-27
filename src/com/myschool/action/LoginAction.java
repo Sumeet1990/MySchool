@@ -24,7 +24,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	private String errorMesage;
 	private java.util.Map<String, Object> session;
 	private LoginService loginService;
-	private UserDetailsDTO userDetailsDTO;
+	private UserDetailsDTO userDetailsDTO = null;
 	private Map schoolConfigurationMap;
 
 	/*
@@ -34,11 +34,12 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	public String execute() {
 		log.debug("################# login Execute");
 		boolean valid = false;
+		userDetailsDTO = new UserDetailsDTO();
 		if(StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {
-			userDetailsDTO = loginService.retrieveLoginCredentials(username, password);
+			userDetailsDTO.setUsername(username);
+			boolean loginFlag = loginService.retrieveLoginCredentials(userDetailsDTO, password);			
 			
-			log.debug("################## valid :"+valid);
-			if(userDetailsDTO != null && !userDetailsDTO.isLocked() && userDetailsDTO.isVerificationStatus()) {
+			if(!userDetailsDTO.isLocked() && userDetailsDTO.isVerificationStatus()) {
 				System.out.println("!!!!! last login : "+userDetailsDTO.getLastLoginDetails());
 				log.debug("!!!!! last login : "+userDetailsDTO.getLastLoginDetails());
 				
@@ -50,25 +51,23 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			} else {
 				if(session.containsKey(CommonConstants.USERNAME)) {
 					session.remove(CommonConstants.USERNAME);	
-					//TODO remove Role name in session
+					//TODO remove Role name from session
 				} 
 				
-				if(userDetailsDTO ==null)
-				{
+				if(userDetailsDTO.getUserId() == null) {
 					setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALIDUSE));
-				}
-				else if( userDetailsDTO.isLocked()) {
+				} else if(userDetailsDTO.isLocked()) {
 					setErrorMesage(getText(CommonConstants.LOGIN_FAIL_LOCKED));
 				} else {
 					setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALIDCREDENTIALS));
-					setErrorMesage(getErrorMesage()+schoolConfigurationMap.get(CommonConstants.MAX_INVALID_LOGIN_ATTEMPTS));
-					
+					setErrorMesage(getErrorMesage()+schoolConfigurationMap.get(CommonConstants.MAX_INVALID_LOGIN_ATTEMPTS));					
 				}
 				
 				return "failure";
 			}
 		} else {
 			setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALIDUSER));
+			
 			return "failure";
 		}
 	}

@@ -13,30 +13,39 @@ public class LoginServiceImpl implements LoginService {
 	private UserDAO userDAO;
 	private Map<String,String> schoolConfigurationMap;
 	
-	public UserDetailsDTO retrieveLoginCredentials(String username, String password) {
-		UserDetailsDTO userDetailsDTO = userDAO.getLoginCredentials(username);
-		if (userDetailsDTO != null &&
-				StringUtils.equals(userDetailsDTO.getPassword(), password)) {
-			if(userDetailsDTO.getInvalidAttempts() < Integer.valueOf(schoolConfigurationMap.get(CommonConstants.MAX_INVALID_LOGIN_ATTEMPTS).toString())) {	
-				userDetailsDTO.setVerificationStatus(true);
-				userDetailsDTO.setLocked(false);
+	public boolean retrieveLoginCredentials(UserDetailsDTO userDetailsDTO, final String password) {
+		boolean retFlag = true;
+		userDAO.retrieveLoginCredentials(userDetailsDTO);
+		
+		if (StringUtils.equals(userDetailsDTO.getPassword(), password)) {
+			if(userDetailsDTO.getInvalidAttempts() < Integer.valueOf(schoolConfigurationMap
+					.get(CommonConstants.MAX_INVALID_LOGIN_ATTEMPTS).toString())) {				
 				userDAO.updateSuccessLoginDetails(userDetailsDTO);
 				//TODO get role name
+				
+				userDetailsDTO.setVerificationStatus(true);
+				userDetailsDTO.setLocked(false);
 			} else {
 				userDetailsDTO.setVerificationStatus(false);
 				userDetailsDTO.setLocked(true);
+				
+				retFlag = false;
 			}			
 		} else {			
-			if(userDetailsDTO == null) {
-				//TODO SET MESSGE as INVALID USER NAME
-			} else {	
-				userDetailsDTO.setVerificationStatus(false);
-				userDAO.updateInvalidAttempts(userDetailsDTO);
-				//TODO SET MESSGE as INVALID PASSWORD
-			}			
+			if(userDetailsDTO.getUserId() != null) {
+				boolean updateFlag = userDAO.updateInvalidAttempts(userDetailsDTO);		
+				if(updateFlag) {
+					userDetailsDTO.setLocked(false);
+				} else {
+					userDetailsDTO.setLocked(true);
+				}
+			} 
+			
+			userDetailsDTO.setVerificationStatus(false);
+			retFlag = false;
 		}
 		
-		return userDetailsDTO;
+		return retFlag;
 	}
 
 	public UserDAO getUserDAO() {

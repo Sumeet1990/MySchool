@@ -5,6 +5,6 @@ import com.myschool.dto.UserDetailsDTO;
 
 public interface LoginService {
    
-	UserDetailsDTO retrieveLoginCredentials(String username, String password);
+	boolean retrieveLoginCredentials(UserDetailsDTO userDetailsDTO, final String password);
 }
 
