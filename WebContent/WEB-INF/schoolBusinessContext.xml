@@ -5,6 +5,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
  
  	<bean name="loginServiceTarget" class="com.myschool.service.LoginServiceImpl" >
 		<property name="userDAO" ref="userDAO"></property>
+		<property name="schoolConfigurationMap" ref="schoolConfigurationMap"></property>
 	</bean>
 	
 	<bean id="loginService"
@@ -21,7 +22,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		
 	<bean name="classSectionServiceTarget" class="com.myschool.service.ClassSectionServiceImpl" >
 		<property name="staffDAO" ref="staffDAO"></property>
-		<property name="classSectionDAO" ref="classSectionDAO"></property>
+		<property name="classSectionDAO" ref="classSectionDAO"></property>				
 	</bean>
 	
 	<bean id="classSectionService"

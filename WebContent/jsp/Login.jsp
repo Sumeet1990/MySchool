@@ -55,6 +55,7 @@
 			
 			<s:form name="login-form" id="login-form" action="login" method="post">
     			<div class="header">
+
     				<h1><s:property value="getText('login')"/></h1>
      				<s:if test="#errorMesage!=''">
     					<span style="color:red;font-size: 16px;"><s:property  value="errorMesage"/></span>

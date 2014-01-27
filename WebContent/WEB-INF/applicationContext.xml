@@ -1,37 +1,45 @@
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
- 
- <!-- If you have database use this -->
- 	<import resource="schoolBusinessContext.xml"/>
- 	<!-- if you dont have database use this 
- 	<import resource="for_no_database_bussiness.xml"/>-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	
-	<!-- If you have database use this -->
- 	<import resource="schoolDatabaseContext.xml"/>
- 	<!-- if you dont have database use this
- 	<import resource="For_no_database_conn.xml"/> -->
- 
- 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="ignoreUnresolvablePlaceholders" value="true"/>
-		<property name="searchSystemEnvironment"  value="true"/>
+	<import resource="schoolBusinessContext.xml"/>	
+	<import resource="schoolDatabaseContext.xml"/>	
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="searchSystemEnvironment" value="true" />
 		<property name="locations">
-            <list>
-                <value>WEB-INF/jdbc.properties</value>
-            </list>
-        </property>
-    </bean>
-    
- 	<!-- Login Action-->
-	<bean name="loginClass" class="com.myschool.action.LoginAction" >
-		<property name="loginService" ref="loginService"></property>
+			<list>
+				<value>WEB-INF/jdbc.properties</value>
+				<value>WEB-INF/schoolConfigurations.properties</value>
+			</list>
+		</property>
 	</bean>
 
- 	<!-- Login Action-->
+	<!-- Login Action -->
+	<bean name="loginClass" class="com.myschool.action.LoginAction">
+		<property name="loginService" ref="loginService"></property>
+		<property name="schoolConfigurationMap" ref="schoolConfigurationMap"></property>
+	</bean>
+
+	<!-- Login Action -->
 	<bean name="configurationMenuAction" class="com.myschool.action.ConfigurationMenuAction"></bean>
-			
- 	<!-- School class Action-->
-	<bean name="classSectionAction" class="com.myschool.action.ClassSectionAction" >
+
+	<!-- School class Action -->
+	<bean name="classSectionAction" class="com.myschool.action.ClassSectionAction">
 		<property name="classSectionService" ref="classSectionService"></property>
+	</bean>
+
+	<!-- java.util.Map -->
+	<bean name="schoolConfigurationMap" class="java.util.HashMap">
+		<constructor-arg index="0" type="java.util.Map">
+		<map key-type="java.lang.String" value-type="java.lang.String">
+			<entry key="SESSION_TIMEOUT" value="${school.session.timeout}" />
+			<entry key="MAX_INVALID_LOGIN_ATTEMPTS" value="${school.login.maxInvalidAttempts}" />
+		</map>
+		</constructor-arg>
 	</bean>
 
 </beans>

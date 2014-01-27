@@ -12,7 +12,6 @@
 				<s:property value="getText('school.quot2')"/></br></br>
 			</p>
 		</div>
-		
 		<div id="configurationalContent" style="display: none">
 			<%@ include file="ConfigurationMenuPage.jsp" %>
 		</div>

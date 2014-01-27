@@ -5,6 +5,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
  
 	<bean name="userDAO" class="com.myschool.dao.UserDAOImpl" >
 		<property name="sessionFactory" ref="sessionFactory"/>
+		<property name="schoolConfigurationMap" ref="schoolConfigurationMap"></property>
 	</bean>
 	
 	<bean name="staffDAO" class="com.myschool.dao.StaffDAOImpl" >
@@ -20,115 +21,47 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		<property name="dataSource" ref="dataSource"/>
 		 <property name="annotatedClasses">
 			<list>
-				<value>
-					com.myschool.beans.ClassEvents</value>
-				<value>
-					com.myschool.beans.ClassExams
+				<value>com.myschool.beans.ClassEvents</value>
+				<value>com.myschool.beans.ClassExams</value>
+				<value>com.myschool.beans.ClassHolidayList</value>
+				<value>com.myschool.beans.ClassSection</value>
+				<value>com.myschool.beans.DriverDetails</value>
+				<value>com.myschool.beans.ExamSubjectSchedule
 				</value>
-				<value>
-					com.myschool.beans.ClassHolidayList
-				</value>
-				<value>
-					com.myschool.beans.ClassSection
-				</value>
-				<value>
-					com.myschool.beans.DriverDetails
-				</value>
-				<value>
-					com.myschool.beans.ExamSubjectSchedule
-				</value>
-				<value>
-					com.myschool.beans.GeneralEvents
-				</value>
-				<value>
-					com.myschool.beans.GeneralHolidayList
-				</value>
-				<value>
-					com.myschool.beans.LibraryBookAllocation
-				</value>
-				<value>
-					com.myschool.beans.LibraryBookCategories
-				</value>
-				<value>
-					com.myschool.beans.LibraryBookDetails
-				</value>
-				<value>
-					com.myschool.beans.OtherFeePayment
-				</value>
-				<value>
-					com.myschool.beans.OtherFeeStructure
-				</value>
-				<value>
-					com.myschool.beans.SchoolAchivenets
-				</value>
-				<value>
-					com.myschool.beans.SchoolClass
-				</value>
-				<value>
-					com.myschool.beans.SchoolSubjects
-				</value>
-				<value>
-					com.myschool.beans.SchoolTimings
-				</value>
-				<value>
-					com.myschool.beans.StaffAddress
-				</value>
-				<value>
-					com.myschool.beans.StaffAppointment
-				</value>
-				<value>
-					com.myschool.beans.StaffAttendance
-				</value>
-				<value>
-					com.myschool.beans.StaffDetails
-				</value>
-				<value>
-					com.myschool.beans.StaffLeaves
-				</value>
-				<value>
-					com.myschool.beans.StudentAddress
-				</value>
-				<value>
-					com.myschool.beans.StudentAttendance
-				</value>
-				<value>
-					com.myschool.beans.StudentCurrentDetails
-				</value>
-				<value>
-					com.myschool.beans.StudentRegistration
-				</value>
-				<value>
-					com.myschool.beans.StudentReport
-				</value>
-				<value>
-					com.myschool.beans.TransportationAllocation
-				</value>
-				<value>
-					com.myschool.beans.TransportRoutDetails
-				</value>
-				<value>
-					com.myschool.beans.TutionFeePayment
-				</value>
-				<value>
-					com.myschool.beans.TutionFeeStructure
-				</value>
-				<value>
-					com.myschool.beans.UserDetails
-				</value>
-				<value>
-					com.myschool.beans.UserRole
-				</value>
-				<value>
-					com.myschool.beans.UserRoleAccess
-				</value>
-				<value>
-					com.myschool.beans.VehicleDetails
-				</value>
+				<value>com.myschool.beans.GeneralEvents</value>
+				<value>com.myschool.beans.GeneralHolidayList</value>
+				<value>com.myschool.beans.LibraryBookAllocation</value>
+				<value>com.myschool.beans.LibraryBookCategories</value>
+				<value>com.myschool.beans.LibraryBookDetails</value>
+				<value>com.myschool.beans.OtherFeePayment</value>
+				<value>com.myschool.beans.OtherFeeStructure</value>
+				<value>com.myschool.beans.SchoolAchivenets</value>
+				<value>com.myschool.beans.SchoolClass</value>
+				<value>com.myschool.beans.SchoolSubjects</value>
+				<value>com.myschool.beans.SchoolTimings</value>
+				<value>com.myschool.beans.StaffAddress</value>
+				<value>com.myschool.beans.StaffAppointment</value>
+				<value>com.myschool.beans.StaffAttendance</value>
+				<value>com.myschool.beans.StaffDetails</value>
+				<value>com.myschool.beans.StaffLeaves</value>
+				<value>com.myschool.beans.StudentAddress</value>
+				<value>com.myschool.beans.StudentAttendance</value>
+				<value>com.myschool.beans.StudentCurrentDetails</value>
+				<value>com.myschool.beans.StudentRegistration</value>
+				<value>com.myschool.beans.StudentReport</value>
+				<value>com.myschool.beans.TransportationAllocation</value>
+				<value>com.myschool.beans.TransportRoutDetails</value>
+				<value>com.myschool.beans.TutionFeePayment</value>
+				<value>com.myschool.beans.TutionFeeStructure</value>
+				<value>com.myschool.beans.UserDetails</value>
+				<value>com.myschool.beans.UserRole</value>
+				<value>com.myschool.beans.UserRoleAccess</value>
+				<value>com.myschool.beans.VehicleDetails</value>
 			</list>
 		</property>	
 		<property name="hibernateProperties">
 		<props>
-			<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+			<prop key="hibernate.dialect">${db.hibernate.dialect}</prop>
 			<prop key="hibernate.current_session_context_class">thread</prop>
 			<prop key="hibernate.show_sql">true</prop>
 		</props>

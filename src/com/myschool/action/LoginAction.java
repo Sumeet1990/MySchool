@@ -1,9 +1,10 @@
 package com.myschool.action;
 
+import java.util.Map;
+
 import org.apache.commons.lang.xwork.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.struts2.interceptor.SessionAware;
-import org.hibernate.mapping.Map;
 
 import com.myschool.dto.UserDetailsDTO;
 import com.myschool.service.LoginService;
@@ -15,17 +16,16 @@ import com.opensymphony.xwork2.ActionSupport;
  * 
  */
 public class LoginAction extends ActionSupport implements SessionAware {
-	
+
 	private static Logger log = Logger.getLogger(LoginAction.class);
 	
 	private String username;
 	private String password;
-	private String lastLoginDetails;
 	private String errorMesage;
 	private java.util.Map<String, Object> session;
 	private LoginService loginService;
 	private UserDetailsDTO userDetailsDTO;
-
+	private Map schoolConfigurationMap;
 
 	/*
 	 * (non-Javadoc)
@@ -41,48 +41,35 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			if(userDetailsDTO != null && !userDetailsDTO.isLocked() && userDetailsDTO.isVerificationStatus()) {
 				System.out.println("!!!!! last login : "+userDetailsDTO.getLastLoginDetails());
 				log.debug("!!!!! last login : "+userDetailsDTO.getLastLoginDetails());
-				lastLoginDetails = userDetailsDTO.getLastLoginDetails(); 
-				System.out.println("@@@@@@@ lastLoginDateTIme : "+lastLoginDetails);
-				log.debug("@@@@@@@ lastLoginDateTIme : "+lastLoginDetails);
+				
 				setErrorMesage(StringUtils.EMPTY);
 				session.put(CommonConstants.USERNAME, getUsername());
-				session.put(CommonConstants.LAST_LOGIN_DETAILS, lastLoginDetails);
+				
 				//TODO set Role name in session
 				return SUCCESS;
 			} else {
 				if(session.containsKey(CommonConstants.USERNAME)) {
 					session.remove(CommonConstants.USERNAME);	
-					session.remove(CommonConstants.LAST_LOGIN_DETAILS);
 					//TODO remove Role name in session
 				} 
 				
 				if(userDetailsDTO ==null)
 				{
-					setMessage("Invalid User Name !");
+					setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALIDUSE));
 				}
 				else if( userDetailsDTO.isLocked()) {
-					setMessage("Your account has been locked!");
+					setErrorMesage(getText(CommonConstants.LOGIN_FAIL_LOCKED));
 				} else {
-					setMessage("Invalid credentials please try again");
+					setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALIDCREDENTIALS));
+					setErrorMesage(getErrorMesage()+schoolConfigurationMap.get(CommonConstants.MAX_INVALID_LOGIN_ATTEMPTS));
+					
 				}
 				
 				return "failure";
 			}
 		} else {
-			setMessage("Please enter username and password");
+			setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALIDUSER));
 			return "failure";
-		}
-	}
-	
-	/*
-	 * 
-	 */
-	private void setMessage(final String msg) {
-		if(getErrorMesage() == null || getErrorMesage().isEmpty()) {
-			setErrorMesage( msg);
-		}
-		else {
-			setErrorMesage(StringUtils.EMPTY);
 		}
 	}
 	
@@ -93,17 +80,15 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		if (StringUtils.isNotBlank((String) session.get(CommonConstants.USERNAME))) {
 			setErrorMesage(StringUtils.EMPTY);
 			username = (String) session.get(CommonConstants.USERNAME);
-			lastLoginDetails = (String) session.get(CommonConstants.LAST_LOGIN_DETAILS);
 			
 			return SUCCESS;
 		} else {
 			if(session.containsKey(CommonConstants.USERNAME)) {
 				session.remove(CommonConstants.USERNAME);
-				session.remove(CommonConstants.LAST_LOGIN_DETAILS);
 				//TODO remove Role name in session
 			}
 			
-			setMessage("Invalid credentials please try again");				
+			setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALIDCREDENTIALS));				
 			return "failure";
 		}		
 	}
@@ -114,11 +99,10 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	public String logout() {		
 		if(session.containsKey(CommonConstants.USERNAME)) {
 			session.remove(CommonConstants.USERNAME);
-			session.remove(CommonConstants.LAST_LOGIN_DETAILS);
 			//TODO remove Role name in session
 		}
 		
-		setMessage("You are successfully logged out !");
+		setErrorMesage(getText(CommonConstants.LOGIN_SUCCESS_LOGOUT));
 		return "failure";
 	}
 
@@ -167,12 +151,11 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		this.session = session;
 		
 	}
-
-	public String getLastLoginDetails() {
-		return lastLoginDetails;
+	public Map getSchoolConfigurationMap() {
+		return schoolConfigurationMap;
 	}
 
-	public void setLastLoginDetails(String lastLoginDetails) {
-		this.lastLoginDetails = lastLoginDetails;
+	public void setSchoolConfigurationMap(Map schoolConfigurationMap) {
+		this.schoolConfigurationMap = schoolConfigurationMap;
 	}	
 }
