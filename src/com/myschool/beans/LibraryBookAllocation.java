@@ -30,16 +30,20 @@ String bookAllocatedDate;
 @Column(name="BOOK_DUE_DATE")
 String bookDueDate;
 
+
+@Column(name="BOOK_RETURNED_DATE_TIME")
+String bookReturnedDateTime;
+
 @Column(name="CREATED_USER_ID")
 String createdUserId;
 
 @Column(name="MODIFIED_USER_ID")
 String modifiedUserId;
 
-@Column(name="CREATED_DATE_AND_TIME")
+@Column(name="CREATED_DATE_TIME")
 String createdDateAndTime;
 
-@Column(name="MODIFIED_DATE_AND_TIME")
+@Column(name="MODIFIED_DATE_TIME")
 String modifiedDateAndTime;
 
 
@@ -78,6 +82,12 @@ public String getBookDueDate(){
 }
 public void setBookDueDate(String bookDueDate){
  this.bookDueDate=bookDueDate;
+}
+public String getBookReturnedDateTime() {
+	return bookReturnedDateTime;
+}
+public void setBookReturnedDateTime(String bookReturnedDateTime) {
+	this.bookReturnedDateTime = bookReturnedDateTime;
 }
 public String getCreatedUserId(){
  return createdUserId;

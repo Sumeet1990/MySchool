@@ -69,10 +69,10 @@ String createdUserId;
 @Column(name="MODIFIED_USER_ID")
 String modifiedUserId;
 
-@Column(name="CREATED_DATE_AND_TIME")
+@Column(name="CREATED_DATE_TIME")
 String createdDateAndTime;
 
-@Column(name="MODIFIED_DATE_AND_TIME")
+@Column(name="MODIFIED_DATE_TIME")
 String modifiedDateAndTime;
 
 

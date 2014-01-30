@@ -33,16 +33,22 @@ Integer instalmentNumber;
 @Column(name="BALANCE_TUTION_FEE")
 Integer balanceTutionFee;
 
+@Column(name="PAYMENT_MODE")
+String paymentMode;
+
+@Column(name="PAYMENT_DATE_TIME")
+String paymentDateTime;
+
 @Column(name="CREATED_USER_ID")
 String createdUserId;
 
 @Column(name="MODIFIED_USER_ID")
 String modifiedUserId;
 
-@Column(name="CREATED_DATE_AND_TIME")
+@Column(name="CREATED_DATE_TIME")
 String createdDateAndTime;
 
-@Column(name="MODIFIED_DATE_AND_TIME")
+@Column(name="MODIFIED_DATE_TIME")
 String modifiedDateAndTime;
 
 
@@ -87,6 +93,18 @@ public Integer getBalanceTutionFee(){
 }
 public void setBalanceTutionFee(Integer balanceTutionFee){
  this.balanceTutionFee=balanceTutionFee;
+}
+public String getPaymentMode() {
+	return paymentMode;
+}
+public void setPaymentMode(String paymentMode) {
+	this.paymentMode = paymentMode;
+}
+public String getPaymentDateTime() {
+	return paymentDateTime;
+}
+public void setPaymentDateTime(String paymentDateTime) {
+	this.paymentDateTime = paymentDateTime;
 }
 public String getCreatedUserId(){
  return createdUserId;

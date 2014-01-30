@@ -1,7 +1,5 @@
-<beans xmlns="http://www.springframework.org/schema/beans"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
  
 	<bean name="userDAO" class="com.myschool.dao.UserDAOImpl" >
 		<property name="sessionFactory" ref="sessionFactory"/>
@@ -16,8 +14,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
-	<bean id="sessionFactory"
-			class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 		 <property name="annotatedClasses">
 			<list>
@@ -26,8 +23,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 				<value>com.myschool.beans.ClassHolidayList</value>
 				<value>com.myschool.beans.ClassSection</value>
 				<value>com.myschool.beans.DriverDetails</value>
-				<value>com.myschool.beans.ExamSubjectSchedule
-				</value>
+				<value>com.myschool.beans.ExamSubjectSchedule</value>
 				<value>com.myschool.beans.GeneralEvents</value>
 				<value>com.myschool.beans.GeneralHolidayList</value>
 				<value>com.myschool.beans.LibraryBookAllocation</value>
@@ -60,19 +56,35 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 			</list>
 		</property>	
 		<property name="hibernateProperties">
-		<props>
-			<prop key="hibernate.dialect">${db.hibernate.dialect}</prop>
-			<prop key="hibernate.current_session_context_class">thread</prop>
-			<prop key="hibernate.show_sql">true</prop>
-		</props>
+			<props>
+				<prop key="hibernate.dialect">${db.hibernate.dialect}</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
 		</property>
-			</bean>
-			<bean id="dataSource"
-					class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-				<property name="driverClassName" value="${db.driveClassName}" />
-				<property name="url" value="${db.url}" />
-				<property name="username" value="${db.username}" />
-				<property name="password" value="${db.password}" />
-			</bean>
-
+	</bean>
+	
+	<!-- <bean id="dataSource"
+			class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${db.driveClassName}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+	</bean> -->
+		
+	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">			
+		<property name="driverClass" value="${db.driveClassName}" />
+		<property name="jdbcUrl" value="${db.url}" />
+		<property name="username" value="${db.username}"/>
+		<property name="password" value="${db.password}"/>
+		
+		<property name="idleConnectionTestPeriodInSeconds" value="${db.pool.idleConnectionTestPeriodInSeconds}"/>
+        <property name="maxConnectionsPerPartition" value="${db.pool.maxConnectionsPerPartition}" />
+        <property name="minConnectionsPerPartition" value="${db.pool.minConnectionsPerPartition}" />
+        <property name="partitionCount" value="${db.pool.partitionCount}" />
+        <property name="acquireIncrement" value="${db.pool.acquireIncrement}" />
+        <property name="releaseHelperThreads" value="${db.pool.releaseHelperThreads}" />
+        <property name="statementsCacheSize" value="${db.pool.statementsCacheSize}" />        
+        <property name="idleMaxAgeInSeconds" value="${db.pool.idleMaxAgeInSeconds}" />        
+	</bean>
 </beans>

@@ -55,18 +55,18 @@ public class LoginAction extends ActionSupport implements SessionAware {
 				} 
 				
 				if(userDetailsDTO.getUserId() == null) {
-					setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALIDUSE));
+					setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALID_USER));
 				} else if(userDetailsDTO.isLocked()) {
 					setErrorMesage(getText(CommonConstants.LOGIN_FAIL_LOCKED));
 				} else {
-					setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALIDCREDENTIALS));
+					setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALID_CREDENTIALS));
 					setErrorMesage(getErrorMesage()+schoolConfigurationMap.get(CommonConstants.MAX_INVALID_LOGIN_ATTEMPTS));					
 				}
 				
 				return "failure";
 			}
 		} else {
-			setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALIDUSER));
+			setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALID_USER));
 			
 			return "failure";
 		}
@@ -87,7 +87,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 				//TODO remove Role name in session
 			}
 			
-			setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALIDCREDENTIALS));				
+			setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALID_CREDENTIALS));				
 			return "failure";
 		}		
 	}

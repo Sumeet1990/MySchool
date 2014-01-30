@@ -54,6 +54,17 @@ String collect;
 @Column(name="ASSIGN")
 String assign;
 
+@Column(name="CREATED_USER_ID")
+String createdUserId;
+
+@Column(name="MODIFIED_USER_ID")
+String modifiedUserId;
+
+@Column(name="CREATED_DATE_TIME")
+String createdDateAndTime;
+
+@Column(name="MODIFIED_DATE_TIME")
+String modifiedDateAndTime;
 
 public Integer getUserRolesAccessId() {
 	return userRolesAccessId;
@@ -138,5 +149,36 @@ public String getAssign(){
 }
 public void setAssign(String assign){
  this.assign=assign;
+}
+public String getCreatedUserId(){
+	return createdUserId;
+}
+
+public void setCreatedUserId(String createdUserId){
+	this.createdUserId=createdUserId;
+}
+
+public String getModifiedUserId(){
+	return modifiedUserId;
+}
+
+public void setModifiedUserId(String modifiedUserId){
+	this.modifiedUserId=modifiedUserId;
+}
+
+public String getCreatedDateAndTime(){
+	return createdDateAndTime;
+}
+
+public void setCreatedDateAndTime(String createdDateAndTime){
+	this.createdDateAndTime=createdDateAndTime;
+}
+
+public String getModifiedDateAndTime(){
+	return modifiedDateAndTime;
+}
+
+public void setModifiedDateAndTime(String modifiedDateAndTime){
+	this.modifiedDateAndTime=modifiedDateAndTime;
 }
 }

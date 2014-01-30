@@ -22,7 +22,7 @@ public class CommonUtility {
 		return date;
 	}
 	public static String dateToString( Date date) {
-		formater = new SimpleDateFormat("DD-MMM-yyyy hh:mm");
+		formater = new SimpleDateFormat(CommonConstants.DATE_TIME_FORMAT);
 			String dateStr = formater.format(date);
 			return dateStr;
 		}
