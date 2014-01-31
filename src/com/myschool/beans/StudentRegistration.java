@@ -13,73 +13,73 @@ public class StudentRegistration implements Serializable{
 
 @Id
 @Column(name="STUDENT_REG_DETAILS_ID")
-Integer studentRegDetailsId;
+private Integer studentRegDetailsId;
 
 @Column(name="STUDENT_REGISTRATION_ID")
-Integer studentRegistrationId;
+private Integer studentRegistrationId;
 
 @Column(name="STUDENT_TITLE")
-String studentTitle;
+private String studentTitle;
 
 @Column(name="STUDENT_GIVEN_FULL_NAME")
-String studentGivenFullName;
+private String studentGivenFullName;
 
 @Column(name="STUDENT_SURNAME")
-String studentSurname;
+private String studentSurname;
 
 @Column(name="STUDENT_DOB")
-String studentDob;
+private String studentDob;
 
 @Column(name="STUDENT_GENDER")
-String studentGender;
+private String studentGender;
 
 @Column(name="MOTHER_TOUNGE")
-String motherTounge;
+private String motherTounge;
 
 @Column(name="STUDENT_FATHER_NAME")
-String studentFatherName;
+private String studentFatherName;
 
 @Column(name="STUDENT_MOTHER_NAME")
-String studentMotherName;
+private String studentMotherName;
 
 @Column(name="STUDENT_GUARDIAN_NAME")
-String studentGuardianName;
+private String studentGuardianName;
 
 @Column(name="ADMISSION_CLASS")
-String admissionClass;
+private String admissionClass;
 
 @Column(name="ADMISSION_SECTION")
-String admissionSection;
+private String admissionSection;
 
 @Column(name="STUDENT_CLASS_TEACHER")
-String studentClassTeacher;
+private String studentClassTeacher;
 
 @Column(name="STUDENT_STATUS")
-String studentStatus;
+private String studentStatus;
 
 @Column(name="STUDENT_ADDRESS_ID")
-Integer studentAddressId;
+private Integer studentAddressId;
 
 @Column(name="ADMISSION_DATE")
-String admissionDate;
+private String admissionDate;
 
 @Column(name="PHOTO")
-String photo;
+private String photo;
 
 @Column(name="TRANSPORTATION_REQUIRED")
-Integer transportationRequired;
+private Integer transportationRequired;
 
 @Column(name="CREATED_USER_ID")
-String createdUserId;
+private String createdUserId;
 
 @Column(name="MODIFIED_USER_ID")
-String modifiedUserId;
+private String modifiedUserId;
 
 @Column(name="CREATED_DATE_TIME")
-String createdDateAndTime;
+private String createdDateTime;
 
 @Column(name="MODIFIED_DATE_TIME")
-String modifiedDateAndTime;
+private String modifiedDateTime;
 
 
 public Integer getStudentRegDetailsId(){
@@ -208,16 +208,16 @@ public String getModifiedUserId(){
 public void setModifiedUserId(String modifiedUserId){
  this.modifiedUserId=modifiedUserId;
 }
-public String getCreatedDateAndTime(){
- return createdDateAndTime;
+public String getCreatedDateTime(){
+ return createdDateTime;
 }
-public void setCreatedDateAndTime(String createdDateAndTime){
- this.createdDateAndTime=createdDateAndTime;
+public void setCreatedDateTime(String createdDateTime){
+ this.createdDateTime=createdDateTime;
 }
-public String getModifiedDateAndTime(){
- return modifiedDateAndTime;
+public String getModifiedDateTime(){
+ return modifiedDateTime;
 }
-public void setModifiedDateAndTime(String modifiedDateAndTime){
- this.modifiedDateAndTime=modifiedDateAndTime;
+public void setModifiedDateTime(String modifiedDateTime){
+ this.modifiedDateTime=modifiedDateTime;
 }
 }

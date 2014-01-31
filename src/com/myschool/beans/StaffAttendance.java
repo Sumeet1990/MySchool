@@ -13,37 +13,37 @@ public class StaffAttendance implements Serializable{
 
 @Id
 @Column(name="STAFFT_ATTENDANCE_ID")
-Integer stafftAttendanceId;
+private Integer stafftAttendanceId;
 
 @Column(name="STAFF_ID")
-Integer staffId;
+private Integer staffId;
 
 @Column(name="STAFFT_LEAVES_ID")
-Integer stafftLeavesId;
+private Integer stafftLeavesId;
 
 @Column(name="REASON")
-String reason;
+private String reason;
 
 @Column(name="LEAVE_FROM")
-String leaveFrom;
+private String leaveFrom;
 
 @Column(name="LEAVE_TO")
-String leaveTo;
+private String leaveTo;
 
 @Column(name="NO_OF_DAYS")
-Integer noOfDays;
+private Integer noOfDays;
 
 @Column(name="CREATED_USER_ID")
-String createdUserId;
+private String createdUserId;
 
 @Column(name="MODIFIED_USER_ID")
-String modifiedUserId;
+private String modifiedUserId;
 
 @Column(name="CREATED_DATE_TIME")
-String createdDateAndTime;
+private String createdDateTime;
 
 @Column(name="MODIFIED_DATE_TIME")
-String modifiedDateAndTime;
+private String modifiedDateTime;
 
 
 public Integer getStafftAttendanceId(){
@@ -100,16 +100,16 @@ public String getModifiedUserId(){
 public void setModifiedUserId(String modifiedUserId){
  this.modifiedUserId=modifiedUserId;
 }
-public String getCreatedDateAndTime(){
- return createdDateAndTime;
+public String getCreatedDateTime(){
+ return createdDateTime;
 }
-public void setCreatedDateAndTime(String createdDateAndTime){
- this.createdDateAndTime=createdDateAndTime;
+public void setCreatedDateTime(String createdDateTime){
+ this.createdDateTime=createdDateTime;
 }
-public String getModifiedDateAndTime(){
- return modifiedDateAndTime;
+public String getModifiedDateTime(){
+ return modifiedDateTime;
 }
-public void setModifiedDateAndTime(String modifiedDateAndTime){
- this.modifiedDateAndTime=modifiedDateAndTime;
+public void setModifiedDateTime(String modifiedDateTime){
+ this.modifiedDateTime=modifiedDateTime;
 }
 }

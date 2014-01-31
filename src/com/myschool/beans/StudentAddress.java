@@ -13,94 +13,94 @@ public class StudentAddress implements Serializable{
 
 @Id
 @Column(name="STUDENT_ADDRESS_ID")
-Integer studentAddressId;
+private Integer studentAddressId;
 
 @Column(name="CAREOFF_NAME")
-String careoffName;
+private String careoffName;
 
 @Column(name="ADDRESS_LINE_1")
-String addressLine1;
+private String addressLine1;
 
 @Column(name="ADDRESS_LINE_2")
-String addressLine2;
+private String addressLine2;
 
 @Column(name="ADDRESS_LINE_3")
-String addressLine3;
+private String addressLine3;
 
 @Column(name="ADDRESS_LINE_4")
-String addressLine4;
+private String addressLine4;
 
 @Column(name="ADDRESS_LINE_5")
-String addressLine5;
+private String addressLine5;
 
 @Column(name="ADDRESS_LINE_6")
-String addressLine6;
+private String addressLine6;
 
 @Column(name="PINCODE")
-Integer pincode;
+private Integer pincode;
 
 @Column(name="STATE")
-String state;
+private String state;
 
 @Column(name="COUNTRY")
-String country;
+private String country;
 
 @Column(name="FATHER_CONTACT_NUMBER")
-String fatherContactNumber;
+private String fatherContactNumber;
 
 @Column(name="MOTHER_CONTACT_NUMBER")
-String motherContactNumber;
+private String motherContactNumber;
 
 @Column(name="GUARDAIN_CONTACT_NUMBER")
-String guardainContactNumber;
+private String guardainContactNumber;
 
 @Column(name="FATHER_WORK_NUMBER")
-String fatherWorkNumber;
+private String fatherWorkNumber;
 
 @Column(name="MOTHER_WORK_NUMBER")
-String motherWorkNumber;
+private String motherWorkNumber;
 
 @Column(name="GUARDAIN_WORK_NUMBER")
-String guardainWorkNumber;
+private String guardainWorkNumber;
 
 @Column(name="FATHER_EMAIL_ID")
-String fatherEmailId;
+private String fatherEmailId;
 
 @Column(name="SEND_MAIL_TO_FATHER")
-String sendMailToFather;
+private String sendMailToFather;
 
 @Column(name="MOTHER_EMAIL_ID")
-String motherEmailId;
+private String motherEmailId;
 
 @Column(name="SEND_MAIL_TO_MOTHER")
-String sendMailToMother;
+private String sendMailToMother;
 
 @Column(name="GUARDAIN_EMAIL_ID")
-String guardainEmailId;
+private String guardainEmailId;
 
 @Column(name="SEND_MAIL_TO_GUARDAIN")
-String sendMailToGuardain;
+private String sendMailToGuardain;
 
 @Column(name="FATHER_OCCUPATION")
-String fatherOccupation;
+private String fatherOccupation;
 
 @Column(name="MOTHER_OCCUPATION")
-String motherOccupation;
+private String motherOccupation;
 
 @Column(name="GUARDAIN_OCCUPATION")
-String guardainOccupation;
+private String guardainOccupation;
 
 @Column(name="CREATED_USER_ID")
-String createdUserId;
+private String createdUserId;
 
 @Column(name="MODIFIED_USER_ID")
-String modifiedUserId;
+private String modifiedUserId;
 
 @Column(name="CREATED_DATE_TIME")
-String createdDateAndTime;
+private String createdDateTime;
 
 @Column(name="MODIFIED_DATE_TIME")
-String modifiedDateAndTime;
+private String modifiedDateTime;
 
 
 public Integer getStudentAddressId(){
@@ -271,16 +271,16 @@ public String getModifiedUserId(){
 public void setModifiedUserId(String modifiedUserId){
  this.modifiedUserId=modifiedUserId;
 }
-public String getCreatedDateAndTime(){
- return createdDateAndTime;
+public String getCreatedDateTime(){
+ return createdDateTime;
 }
-public void setCreatedDateAndTime(String createdDateAndTime){
- this.createdDateAndTime=createdDateAndTime;
+public void setCreatedDateTime(String createdDateTime){
+ this.createdDateTime=createdDateTime;
 }
-public String getModifiedDateAndTime(){
- return modifiedDateAndTime;
+public String getModifiedDateTime(){
+ return modifiedDateTime;
 }
-public void setModifiedDateAndTime(String modifiedDateAndTime){
- this.modifiedDateAndTime=modifiedDateAndTime;
+public void setModifiedDateTime(String modifiedDateTime){
+ this.modifiedDateTime=modifiedDateTime;
 }
 }

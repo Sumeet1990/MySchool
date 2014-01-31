@@ -13,34 +13,34 @@ public class ExamSubjectSchedule implements Serializable{
 
 @Id
 @Column(name="EXAM_SUBJECT_SCHEDULE_ID")
-Integer examSubjectScheduleId;
+private Integer examSubjectScheduleId;
 
 @Column(name="SCHOOL_CLASS_ID")
-Integer schoolClassId;
+private Integer schoolClassId;
 
 @Column(name="EXAM_NAME")
-String examName;
+private String examName;
 
 @Column(name="SUBJECT_NAME")
-String subjectName;
+private String subjectName;
 
 @Column(name="SUBJECT_EXAM_DATE")
-String subjectExamDate;
+private String subjectExamDate;
 
 @Column(name="SYLLABUS")
-String syllabus;
+private String syllabus;
 
 @Column(name="CREATED_USER_ID")
-String createdUserId;
+private String createdUserId;
 
 @Column(name="MODIFIED_USER_ID")
-String modifiedUserId;
+private String modifiedUserId;
 
 @Column(name="CREATED_DATE_TIME")
-String createdDateAndTime;
+private String createdDateTime;
 
 @Column(name="MODIFIED_DATE_TIME")
-String modifiedDateAndTime;
+private String modifiedDateTime;
 
 
 public Integer getExamSubjectScheduleId(){
@@ -91,16 +91,16 @@ public String getModifiedUserId(){
 public void setModifiedUserId(String modifiedUserId){
  this.modifiedUserId=modifiedUserId;
 }
-public String getCreatedDateAndTime(){
- return createdDateAndTime;
+public String getCreatedDateTime(){
+ return createdDateTime;
 }
-public void setCreatedDateAndTime(String createdDateAndTime){
- this.createdDateAndTime=createdDateAndTime;
+public void setCreatedDateTime(String createdDateTime){
+ this.createdDateTime=createdDateTime;
 }
-public String getModifiedDateAndTime(){
- return modifiedDateAndTime;
+public String getModifiedDateTime(){
+ return modifiedDateTime;
 }
-public void setModifiedDateAndTime(String modifiedDateAndTime){
- this.modifiedDateAndTime=modifiedDateAndTime;
+public void setModifiedDateTime(String modifiedDateTime){
+ this.modifiedDateTime=modifiedDateTime;
 }
 }

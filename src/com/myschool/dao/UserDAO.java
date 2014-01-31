@@ -11,5 +11,7 @@ public interface UserDAO {
 
 	boolean updateInvalidAttempts(UserDetailsDTO userDetailsDTO);
 
+	boolean resetPasswordAndInvalidAttempts(UserDetailsDTO userDetailsDTO);
+
 }
 

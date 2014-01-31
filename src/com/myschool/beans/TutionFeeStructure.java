@@ -13,31 +13,31 @@ public class TutionFeeStructure implements Serializable{
 
 @Id
 @Column(name="TUTION_FEE_STRUCTURE_ID")
-Integer tutionFeeStructureId;
+private Integer tutionFeeStructureId;
 
 @Column(name="SCHOOL_CLASS_ID")
-Integer schoolClassId;
+private Integer schoolClassId;
 
 @Column(name="AMOUNT_PER_INSTALMENT")
-Integer amountPerInstalment;
+private Integer amountPerInstalment;
 
 @Column(name="NUMBER_OF_INSTALMENTS")
-Integer numberOfInstalments;
+private Integer numberOfInstalments;
 
 @Column(name="TOTAL_TUTION_FEE")
-Integer totalTutionFee;
+private Integer totalTutionFee;
 
 @Column(name="CREATED_USER_ID")
-String createdUserId;
+private String createdUserId;
 
 @Column(name="MODIFIED_USER_ID")
-String modifiedUserId;
+private String modifiedUserId;
 
 @Column(name="CREATED_DATE_TIME")
-String createdDateAndTime;
+private String createdDateTime;
 
 @Column(name="MODIFIED_DATE_TIME")
-String modifiedDateAndTime;
+private String modifiedDateTime;
 
 
 public Integer getTutionFeeStructureId(){
@@ -82,16 +82,16 @@ public String getModifiedUserId(){
 public void setModifiedUserId(String modifiedUserId){
  this.modifiedUserId=modifiedUserId;
 }
-public String getCreatedDateAndTime(){
- return createdDateAndTime;
+public String getCreatedDateTime(){
+ return createdDateTime;
 }
-public void setCreatedDateAndTime(String createdDateAndTime){
- this.createdDateAndTime=createdDateAndTime;
+public void setCreatedDateTime(String createdDateTime){
+ this.createdDateTime=createdDateTime;
 }
-public String getModifiedDateAndTime(){
- return modifiedDateAndTime;
+public String getModifiedDateTime(){
+ return modifiedDateTime;
 }
-public void setModifiedDateAndTime(String modifiedDateAndTime){
- this.modifiedDateAndTime=modifiedDateAndTime;
+public void setModifiedDateTime(String modifiedDateTime){
+ this.modifiedDateTime=modifiedDateTime;
 }
 }

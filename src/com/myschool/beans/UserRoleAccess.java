@@ -13,64 +13,65 @@ public class UserRoleAccess implements Serializable{
 
 @Id
 @Column(name="USER_ROLE_ACCESS_ID")
-Integer userRolesAccessId;
-	
+private Integer userRoleAccessId;
+
 @Column(name="USER_ROLES_ID")
-Integer userRolesId;
+private Integer userRolesId;
 
 @Column(name="MENU_CATEGORY")
-String menuCategory;
+private String menuCategory;
 
 @Column(name="MENU_SUB_CATEGORY")
-String menuSubCategory;
+private String menuSubCategory;
 
 @Column(name="CREATE_ADD")
-String createAdd;
+private String createAdd;
 
 @Column(name="MODIFY_EDIT")
-String modifyEdit;
+private String modifyEdit;
 
 @Column(name="DELETE_REMOVE")
-String deleteRemove;
+private String deleteRemove;
 
 @Column(name="VIEW_SHOW")
-String viewShow;
+private String viewShow;
 
 @Column(name="MIGRATE")
-String migrate;
+private String migrate;
 
 @Column(name="GENERATE")
-String generate;
+private String generate;
 
 @Column(name="SMS")
-String sms;
+private String sms;
 
 @Column(name="EMAIL")
-String email;
+private String email;
 
 @Column(name="COLLECT")
-String collect;
+private String collect;
 
 @Column(name="ASSIGN")
-String assign;
+private String assign;
 
 @Column(name="CREATED_USER_ID")
-String createdUserId;
+private String createdUserId;
 
 @Column(name="MODIFIED_USER_ID")
-String modifiedUserId;
+private String modifiedUserId;
 
 @Column(name="CREATED_DATE_TIME")
-String createdDateAndTime;
+private String createdDateTime;
 
 @Column(name="MODIFIED_DATE_TIME")
-String modifiedDateAndTime;
+private String modifiedDateTime;
 
-public Integer getUserRolesAccessId() {
-	return userRolesAccessId;
+
+public Integer getUserRoleAccessId(){
+ return userRoleAccessId;
 }
-public void setUserRolesAccessId(Integer userRolesAccessId) {
-	this.userRolesAccessId = userRolesAccessId;
+public void setUserRoleAccessId(Integer userRoleAccessId){
+ this.userRoleAccessId=userRoleAccessId;
 }
 public Integer getUserRolesId(){
  return userRolesId;
@@ -151,34 +152,27 @@ public void setAssign(String assign){
  this.assign=assign;
 }
 public String getCreatedUserId(){
-	return createdUserId;
+ return createdUserId;
 }
-
 public void setCreatedUserId(String createdUserId){
-	this.createdUserId=createdUserId;
+ this.createdUserId=createdUserId;
 }
-
 public String getModifiedUserId(){
-	return modifiedUserId;
+ return modifiedUserId;
 }
-
 public void setModifiedUserId(String modifiedUserId){
-	this.modifiedUserId=modifiedUserId;
+ this.modifiedUserId=modifiedUserId;
 }
-
-public String getCreatedDateAndTime(){
-	return createdDateAndTime;
+public String getCreatedDateTime(){
+ return createdDateTime;
 }
-
-public void setCreatedDateAndTime(String createdDateAndTime){
-	this.createdDateAndTime=createdDateAndTime;
+public void setCreatedDateTime(String createdDateTime){
+ this.createdDateTime=createdDateTime;
 }
-
-public String getModifiedDateAndTime(){
-	return modifiedDateAndTime;
+public String getModifiedDateTime(){
+ return modifiedDateTime;
 }
-
-public void setModifiedDateAndTime(String modifiedDateAndTime){
-	this.modifiedDateAndTime=modifiedDateAndTime;
+public void setModifiedDateTime(String modifiedDateTime){
+ this.modifiedDateTime=modifiedDateTime;
 }
 }

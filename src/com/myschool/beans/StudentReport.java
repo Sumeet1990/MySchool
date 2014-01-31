@@ -13,67 +13,67 @@ public class StudentReport implements Serializable{
 
 @Id
 @Column(name="STUDENT_REPORT_ID")
-String studentReportId;
+private String studentReportId;
 
 @Column(name="STUDENT_REGISTRATION_ID")
-Integer studentRegistrationId;
+private Integer studentRegistrationId;
 
 @Column(name="STUDENT_ROLL_NO")
-String studentRollNo;
+private String studentRollNo;
 
 @Column(name="SCHOOL_CLASS_NAME")
-String schoolClassName;
+private String schoolClassName;
 
 @Column(name="SECTION")
-String section;
+private String section;
 
 @Column(name="TEST_NAME")
-String testName;
+private String testName;
 
 @Column(name="SUBJECT_CODES_MARKS")
-String subjectCodesMarks;
+private String subjectCodesMarks;
 
 @Column(name="SUBJECTS_FAILED")
-Integer subjectsFailed;
+private Integer subjectsFailed;
 
 @Column(name="TOTAL_MARKS")
-Integer totalMarks;
+private Integer totalMarks;
 
 @Column(name="PERCENTAGE_OF_MARKS")
-Integer percentageOfMarks;
+private Integer percentageOfMarks;
 
 @Column(name="RANK")
-Integer rank;
+private Integer rank;
 
 @Column(name="GRADE")
-String grade;
+private String grade;
 
 @Column(name="EXAM_RESULT")
-String examResult;
+private String examResult;
 
 @Column(name="TOTAL_PRESENT_DAYS")
-Integer totalPresentDays;
+private Integer totalPresentDays;
 
 @Column(name="TOTAL_LEAVE_DAYS")
-Integer totalLeaveDays;
+private Integer totalLeaveDays;
 
 @Column(name="TOTAL_ABSENT_DAYS")
-Integer totalAbsentDays;
+private Integer totalAbsentDays;
 
 @Column(name="TOTAL_WORKING_DAYS")
-Integer totalWorkingDays;
+private Integer totalWorkingDays;
 
 @Column(name="CREATED_USER_ID")
-String createdUserId;
+private String createdUserId;
 
 @Column(name="MODIFIED_USER_ID")
-String modifiedUserId;
+private String modifiedUserId;
 
 @Column(name="CREATED_DATE_TIME")
-String createdDateAndTime;
+private String createdDateTime;
 
 @Column(name="MODIFIED_DATE_TIME")
-String modifiedDateAndTime;
+private String modifiedDateTime;
 
 
 public String getStudentReportId(){
@@ -190,16 +190,16 @@ public String getModifiedUserId(){
 public void setModifiedUserId(String modifiedUserId){
  this.modifiedUserId=modifiedUserId;
 }
-public String getCreatedDateAndTime(){
- return createdDateAndTime;
+public String getCreatedDateTime(){
+ return createdDateTime;
 }
-public void setCreatedDateAndTime(String createdDateAndTime){
- this.createdDateAndTime=createdDateAndTime;
+public void setCreatedDateTime(String createdDateTime){
+ this.createdDateTime=createdDateTime;
 }
-public String getModifiedDateAndTime(){
- return modifiedDateAndTime;
+public String getModifiedDateTime(){
+ return modifiedDateTime;
 }
-public void setModifiedDateAndTime(String modifiedDateAndTime){
- this.modifiedDateAndTime=modifiedDateAndTime;
+public void setModifiedDateTime(String modifiedDateTime){
+ this.modifiedDateTime=modifiedDateTime;
 }
 }

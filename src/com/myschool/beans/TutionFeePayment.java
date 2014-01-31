@@ -13,43 +13,46 @@ public class TutionFeePayment implements Serializable{
 
 @Id
 @Column(name="STUDNT_TUTIN_FEE_PYNT_ID")
-String studntTutinFeePyntId;
+private String studntTutinFeePyntId;
 
 @Column(name="STUDENT_ROLL_NO")
-String studentRollNo;
+private String studentRollNo;
 
 @Column(name="TUTION_FEE_STRUCTURE_ID")
-Integer tutionFeeStructureId;
+private Integer tutionFeeStructureId;
 
 @Column(name="SCHOOL_CLASS_ID")
-Integer schoolClassId;
+private Integer schoolClassId;
+
+@Column(name="TUTION_FEE_PAID_RCPT_NO")
+private Integer tutionFeePaidRcptNo;
 
 @Column(name="FEE_PAID")
-Integer feePaid;
+private Integer feePaid;
 
 @Column(name="INSTALMENT_NUMBER")
-Integer instalmentNumber;
+private Integer instalmentNumber;
 
 @Column(name="BALANCE_TUTION_FEE")
-Integer balanceTutionFee;
+private Integer balanceTutionFee;
 
 @Column(name="PAYMENT_MODE")
-String paymentMode;
+private String paymentMode;
 
 @Column(name="PAYMENT_DATE_TIME")
-String paymentDateTime;
+private String paymentDateTime;
 
 @Column(name="CREATED_USER_ID")
-String createdUserId;
+private String createdUserId;
 
 @Column(name="MODIFIED_USER_ID")
-String modifiedUserId;
+private String modifiedUserId;
 
 @Column(name="CREATED_DATE_TIME")
-String createdDateAndTime;
+private String createdDateTime;
 
 @Column(name="MODIFIED_DATE_TIME")
-String modifiedDateAndTime;
+private String modifiedDateTime;
 
 
 public String getStudntTutinFeePyntId(){
@@ -76,6 +79,12 @@ public Integer getSchoolClassId(){
 public void setSchoolClassId(Integer schoolClassId){
  this.schoolClassId=schoolClassId;
 }
+public Integer getTutionFeePaidRcptNo(){
+ return tutionFeePaidRcptNo;
+}
+public void setTutionFeePaidRcptNo(Integer tutionFeePaidRcptNo){
+ this.tutionFeePaidRcptNo=tutionFeePaidRcptNo;
+}
 public Integer getFeePaid(){
  return feePaid;
 }
@@ -94,17 +103,17 @@ public Integer getBalanceTutionFee(){
 public void setBalanceTutionFee(Integer balanceTutionFee){
  this.balanceTutionFee=balanceTutionFee;
 }
-public String getPaymentMode() {
-	return paymentMode;
+public String getPaymentMode(){
+ return paymentMode;
 }
-public void setPaymentMode(String paymentMode) {
-	this.paymentMode = paymentMode;
+public void setPaymentMode(String paymentMode){
+ this.paymentMode=paymentMode;
 }
-public String getPaymentDateTime() {
-	return paymentDateTime;
+public String getPaymentDateTime(){
+ return paymentDateTime;
 }
-public void setPaymentDateTime(String paymentDateTime) {
-	this.paymentDateTime = paymentDateTime;
+public void setPaymentDateTime(String paymentDateTime){
+ this.paymentDateTime=paymentDateTime;
 }
 public String getCreatedUserId(){
  return createdUserId;
@@ -118,16 +127,16 @@ public String getModifiedUserId(){
 public void setModifiedUserId(String modifiedUserId){
  this.modifiedUserId=modifiedUserId;
 }
-public String getCreatedDateAndTime(){
- return createdDateAndTime;
+public String getCreatedDateTime(){
+ return createdDateTime;
 }
-public void setCreatedDateAndTime(String createdDateAndTime){
- this.createdDateAndTime=createdDateAndTime;
+public void setCreatedDateTime(String createdDateTime){
+ this.createdDateTime=createdDateTime;
 }
-public String getModifiedDateAndTime(){
- return modifiedDateAndTime;
+public String getModifiedDateTime(){
+ return modifiedDateTime;
 }
-public void setModifiedDateAndTime(String modifiedDateAndTime){
- this.modifiedDateAndTime=modifiedDateAndTime;
+public void setModifiedDateTime(String modifiedDateTime){
+ this.modifiedDateTime=modifiedDateTime;
 }
 }

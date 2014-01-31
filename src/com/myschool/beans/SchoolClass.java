@@ -13,46 +13,46 @@ public class SchoolClass implements Serializable{
 
 @Id
 @Column(name="SCHOOL_CLASS_ID")
-Integer schoolClassId;
+private Integer schoolClassId;
 
 @Column(name="SCHOOL_CLASS_NAME")
-String schoolClassName;
+private String schoolClassName;
 
 @Column(name="MIN_AGE_CRITERIA")
-Integer minAgeCriteria;
+private Integer minAgeCriteria;
 
 @Column(name="MAX_AGE_CRITERIA")
-Integer maxAgeCriteria;
+private Integer maxAgeCriteria;
 
 @Column(name="PERIODS_PER_DAY")
-Integer periodsPerDay;
+private Integer periodsPerDay;
 
 @Column(name="PERIOD_MINUTES_DURATION")
-Integer periodMinutesDuration;
+private Integer periodMinutesDuration;
 
 @Column(name="TEACHER_PERIODS_PER_DAY")
-Integer teacherPeriodsPerDay;
+private Integer teacherPeriodsPerDay;
 
 @Column(name="SUBJECT_CODES")
-String subjectCodes;
+private String subjectCodes;
 
 @Column(name="CLASS_MAXIMUM_STRENGTH")
-Integer classMaximumStrength;
+private Integer classMaximumStrength;
 
 @Column(name="CLASS_STATUS")
-String classStatus;
+private String classStatus;
 
 @Column(name="CREATED_USER_ID")
-String createdUserId;
+private String createdUserId;
 
 @Column(name="MODIFIED_USER_ID")
-String modifiedUserId;
+private String modifiedUserId;
 
 @Column(name="CREATED_DATE_TIME")
-String createdDateAndTime;
+private String createdDateTime;
 
 @Column(name="MODIFIED_DATE_TIME")
-String modifiedDateAndTime;
+private String modifiedDateTime;
 
 
 public Integer getSchoolClassId(){
@@ -127,16 +127,16 @@ public String getModifiedUserId(){
 public void setModifiedUserId(String modifiedUserId){
  this.modifiedUserId=modifiedUserId;
 }
-public String getCreatedDateAndTime(){
- return createdDateAndTime;
+public String getCreatedDateTime(){
+ return createdDateTime;
 }
-public void setCreatedDateAndTime(String createdDateAndTime){
- this.createdDateAndTime=createdDateAndTime;
+public void setCreatedDateTime(String createdDateTime){
+ this.createdDateTime=createdDateTime;
 }
-public String getModifiedDateAndTime(){
- return modifiedDateAndTime;
+public String getModifiedDateTime(){
+ return modifiedDateTime;
 }
-public void setModifiedDateAndTime(String modifiedDateAndTime){
- this.modifiedDateAndTime=modifiedDateAndTime;
+public void setModifiedDateTime(String modifiedDateTime){
+ this.modifiedDateTime=modifiedDateTime;
 }
 }

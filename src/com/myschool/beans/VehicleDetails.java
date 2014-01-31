@@ -13,34 +13,34 @@ public class VehicleDetails implements Serializable{
 
 @Id
 @Column(name="VEHICLE_DETAILS_ID")
-Integer vehicleDetailsId;
+private Integer vehicleDetailsId;
 
 @Column(name="VEHICLE_REG_NO")
-String vehicleRegNo;
+private String vehicleRegNo;
 
 @Column(name="VEHICLE_RC_NO")
-String vehicleRcNo;
+private String vehicleRcNo;
 
 @Column(name="POLUTION_DUE_DATE")
-String polutionDueDate;
+private String polutionDueDate;
 
 @Column(name="INSURANCE_DUE_DATE")
-String insuranceDueDate;
+private String insuranceDueDate;
 
 @Column(name="CREATED_USER_ID")
-String createdUserId;
+private String createdUserId;
 
 @Column(name="SEATION_CAPACITY_EXC_DRIVER")
-String seationCapacityExcDriver;
+private String seationCapacityExcDriver;
 
 @Column(name="MODIFIED_USER_ID")
-String modifiedUserId;
+private String modifiedUserId;
 
 @Column(name="CREATED_DATE_TIME")
-String createdDateAndTime;
+private String createdDateTime;
 
 @Column(name="MODIFIED_DATE_TIME")
-String modifiedDateAndTime;
+private String modifiedDateTime;
 
 
 public Integer getVehicleDetailsId(){
@@ -91,16 +91,16 @@ public String getModifiedUserId(){
 public void setModifiedUserId(String modifiedUserId){
  this.modifiedUserId=modifiedUserId;
 }
-public String getCreatedDateAndTime(){
- return createdDateAndTime;
+public String getCreatedDateTime(){
+ return createdDateTime;
 }
-public void setCreatedDateAndTime(String createdDateAndTime){
- this.createdDateAndTime=createdDateAndTime;
+public void setCreatedDateTime(String createdDateTime){
+ this.createdDateTime=createdDateTime;
 }
-public String getModifiedDateAndTime(){
- return modifiedDateAndTime;
+public String getModifiedDateTime(){
+ return modifiedDateTime;
 }
-public void setModifiedDateAndTime(String modifiedDateAndTime){
- this.modifiedDateAndTime=modifiedDateAndTime;
+public void setModifiedDateTime(String modifiedDateTime){
+ this.modifiedDateTime=modifiedDateTime;
 }
 }

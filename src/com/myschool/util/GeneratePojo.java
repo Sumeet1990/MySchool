@@ -81,10 +81,10 @@ public class GeneratePojo {
 		javaStr = javaStr + "\n@Column(name=" + varibaleName + ")";
 
 		if (parseStr.contains("VARCHAR2") ||parseStr.contains("CLOB") ) {
-			javaStr = javaStr + "\nString ";
+			javaStr = javaStr + "\nprivate String ";
 			getterSetter(initCapTheString(varibaleName,"Variable").replace("\"", ""),"String");
 		} else if (parseStr.contains("NUMBER")) {
-			javaStr = javaStr + "\nInteger ";
+			javaStr = javaStr + "\nprivate Integer ";
 			getterSetter(initCapTheString(varibaleName,"Variable").replace("\"", ""),"Integer");
 		}
 

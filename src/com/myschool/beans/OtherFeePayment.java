@@ -13,43 +13,46 @@ public class OtherFeePayment implements Serializable{
 
 @Id
 @Column(name="OTHER_FEE_PYNT_ID")
-Integer otherFeePyntId;
+private Integer otherFeePyntId;
 
 @Column(name="STUDENT_ROLL_NO")
-String studentRollNo;
+private String studentRollNo;
 
 @Column(name="OTHER_FEE_STRUCTURE_ID")
-Integer otherFeeStructureId;
+private Integer otherFeeStructureId;
+
+@Column(name="OTHER_FEE_PAID_RCPT_NO")
+private Integer otherFeePaidRcptNo;
 
 @Column(name="SCHOOL_CLASS_ID")
-Integer schoolClassId;
+private Integer schoolClassId;
 
 @Column(name="OTHER_FEE_NAME")
-String otherFeeName;
+private String otherFeeName;
 
 @Column(name="OTHER_FEE_AMOUNT_PAID")
-Integer otherFeeAmountPaid;
+private Integer otherFeeAmountPaid;
 
 @Column(name="OTHER_FEE_AMOUNT_BALANCE")
-Integer otherFeeAmountBalance;
+private Integer otherFeeAmountBalance;
 
 @Column(name="PAYMENT_MODE")
-String paymentMode;
+private String paymentMode;
 
 @Column(name="PAYMENT_DATE_TIME")
-String paymentDateTime;
+private String paymentDateTime;
 
 @Column(name="CREATED_USER_ID")
-String createdUserId;
+private String createdUserId;
 
 @Column(name="MODIFIED_USER_ID")
-String modifiedUserId;
+private String modifiedUserId;
 
 @Column(name="CREATED_DATE_TIME")
-String createdDateAndTime;
+private String createdDateTime;
 
 @Column(name="MODIFIED_DATE_TIME")
-String modifiedDateAndTime;
+private String modifiedDateTime;
 
 
 public Integer getOtherFeePyntId(){
@@ -69,6 +72,12 @@ public Integer getOtherFeeStructureId(){
 }
 public void setOtherFeeStructureId(Integer otherFeeStructureId){
  this.otherFeeStructureId=otherFeeStructureId;
+}
+public Integer getOtherFeePaidRcptNo(){
+ return otherFeePaidRcptNo;
+}
+public void setOtherFeePaidRcptNo(Integer otherFeePaidRcptNo){
+ this.otherFeePaidRcptNo=otherFeePaidRcptNo;
 }
 public Integer getSchoolClassId(){
  return schoolClassId;
@@ -94,17 +103,17 @@ public Integer getOtherFeeAmountBalance(){
 public void setOtherFeeAmountBalance(Integer otherFeeAmountBalance){
  this.otherFeeAmountBalance=otherFeeAmountBalance;
 }
-public String getPaymentMode() {
-	return paymentMode;
+public String getPaymentMode(){
+ return paymentMode;
 }
-public void setPaymentMode(String paymentMode) {
-	this.paymentMode = paymentMode;
+public void setPaymentMode(String paymentMode){
+ this.paymentMode=paymentMode;
 }
-public String getPaymentDateTime() {
-	return paymentDateTime;
+public String getPaymentDateTime(){
+ return paymentDateTime;
 }
-public void setPaymentDateTime(String paymentDateTime) {
-	this.paymentDateTime = paymentDateTime;
+public void setPaymentDateTime(String paymentDateTime){
+ this.paymentDateTime=paymentDateTime;
 }
 public String getCreatedUserId(){
  return createdUserId;
@@ -118,16 +127,16 @@ public String getModifiedUserId(){
 public void setModifiedUserId(String modifiedUserId){
  this.modifiedUserId=modifiedUserId;
 }
-public String getCreatedDateAndTime(){
- return createdDateAndTime;
+public String getCreatedDateTime(){
+ return createdDateTime;
 }
-public void setCreatedDateAndTime(String createdDateAndTime){
- this.createdDateAndTime=createdDateAndTime;
+public void setCreatedDateTime(String createdDateTime){
+ this.createdDateTime=createdDateTime;
 }
-public String getModifiedDateAndTime(){
- return modifiedDateAndTime;
+public String getModifiedDateTime(){
+ return modifiedDateTime;
 }
-public void setModifiedDateAndTime(String modifiedDateAndTime){
- this.modifiedDateAndTime=modifiedDateAndTime;
+public void setModifiedDateTime(String modifiedDateTime){
+ this.modifiedDateTime=modifiedDateTime;
 }
 }

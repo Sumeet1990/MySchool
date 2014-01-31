@@ -13,79 +13,79 @@ public class DriverDetails implements Serializable{
 
 @Id
 @Column(name="DRIVER_DETAILS_ID")
-Integer driverDetailsId;
+private Integer driverDetailsId;
 
 @Column(name="DRIVER_TITLE")
-String driverTitle;
+private String driverTitle;
 
 @Column(name="DRIVER_GIVEN_FULL_NAME")
-String driverGivenFullName;
+private String driverGivenFullName;
 
 @Column(name="DRIVER_SURNAME")
-String driverSurname;
+private String driverSurname;
 
 @Column(name="DRIVER_DOB")
-String driverDob;
+private String driverDob;
 
 @Column(name="DRIVER_GENDER")
-String driverGender;
+private String driverGender;
 
 @Column(name="DRIVER_STATUS")
-String driverStatus;
+private String driverStatus;
 
 @Column(name="DRIVER_QUALIFICATION")
-String driverQualification;
+private String driverQualification;
 
 @Column(name="PHOTO")
-String photo;
+private String photo;
 
 @Column(name="DRIVER_LICENSE_NO")
-String driverLicenseNo;
+private String driverLicenseNo;
 
 @Column(name="LICENSE_EXP_DATE")
-String licenseExpDate;
+private String licenseExpDate;
 
 @Column(name="ADDRESS_LINE_1")
-String addressLine1;
+private String addressLine1;
 
 @Column(name="ADDRESS_LINE_2")
-String addressLine2;
+private String addressLine2;
 
 @Column(name="ADDRESS_LINE_3")
-String addressLine3;
+private String addressLine3;
 
 @Column(name="ADDRESS_LINE_4")
-String addressLine4;
+private String addressLine4;
 
 @Column(name="ADDRESS_LINE_5")
-String addressLine5;
+private String addressLine5;
 
 @Column(name="ADDRESS_LINE_6")
-String addressLine6;
+private String addressLine6;
 
 @Column(name="PINCODE")
-Integer pincode;
+private Integer pincode;
 
 @Column(name="STATE")
-String state;
+private String state;
 
 @Column(name="COUNTRY")
-String country;
+private String country;
 
 @Column(name="PERSONAL_CONTACT_NUMBER")
-String personalContactNumber;
+private String personalContactNumber;
 
 @Column(name="CREATED_USER_ID")
-String createdUserId;
+private String createdUserId;
 
 @Column(name="MODIFIED_USER_ID")
-String modifiedUserId;
+private String modifiedUserId;
 
 @Column(name="CREATED_DATE_TIME")
-String createdDateAndTime;
+private String createdDateTime;
 
 @Column(name="MODIFIED_DATE_TIME")
-String modifiedDateAndTime;
+private String modifiedDateTime;
 
 
 public Integer getDriverDetailsId(){
@@ -226,16 +226,16 @@ public String getModifiedUserId(){
 public void setModifiedUserId(String modifiedUserId){
  this.modifiedUserId=modifiedUserId;
 }
-public String getCreatedDateAndTime(){
- return createdDateAndTime;
+public String getCreatedDateTime(){
+ return createdDateTime;
 }
-public void setCreatedDateAndTime(String createdDateAndTime){
- this.createdDateAndTime=createdDateAndTime;
+public void setCreatedDateTime(String createdDateTime){
+ this.createdDateTime=createdDateTime;
 }
-public String getModifiedDateAndTime(){
- return modifiedDateAndTime;
+public String getModifiedDateTime(){
+ return modifiedDateTime;
 }
-public void setModifiedDateAndTime(String modifiedDateAndTime){
- this.modifiedDateAndTime=modifiedDateAndTime;
+public void setModifiedDateTime(String modifiedDateTime){
+ this.modifiedDateTime=modifiedDateTime;
 }
 }

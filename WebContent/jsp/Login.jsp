@@ -69,7 +69,7 @@
     			<div class="footer">
     				<s:submit  id="button" value="%{getText('login.submit.login')}" theme="simple"  scope="page" onclick="showTransparentScreen()" tabindex="3"/>
     				<!--Register button-->
-    				<input type="submit" name="submit" value="<s:property  value="getText('login.forgotpassword')"/>" class="register" />
+    					<s:submit name="submit" value="%{getText('login.forgotpassword')}" theme="simple"  scope="page" cssClass="register" action="forgot"/>
     			</div>
 			</s:form>
 		</div>

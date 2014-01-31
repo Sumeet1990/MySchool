@@ -9,10 +9,14 @@ import com.myschool.dto.UserDetailsDTO;
 import com.myschool.util.CommonConstants;
 
 public class LoginServiceImpl implements LoginService {
+
 	private static Logger log = Logger.getLogger(LoginServiceImpl.class);
 	private UserDAO userDAO;
 	private Map<String,String> schoolConfigurationMap;
 	
+	/**
+	 * 
+	 */
 	public boolean retrieveLoginCredentials(UserDetailsDTO userDetailsDTO, final String password) {
 		boolean retFlag = true;
 		userDAO.retrieveLoginCredentials(userDetailsDTO);
@@ -47,7 +51,23 @@ public class LoginServiceImpl implements LoginService {
 		
 		return retFlag;
 	}
+	
+	/**
+	 * 
+	 */
+	public int getUserDetails(UserDetailsDTO userDetailsDTO) {
+		getUserDAO().retrieveLoginCredentials(userDetailsDTO);
+		if (userDetailsDTO.getUserId() != null) {
+			return 0;
+		} else {
+			return -1;
+		}	
+	}
 
+	public boolean resetPassword( UserDetailsDTO userDetailsDTO) {
+		return getUserDAO().resetPasswordAndInvalidAttempts(userDetailsDTO);
+	}
+	
 	public UserDAO getUserDAO() {
 		return userDAO;
 	}

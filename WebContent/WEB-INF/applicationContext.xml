@@ -42,4 +42,8 @@
 		</constructor-arg>
 	</bean>
 
+<!-- Forgot Password Action -->
+	<bean name="forgotPasswordClass" class="com.myschool.action.ForgotPasswordAction">
+		<property name="loginService" ref="loginService"></property>
+	</bean>
 </beans>

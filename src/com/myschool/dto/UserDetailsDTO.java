@@ -3,12 +3,19 @@ package com.myschool.dto;
 public class UserDetailsDTO {
     private String username;
     private String password; 
+    private String userGivenFullName;
+    private String userSurname;
     private Integer userId;
     private Integer userRoleId;
-    private String lastLoginDetails;
+    private String lastLogedinDateTime;
     private boolean locked;
     private Integer invalidAttempts;
     private boolean verificationStatus;
+    private String securityQuestion;
+    private String securityAnswer;
+    private String userRolesName;
+    private String personalContactNumber;
+    private String userDob;
     
     public String getUsername() {
         return username;
@@ -42,12 +49,14 @@ public class UserDetailsDTO {
 		this.userId = userId;
 	}
 
-	public String getLastLoginDetails() {
-		return lastLoginDetails;
+
+
+	public String getLastLogedinDateTime() {
+		return lastLogedinDateTime;
 	}
 
-	public void setLastLoginDetails(String lastLoginDetails) {
-		this.lastLoginDetails = lastLoginDetails;
+	public void setLastLogedinDateTime(String lastLogedinDateTime) {
+		this.lastLogedinDateTime = lastLogedinDateTime;
 	}
 
 	public boolean isLocked() {
@@ -72,6 +81,62 @@ public class UserDetailsDTO {
 
 	public void setVerificationStatus(boolean verificationStatus) {
 		this.verificationStatus = verificationStatus;
+	}
+
+	public String getSecurityQuestion() {
+		return securityQuestion;
+	}
+
+	public void setSecurityQuestion(String securityQuestion) {
+		this.securityQuestion = securityQuestion;
+	}
+
+	public String getSecurityAnswer() {
+		return securityAnswer;
+	}
+
+	public void setSecurityAnswer(String securityAnswer) {
+		this.securityAnswer = securityAnswer;
+	}
+
+	public String getUserSurname() {
+		return userSurname;
+	}
+
+	public void setUserSurname(String userSurname) {
+		this.userSurname = userSurname;
+	}
+
+	public String getUserGivenFullName() {
+		return userGivenFullName;
+	}
+
+	public void setUserGivenFullName(String userGivenFullName) {
+		this.userGivenFullName = userGivenFullName;
+	}
+
+	public String getPersonalContactNumber() {
+		return personalContactNumber;
+	}
+
+	public void setPersonalContactNumber(String personalContactNumber) {
+		this.personalContactNumber = personalContactNumber;
+	}
+
+	public String getUserRolesName() {
+		return userRolesName;
+	}
+
+	public void setUserRolesName(String userRolesName) {
+		this.userRolesName = userRolesName;
+	}
+
+	public String getUserDob() {
+		return userDob;
+	}
+
+	public void setUserDob(String userDob) {
+		this.userDob = userDob;
 	}	
 }
 

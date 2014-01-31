@@ -131,6 +131,25 @@
 		<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result type="tiles">/LoadFunctionalPage.tiles</result>
 		</action>
-		
+		<action name="forgot">
+		<interceptor-ref name="mySchoolCommonInterceptors"/>
+		<param name="errorMesage"></param>
+			<result>jsp/ForgotPassword.jsp</result>
+		</action>
+		<action name="verifyUser" class="forgotPasswordClass">
+		<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success">jsp/ForgotPassword.jsp</result>
+			<result name="failure">jsp/ForgotPassword.jsp</result>
+		</action>
+		<action name="validateSecurityAnswers" class="forgotPasswordClass" method="validateSecurityAnswers">
+		<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success">jsp/ForgotPassword.jsp</result>
+			<result name="failure">jsp/ForgotPassword.jsp</result>
+		</action>
+		<action name="resetPassword" class="forgotPasswordClass" method="resetPassword">
+		<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success">jsp/Login.jsp</result>
+			<result name="failure">jsp/ForgotPassword.jsp</result>
+		</action>
 	</package>
 </struts>

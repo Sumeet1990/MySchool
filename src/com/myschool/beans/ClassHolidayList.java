@@ -13,34 +13,34 @@ public class ClassHolidayList implements Serializable{
 
 @Id
 @Column(name="CLASS_HOLIDAY_ID")
-Integer classHolidayId;
+private Integer classHolidayId;
 
 @Column(name="SCHOOL_CLASS_ID")
-Integer schoolClassId;
+private Integer schoolClassId;
 
 @Column(name="LASS_HOLIDAY_FOR")
-String lassHolidayFor;
+private String lassHolidayFor;
 
 @Column(name="LASS_HOLIDAY_FROM")
-String lassHolidayFrom;
+private String lassHolidayFrom;
 
 @Column(name="LASS_HOLIDAY_TO")
-String lassHolidayTo;
+private String lassHolidayTo;
 
 @Column(name="NO_OF_DAYS")
-Integer noOfDays;
+private Integer noOfDays;
 
 @Column(name="CREATED_USER_ID")
-String createdUserId;
+private String createdUserId;
 
 @Column(name="MODIFIED_USER_ID")
-String modifiedUserId;
+private String modifiedUserId;
 
 @Column(name="CREATED_DATE_TIME")
-String createdDateAndTime;
+private String createdDateTime;
 
 @Column(name="MODIFIED_DATE_TIME")
-String modifiedDateAndTime;
+private String modifiedDateTime;
 
 
 public Integer getClassHolidayId(){
@@ -91,16 +91,16 @@ public String getModifiedUserId(){
 public void setModifiedUserId(String modifiedUserId){
  this.modifiedUserId=modifiedUserId;
 }
-public String getCreatedDateAndTime(){
- return createdDateAndTime;
+public String getCreatedDateTime(){
+ return createdDateTime;
 }
-public void setCreatedDateAndTime(String createdDateAndTime){
- this.createdDateAndTime=createdDateAndTime;
+public void setCreatedDateTime(String createdDateTime){
+ this.createdDateTime=createdDateTime;
 }
-public String getModifiedDateAndTime(){
- return modifiedDateAndTime;
+public String getModifiedDateTime(){
+ return modifiedDateTime;
 }
-public void setModifiedDateAndTime(String modifiedDateAndTime){
- this.modifiedDateAndTime=modifiedDateAndTime;
+public void setModifiedDateTime(String modifiedDateTime){
+ this.modifiedDateTime=modifiedDateTime;
 }
 }

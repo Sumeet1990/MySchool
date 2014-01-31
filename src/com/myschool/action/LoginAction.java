@@ -17,6 +17,8 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 public class LoginAction extends ActionSupport implements SessionAware {
 
+	private static final String FAILURE = "failure";
+
 	private static Logger log = Logger.getLogger(LoginAction.class);
 	
 	private String username;
@@ -40,8 +42,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			boolean loginFlag = loginService.retrieveLoginCredentials(userDetailsDTO, password);			
 			
 			if(!userDetailsDTO.isLocked() && userDetailsDTO.isVerificationStatus()) {
-				System.out.println("!!!!! last login : "+userDetailsDTO.getLastLoginDetails());
-				log.debug("!!!!! last login : "+userDetailsDTO.getLastLoginDetails());
 				
 				setErrorMesage(StringUtils.EMPTY);
 				session.put(CommonConstants.USERNAME, getUsername());
@@ -63,12 +63,12 @@ public class LoginAction extends ActionSupport implements SessionAware {
 					setErrorMesage(getErrorMesage()+schoolConfigurationMap.get(CommonConstants.MAX_INVALID_LOGIN_ATTEMPTS));					
 				}
 				
-				return "failure";
+				return FAILURE;
 			}
 		} else {
 			setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALID_USER));
 			
-			return "failure";
+			return FAILURE;
 		}
 	}
 	
@@ -88,7 +88,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			}
 			
 			setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALID_CREDENTIALS));				
-			return "failure";
+			return FAILURE;
 		}		
 	}
 	
@@ -102,7 +102,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		}
 		
 		setErrorMesage(getText(CommonConstants.LOGIN_SUCCESS_LOGOUT));
-		return "failure";
+		return FAILURE;
 	}
 
 	public String getUsername() {

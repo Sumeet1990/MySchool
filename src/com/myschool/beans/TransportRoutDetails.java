@@ -13,46 +13,46 @@ public class TransportRoutDetails implements Serializable{
 
 @Id
 @Column(name="TRANSPORTATION_ID")
-Integer transportationId;
+private Integer transportationId;
 
 @Column(name="ROUT_NO")
-String routNo;
+private String routNo;
 
 @Column(name="VEHICLE_REG_NO")
-String vehicleRegNo;
+private String vehicleRegNo;
 
 @Column(name="STARTING_POINT")
-String startingPoint;
+private String startingPoint;
 
 @Column(name="END_POINT")
-String endPoint;
+private String endPoint;
 
 @Column(name="STOPS")
-String stops;
+private String stops;
 
 @Column(name="TOTAL_STOPS")
-String totalStops;
+private String totalStops;
 
 @Column(name="STARTING_TIME")
-String startingTime;
+private String startingTime;
 
 @Column(name="REACHING_TIME")
-String reachingTime;
+private String reachingTime;
 
 @Column(name="SEATES_LEFT")
-String seatesLeft;
+private String seatesLeft;
 
 @Column(name="CREATED_USER_ID")
-String createdUserId;
+private String createdUserId;
 
 @Column(name="MODIFIED_USER_ID")
-String modifiedUserId;
+private String modifiedUserId;
 
 @Column(name="CREATED_DATE_TIME")
-String createdDateAndTime;
+private String createdDateTime;
 
 @Column(name="MODIFIED_DATE_TIME")
-String modifiedDateAndTime;
+private String modifiedDateTime;
 
 
 public Integer getTransportationId(){
@@ -127,16 +127,16 @@ public String getModifiedUserId(){
 public void setModifiedUserId(String modifiedUserId){
  this.modifiedUserId=modifiedUserId;
 }
-public String getCreatedDateAndTime(){
- return createdDateAndTime;
+public String getCreatedDateTime(){
+ return createdDateTime;
 }
-public void setCreatedDateAndTime(String createdDateAndTime){
- this.createdDateAndTime=createdDateAndTime;
+public void setCreatedDateTime(String createdDateTime){
+ this.createdDateTime=createdDateTime;
 }
-public String getModifiedDateAndTime(){
- return modifiedDateAndTime;
+public String getModifiedDateTime(){
+ return modifiedDateTime;
 }
-public void setModifiedDateAndTime(String modifiedDateAndTime){
- this.modifiedDateAndTime=modifiedDateAndTime;
+public void setModifiedDateTime(String modifiedDateTime){
+ this.modifiedDateTime=modifiedDateTime;
 }
 }
