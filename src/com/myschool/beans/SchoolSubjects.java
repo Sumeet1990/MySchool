@@ -4,22 +4,27 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="SCHOOL_SUBJECTS")
 public class SchoolSubjects implements Serializable{
 
+@SequenceGenerator (name="seqSchoolSubjects", sequenceName="SEQ_SCHOOL_SUBJECTS", allocationSize=1)
 @Id
-@Column(name="SCHOOL_SUBJECT_ID")
-private Integer schoolSubjectId;
-
+@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqSchoolSubjects")
 @Column(name="SUBJECT_CODE")
-private String subjectCode;
+private Integer subjectCode;
 
 @Column(name="SUBJECT_NAME")
 private String subjectName;
+
+@Column(name="SUBJECT_STATUS")
+private String subjectStatus;
 
 @Column(name="CREATED_USER_ID")
 private String createdUserId;
@@ -34,23 +39,23 @@ private String createdDateTime;
 private String modifiedDateTime;
 
 
-public Integer getSchoolSubjectId(){
- return schoolSubjectId;
+public Integer getSubjectCode() {
+	return subjectCode;
 }
-public void setSchoolSubjectId(Integer schoolSubjectId){
- this.schoolSubjectId=schoolSubjectId;
-}
-public String getSubjectCode(){
- return subjectCode;
-}
-public void setSubjectCode(String subjectCode){
- this.subjectCode=subjectCode;
+public void setSubjectCode(Integer subjectCode) {
+	this.subjectCode = subjectCode;
 }
 public String getSubjectName(){
  return subjectName;
 }
 public void setSubjectName(String subjectName){
  this.subjectName=subjectName;
+}
+public String getSubjectStatus() {
+	return subjectStatus;
+}
+public void setSubjectStatus(String subjectStatus) {
+	this.subjectStatus = subjectStatus;
 }
 public String getCreatedUserId(){
  return createdUserId;

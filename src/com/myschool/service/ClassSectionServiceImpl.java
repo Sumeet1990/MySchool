@@ -9,7 +9,11 @@ public class ClassSectionServiceImpl implements ClassSectionService {
 	private static Logger log = Logger.getLogger(ClassSectionServiceImpl.class);
 	private StaffDAO staffDAO;
 	private ClassSectionDAO classSectionDAO;
-	
+
+
+	public void createClassSection() {
+		getClassSectionDAO().createClassSection();		
+	}
 	public StaffDAO getStaffDAO() {
 		return staffDAO;
 	}
@@ -21,7 +25,6 @@ public class ClassSectionServiceImpl implements ClassSectionService {
 	}
 	public void setClassSectionDAO(ClassSectionDAO classSectionDAO) {
 		this.classSectionDAO = classSectionDAO;
-	}
-	
+	}	
 	
 }

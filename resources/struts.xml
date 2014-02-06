@@ -92,13 +92,6 @@
 			<result name="failure">jsp/Login.jsp</result>
 			<result name="input">jsp/Login.jsp</result>
 		</action>
-		
-		<action name="ConfigurationMenuAction.action"  class="configurationMenuAction">
-			<interceptor-ref name="mySchoolCommonInterceptors"/>
-			<result name="success" type="tiles">/ConfigurationMenuPage.tiles</result>
-			<result name="success" type="tiles">/SchoolLandingPage.tiles</result>
-			<result name="input" type="tiles">/SchoolLandingPage.tiles</result>
-		</action>
 			
 		<action name="ClassSection*Action"  class="classSectionAction">
 			<param name="actionTypeValue">{1}</param>
@@ -123,14 +116,14 @@
 		</action>
 		
 		
-		<action name="loadActionConfig">
+		<!-- <action name="loadActionConfig">
 		<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result type="tiles">/LoadConfigPage.tiles</result>
 		</action>
 		<action name="loadActionFunctional">
 		<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result type="tiles">/LoadFunctionalPage.tiles</result>
-		</action>
+		</action> -->
 		<action name="forgot">
 		<interceptor-ref name="mySchoolCommonInterceptors"/>
 		<param name="errorMesage"></param>
@@ -150,6 +143,35 @@
 		<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result name="success">jsp/Login.jsp</result>
 			<result name="failure">jsp/ForgotPassword.jsp</result>
+		</action>
+	
+		<!-- Subjects -->
+		<action name="schoolSubject*Action"  class="schoolSubjectClass" method="perform{1}">
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success"  type="tiles">/SchoolSubjectPage.tiles</result>
+			<result name="failure" type="tiles">/SchoolSubjectPage.tiles</result>
+			<result name="input" type="tiles">/SchoolSubjectPage.tiles</result>
+		</action>
+		
+		<!-- functionalContent - configurationalContent hide div etc -->
+		<action name="functionalContent" class="forwardActionClass">
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<param name="display">functionalContent</param>
+			<result type="tiles" >/SchoolLandingPage.tiles</result>
+			
+		</action>
+		
+		<action name="configurationalContent" class="forwardActionClass">
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<param name="display">configurationalContent</param>
+			<result type="tiles">/SchoolLandingPage.tiles</result>
+		</action>
+		<!-- Dummy suubject action test -->
+		
+		<action name="subjectAction">
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<param name="errorMesage">1m</param>
+			<result type="tiles">/SchoolSubjectPage.tiles</result>
 		</action>
 	</package>
 </struts>

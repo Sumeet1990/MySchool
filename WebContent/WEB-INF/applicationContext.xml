@@ -27,7 +27,7 @@
 	<!-- Login Action -->
 	<bean name="configurationMenuAction" class="com.myschool.action.ConfigurationMenuAction"></bean>
 
-	<!-- School class Action -->
+	<!-- School class section Action -->
 	<bean name="classSectionAction" class="com.myschool.action.ClassSectionAction">
 		<property name="classSectionService" ref="classSectionService"></property>
 	</bean>
@@ -45,5 +45,13 @@
 <!-- Forgot Password Action -->
 	<bean name="forgotPasswordClass" class="com.myschool.action.ForgotPasswordAction">
 		<property name="loginService" ref="loginService"></property>
+	</bean>
+<!-- School Subject Action -->
+	<bean name="schoolSubjectClass" class="com.myschool.action.SchoolSubjectsAction">
+		<property name="schoolSubjectsService" ref="schoolSubjectsService"></property>
+	</bean>
+	
+	<!-- forward Action -->
+	<bean name="forwardActionClass" class="com.myschool.action.ForwardAction">
 	</bean>
 </beans>

@@ -46,19 +46,6 @@ function upperCaseThetext(nameTextBx){
 
 		$("[name='"+nameTextBx+"']").val(value.toUpperCase());
 }
-function manageDivForMenu(id) {
-
-	if (id == 'paraCotent') {
-		$('#paraCotent').show();
-		$('#configurationalContent').hide();
-		$('#functionalContent').hide();
-	} else if (id == 'configurationalContent') {
-		$('#paraCotent').hide();
-		$('#configurationalContent').show();
-		$('#functionalContent').hide();
-	} else if (id == 'functionalContent') {
-		$('#paraCotent').hide();
-		$('#configurationalContent').hide();
-		$('#functionalContent').show();
-	}
+function upperCaseThetextById(thisObj){
+	thisObj.value = thisObj.value.toUpperCase();
 }

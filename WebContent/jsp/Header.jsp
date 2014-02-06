@@ -17,14 +17,14 @@
 
 	<h3 class="textColor" align="left">
 		<s:property value="getText('header.welcome')" />
-		<s:property value='%{userDetailsDTO.userGivenFullName}' /> <s:property value='%{userDetailsDTO.userSurname}' />
+		<s:property value='#session.sessionUtils.userGivenFullName' /> <s:property value='#session.sessionUtils.userSurname' />
 		,
-		<s:property value="getText('header.role')" /> <s:property value='%{userDetailsDTO.userRolesName}' />
+		<s:property value="getText('header.role')" /> <s:property value='#session.sessionUtils.userRolesName' />
 	</h3>
 	<h3 class="textColor" align="left">
 		<s:property value="getText('header.lastlogin.datetime')" />
 		:
-		<s:property value="%{userDetailsDTO.lastLogedinDateTime}" />
+		<s:property value="#session.sessionUtils.lastLogedinDateTime" />
 	</h3>
 	<h3 align="left">
 		<s:property value="getText('header.current.datetime')" />

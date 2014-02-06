@@ -1,6 +1,8 @@
 package com.myschool.service;
 
-public interface ClassSectionService {	
+public interface ClassSectionService {
+
+	void createClassSection();	
 
 }
 

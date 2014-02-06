@@ -1,5 +1,7 @@
 package com.myschool.dao;
 
-public interface ClassSectionDAO {	
+public interface ClassSectionDAO {
+
+	void createClassSection();	
 	
 }

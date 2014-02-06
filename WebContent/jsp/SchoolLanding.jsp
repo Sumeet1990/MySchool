@@ -5,19 +5,26 @@
 	</head>
 	
 	<body>
-		<div id="paraCotent">
+	<s:set value="%{display}" name="displayValue"/>
+	<s:if test="#displayValue == 'configurationalContent'">
+		<div id="configurationalContent" >
+			<%@ include file="ConfigurationMenu.jsp" %>
+		</div>
+		</s:if>
+	<s:elseif test="#displayValue == 'functionalContent'">
+		<div id="functionalContent">
+			<%@ include file="FunctionalMenu.jsp" %>
+		</div>
+	</s:elseif>
+	<s:else>
+	<div id="paraCotent">
 			<p class="paraContentStyle">
 				<s:property value="getText('school.para1')"/></br></br>
 				<s:property value="getText('school.quot1')"/></br></br>
 				<s:property value="getText('school.quot2')"/></br></br>
 			</p>
 		</div>
-		<div id="configurationalContent" style="display: none">
-			<%@ include file="ConfigurationMenuPage.jsp" %>
-		</div>
+		</s:else>
 		
-		<div id="functionalContent" style="display: none">
-			<%@ include file="FunctionalMenuPage.jsp" %>
-		</div>
 	</body>
 </html>

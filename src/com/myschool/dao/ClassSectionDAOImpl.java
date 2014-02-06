@@ -6,4 +6,10 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 public class ClassSectionDAOImpl extends HibernateDaoSupport implements ClassSectionDAO {	
 	private static Logger log = Logger.getLogger(ClassSectionDAOImpl.class);
+
+	@Override
+	public void createClassSection() {
+		// TODO Auto-generated method stub
+		
+	}
 }

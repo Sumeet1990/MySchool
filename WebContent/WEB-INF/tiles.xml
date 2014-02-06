@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
 <!DOCTYPE tiles-definitions PUBLIC
        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
@@ -12,13 +11,13 @@
         <put-attribute name="footer" value="/jsp/Footer.jsp" />
     </definition>
      <definition name="/ConfigurationMenuPage.tile" extends="baseLayout">
-        <put-attribute name="body" value="/jsp/ConfigurationMenuPage.jsp" />
+        <put-attribute name="body" value="/jsp/ConfigurationMenu.jsp" />
     </definition>
     <definition name="/FunctionalMenuPage.tile" extends="baseLayout">
-        <put-attribute name="body" value="/jsp/FunctionalMenuPage.jsp" />
+        <put-attribute name="body" value="/jsp/FunctionalMenu.jsp" />
     </definition>
     <definition name="/SchoolLandingPage.tiles" extends="baseLayout">
-        <put-attribute name="body" value="/jsp/SchoolLandingPage.jsp" />
+        <put-attribute name="body" value="/jsp/SchoolLanding.jsp" />
     </definition>
     <definition name="/ClassSectionPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/ClassSection.jsp" />
@@ -34,9 +33,25 @@
     </definition>
     
     <definition name="/LoadConfigPage.tiles" extends="baseLayout">
-        <put-attribute name="body" value="/jsp/ConfigurationMenuPage.jsp" />
+        <put-attribute name="body" value="/jsp/ConfigurationMenu.jsp" />
     </definition>
     <definition name="/LoadFunctionalPage.tiles" extends="baseLayout">
-        <put-attribute name="body" value="/jsp/FunctionalMenuPage.jsp" />
+        <put-attribute name="body" value="/jsp/FunctionalMenu.jsp" />
     </definition>
+        <definition name="/ClassSectionPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/ClassSection.jsp" />
+    </definition>
+    
+    <definition name="/SchoolSubjectPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/SchoolSubjects.jsp" />
+    </definition>
+    
+    <definition name="/ConfigurationalContentPage.tiles" extends="baseLayout" >
+        <put-attribute name="body" value="/jsp/SchoolLanding.jsp" >
+        </put-attribute>
+    </definition>
+    <definition name="/FunctionalContentPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/SchoolLanding.jsp" />
+    </definition>
+  
 </tiles-definitions>

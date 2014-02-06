@@ -8,6 +8,7 @@
 	<head>
 				
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/textBox_button.css" type="text/css">
+		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jQuery1.9.js"></script>	
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/schoolCommon.js"></script>
 	</head>
 	

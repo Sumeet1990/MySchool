@@ -2,6 +2,7 @@ package com.myschool.action;
 
 import java.util.Map;
 
+import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang.xwork.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.struts2.interceptor.SessionAware;
@@ -9,6 +10,8 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.myschool.dto.UserDetailsDTO;
 import com.myschool.service.LoginService;
 import com.myschool.util.CommonConstants;
+import com.myschool.util.CommonUtility;
+import com.myschool.util.SessionUtils;
 import com.opensymphony.xwork2.ActionSupport;
 
 
@@ -44,14 +47,19 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			if(!userDetailsDTO.isLocked() && userDetailsDTO.isVerificationStatus()) {
 				
 				setErrorMesage(StringUtils.EMPTY);
+				SessionUtils sessionUtils = new SessionUtils();
+				CommonUtility.copyProperties(userDetailsDTO,sessionUtils, "userId userId", "userName userName",						
+																		  "userGivenFullName userGivenFullName",
+																		  "userRolesName userRolesName",
+																		  "userSurname userSurname",
+																		  "lastLogedinDateTime lastLogedinDateTime");
+				session.put(CommonConstants.SESSION_UTILS, sessionUtils);
 				session.put(CommonConstants.USERNAME, getUsername());
-				
-				//TODO set Role name in session
 				return SUCCESS;
 			} else {
 				if(session.containsKey(CommonConstants.USERNAME)) {
 					session.remove(CommonConstants.USERNAME);	
-					//TODO remove Role name from session
+					session.remove(CommonConstants.SESSION_UTILS);
 				} 
 				
 				if(userDetailsDTO.getUserId() == null) {
@@ -84,7 +92,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		} else {
 			if(session.containsKey(CommonConstants.USERNAME)) {
 				session.remove(CommonConstants.USERNAME);
-				//TODO remove Role name in session
+				session.remove(CommonConstants.SESSION_UTILS);
 			}
 			
 			setErrorMesage(getText(CommonConstants.LOGIN_FAIL_INVALID_CREDENTIALS));				
@@ -98,7 +106,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	public String logout() {		
 		if(session.containsKey(CommonConstants.USERNAME)) {
 			session.remove(CommonConstants.USERNAME);
-			//TODO remove Role name in session
+			session.remove(CommonConstants.SESSION_UTILS);
 		}
 		
 		setErrorMesage(getText(CommonConstants.LOGIN_SUCCESS_LOGOUT));
