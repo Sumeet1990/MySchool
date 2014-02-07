@@ -11,7 +11,7 @@
 <BODY>
 opname-<s:property value="schoolSubjectsDTO.currentOperationStatus"/>
 
-	<s:if test="schoolSubjectsDTO.operationName == 'subjectCreateFail'">
+	<s:if test="schoolSubjectsDTO.currentOperationStatus=='subjectCreateFail' || schoolSubjectsDTO.currentOperationStatus=='subjectModifyFail'">
 		<s:property value="schoolSubjectsDTO.existsSubjectList" />
 		<s:property value="errorMessage" />
 	</s:if>
@@ -36,7 +36,7 @@ opname-<s:property value="schoolSubjectsDTO.currentOperationStatus"/>
 		</s:form>
 	</s:if>
 	<s:if
-		test="%{schoolSubjectsDTO==null || schoolSubjectsDTO.currentOperationStatus == null}">
+		test="%{schoolSubjectsDTO==null || schoolSubjectsDTO.currentOperationStatus=='subjectCreateFail' || schoolSubjectsDTO.currentOperationStatus=='subjectModifyFail'}">
 		<s:form method="post" action="schoolSubjectCreateAction"
 			theme="simple">
 			<INPUT type="button" value="Add Row" onclick="addRow('dataTable')" />

@@ -54,4 +54,9 @@
 	<!-- forward Action -->
 	<bean name="forwardActionClass" class="com.myschool.action.ForwardAction">
 	</bean>
+	
+	<!--  -->
+	<bean name="schoolClassref" class="com.myschool.action.SchoolClassAction">
+		<property name="schoolClassSerice" ref="schoolClassSerice"></property>
+	</bean>
 </beans>

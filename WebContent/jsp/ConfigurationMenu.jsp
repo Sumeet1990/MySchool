@@ -7,9 +7,9 @@
 </head>
 	
 	<body>
-		<s:form action="subjectAction" method="POST">
-				<s:submit value="Subject create"></s:submit>
-				<s:submit value="View Section Class"></s:submit>
+		<s:form  method="POST">
+				<s:submit value="Subject create" action="subjectAction"></s:submit>
+				<s:submit value="View Section Class" action="schoolClassAction"></s:submit>
 				<s:submit value="Delete Section Class"></s:submit>
 				<s:submit value="Modify Section Class"></s:submit>
 		</s:form>

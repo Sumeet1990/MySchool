@@ -166,6 +166,13 @@
 			<param name="display">configurationalContent</param>
 			<result type="tiles">/SchoolLandingPage.tiles</result>
 		</action>
+		
+		<!-- Class action -->
+		<action name="schoolClass*Action" class="schoolClassref" method="perform{1}">
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<param name="errorMesage">1m</param>
+			<result type="tiles">/SchoolSubjectPage.tiles</result>
+		</action>
 		<!-- Dummy suubject action test -->
 		
 		<action name="subjectAction">
@@ -173,5 +180,6 @@
 			<param name="errorMesage">1m</param>
 			<result type="tiles">/SchoolSubjectPage.tiles</result>
 		</action>
+		
 	</package>
 </struts>

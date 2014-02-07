@@ -33,6 +33,7 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 		
 		if(status)
 		{
+			setErrorMessage("");
 			schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECT_CREATE);
 			return SUCCESS;
 		}else
