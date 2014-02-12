@@ -3,15 +3,15 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
  
-  <bean name="schoolClassSericeTarget" class="com.myschool.service.SchoolClassServiceImpl" >
+  <bean name="schoolClassServiceTarget" class="com.myschool.service.SchoolClassServiceImpl" >
 		<property name="schoolClassDAO" ref="schoolClassDAO"></property>
 		<property name="schoolSubjectDAO" ref="schoolSubjectDAO"></property>
 	</bean>
 	
-	<bean id="schoolClassSerice"
+	<bean id="schoolClassService"
 			class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
 		<property name="transactionManager" ref="myTxManager"/>
-		<property name="target" ref="schoolClassSericeTarget"/>
+		<property name="target" ref="schoolClassServiceTarget"/>
 		<property name="transactionAttributes">
 			<props>
 				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>

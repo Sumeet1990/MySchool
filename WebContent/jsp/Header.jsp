@@ -11,10 +11,6 @@
 	<h1 class="textColor" align="center" style="margin-top: 0;">
 		<s:property value="getText('global.schoolname')" />
 	</h1>
-	<s:url action="home.action" var="homeAction" />
-	<s:url action="" var="helpAction" />
-	<s:url action="logout.action" var="logoutAction" />
-
 	<h3 class="textColor" align="left">
 		<s:property value="getText('header.welcome')" />
 		<s:property value='#session.sessionUtils.userGivenFullName' /> <s:property value='#session.sessionUtils.userSurname' />
@@ -31,15 +27,12 @@
 		: <span class="textColor" id="timeDisplay" />
 	</h3>
 	<div class="toolTip" id="tooltipId"></div>
-	<s:a style="color:aliceblue;" href="%{homeAction}">
-		<img id="Icon" style="right: 110px" src="images/home.png"
-			onmouseout="hideToolTip()" onmouseover="showToolTip('Home','110px')">
-	</s:a>
+
 	<s:a style="color:aliceblue;" href="%{helpAction}">
 		<img id="Icon" style="right: 60px" src="images/Help and support.png"
 			onmouseout="hideToolTip()" onmouseover="showToolTip('Help','60px')">
 	</s:a>
-	<s:a style="color:aliceblue;" href="%{logoutAction}">
+	<s:a style="color:aliceblue;" action="logout">
 		<img id="Icon" style="right: 10px"
 			src="images/gnome-session-logout.png" onmouseout="hideToolTip()"
 			onmouseover="showToolTip('Logout','10px')">

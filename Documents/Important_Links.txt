@@ -1,7 +1,14 @@
 1) Copy Properties from one bean to another
 
-a) For files having different property names
+	a) For files having different property names
 	http://java.dzone.com/articles/how-copy-bean-properties
 
-b) For files having same property names
+	b) For files having same property names
 	http://www.avajava.com/tutorials/lessons/how-do-i-copy-properties-from-one-bean-to-another.html
+	
+2) Table design using CSS (with Multiple Rows and Columns)
+	http://www.csstablegenerator.com/css-table-design/0/all/
+	
+3) DB Scripts Converter from One Language to Another Language
+
+	http://www.sqlines.com/online

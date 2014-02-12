@@ -57,6 +57,6 @@
 	
 	<!--  -->
 	<bean name="schoolClassref" class="com.myschool.action.SchoolClassAction">
-		<property name="schoolClassSerice" ref="schoolClassSerice"></property>
+		<property name="schoolClassService" ref="schoolClassService"></property>
 	</bean>
 </beans>

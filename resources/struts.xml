@@ -171,7 +171,7 @@
 		<action name="schoolClass*Action" class="schoolClassref" method="perform{1}">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<param name="errorMesage">1m</param>
-			<result type="tiles">/SchoolSubjectPage.tiles</result>
+			<result type="tiles">/SchoolClassPage.tiles</result>
 		</action>
 		<!-- Dummy suubject action test -->
 		

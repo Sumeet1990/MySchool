@@ -54,4 +54,7 @@
         <put-attribute name="body" value="/jsp/SchoolLanding.jsp" />
     </definition>
   
+    <definition name="/SchoolClassPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/SchoolClass.jsp" />
+    </definition>
 </tiles-definitions>

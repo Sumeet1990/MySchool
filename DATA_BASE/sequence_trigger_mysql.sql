@@ -1,0 +1,1 @@
+CALL CreateSequence('`SEQ_SCHOOL_SUBJECTS`', 101, 1) ;
