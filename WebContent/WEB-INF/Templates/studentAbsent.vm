@@ -1,0 +1,21 @@
+<html>
+<head><title></title></head>
+<body>
+<h1>Dear Parent/Guardain,</h1>
+
+<p>
+	${studentFullName} of class ${studentClassAndSection} has not come to school today and the school do not have any intimation of ${studentFullName) not comming to school.
+</p>
+<p>
+	So, school will mark ${studentName}'s today's attendance as <b>Absent</b>.
+</p>
+
+</br></br>
+Regards,
+${classTeacherName}
+${schoolName}
+${schoolBranch}
+${schoolContactNumbers}
+${schoolAddress}
+</body>
+</html>

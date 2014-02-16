@@ -1,0 +1,22 @@
+<html>
+<head><title></title></head>
+<body>
+<h1>Dear Parent/Guardain,</h1>
+
+<P>
+Please find below the school events schedule. We request you to kindly participate along with you child ${studentFullName} of class  ${studentClassAndSection} and make the event a big success.
+</p>
+
+${eventName}
+${eventStartDateTime}
+${eventEndDateTime}
+
+</br></br>
+Regards,
+${classTeacherName}
+${schoolName}
+${schoolBranch}
+${schoolContactNumbers}
+${schoolAddress}
+</body>
+</html>

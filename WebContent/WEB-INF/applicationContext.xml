@@ -14,6 +14,7 @@
 			<list>
 				<value>WEB-INF/jdbc.properties</value>
 				<value>WEB-INF/schoolConfigurations.properties</value>
+				<!-- <value>WEB-INF/Templates/*.vm</value> -->
 			</list>
 		</property>
 	</bean>

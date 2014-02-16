@@ -1,0 +1,29 @@
+<html>
+<head><title></title></head>
+<body>
+<h1>Dear Parent/Guardain,</h1>
+
+<P>
+There is fee overdue twords <b>${feeTwords}</b> of ${studentFullName} of class ${studentClassAndSection}. 
+</p>
+</br>
+
+Fee Twords 			: ${feeTwords}</br>
+Total Fee  			: ${totalFee}</br>
+Fee Paid till now  	: ${totalFeePaid}</br>
+Balence Fee 		: ${balanceFee}</br>
+
+<p>
+Please pay the banalce fee immediately.
+</p>
+
+
+</br></br>
+Regards,
+${classTeacherName}
+${schoolName}
+${schoolBranch}
+${schoolContactNumbers}
+${schoolAddress}
+</body>
+</html>
