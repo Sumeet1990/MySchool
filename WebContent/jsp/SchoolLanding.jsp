@@ -8,12 +8,12 @@
 	<s:set value="%{display}" name="displayValue"/>
 	<s:if test="#displayValue == 'configurationalContent'">
 		<div id="configurationalContent" >
-			<%@ include file="ConfigurationMenu.jsp" %>
+			<%@ include file="ConfigurationManagement.jsp" %>
 		</div>
 		</s:if>
 	<s:elseif test="#displayValue == 'functionalContent'">
 		<div id="functionalContent">
-			<%@ include file="FunctionalMenu.jsp" %>
+			<%@ include file="FunctionalManagement.jsp" %>
 		</div>
 	</s:elseif>
 	<s:else>

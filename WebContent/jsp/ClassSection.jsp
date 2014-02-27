@@ -1,10 +1,8 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ page import="java.util.Date" %>
 <html>
-<head>
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/textBox_button.css"
-	type="text/css">
+	<head>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/textBox_button.css" type="text/css">
 	</head>
 <body>
 <h2 align="center"><s:property value="actionTypeValue"/> Class</h2>

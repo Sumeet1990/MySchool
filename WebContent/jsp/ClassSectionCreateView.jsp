@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Done</title>
+<title></title>
 </head>
 <body>
 <h1>Class got created !</h1>
