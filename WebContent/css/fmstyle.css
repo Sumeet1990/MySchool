@@ -221,7 +221,7 @@ a { text-decoration: none;  }
 	filter: alpha(opacity=0);
 	-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0); 
 }
-.slider a { display: block; color: #000; font-weight: bold; }
+.slider a { display: block; color: #000; }
 
 .slider a:hover { background: #f1f1f1; }
 #slide { width:736px; margin:auto; height: 330px;  }

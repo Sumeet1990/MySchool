@@ -22,7 +22,7 @@
 			});
 		 </script>
 	</head>	
-	<body>
+	<body style="background-color:#555">
 		<s:form action="verifyUser" method="POST">
 			<table border="0" id="form_table">
 				<caption><s:property value="getText('forgotPassword.changePassword')"/></caption>

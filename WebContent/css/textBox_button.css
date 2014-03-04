@@ -156,18 +156,17 @@ font-size: 30px;
 }
 
 body {
-	background: url(../images/main_bg.jpg);
+	/*background: url(../images/main_bg.jpg);*/
+	background-color:#555;
 }
 .textColor{
 font-family:"PacificoRegular", Georgia, Times, serif;
 }
-.paraContentStyle
-{
+.paraContentStyle {
 float: right;
 padding: 37px;
 font-family: cursive;
 font-size: larger;
 top: 1px;
-color: brown;
 font-weight: 600;
 }

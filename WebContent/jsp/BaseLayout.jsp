@@ -12,7 +12,7 @@
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/schoolCommon.js"></script>
 	</head>
 	
-	<body>
+	<body style="background-color:#555">
 		<table border="1" cellpadding="2" cellspacing="2" width="100%">
 			<tr>
 				<td height="20%" colspan="2"><tiles:insertAttribute name="header"/></td>

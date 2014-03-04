@@ -42,7 +42,7 @@
 		</script>
 	</head>
 	
-	<body>
+	<body style="background-color:#555">
 		<div class="heading">
     		<s:property value="getText('global.schoolname')"/>
     	</div>
