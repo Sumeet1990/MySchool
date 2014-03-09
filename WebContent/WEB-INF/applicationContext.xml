@@ -27,12 +27,7 @@
 
 	<!-- Login Action -->
 	<bean name="configurationMenuAction" class="com.myschool.action.ConfigurationMenuAction"></bean>
-
-	<!-- School class section Action -->
-	<bean name="classSectionAction" class="com.myschool.action.ClassSectionAction">
-		<property name="classSectionService" ref="classSectionService"></property>
-	</bean>
-
+	
 	<!-- java.util.Map -->
 	<bean name="schoolConfigurationMap" class="java.util.HashMap">
 		<constructor-arg index="0" type="java.util.Map">
@@ -59,5 +54,11 @@
 	<!--  -->
 	<bean name="schoolClassref" class="com.myschool.action.SchoolClassAction">
 		<property name="schoolClassService" ref="schoolClassService"></property>
+	</bean>
+	
+	<bean name="classSectionref" class="com.myschool.action.ClassSectionAction">
+	</bean>
+	
+	<bean name="studentRegistrationref" class="com.myschool.action.StudentRegistrationAction">
 	</bean>
 </beans>

@@ -16,13 +16,13 @@ public class SchoolClassAction extends ActionSupport {
 	
 	public String performCreate()
 	{
-		subjectList = new ArrayList<>();
+		subjectList = new ArrayList<String>();
 		subjectList.add("a");
 		subjectList.add("a0");
 		subjectList.add("a1");
 		subjectList.add("a2");
 		subjectList.add("a3");
-		selectedSubjectLst = new ArrayList<>();
+		selectedSubjectLst = new ArrayList<String>();
 		return SUCCESS;
 	}
 	

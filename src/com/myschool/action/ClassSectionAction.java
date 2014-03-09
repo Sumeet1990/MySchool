@@ -1,11 +1,8 @@
 package com.myschool.action;
 
+import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.myschool.service.ClassSectionService;
-import com.myschool.service.StaffService;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ClassSectionAction extends ActionSupport{
@@ -18,18 +15,12 @@ public class ClassSectionAction extends ActionSupport{
 	private String section;
 	private String actionType;
 	private Map<String,String> classTeacherMap;
-	ClassSectionService classSectionService;
-	StaffService staffService;
+	private Map<String,String> classesMap;
 
-	public String execute()
+	public String performCreate()
 	{
-		try{
-			classTeacherMap = getStaffService().getClassTeachersList();
-		System.out.println("-------End of class teacher");
-		}catch (Exception e)
-		{
-			e.printStackTrace();
-		}
+		classTeacherMap = new HashMap<String,String>();
+		classesMap = new HashMap<String,String>();
 		return SUCCESS;
 	}
 
@@ -64,20 +55,14 @@ public class ClassSectionAction extends ActionSupport{
 	public void setClassTeacherMap(Map<String,String> classTeacherMap) {
 		this.classTeacherMap = classTeacherMap;
 	}
-	public ClassSectionService getClassSectionService() {
-		return classSectionService;
+
+	public Map<String, String> getClassesMap() {
+		return classesMap;
 	}
 
-	public void setClassSectionService(ClassSectionService classSectionService) {
-		this.classSectionService = classSectionService;
+	public void setClassesMap(Map<String, String> classesMap) {
+		this.classesMap = classesMap;
 	}
-
-	public StaffService getStaffService() {
-		return staffService;
-	}
-
-	public void setStaffService(StaffService staffService) {
-		this.staffService = staffService;
-	}
+	
 	
 }

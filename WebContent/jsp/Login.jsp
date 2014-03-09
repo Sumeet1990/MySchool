@@ -62,7 +62,7 @@
 					</s:if>
     			</div>    			
     			<div class="content">
-    				<s:textfield cssClass="input username" placeholder="%{getText('login.username')}"  autofocus="autofocus" theme="simple" scope="page" name="username" onkeyup="upperCaseThetext('username')" tabindex="1"/> 
+    				<s:textfield requiredLabel="true" cssClass="input username" placeholder="%{getText('login.username')}"  autofocus="autofocus" theme="simple" scope="page" name="username" onkeyup="upperCaseThetext('username')" tabindex="1"/> 
 					<s:password cssClass="input password" placeholder="%{getText('login.password')}" name="password" theme="simple"  scope="page" tabindex="2"/>
 				</div>
     

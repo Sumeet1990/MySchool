@@ -30,14 +30,14 @@
 					<tr>
 				    	<th width="25%"><s:property value="getText('forgotPassword.newPassword')"/> :</th>
 				    	<td>
-				     		<s:password name="newPassword" autofocus="autofocus" theme="simple"  scope="page" tabindex="1"/>
+				     		<s:password required="true" name="newPassword" autofocus="autofocus" theme="simple"  scope="page" tabindex="1"/>
 					   	  	<span><s:property value="getText('forgotPassword.newPassword')"/></span>
 				   	 	</td>
 				 	 </tr>
 				 	 <tr>
 				    	<th width="25%"><s:property value="getText('forgotPassword.confirmNewPassword')"/> :</th>
 				    	<td>
-				     		<s:password cssClass="input password" name="confirmNewPassword" theme="simple"  scope="page" tabindex="2"/>
+				     		<s:password required="true" cssClass="input password" name="confirmNewPassword" theme="simple"  scope="page" tabindex="2"/>
 							<span><s:property value="getText('forgotPassword.confirmNewPassword')"/></span>
 				   	 	</td>
 				 	 </tr>
@@ -73,21 +73,21 @@
 				 	 	<tr>
 				    		<th width="25%"><s:property value="getText('forgotPassword.provideSecurityAnswer')"/> :</th>
 				    		<td>
-				     			<s:textfield cssClass="input username"  autofocus="autofocus" theme="simple" scope="page" name="securityAnswer" tabindex="3"/>
+				     			<s:textfield required="true" cssClass="input username"  autofocus="autofocus" theme="simple" scope="page" name="securityAnswer" tabindex="3"/>
 								<span><s:property value="getText('forgotPassword.provideSecurityAnswer')"/></span>
 							</td>
 				 	 	</tr>
 				 	 	<tr>
 				    		<th width="25%"><s:property value="getText('forgotPassword.dob')"/> :</th>
 				    		<td>
-				     			<s:textfield cssClass="input username" theme="simple" scope="page" name="userDOB" tabindex="3"/>
+				     			<s:textfield required="true" cssClass="input username" theme="simple" scope="page" name="userDOB" tabindex="3"/>
 								<span><s:property value="getText('forgotPassword.dob')"/></span>
 							</td>
 				 	 	</tr>
 				 	 	<tr>
 				    		<th width="25%"><s:property value="getText('forgotPassword.personalContactNumber')"/> :</th>
 				    		<td>
-				     			<s:textfield cssClass="input username" theme="simple" scope="page" name="personalContactNo" tabindex="4"/>
+				     			<s:textfield required="true" cssClass="input username" theme="simple" scope="page" name="personalContactNo" tabindex="4"/>
 								<span><s:property value="getText('forgotPassword.personalContactNumber')"/></span>
 							</td>
 				 	 	</tr>
@@ -106,7 +106,7 @@
 						<tr>
 				    		<th width="25%"><s:property value="getText('forgotPassword.userName')"/> :</th>
 				    		<td>
-				     			<s:textfield cssClass="input username" autofocus="autofocus" theme="simple" scope="page" name="username" onkeyup="upperCaseThetext('username')" tabindex="1"/> 
+				     			<s:textfield required="true" cssClass="input username" autofocus="autofocus" theme="simple" scope="page" name="username" onkeyup="upperCaseThetext('username')" tabindex="1"/> 
 								<span><s:property value="getText('forgotPassword.userName')"/></span>
 							</td>
 				 	 	</tr>

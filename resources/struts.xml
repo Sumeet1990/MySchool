@@ -72,7 +72,7 @@
 		</global-exception-mappings>  -->
 				
 		<action name="login" class="loginClass">
-		<interceptor-ref name="allYourParamsAreBelongToUsStack"></interceptor-ref>
+			<interceptor-ref name="allYourParamsAreBelongToUsStack"></interceptor-ref>
 			<result name="success" type="tiles">/SchoolLandingPage.tiles</result>
 			<result name="usersuccess" type="tiles">/ConfigurationMenuPage.tile</result>
 			<result name="failure">jsp/Login.jsp</result>
@@ -107,6 +107,7 @@
 			<result name="failure" type="tiles">/ClassSectionPage.tiles</result>
 			<result name="input" type="tiles">/ClassSectionPage.tiles</result>
 		</action>
+		
 		<action name="Staff*action" class="classSectionAction" method="performStaff{1}">
 			<param name="staffActionType">{1}</param>
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
@@ -115,32 +116,26 @@
 			<result name="input" type="tiles">/StaffPage.tiles</result>
 		</action>
 		
-		
-		<!-- <action name="loadActionConfig">
-		<interceptor-ref name="mySchoolCommonInterceptors"/>
-			<result type="tiles">/LoadConfigPage.tiles</result>
-		</action>
-		<action name="loadActionFunctional">
-		<interceptor-ref name="mySchoolCommonInterceptors"/>
-			<result type="tiles">/LoadFunctionalPage.tiles</result>
-		</action> -->
 		<action name="forgot">
-		<interceptor-ref name="mySchoolCommonInterceptors"/>
-		<param name="errorMesage"></param>
-			<result>jsp/ForgotPassword.jsp</result>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<param name="errorMesage"></param>
+				<result>jsp/ForgotPassword.jsp</result>
 		</action>
+		
 		<action name="verifyUser" class="forgotPasswordClass">
-		<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result name="success">jsp/ForgotPassword.jsp</result>
 			<result name="failure">jsp/ForgotPassword.jsp</result>
 		</action>
+		
 		<action name="validateSecurityAnswers" class="forgotPasswordClass" method="validateSecurityAnswers">
-		<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result name="success">jsp/ForgotPassword.jsp</result>
 			<result name="failure">jsp/ForgotPassword.jsp</result>
 		</action>
+		
 		<action name="resetPassword" class="forgotPasswordClass" method="resetPassword">
-		<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result name="success">jsp/Login.jsp</result>
 			<result name="failure">jsp/ForgotPassword.jsp</result>
 		</action>
@@ -158,7 +153,6 @@
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<param name="display">functionalContent</param>
 			<result type="tiles" >/SchoolLandingPage.tiles</result>
-			
 		</action>
 		
 		<action name="configurationalContent" class="forwardActionClass">
@@ -173,13 +167,25 @@
 			<param name="errorMesage">1m</param>
 			<result type="tiles">/SchoolClassPage.tiles</result>
 		</action>
-		<!-- Dummy suubject action test -->
+		
+		<!-- Section action -->
+		<action name="classSection*Action" class="classSectionref" method="perform{1}">
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<param name="errorMesage">1m</param>
+			<result name="success" type="tiles">/ClassSectionPage.tiles</result>
+		</action>
+		
+		<!-- Section action -->
+		<action name="studentRegistration*Action" class="studentRegistrationref" method="perform{1}">
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<param name="errorMesage">1m</param>
+			<result name="success" type="tiles">/StudentRegistrationPage.tiles</result>
+		</action>
 		
 		<action name="subjectAction">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<param name="errorMesage">1m</param>
 			<result type="tiles">/SchoolSubjectPage.tiles</result>
-		</action>
-		
+		</action>		
 	</package>
 </struts>

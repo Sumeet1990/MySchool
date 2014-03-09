@@ -57,4 +57,12 @@
     <definition name="/SchoolClassPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/SchoolClass.jsp" />
     </definition>
+    
+    <definition name="/ClassSectionPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/ClassSection.jsp" />
+    </definition>
+    
+    <definition name="/StudentRegistrationPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/StudentRegistration.jsp" />
+    </definition>
 </tiles-definitions>
