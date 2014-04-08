@@ -211,8 +211,8 @@ a { text-decoration: none;  }
 .slider {
 	background-color: #fff;
 	width:172px;
-	height:200px;
-	line-height:40px;
+	height:auto;
+	line-height:28px;
 	text-align:center;
 	color: #555;
 	position: relative;
@@ -221,8 +221,12 @@ a { text-decoration: none;  }
 	filter: alpha(opacity=0);
 	-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0); 
 }
-.slider a { display: block; color: #000; }
+.slider a { display: block; color: #000;
+font-size: 18px;
+font-family: cursive;}
 
-.slider a:hover { background: #f1f1f1; }
+.slider a:hover { background: grey;
+color:white;
+}
 #slide { width:736px; margin:auto; height: 330px;  }
 .column { float: left; margin-left: 12px; position: relative; }

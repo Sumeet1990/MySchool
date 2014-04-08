@@ -30,8 +30,8 @@ private String section;
 @Column(name="TEST_NAME")
 private String testName;
 
-@Column(name="SUBJECT_CODES_MARKS")
-private String subjectCodesMarks;
+@Column(name="SUBJECTS_AND_MARKS")
+private String subjectsAndMarks;
 
 @Column(name="SUBJECTS_FAILED")
 private Integer subjectsFailed;
@@ -112,11 +112,11 @@ public String getTestName(){
 public void setTestName(String testName){
  this.testName=testName;
 }
-public String getSubjectCodesMarks(){
- return subjectCodesMarks;
+public String getSubjectsAndMarks(){
+ return subjectsAndMarks;
 }
-public void setSubjectCodesMarks(String subjectCodesMarks){
- this.subjectCodesMarks=subjectCodesMarks;
+public void setSubjectsAndMarks(String subjectsAndMarks){
+ this.subjectsAndMarks=subjectsAndMarks;
 }
 public Integer getSubjectsFailed(){
  return subjectsFailed;

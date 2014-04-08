@@ -17,8 +17,8 @@ public class GeneratePojo {
 
 	public static void main(String[] args) throws IOException {
 
-		File file = new File("C:\\Users\\3129348\\Desktop\\test.txt");
-		File fileDir = new File("E:\\SUMEET\\GENERATEDCLASS");
+		File file = new File("C:\\Users\\SUMEET\\Documents\\a.txt");
+		File fileDir = new File("C:\\Users\\SUMEET\\Documents\\a");
 		String className = null;
 		try {
 

@@ -42,20 +42,26 @@ private String teacherStaffFlag;
 @Column(name="CLASS_TEACHER_FLAG")
 private String classTeacherFlag;
 
-@Column(name="SUBJECT_CODES")
-private String subjectCodes;
+@Column(name="SUBJECT_CODES_LIST")
+private String subjectCodesList;
 
 @Column(name="APPOINTMENT_TYPE_ID")
 private Integer appointmentTypeId;
 
-@Column(name="STAFF_STATUS")
-private String staffStatus;
+@Column(name="STAFF_ADDRESS_ID")
+private Integer staffAddressId;
 
 @Column(name="PHOTO")
 private String photo;
 
-@Column(name="STAFF_ADDRESS_ID")
-private Integer staffAddressId;
+@Column(name="STAFF_STATUS")
+private String staffStatus;
+
+@Column(name="STAFF_INACTIVE_REASON")
+private String staffInactiveReason;
+
+@Column(name="STAFF_INACTIVE_DATE_TIME")
+private String staffInactiveDateTime;
 
 @Column(name="CREATED_USER_ID")
 private String createdUserId;
@@ -130,11 +136,11 @@ public String getClassTeacherFlag(){
 public void setClassTeacherFlag(String classTeacherFlag){
  this.classTeacherFlag=classTeacherFlag;
 }
-public String getSubjectCodes(){
- return subjectCodes;
+public String getSubjectCodesList(){
+ return subjectCodesList;
 }
-public void setSubjectCodes(String subjectCodes){
- this.subjectCodes=subjectCodes;
+public void setSubjectCodesList(String subjectCodesList){
+ this.subjectCodesList=subjectCodesList;
 }
 public Integer getAppointmentTypeId(){
  return appointmentTypeId;
@@ -142,11 +148,11 @@ public Integer getAppointmentTypeId(){
 public void setAppointmentTypeId(Integer appointmentTypeId){
  this.appointmentTypeId=appointmentTypeId;
 }
-public String getStaffStatus(){
- return staffStatus;
+public Integer getStaffAddressId(){
+ return staffAddressId;
 }
-public void setStaffStatus(String staffStatus){
- this.staffStatus=staffStatus;
+public void setStaffAddressId(Integer staffAddressId){
+ this.staffAddressId=staffAddressId;
 }
 public String getPhoto(){
  return photo;
@@ -154,11 +160,23 @@ public String getPhoto(){
 public void setPhoto(String photo){
  this.photo=photo;
 }
-public Integer getStaffAddressId(){
- return staffAddressId;
+public String getStaffStatus(){
+ return staffStatus;
 }
-public void setStaffAddressId(Integer staffAddressId){
- this.staffAddressId=staffAddressId;
+public void setStaffStatus(String staffStatus){
+ this.staffStatus=staffStatus;
+}
+public String getStaffInactiveReason(){
+ return staffInactiveReason;
+}
+public void setStaffInactiveReason(String staffInactiveReason){
+ this.staffInactiveReason=staffInactiveReason;
+}
+public String getStaffInactiveDateTime(){
+ return staffInactiveDateTime;
+}
+public void setStaffInactiveDateTime(String staffInactiveDateTime){
+ this.staffInactiveDateTime=staffInactiveDateTime;
 }
 public String getCreatedUserId(){
  return createdUserId;

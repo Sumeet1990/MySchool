@@ -27,11 +27,17 @@ private Integer staffId;
 @Column(name="SECTION_MAXIMUM_STRENGTH")
 private Integer sectionMaximumStrength;
 
+@Column(name="MIGRATION_STATUS")
+private Integer migrationStatus;
+
 @Column(name="SECTION_STATUS")
 private String sectionStatus;
 
-@Column(name="MIGRATION_STATUS")
-private Integer migrationStatus;
+@Column(name="SECTION_INACTIVE_REASON")
+private String sectionInactiveReason;
+
+@Column(name="SECTION_INACTIVE_DATE_TIME")
+private String sectionInactiveDateTime;
 
 @Column(name="CREATED_USER_ID")
 private String createdUserId;
@@ -76,17 +82,29 @@ public Integer getSectionMaximumStrength(){
 public void setSectionMaximumStrength(Integer sectionMaximumStrength){
  this.sectionMaximumStrength=sectionMaximumStrength;
 }
+public Integer getMigrationStatus(){
+ return migrationStatus;
+}
+public void setMigrationStatus(Integer migrationStatus){
+ this.migrationStatus=migrationStatus;
+}
 public String getSectionStatus(){
  return sectionStatus;
 }
 public void setSectionStatus(String sectionStatus){
  this.sectionStatus=sectionStatus;
 }
-public Integer getMigrationStatus(){
- return migrationStatus;
+public String getSectionInactiveReason(){
+ return sectionInactiveReason;
 }
-public void setMigrationStatus(Integer migrationStatus){
- this.migrationStatus=migrationStatus;
+public void setSectionInactiveReason(String sectionInactiveReason){
+ this.sectionInactiveReason=sectionInactiveReason;
+}
+public String getSectionInactiveDateTime(){
+ return sectionInactiveDateTime;
+}
+public void setSectionInactiveDateTime(String sectionInactiveDateTime){
+ this.sectionInactiveDateTime=sectionInactiveDateTime;
 }
 public String getCreatedUserId(){
  return createdUserId;

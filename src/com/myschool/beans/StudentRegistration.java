@@ -54,20 +54,26 @@ private String admissionSection;
 @Column(name="STUDENT_CLASS_TEACHER")
 private String studentClassTeacher;
 
-@Column(name="STUDENT_STATUS")
-private String studentStatus;
-
 @Column(name="STUDENT_ADDRESS_ID")
 private Integer studentAddressId;
 
 @Column(name="ADMISSION_DATE")
 private String admissionDate;
 
+@Column(name="TRANSPORTATION_REQUIRED")
+private Integer transportationRequired;
+
 @Column(name="PHOTO")
 private String photo;
 
-@Column(name="TRANSPORTATION_REQUIRED")
-private Integer transportationRequired;
+@Column(name="STUDENT_STATUS")
+private String studentStatus;
+
+@Column(name="STUDENT_INACTIVE_REASON")
+private String studentInactiveReason;
+
+@Column(name="STUDENT_INACTIVE_DATE_TIME")
+private String studentInactiveDateTime;
 
 @Column(name="CREATED_USER_ID")
 private String createdUserId;
@@ -166,12 +172,6 @@ public String getStudentClassTeacher(){
 public void setStudentClassTeacher(String studentClassTeacher){
  this.studentClassTeacher=studentClassTeacher;
 }
-public String getStudentStatus(){
- return studentStatus;
-}
-public void setStudentStatus(String studentStatus){
- this.studentStatus=studentStatus;
-}
 public Integer getStudentAddressId(){
  return studentAddressId;
 }
@@ -184,17 +184,35 @@ public String getAdmissionDate(){
 public void setAdmissionDate(String admissionDate){
  this.admissionDate=admissionDate;
 }
+public Integer getTransportationRequired(){
+ return transportationRequired;
+}
+public void setTransportationRequired(Integer transportationRequired){
+ this.transportationRequired=transportationRequired;
+}
 public String getPhoto(){
  return photo;
 }
 public void setPhoto(String photo){
  this.photo=photo;
 }
-public Integer getTransportationRequired(){
- return transportationRequired;
+public String getStudentStatus(){
+ return studentStatus;
 }
-public void setTransportationRequired(Integer transportationRequired){
- this.transportationRequired=transportationRequired;
+public void setStudentStatus(String studentStatus){
+ this.studentStatus=studentStatus;
+}
+public String getStudentInactiveReason(){
+ return studentInactiveReason;
+}
+public void setStudentInactiveReason(String studentInactiveReason){
+ this.studentInactiveReason=studentInactiveReason;
+}
+public String getStudentInactiveDateTime(){
+ return studentInactiveDateTime;
+}
+public void setStudentInactiveDateTime(String studentInactiveDateTime){
+ this.studentInactiveDateTime=studentInactiveDateTime;
 }
 public String getCreatedUserId(){
  return createdUserId;

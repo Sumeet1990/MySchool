@@ -21,20 +21,11 @@ private String careoffName;
 @Column(name="ADDRESS_LINE_1")
 private String addressLine1;
 
-@Column(name="ADDRESS_LINE_2")
-private String addressLine2;
+@Column(name="TOWN_DISTRICT")
+private String townDistrict;
 
-@Column(name="ADDRESS_LINE_3")
-private String addressLine3;
-
-@Column(name="ADDRESS_LINE_4")
-private String addressLine4;
-
-@Column(name="ADDRESS_LINE_5")
-private String addressLine5;
-
-@Column(name="ADDRESS_LINE_6")
-private String addressLine6;
+@Column(name="DISTRICT_CITY")
+private String districtCity;
 
 @Column(name="PINCODE")
 private Integer pincode;
@@ -121,35 +112,17 @@ public String getAddressLine1(){
 public void setAddressLine1(String addressLine1){
  this.addressLine1=addressLine1;
 }
-public String getAddressLine2(){
- return addressLine2;
+public String getTownDistrict(){
+ return townDistrict;
 }
-public void setAddressLine2(String addressLine2){
- this.addressLine2=addressLine2;
+public void setTownDistrict(String townDistrict){
+ this.townDistrict=townDistrict;
 }
-public String getAddressLine3(){
- return addressLine3;
+public String getDistrictCity(){
+ return districtCity;
 }
-public void setAddressLine3(String addressLine3){
- this.addressLine3=addressLine3;
-}
-public String getAddressLine4(){
- return addressLine4;
-}
-public void setAddressLine4(String addressLine4){
- this.addressLine4=addressLine4;
-}
-public String getAddressLine5(){
- return addressLine5;
-}
-public void setAddressLine5(String addressLine5){
- this.addressLine5=addressLine5;
-}
-public String getAddressLine6(){
- return addressLine6;
-}
-public void setAddressLine6(String addressLine6){
- this.addressLine6=addressLine6;
+public void setDistrictCity(String districtCity){
+ this.districtCity=districtCity;
 }
 public Integer getPincode(){
  return pincode;

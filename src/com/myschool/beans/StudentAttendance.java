@@ -24,8 +24,8 @@ private Integer classSectionId;
 @Column(name="LEAVE_ABSENT")
 private String leaveAbsent;
 
-@Column(name="REASON")
-private String reason;
+@Column(name="LEAVE_ABESNT_REASON")
+private String leaveAbesntReason;
 
 @Column(name="LEAVE_ABSENT_FROM")
 private String leaveAbsentFrom;
@@ -73,11 +73,11 @@ public String getLeaveAbsent(){
 public void setLeaveAbsent(String leaveAbsent){
  this.leaveAbsent=leaveAbsent;
 }
-public String getReason(){
- return reason;
+public String getLeaveAbesntReason(){
+ return leaveAbesntReason;
 }
-public void setReason(String reason){
- this.reason=reason;
+public void setLeaveAbesntReason(String leaveAbesntReason){
+ this.leaveAbesntReason=leaveAbesntReason;
 }
 public String getLeaveAbsentFrom(){
  return leaveAbsentFrom;

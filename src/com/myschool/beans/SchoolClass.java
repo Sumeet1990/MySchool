@@ -33,8 +33,8 @@ private Integer periodMinutesDuration;
 @Column(name="TEACHER_PERIODS_PER_DAY")
 private Integer teacherPeriodsPerDay;
 
-@Column(name="SUBJECT_CODES")
-private String subjectCodes;
+@Column(name="SUBJECT_CODES_LIST")
+private String subjectCodesList;
 
 @Column(name="CLASS_MAXIMUM_STRENGTH")
 private Integer classMaximumStrength;
@@ -97,11 +97,11 @@ public Integer getTeacherPeriodsPerDay(){
 public void setTeacherPeriodsPerDay(Integer teacherPeriodsPerDay){
  this.teacherPeriodsPerDay=teacherPeriodsPerDay;
 }
-public String getSubjectCodes(){
- return subjectCodes;
+public String getSubjectCodesList(){
+ return subjectCodesList;
 }
-public void setSubjectCodes(String subjectCodes){
- this.subjectCodes=subjectCodes;
+public void setSubjectCodesList(String subjectCodesList){
+ this.subjectCodesList=subjectCodesList;
 }
 public Integer getClassMaximumStrength(){
  return classMaximumStrength;

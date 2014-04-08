@@ -26,6 +26,12 @@ private String subjectName;
 @Column(name="SUBJECT_STATUS")
 private String subjectStatus;
 
+@Column(name="SUBJECT_INACTIVE_REASON")
+private String subjectInactiveReason;
+
+@Column(name="SUBJECT_INACTIVE_DATE_TIME")
+private String subjectInactiveDateTime;
+
 @Column(name="CREATED_USER_ID")
 private String createdUserId;
 
@@ -39,11 +45,11 @@ private String createdDateTime;
 private String modifiedDateTime;
 
 
-public Integer getSubjectCode() {
-	return subjectCode;
+public Integer getSubjectCode(){
+ return subjectCode;
 }
-public void setSubjectCode(Integer subjectCode) {
-	this.subjectCode = subjectCode;
+public void setSubjectCode(Integer subjectCode){
+ this.subjectCode=subjectCode;
 }
 public String getSubjectName(){
  return subjectName;
@@ -51,11 +57,23 @@ public String getSubjectName(){
 public void setSubjectName(String subjectName){
  this.subjectName=subjectName;
 }
-public String getSubjectStatus() {
-	return subjectStatus;
+public String getSubjectStatus(){
+ return subjectStatus;
 }
-public void setSubjectStatus(String subjectStatus) {
-	this.subjectStatus = subjectStatus;
+public void setSubjectStatus(String subjectStatus){
+ this.subjectStatus=subjectStatus;
+}
+public String getSubjectInactiveReason(){
+ return subjectInactiveReason;
+}
+public void setSubjectInactiveReason(String subjectInactiveReason){
+ this.subjectInactiveReason=subjectInactiveReason;
+}
+public String getSubjectInactiveDateTime(){
+ return subjectInactiveDateTime;
+}
+public void setSubjectInactiveDateTime(String subjectInactiveDateTime){
+ this.subjectInactiveDateTime=subjectInactiveDateTime;
 }
 public String getCreatedUserId(){
  return createdUserId;

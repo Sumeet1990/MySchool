@@ -38,8 +38,8 @@
 		<!-- if database use this Oracle OJDBC JAR -->
 		<dependency>
 			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc</artifactId>
-			<version>14</version>
+			<artifactId>ojdbc14</artifactId>
+			<version>10.2.0.4.0</version>
 		</dependency>
 		
 		<!-- HIBERNATE JPA -->

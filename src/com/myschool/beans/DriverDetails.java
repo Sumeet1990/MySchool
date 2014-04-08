@@ -30,9 +30,6 @@ private String driverDob;
 @Column(name="DRIVER_GENDER")
 private String driverGender;
 
-@Column(name="DRIVER_STATUS")
-private String driverStatus;
-
 @Column(name="DRIVER_QUALIFICATION")
 private String driverQualification;
 
@@ -44,6 +41,15 @@ private String driverLicenseNo;
 
 @Column(name="LICENSE_EXP_DATE")
 private String licenseExpDate;
+
+@Column(name="DRIVER_STATUS")
+private String driverStatus;
+
+@Column(name="DRIVER_INACTIVE_REASON")
+private String driverInactiveReason;
+
+@Column(name="DRIVER_INACTIVE_DATE_TIME")
+private String driverInactiveDateTime;
 
 @Column(name="ADDRESS_LINE_1")
 private String addressLine1;
@@ -124,12 +130,6 @@ public String getDriverGender(){
 public void setDriverGender(String driverGender){
  this.driverGender=driverGender;
 }
-public String getDriverStatus(){
- return driverStatus;
-}
-public void setDriverStatus(String driverStatus){
- this.driverStatus=driverStatus;
-}
 public String getDriverQualification(){
  return driverQualification;
 }
@@ -153,6 +153,24 @@ public String getLicenseExpDate(){
 }
 public void setLicenseExpDate(String licenseExpDate){
  this.licenseExpDate=licenseExpDate;
+}
+public String getDriverStatus(){
+ return driverStatus;
+}
+public void setDriverStatus(String driverStatus){
+ this.driverStatus=driverStatus;
+}
+public String getDriverInactiveReason(){
+ return driverInactiveReason;
+}
+public void setDriverInactiveReason(String driverInactiveReason){
+ this.driverInactiveReason=driverInactiveReason;
+}
+public String getDriverInactiveDateTime(){
+ return driverInactiveDateTime;
+}
+public void setDriverInactiveDateTime(String driverInactiveDateTime){
+ this.driverInactiveDateTime=driverInactiveDateTime;
 }
 public String getAddressLine1(){
  return addressLine1;
