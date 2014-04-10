@@ -55,7 +55,7 @@
 		<appender-ref ref="fileAppender"/> 
 	</root> -->
 	<root>
-		<level value="DEBUG"/>
+		<level value="WARN"/>
 		<appender-ref ref="consoleAppender"/>
 		<appender-ref ref="fileAppender"/>
 	</root>
