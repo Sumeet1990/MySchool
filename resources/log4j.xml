@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" > 
 	 
- <log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'> 
+ <!--<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>-->  
+     <log4j:configuration>
 	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender"> 
 		<layout class="org.apache.log4j.PatternLayout"> 
 			<param name="ConversionPattern" value="%d %-5p %c{1}:%L %m %n" /> 
@@ -19,7 +20,8 @@
 	<appender name="fileAppender" class="org.apache.log4j.RollingFileAppender"> 
 		<param name="MaxFileSize" value="10MB" /> 
 		<param name="MaxBackupIndex" value="10" /> 
-		<param name="File" value="C:/Logs/mySchoolLog.log" />  
+		<param name="File" value="C:/Logs/mySchoolLog.log" /> 
+		 <param name="DatePattern" value="'.'yyyy-MM-dd"/>
 		<param name="Append" value="true" />
 		
 		<layout class="org.apache.log4j.PatternLayout"> 
@@ -33,14 +35,28 @@
 	</logger> --> 
 	
 	<!--sets the priority log level for com.myschool--> 
-    <logger name= "com.myschool"> 
+    <!--<logger name= "com.myschool"> 
 	    <level value="debug"/>
-	</logger> 
+	</logger> -->
 
-	<!--sets the default priority log level--> 
-    <root> 
+    
+    <category name="com.myschool">
+        <priority value="DEBUG"/>
+    </category>
+    
+    <category name="org.springframework">
+        <priority value="DEBUG"/>
+    </category>
+    
+    <!--sets the default priority log level--> 
+   <!-- <root> 
         <priority value="DEBUG"></priority> 
         <appender-ref ref="consoleAppender"/> 
 		<appender-ref ref="fileAppender"/> 
-	</root> 
+	</root> -->
+	<root>
+		<level value="DEBUG"/>
+		<appender-ref ref="consoleAppender"/>
+		<appender-ref ref="fileAppender"/>
+	</root>
 </log4j:configuration> 
