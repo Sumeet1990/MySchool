@@ -3,7 +3,7 @@
 #cssmenu ul,
 #cssmenu li,
 #cssmenu a {
-  margin: 0;
+  margin-left: 4px;
   padding: 0;
   border: 0;
   list-style: none;
@@ -14,6 +14,7 @@
   font-size: 14px;
   position: relative;
 }
+
 #cssmenu {
   width: 250px;
   border-bottom: 4px solid #656659;
@@ -23,9 +24,11 @@
   position: fixed;
   top: 163px;
 }
+
 #cssmenu a {
   line-height: 1.3;
 }
+
 #cssmenu > ul > li:first-child {
   background: #66665e;
   background: -moz-linear-gradient(#66665e 0%, #45463d 100%);
@@ -37,6 +40,7 @@
   -moz-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
 }
+
 #cssmenu > ul > li:first-child > a {
   padding: 15px 10px;
   background: url(pattern.png) top left repeat;
@@ -51,9 +55,11 @@
   font-weight: 300;
   text-shadow: 0 -1px 1px #000000;
 }
+
 #cssmenu > ul > li:first-child > a > span {
   padding: 0;
 }
+
 #cssmenu > ul > li:first-child:hover {
   background: #66665e;
   background: -moz-linear-gradient(#66665e 0%, #45463d 100%);
@@ -61,6 +67,7 @@
   background: -webkit-linear-gradient(#66665e 0%, #45463d 100%);
   background: linear-gradient(#66665e 0%, #45463d 100%);
 }
+
 #cssmenu > ul > li {
   background: #e94f31;
   background: -moz-linear-gradient(#e94f31 0%, #d13516 100%);
@@ -68,6 +75,7 @@
   background: -webkit-linear-gradient(#e94f31 0%, #d13516 100%);
   background: linear-gradient(#e94f31 0%, #d13516 100%);
 }
+
 #cssmenu > ul > li:hover {
   background: #e84323;
   background: -moz-linear-gradient(#e84323 0%, #c33115 100%);
@@ -75,6 +83,7 @@
   background: -webkit-linear-gradient(#e84323 0%, #c33115 100%);
   background: linear-gradient(#e84323 0%, #c33115 100%);
 }
+
 #cssmenu > ul > li > a {
   font-size: 14px;
   display: block;
@@ -84,6 +93,7 @@
   border-top: none;
   text-shadow: 0 -1px 1px #751d0c;
 }
+
 #cssmenu > ul > li > a > span {
   display: block;
   padding: 12px 10px;
@@ -91,18 +101,23 @@
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
+
 #cssmenu > ul > li > a:hover {
   text-decoration: none;
 }
+
 #cssmenu > ul > li.active {
   border-bottom: none;
 }
+
 #cssmenu > ul > li.has-sub > a span {
   background: url(images/icon_plus.png) 96% center no-repeat;
 }
+
 #cssmenu > ul > li.has-sub.active > a span {
   background: url(images/icon_minus.png) 96% center no-repeat;
 }
+
 /* Sub menu */
 #cssmenu ul ul {
   display: none;
@@ -110,6 +125,7 @@
   border-right: 1px solid #a2a194;
   border-left: 1px solid #a2a194;
 }
+
 #cssmenu ul ul li {
   padding: 0;
   border-bottom: 1px solid #d4d4d4;
@@ -120,9 +136,11 @@
   background: -webkit-linear-gradient(#f7f7f7 0%, #ececec 100%);
   background: linear-gradient(#f7f7f7 0%, #ececec 100%);
 }
+
 #cssmenu ul ul li:last-child {
   border-bottom: none;
 }
+
 #cssmenu ul ul a {
   padding: 10px 10px 10px 25px;
   display: block;
@@ -130,12 +148,14 @@
   font-size: 12px;
   font-weight: normal;
 }
+
 #cssmenu ul ul a:before {
   content: '»';
   position: absolute;
   left: 10px;
   color: #e94f31;
 }
+
 #cssmenu ul ul a:hover {
   color: #e94f31;
 }

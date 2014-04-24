@@ -20,7 +20,7 @@
 	</bean>
 
 	<!-- Login Action -->
-	<bean name="loginClass" class="com.myschool.action.LoginAction">
+	<bean name="loginAction" class="com.myschool.action.LoginAction">
 		<property name="loginService" ref="loginService"></property>
 		<property name="schoolConfigurationMap" ref="schoolConfigurationMap"></property>
 	</bean>
@@ -39,26 +39,32 @@
 	</bean>
 
 <!-- Forgot Password Action -->
-	<bean name="forgotPasswordClass" class="com.myschool.action.ForgotPasswordAction">
+	<bean name="forgotPasswordAction" class="com.myschool.action.ForgotPasswordAction">
 		<property name="loginService" ref="loginService"></property>
 	</bean>
 <!-- School Subject Action -->
-	<bean name="schoolSubjectClass" class="com.myschool.action.SchoolSubjectsAction">
+	<bean name="schoolSubjectsAction" class="com.myschool.action.SchoolSubjectsAction">
 		<property name="schoolSubjectsService" ref="schoolSubjectsService"></property>
 	</bean>
 	
 	<!-- forward Action -->
-	<bean name="forwardActionClass" class="com.myschool.action.ForwardAction">
+	<bean name="forwardAction" class="com.myschool.action.ForwardAction">
 	</bean>
 	
 	<!--  -->
-	<bean name="schoolClassref" class="com.myschool.action.SchoolClassAction">
+	<bean name="schoolClassAction" class="com.myschool.action.SchoolClassAction">
 		<property name="schoolClassService" ref="schoolClassService"></property>
 	</bean>
 	
-	<bean name="classSectionref" class="com.myschool.action.ClassSectionAction">
+	<bean name="classSectionAction" class="com.myschool.action.ClassSectionAction">
 	</bean>
 	
-	<bean name="studentRegistrationref" class="com.myschool.action.StudentRegistrationAction">
+	<bean name="studentRegistrationAction" class="com.myschool.action.StudentRegistrationAction">
+	</bean>
+	
+	<bean name="staffAction" class="com.myschool.action.StaffAction">
+	</bean>
+	
+	<bean name="staffLeavesAction" class="com.myschool.action.StaffLeavesAction">
 	</bean>
 </beans>

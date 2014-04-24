@@ -1,7 +1,7 @@
 package com.myschool.dto;
 
 public class UserDetailsDTO {
-    private String username;
+    private String userName;
     private String password; 
     private String userGivenFullName;
     private String userSurname;
@@ -17,14 +17,14 @@ public class UserDetailsDTO {
     private String personalContactNumber;
     private String userDob;
     
-    public String getUsername() {
-        return username;
-    }
- 
-    public void setUsername(String username) {
-        this.username = username;
-    }
- 
+    public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
     public String getPassword() {
         return password;
     }

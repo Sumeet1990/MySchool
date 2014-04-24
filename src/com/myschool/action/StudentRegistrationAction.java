@@ -17,7 +17,7 @@ public class StudentRegistrationAction extends ActionSupport{
 	private Map<String,String> classSectionsMap;
 	private Map<String,String> classesMap;
 
-	public String performCreate()
+	public String performAdd()
 	{
 		classesMap = new HashMap<String,String>();
 		classSectionsMap = new HashMap<String,String>();

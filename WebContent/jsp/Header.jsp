@@ -1,42 +1,56 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<head>
-		<title></title>
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/textBox_button.css" type="text/css">
-	</head>
-	<body>
-		<h1 class="textColor" align="center" style="margin-top: 0;">
-			<s:property value="getText('global.schoolname')" />
-		</h1>
-		<h3 class="textColor" align="left">
-			<s:property value="getText('header.welcome')" />
-			<s:property value='#session.sessionUtils.userGivenFullName' /> <s:property value='#session.sessionUtils.userSurname' />
-			,
-			<s:property value="getText('header.role')" /> <s:property value='#session.sessionUtils.userRolesName' />
-		</h3>
-		<h3 class="textColor" align="left">
-			<s:property value="getText('header.lastlogin.datetime')" />
-			:
-			<s:property value="#session.sessionUtils.lastLogedinDateTime" />
-		</h3>
-		<h3 align="left">
-			<s:property value="getText('header.current.datetime')" />
-			: <span class="textColor" id="timeDisplay" />
-		</h3>
-		<div class="toolTip" id="tooltipId"></div>
-	
-		<s:a style="color:aliceblue;" href="%{helpAction}">
-			<img id="Icon" style="right: 60px" src="images/help.png"
-				onmouseout="hideToolTip()" onmouseover="showToolTip('Help','60px')">
-		</s:a>
-		<s:a style="color:aliceblue;" action="logout">
-			<img id="Icon" style="right: 10px"
-				src="images/logout.png" onmouseout="hideToolTip()"
-				onmouseover="showToolTip('Logout','10px')">
-		</s:a>
-	</body>
-	<script type="text/javascript">
-		startTime();
-	</script>
+<head>
+<title></title>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/textBox_button.css"
+	type="text/css">
+</head>
+<body>
+	<div class="site-container">
+		<nav class="nav-primary">
+			<div class="wrap">
+				<ul id="menu-menu" class="menu genesis-nav-menu menu-primary">
+					<li id="menu-item-400"
+						class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-400">
+						<a href=""><s:property value="getText('global.schoolName')" /></a>
+					</li>
+					<br />
+					<li id="menu-item-165"
+						class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165">
+						<a href=""><s:property
+								value="getText('header.lastlogin.datetime')" /> : <s:property
+								value="#session.sessionUtils.lastLogedinDateTime" /></a>
+					</li>
+					<br />
+					<li id="menu-item-791"
+						class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-791">
+						<a href=""><s:property
+								value="getText('header.current.datetime')" /> : <span
+							class="textColor" id="timeDisplay"></a>
+					</li>
+
+					<li id="menu-item-791"
+						class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-791"
+						style="float: right"><s:a action="logout">Log out</s:a></li>
+					<li id="menu-item-791"
+						class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-791"
+						style="float: right"><s:a href="%{helpAction}"> Help</s:a></li>
+					<li id="menu-item-791"
+						class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-791"
+						style="float: right"><a href=""><s:property
+								value="getText('header.welcome')" /> <s:property
+								value='#session.sessionUtils.userGivenFullName' /> <s:property
+								value='#session.sessionUtils.userSurname' />, &nbsp;<s:property
+								value="getText('header.role')" />&nbsp;<s:property
+								value='#session.sessionUtils.userRolesName' /></a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</body>
+<script type="text/javascript">
+	startTime();
+</script>
 </html>

@@ -18,6 +18,9 @@ private Integer stafftLeavesId;
 @Column(name="STAFF_LEAVE_TYPE")
 private String staffLeaveType;
 
+@Column(name="APPOINTMENT_TYPE_ID")
+private Integer appointmentTypeId;
+
 @Column(name="MAX_LEAVE_DAYS")
 private Integer maxLeaveDays;
 
@@ -48,6 +51,13 @@ public String getStaffLeaveType(){
 }
 public void setStaffLeaveType(String staffLeaveType){
  this.staffLeaveType=staffLeaveType;
+}
+
+public Integer getAppointmentTypeId() {
+	return appointmentTypeId;
+}
+public void setAppointmentTypeId(Integer appointmentTypeId) {
+	this.appointmentTypeId = appointmentTypeId;
 }
 public Integer getMaxLeaveDays(){
  return maxLeaveDays;

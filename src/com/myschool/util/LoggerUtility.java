@@ -10,7 +10,7 @@ import org.aspectj.lang.annotation.Before;
 @Aspect
 public class LoggerUtility {
 
-	@Before("execution(* com.myschool.user.dao..*(..))")
+	/*@Before("execution(* com.myschool.user.dao..*(..))")
 	public void beforeMethod(JoinPoint joinPoint)
 	{
 		Logger methodLogger = Logger.getLogger(joinPoint.getTarget().getClass().getName());
@@ -36,5 +36,5 @@ public class LoggerUtility {
 	    System.out.println("********* " + ex.getMessage()
 	            + " Exception occured during " + jp.toShortString());
 
-	}
+	}*/
 }

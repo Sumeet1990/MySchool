@@ -71,7 +71,7 @@
 		  	<exception-mapping exception="java.lang.Exception" result="globalError"/>
 		</global-exception-mappings>  -->
 				
-		<action name="login" class="loginClass">
+		<action name="login" class="loginAction">
 			<interceptor-ref name="allYourParamsAreBelongToUsStack"></interceptor-ref>
 			<result name="success" type="tiles">/SchoolLandingPage.tiles</result>
 			<result name="usersuccess" type="tiles">/ConfigurationMenuPage.tile</result>
@@ -79,14 +79,14 @@
 			<result name="input">jsp/Login.jsp</result>
 		</action>
 
-		<action name="home" class="loginClass" method="home">
+		<action name="home" class="loginAction" method="home">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result name="success" type="tiles">/SchoolLandingPage.tiles</result>
 			<result name="failure">jsp/Login.jsp</result>
 			<result name="input">jsp/Login.jsp</result>
 		</action>
 
-		<action name="logout" class="loginClass" method="logout">
+		<action name="logout" class="loginAction" method="logout">
 		<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result name="success" type="tiles">/SchoolLandingPage.tiles</result>
 			<result name="failure">jsp/Login.jsp</result>
@@ -108,40 +108,32 @@
 			<result name="input" type="tiles">/ClassSectionPage.tiles</result>
 		</action>
 		
-		<action name="Staff*action" class="classSectionAction" method="performStaff{1}">
-			<param name="staffActionType">{1}</param>
-			<interceptor-ref name="mySchoolCommonInterceptors"/>
-			<result name="success" type="tiles">/StaffPage.tiles</result>
-			<result name="failure" type="tiles">/StaffPage.tiles</result>
-			<result name="input" type="tiles">/StaffPage.tiles</result>
-		</action>
-		
 		<action name="forgot">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<param name="errorMesage"></param>
-				<result>jsp/ForgotPassword.jsp</result>
+			<result>jsp/ForgotPassword.jsp</result>
 		</action>
 		
-		<action name="verifyUser" class="forgotPasswordClass">
+		<action name="verifyUser" class="forgotPasswordAction">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result name="success">jsp/ForgotPassword.jsp</result>
 			<result name="failure">jsp/ForgotPassword.jsp</result>
 		</action>
 		
-		<action name="validateSecurityAnswers" class="forgotPasswordClass" method="validateSecurityAnswers">
+		<action name="validateSecurityAnswers" class="forgotPasswordAction" method="validateSecurityAnswers">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result name="success">jsp/ForgotPassword.jsp</result>
 			<result name="failure">jsp/ForgotPassword.jsp</result>
 		</action>
 		
-		<action name="resetPassword" class="forgotPasswordClass" method="resetPassword">
+		<action name="resetPassword" class="forgotPasswordAction" method="resetPassword">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result name="success">jsp/Login.jsp</result>
 			<result name="failure">jsp/ForgotPassword.jsp</result>
 		</action>
 	
 		<!-- Subjects -->
-		<action name="schoolSubject*Action"  class="schoolSubjectClass" method="perform{1}">
+		<action name="schoolSubject*Action"  class="schoolSubjectsAction" method="perform{1}">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result name="success"  type="tiles">/SchoolSubjectPage.tiles</result>
 			<result name="failure" type="tiles">/SchoolSubjectPage.tiles</result>
@@ -149,34 +141,33 @@
 		</action>
 		
 		<!-- functionalContent - configurationalContent hide div etc -->
-		<action name="functionalContent" class="forwardActionClass">
+		<action name="functionalContent" class="forwardAction">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<param name="display">functionalContent</param>
 			<result type="tiles" >/SchoolLandingPage.tiles</result>
 		</action>
 		
-		<action name="configurationalContent" class="forwardActionClass">
+		<action name="configurationalContent" class="forwardAction">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<param name="display">configurationalContent</param>
 			<result type="tiles">/SchoolLandingPage.tiles</result>
 		</action>
 		
 		<!-- Class action -->
-		<action name="schoolClass*Action" class="schoolClassref" method="perform{1}">
+		<action name="schoolClass*Action" class="schoolClassAction" method="perform{1}">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<param name="errorMesage">1m</param>
 			<result type="tiles">/SchoolClassPage.tiles</result>
 		</action>
 		
 		<!-- Section action -->
-		<action name="classSection*Action" class="classSectionref" method="perform{1}">
+		<action name="classSection*Action" class="classSectionAction" method="perform{1}">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<param name="errorMesage">1m</param>
 			<result name="success" type="tiles">/ClassSectionPage.tiles</result>
 		</action>
 		
-		<!-- Section action -->
-		<action name="studentRegistration*Action" class="studentRegistrationref" method="perform{1}">
+		<action name="studentRegistration*Action" class="studentRegistrationAction" method="perform{1}">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<param name="errorMesage">1m</param>
 			<result name="success" type="tiles">/StudentRegistrationPage.tiles</result>
@@ -186,6 +177,22 @@
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<param name="errorMesage">1m</param>
 			<result type="tiles">/SchoolSubjectPage.tiles</result>
-		</action>		
+		</action>	
+		
+		<action name="staff*Action" class="staffAction" method="perform{1}">
+			<param name="staffActionType">{1}</param>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success" type="tiles">/StaffPage.tiles</result>
+			<result name="failure" type="tiles">/StaffPage.tiles</result>
+			<result name="input" type="tiles">/StaffPage.tiles</result>
+		</action>
+		
+		<action name="staffLeavesCreateAction" class="staffLeavesAction">
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success" type="tiles">/StaffLeavesPage.tiles</result>
+			<result name="failure" type="tiles">/StaffLeavesPage.tiles</result>
+			<result name="input" type="tiles">/StaffLeavesPage.tiles</result>
+		</action>
+			
 	</package>
 </struts>

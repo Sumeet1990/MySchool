@@ -2,6 +2,7 @@ package com.myschool.service;
 
 import com.myschool.dao.SchoolClassDAO;
 import com.myschool.dao.SchoolSubjectDAO;
+import com.myschool.dto.SchoolClassDTO;
 
 public class SchoolClassServiceImpl implements SchoolClassService{
 	
@@ -22,6 +23,19 @@ public class SchoolClassServiceImpl implements SchoolClassService{
 
 	public void setSchoolSubjectDAO(SchoolSubjectDAO schoolSubjectDAO) {
 		this.schoolSubjectDAO = schoolSubjectDAO;
+	}
+
+	@Override
+	public void createClass(SchoolClassDTO schoolClassDTO, String userId) {
+
+		schoolClassDTO.setClassOperationStatus(true);
+		getSchoolClassDAO().verifyClassExists(schoolClassDTO);
+
+		if(!schoolClassDTO.isClassOperationStatus())
+		{
+			
+			getSchoolClassDAO().createSchoolClass(schoolClassDTO,userId);
+		}
 	} 
 
 }

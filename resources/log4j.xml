@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?> 
-<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" > 
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd"> 
 	 
- <log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'> 
+ <log4j:configuration> 
 	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender"> 
 		<layout class="org.apache.log4j.PatternLayout"> 
-			<param name="ConversionPattern" value="%d %-5p %c{1}:%L %m %n" /> 
+			<param name="ConversionPattern" value="%d {%t} [%x] [%-5p] %C.%M - %m%n"/> 
 			<!-- ConversionPattern format specification 
 			%d      inserts the date; you can specify the format (%d{yyyy-MM-dd HH:mm:ss,SSS}) 
 			%-5p    inserts the priority log level, 5 characters, left justified 
@@ -19,27 +19,35 @@
 	<appender name="fileAppender" class="org.apache.log4j.RollingFileAppender"> 
 		<param name="MaxFileSize" value="10MB" /> 
 		<param name="MaxBackupIndex" value="10" /> 
-		<param name="File" value="C:/Logs/mySchoolLog.log" />  
+		<param name="File" value="C:/Logs/mySchoolLog.log"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>  
 		<param name="Append" value="true" />
 		
 		<layout class="org.apache.log4j.PatternLayout"> 
-			<param name="ConversionPattern" value="%d %-5p %c{1}:%L %m %n" /> 
+			<param name="ConversionPattern" value="%d {%t} [%x] [%-5p] %C.%M - %m%n"/> 
 		</layout> 
 	</appender> 
-
-	<!--sets the priority log level for org.springframework--> 
-	<!-- <logger name="org.springframework"> 
-		<level value="debug"/> 
-	</logger> --> 
-	
-	<!--sets the priority log level for com.myschool--> 
-    <logger name= "com.myschool"> 
+		
+   <!--  <logger name= "com.myschool"> 
 	    <level value="debug"/>
 	</logger> 
-
+	
+	 <logger name="org.springframework"> 
+	    <level value="debug"/>
+	</logger> -->
+	
+	<category name="com.myschool">
+        <priority value="DEBUG"/>
+    </category>
+    
+    <category name="org.springframework">
+        <priority value="DEBUG"/>
+    </category>
+	
+	
 	<!--sets the default priority log level--> 
     <root> 
-        <priority value="DEBUG"></priority> 
+        <level value="WARN"/> 
         <appender-ref ref="consoleAppender"/> 
 		<appender-ref ref="fileAppender"/> 
 	</root> 

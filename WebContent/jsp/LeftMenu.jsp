@@ -8,13 +8,13 @@
 		<div id='cssmenu'>
 			<ul>
 			   	<li class='active'>
-				   	<s:a  action="home"><span><img src="images/home.png" style="width: 11%; "><s:property value="getText('leftMenu.home')"/></span></s:a>
+				   	<s:a action="home"><span><img src="images/home.png" style="width:8%;border:0;">&nbsp;&nbsp;<s:property value="getText('leftMenu.home')"/></s:a>
 				</li>
 			   	<li class='has-sub'>
-			   		<s:a  action="configurationalContent"><span><img src="images/Configuration-Settings.png" style="width: 10%; "><s:property value="getText('leftMenu.configurationmanagement')"/></span></s:a>
+			   		<s:a action="configurationalContent"><span><img src="images/Configuration-Settings.png" style="width:9%;border:0">&nbsp;&nbsp;<s:property value="getText('leftMenu.configurationmanagement')"/></span></s:a>
 				</li>
 			   	<li class='has-sub'>
-			   		<s:a action="functionalContent"><span ><s:property value="getText('leftMenu.functionalmanagement')"/></span></s:a>
+			   		<s:a action="functionalContent"><span><img src="images/Configuration-Settings.png" style="width:9%;border:0">&nbsp;&nbsp;<s:property value="getText('leftMenu.functionalmanagement')"/></span></s:a>
 			   	</li>
 			</ul>
 		</div>

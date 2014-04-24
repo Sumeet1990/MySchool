@@ -1,5 +1,5 @@
 * { margin: 0; padding: 0; }
-body { padding: 40px; background: #eee; font-family: Arial; font-size: 16px; line-height: 18px; }
+body {background: #eee; /* font-family: Arial; */ font-size: 16px;}
 a { text-decoration: none;  }
 		
 .button {
@@ -48,7 +48,8 @@ a { text-decoration: none;  }
 .studentLeaves { background-color: #99dc30; }
 .staffLeaves { background-color: #ffd22e; }
 
-.mail { background-color: #99dc30; }
+.mailrs { background-color: #99dc30; }
+.maileh { background-color: #99dc30; }
 .sms { background-color: #ffd22e; }			
 
 .transportationRoute { background-color: #99dc30; }
@@ -118,7 +119,7 @@ a { text-decoration: none;  }
    background: -o-linear-gradient(top,rgba(255,210,48,0.1),rgba(255,210,48,1)); /* For Opera Browsers */
 }
    
-.mail_grad {
+.mailrs_grad {
 	background: url(../images/green.png) repeat-x;	/* for all browsers */
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30');		/* Internet Explorer 6,7 and 8 */
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30')";	/* Internet Explorer 8 only */
@@ -126,7 +127,16 @@ a { text-decoration: none;  }
    background: -moz-linear-gradient(top, rgba(153,220,48,0.1), rgba(153,220,48,1)); /* for firefox 3.6+ */
    background: -o-linear-gradient(rgba(153,220,48,0.1),rgba(153,220,48,1));  /* For Opera Browsers */
 }
-   
+
+.maileh_grad {
+	background: url(../images/green.png) repeat-x;	/* for all browsers */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30');		/* Internet Explorer 6,7 and 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30')";	/* Internet Explorer 8 only */
+   background: -webkit-gradient(linear, left top, left bottom, from(rgba(153,220,48,0.1)), to(rgba(153,220,48,1))); /* for webkit browsers */
+   background: -moz-linear-gradient(top, rgba(153,220,48,0.1), rgba(153,220,48,1)); /* for firefox 3.6+ */
+   background: -o-linear-gradient(rgba(153,220,48,0.1),rgba(153,220,48,1));  /* For Opera Browsers */
+}
+
 .sms_grad {
 	background: url(../images/orange.png) repeat-x;	/*	For all browsers*/
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#FFD230');		/* Internet Explorer 6,7 and 8 */

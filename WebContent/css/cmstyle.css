@@ -1,5 +1,5 @@
 * { margin: 0; padding: 0; }
-body { padding: 40px; background: #eee; font-family: Arial; font-size: 16px; line-height: 18px; }
+body {background: #eee; /* font-family: Arial; */ font-size: 16px;}
 a { text-decoration: none;  }
 		
 .button {
@@ -42,7 +42,7 @@ a { text-decoration: none;  }
 
 .user { background-color: #99dc30; }
 .schoolClass { background-color: #ffd22e; }
-.section { background-color: #c5b8f6; }
+.classSection { background-color: #c5b8f6; }
 .subject { background-color: 	#fe2192; }	
 
 .appointmentType { background-color: #99dc30; }
@@ -78,7 +78,7 @@ a { text-decoration: none;  }
    background: -o-linear-gradient(top,rgba(255,210,48,0.1),rgba(255,210,48,1)); /* For Opera Browsers */
 }
    
-.section_grad {
+.classSection_grad {
 	background: url(../images/section.png) repeat-x; 	/* For all browsers */
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#C5B8F6', endColorstr='#C5B8F6');	/* Internet Explorer 6,7 and 8*/
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#C5B8F6', endColorstr='#C5B8F6')";	/* Internet Explorer 8 only*/
@@ -194,7 +194,7 @@ a { text-decoration: none;  }
 	text-align:center;
 	color: #555;
 	position: relative;
-	top: -234px;
+	top: -659px;
 	opacity:0.0;  
 	filter: alpha(opacity=0);
 	-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0); 

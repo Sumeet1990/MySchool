@@ -44,7 +44,7 @@
 	
 	<body style="background-color:#555">
 		<div class="heading">
-    		<s:property value="getText('global.schoolname')"/>
+    		<s:property value="getText('global.schoolName')"/>
     	</div>
     
 		<div id="wrapper">
@@ -55,19 +55,21 @@
 			
 			<s:form name="login-form" id="login-form" action="login" method="post">
     			<div class="header">
-
     				<h1><s:property value="getText('login')"/></h1>
      				<s:if test="#errorMesage!=''">
     					<span style="color:red;font-size: 16px;"><s:property  value="errorMesage"/></span>
 					</s:if>
     			</div>    			
     			<div class="content">
+    				<s:property value="getText('login.username')"/>
     				<s:textfield requiredLabel="true" cssClass="input username" placeholder="%{getText('login.username')}"  autofocus="autofocus" theme="simple" scope="page" name="username" onkeyup="upperCaseThetext('username')" tabindex="1"/> 
+					<br/>
+					<s:property value="getText('login.password')"/>
 					<s:password cssClass="input password" placeholder="%{getText('login.password')}" name="password" theme="simple"  scope="page" tabindex="2"/>
 				</div>
     
     			<div class="footer">
-    				<s:submit  id="button" value="%{getText('login.submit.login')}" theme="simple"  scope="page" onclick="showTransparentScreen()" tabindex="3"/>
+    				<s:submit id="button" value="%{getText('login.submit.login')}" theme="simple"  scope="page" onclick="showTransparentScreen()" tabindex="3"/>
     				<!--Register button-->
     					<s:submit name="submit" value="%{getText('login.forgotpassword')}" theme="simple"  scope="page" cssClass="register" action="forgot"/>
     			</div>

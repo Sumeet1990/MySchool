@@ -65,4 +65,8 @@
     <definition name="/StudentRegistrationPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/StudentRegistration.jsp" />
     </definition>
+    
+    <definition name="/StaffLeavesPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/StaffLeaves.jsp" />
+    </definition>
 </tiles-definitions>

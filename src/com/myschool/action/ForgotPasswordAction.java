@@ -30,7 +30,7 @@ public class ForgotPasswordAction extends ActionSupport {
 	 */
 	public String execute() {
 		userDetailsDTO = new UserDetailsDTO();
-		userDetailsDTO.setUsername(username);
+		userDetailsDTO.setUserName(username);
 		int valid = getLoginService().getUserDetails(userDetailsDTO);
 		
 		if (valid == -1) {

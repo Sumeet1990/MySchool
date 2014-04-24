@@ -41,7 +41,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		boolean valid = false;
 		userDetailsDTO = new UserDetailsDTO();
 		if(StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {
-			userDetailsDTO.setUsername(username);
+			userDetailsDTO.setUserName(username);
 			boolean loginFlag = loginService.retrieveLoginCredentials(userDetailsDTO, password);			
 			
 			if(!userDetailsDTO.isLocked() && userDetailsDTO.isVerificationStatus()) {

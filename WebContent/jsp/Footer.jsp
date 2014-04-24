@@ -5,8 +5,18 @@
 
 	</head>
 <body>
-<h5  class="textColor" align="center" style="width:100%">Hyderabad, Andhra Pradesh, India serwsrwetwh5 fdrerterterteetertette eereertertertertetertertte </h5>
-<h5  class="textColor" align="center" >Contact</h5>
-<h5  class="textColor" align="center" >Website: http://......</h5>
+<div class="footer-widgets">
+		<div class="wrap">
+			<div class="footer-widgets-1 widget-area">
+				<section id="text-6" class="widget widget_text">
+					<div class="widget-wrap">
+						<h4 class="widget-title widgettitle">ABOUT</h4>
+						<div class="textwidget">Hyderabad, Andhra Pradesh, India serwsrwetwh5 fdrerterterteetertette eereertertertertetertertte </div>
+					</div>
+				</section>
+			</div>
+
+		</div>
+	</div>
 </body>
 </html>
