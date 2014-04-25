@@ -3,9 +3,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <head>
 <title></title>
-<link rel="stylesheet"
+<%-- <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/textBox_button.css"
 	type="text/css">
+	 --%>
 </head>
 <body>
 	<div class="site-container">
@@ -48,6 +49,30 @@
 				</ul>
 			</div>
 		</nav>
+	</div>
+
+	<div class="site-container" >
+		<header class="site-header" role="banner" itemscope="itemscope"
+			itemtype="">
+			<div class="wrap">
+				<div class="title-area">
+					<h1 class="site-title" itemprop="headline">
+						<s:a action="home">
+							<s:property value="getText('leftMenu.home')" />
+						</s:a>
+							|
+						<s:a action="configurationalContent">
+							<s:property value="getText('leftMenu.configurationmanagement')" />
+						</s:a>
+							|
+						<s:a action="functionalContent">
+							<s:property value="getText('leftMenu.functionalmanagement')" />
+						</s:a>
+							| <a href="">Student Search |</a>
+					</h1>
+				</div>
+			</div>
+		</header>
 	</div>
 </body>
 <script type="text/javascript">

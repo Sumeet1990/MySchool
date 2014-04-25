@@ -26,32 +26,8 @@
 }
 </style>
 </head>
-<body class="home blog header-full-width content-sidebar magazine-home"
-	s>
-	<!-- BuySellAds Ad Code -->
-	<div class="site-container">
-		<header class="site-header" role="banner" itemscope="itemscope"
-			itemtype="">
-			<div class="wrap">
-				<div class="title-area">
-					<h1 class="site-title" itemprop="headline">
-						<s:a action="home">
-							<s:property value="getText('leftMenu.home')" />
-						</s:a>
-							|
-						<s:a action="configurationalContent">
-							<s:property value="getText('leftMenu.configurationmanagement')" />
-						</s:a>
-							|
-						<s:a action="functionalContent">
-							<s:property value="getText('leftMenu.functionalmanagement')" />
-						</s:a>
-							| <a href="">Student Search |</a>
-					</h1>
-				</div>
-			</div>
-		</header>
-	</div>
+<body class="home blog header-full-width content-sidebar magazine-home">
+
 
 	<s:set value="%{display}" name="displayValue" />
 	<s:if test="#displayValue == 'configurationalContent'">

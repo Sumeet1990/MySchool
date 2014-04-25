@@ -8,13 +8,13 @@
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/script.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.validate.min.js"></script>
 		
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap_common.css">
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/formElementsStyle.css">
-		
+	 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap_common.css">
+		<%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/formElementsStyle.css">
+		 --%>
 		<style>
-			* { margin: 0; padding: 0; }
-			body {background: #eee; /* font-family: Arial; */ font-size: 16px;}
-			a { text-decoration: none;  }
+			* { margin: 0; padding: 0; } 
+			 body {background: #eee;  font-family: Arial;  font-size: 16px;} 
+			 a { text-decoration: none;  }  
 		</style>
 	</head>
 	

@@ -1,8 +1,8 @@
-#content { background: url("../images/form-fieldset.gif") repeat-x scroll left bottom #F8FDEF;  height:100%; text-align:center;}
+#content { /* background: url("../images/form-fieldset.gif") repeat-x scroll left bottom #F8FDEF; */  height:100%; text-align:center;}
 
-h1 {
+/* h1 {
     padding:20px 10px 20px 10px;
-}
+} */
 
 h4{
 	font-size:14px;
@@ -16,7 +16,7 @@ h2 {
 #header {
     background-color: #CA410B !important;
 }
-
+ 
 .large { font-size:22px; }
 
 .orange { color:orange; }

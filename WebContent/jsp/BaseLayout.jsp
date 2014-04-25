@@ -7,15 +7,17 @@
 
 <html>
 <head>
+<link rel='stylesheet' id='magazine-pro-theme-css' href='css/common.css'
+	type='text/css' media='all' />
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/jQuery1.9.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/schoolCommon.js"></script>
 </head>
 
-<body>
+<body class="home blog header-full-width content-sidebar magazine-home">
 	<table cellpadding="2" cellspacing="2" width="100%">
-		<tr style="background-color: gray">
+		<tr style="background-color: white">
 			<td height="20%" colspan="2"><tiles:insertAttribute
 					name="header" /></td>
 		</tr>
@@ -23,7 +25,7 @@
 			<td style="background-color: white"><tiles:insertAttribute
 					name="body" /></td>
 		</tr>
-		<tr style="background-color: gray">
+		<tr>
 			<td height="20%" colspan="2"><tiles:insertAttribute
 					name="footer" /></td>
 		</tr>

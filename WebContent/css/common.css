@@ -109,13 +109,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 /* Box Sizing
 --------------------------------------------- */
 
-*,
-input[type="search"] {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing:    border-box;
-	box-sizing:         border-box;
-}
-
 /* Float Clearing
 --------------------------------------------- */
 
@@ -335,7 +328,6 @@ textarea {
 	color: #222;
 	font-family: 'Raleway', sans-serif;
 	font-size: 14px;
-	font-size: 1.4rem;
 	font-weight: 300;
 	padding: 16px;
 	padding: 1.6rem;
@@ -431,7 +423,6 @@ th {
 }
 
 td {
-	border-top: 1px solid #ddd;
 	padding: 6px 0;
 	padding: 0.6rem 0;
 }
@@ -452,8 +443,8 @@ Structure and Layout
 
 .site-inner {
 	clear: both;
-	padding-top: 40px;
-	padding-top: 4rem;
+/* 	padding-top: 40px;
+	padding-top: 4rem; */
 }
 
 .magazine-home .site-inner {
@@ -757,8 +748,8 @@ img.alignright,
 
 .site-header .search-form {
 	float: right;
-	margin-top: 24px;
-	margin-top: 2.4rem;
+	/* margin-top: 24px;
+	margin-top: 2.4rem; */
 }
 
 .footer-widgets .search-form input {
@@ -1112,8 +1103,8 @@ Site Header
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
-	padding-top: 64px;
-	padding-top: 6.4rem;
+	/* padding-top: 64px;
+	padding-top: 6.4rem; */
 }
 
 .site-header .wrap {
@@ -1127,8 +1118,8 @@ Site Header
 
 .title-area {
 	float: left;
-	padding-top: 30px;
-	padding-top: 3rem;
+/* 	padding-top: 30px;
+	padding-top: 3rem; */
 	width: 380px;
 }
 
@@ -1332,7 +1323,7 @@ Site Navigation
 
 .nav-primary {
 	background-color: #222;
-	position: fixed;
+	position: relative;
 	width: 100%;
 	z-index: 999;
 }
