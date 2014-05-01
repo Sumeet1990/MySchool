@@ -149,8 +149,10 @@
 							<s:property value="getText('cm.leaveStructure')" />
 						</div>
 						<div style="" class="leaveSructure_grad slider">
-							<a href="#"><s:property value="getText('cm.create')" /></a> <a
-								href="#"><s:property value="getText('cm.modify')" /></a> <a
+						<s:a action="staffLeavesCreateAction">
+								<s:property value="getText('cm.create')" />
+							</s:a>
+							<a href="#"><s:property value="getText('cm.modify')" /></a> <a
 								href="#"><s:property value="getText('cm.delete')" /></a> <a
 								href="#"><s:property value="getText('cm.view')" /></a>
 						</div>
