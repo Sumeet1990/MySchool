@@ -1,73 +1,59 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title></title>
-		
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/formElementsStyle.css" type="text/css">
 	
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jQuery1.9.js"></script>
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/schoolCommon.js"></script>
-
-		<script type="text/javascript">
-			$(document).ready(function(){
-			  $("input,textarea").focus(function () {
-			         $(this).next("span").show("slow").css("display,inline");
-			    });
-			  $("input,textarea").focusout(function () {
-			         $(this).next("span").hide("slow");
-			    });
-			});
-		 </script>
-	</head>	
-	<body style="background-color:#555">
-		<s:form action="" method="POST">
-			<table border="0" id="form_table">
-				<caption>Create Section</caption>
-			  	<tr>
-			    	<th width="25%">Class Name :</th>
-			    	<td>
-			    		<s:select required="true" list="classesMap" name="className" autofocus="autofocus" theme="simple" tabindex="1"></s:select>
-				   	  	<span>Select Class to create section</span>
-			   	 	</td>
-				</tr>
-			  	<tr>
-			    	<th width="25%">Section Name :</th>
-			    	<td>
-			    		<s:textfield required="true" name="section" onkeyup="upperCaseThetext('section')" tabindex="2"></s:textfield>
-						<span>Section Name</span>
-			   	 	</td>
-				</tr>
-				<tr>
-			    	<th width="25%">Class Teacher Name :</th>
-			    	<td>
-			    		<s:select list="classTeacherMap" name="classTeacher" tabindex="3"></s:select>
-						<span>Map class teacher to section</span>
-			   	 	</td>
-				</tr>
-				<tr>
-			    	<th width="25%">Maximum Section Strength :</th>
-			    	<td>
-			    		<s:textfield name="mxSectionStrength" required="true" tabindex="4"></s:textfield>
-						<span>Enter max section strength</span>
-			   	 	</td>
-				</tr>	
-				<tr>
-			    	<th width="25%">Section Status :</th>
-			    	<td>
-			    		
-			   	 	</td>
-				</tr>		
-			  	<tr>
-			    	<th> </th>
-			    	<td>
-			    		<input type="submit" name="submit" value="Submit Form">
-			    		<input type="reset" name="reset">
-			    	</td>
-			  	</tr>
-			</table>
-		</s:form>
+		<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/js/script.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.validate.min.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap_common.css">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/formElementsStyle.css">
+		
+		<style>
+			* { margin: 0; padding: 0; } 
+			 body {background: #eee;  font-family: Arial;  font-size: 16px;} 
+			 a { text-decoration: none;  }  
+		</style>
+	</head>
+	
+	<body>
+		<div id="page-wrap">
+			<div id="content">
+				<form action="" method="post" id="elements-form">
+	    			<h3>Create Class Section</h3>
+				    <div id="form-content">
+				        <fieldset>
+				            <div class="fieldgroup">
+				                <label>Class Name</label>
+				                <s:select required="true" list="classesMap" name="className" autofocus="autofocus" theme="simple" tabindex="1"></s:select>
+				            </div>
+						    <div class="fieldgroup"> 
+				                <label>Section Name</label>
+				                <input type="text" name="section"/>
+				             </div>
+				             <div class="fieldgroup">   
+				                <label>Class Teacher Name</label>
+				                <s:select required="true" list="classesMap" name="className" autofocus="autofocus" theme="simple" tabindex="1"></s:select>
+				            </div>
+				            <div class="fieldgroup">
+				                <label>Maximum Section Strength</label>
+				                <input type="text" name="maxSectionStrength"/>
+				            </div>
+				            <div class="fieldgroup">
+				                <label>Section Status</label>
+				                <input type="text" name="studentMotherFullName"/>
+				            </div>
+						</fieldset>
+				        <fieldset>
+							<div class="fieldgroup">
+				                <input type="submit" value="Create" class="submit"/>
+				            </div>				           	
+				        </fieldset>
+				    </div>
+				</form>
+			</div>
+		</div>
 	</body>
 </html>

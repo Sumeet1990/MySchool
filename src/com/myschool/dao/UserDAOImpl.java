@@ -22,11 +22,11 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 		// TODO ADD userStatus as ACTIVE in the where clause
 		List<UserDetails> userDetailsList = getHibernateTemplate().find(
 				"from UserDetails where userName = ? and userStatus="
-						+ USER_STATUS, userDetailsDTO.getUserName());
+						+ USER_STATUS, userDetailsDTO.getUserName().toUpperCase());
 		if (userDetailsList != null && userDetailsList.size() > 0) {
 			for (UserDetails userDetails : userDetailsList) {
 				CommonUtility.copyProperties(userDetails, userDetailsDTO,
-						"userId userId", "userName userName", "password",
+						"userId userId", "userName userName", "password password",
 						"userGivenFullName userGivenFullName",
 						"userSurname userSurname", "userDob userDob",
 						"invalidAttempts invalidAttempts",
@@ -39,7 +39,6 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 						.getStaffAddress().getPersonalContactNumber());
 			}
 		}
-
 	}
 
 	@Override

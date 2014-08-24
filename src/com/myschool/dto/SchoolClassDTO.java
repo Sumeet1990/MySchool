@@ -2,9 +2,12 @@ package com.myschool.dto;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class SchoolClassDTO {
-	private List<String> selectedSubjectLst;
+	private Map<String,String> allSubjectMap;
+	private List<String>  allSubjectList;
+	private String selectedSubjectCodes;
 	private String schoolClassName;
 	private String minimumStudAge;
 	private String maximumStudAge;
@@ -29,16 +32,7 @@ public class SchoolClassDTO {
 	public void setClassOperationStatus(boolean classOperationStatus) {
 		this.classOperationStatus = classOperationStatus;
 	}
-	public List<String> getSelectedSubjectLst() {
-		return selectedSubjectLst;
-	}
-	public void setSelectedSubjectLst(List<String> selectedSubjectLst) {
-		if(selectedSubjectLst == null)
-		{
-			selectedSubjectLst = new ArrayList<>();
-		}
-		this.selectedSubjectLst = selectedSubjectLst;
-	}
+	
 	public String getSchoolClassName() {
 		return schoolClassName;
 	}
@@ -86,6 +80,24 @@ public class SchoolClassDTO {
 	}
 	public void setMaxPeriodsPerteacher(String maxPeriodsPerteacher) {
 		this.maxPeriodsPerteacher = maxPeriodsPerteacher;
+	}
+	public Map<String,String> getAllSubjectMap() {
+		return allSubjectMap;
+	}
+	public void setAllSubjectMap(Map<String,String> allSubjectMap) {
+		this.allSubjectMap = allSubjectMap;
+	}
+	public List<String> getAllSubjectList() {
+		return allSubjectList;
+	}
+	public void setAllSubjectList(List<String> allSubjectList) {
+		this.allSubjectList = allSubjectList;
+	}
+	public String getSelectedSubjectCodes() {
+		return selectedSubjectCodes;
+	}
+	public void setSelectedSubjectCodes(String selectedSubjectCodes) {
+		this.selectedSubjectCodes = selectedSubjectCodes;
 	}
 	
 }

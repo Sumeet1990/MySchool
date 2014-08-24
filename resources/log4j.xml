@@ -19,7 +19,7 @@
 	<appender name="fileAppender" class="org.apache.log4j.RollingFileAppender"> 
 		<param name="MaxFileSize" value="10MB" /> 
 		<param name="MaxBackupIndex" value="10" /> 
-		<param name="File" value="C:/Logs/mySchoolLog.log"/>
+		<param name="File" value="E:/Logs/mySchoolLog.log"/>
 		<param name="DatePattern" value="'.'yyyy-MM-dd"/>  
 		<param name="Append" value="true" />
 		

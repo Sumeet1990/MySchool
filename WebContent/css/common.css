@@ -370,7 +370,7 @@ input[type="submit"],
 	font-family: 'Raleway', sans-serif;
 	padding: 16px 24px;
 	padding: 1.6rem 2.4rem;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	width: auto;
 }
 
@@ -419,7 +419,7 @@ td {
 
 th {
 	font-weight: bold;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 }
 
 td {
@@ -760,7 +760,7 @@ img.alignright,
 	background-color: #222;
 	border: 1px solid #222;
 	color: #fff;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	width: 180px;
 }
 
@@ -811,7 +811,7 @@ img.alignright,
 	font-size: 1.6rem;
 	margin-bottom: 24px;
 	margin-bottom: 2.4rem;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 }
 
 .magazine-home .content .widget-title,
@@ -1211,7 +1211,7 @@ Site Navigation
 	font-size: 1.4rem;
 	font-weight: 400;
 	line-height: 1;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	width: 100%;
 }
 
@@ -1289,7 +1289,7 @@ Site Navigation
 	list-style-type: none;
 	padding: 25px 0;
 	padding: 2.5rem 0;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 }
 
 .genesis-nav-menu > .right > a {

@@ -7,22 +7,19 @@ import org.apache.log4j.Logger;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+public class StaffLeavesAction extends ActionSupport{
+	
+	private static final long serialVersionUID = 1L;
 
-/*
- * 
- */
-public class StaffLeavesAction extends ActionSupport {
-	
 	private static Logger log = Logger.getLogger(StaffLeavesAction.class);	
-	
+
 	private String schoolClassName;
 	private String section;
 	private String actionType;
 	private Map<String,String> classSectionsMap;
 	private Map<String,String> classesMap;
 
-	public String execute()
-	{
+	public String performAdd() {
 		classesMap = new HashMap<String,String>();
 		classSectionsMap = new HashMap<String,String>();
 		return SUCCESS;
@@ -66,6 +63,5 @@ public class StaffLeavesAction extends ActionSupport {
 
 	public void setClassSectionsMap(Map<String, String> classSectionsMap) {
 		this.classSectionsMap = classSectionsMap;
-	}
-	
+	}	
 }

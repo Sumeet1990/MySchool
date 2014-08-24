@@ -9,7 +9,7 @@
 
 </head>
 <BODY>
-opname-<s:property value="schoolSubjectsDTO.currentOperationStatus"/>
+<s:property value="schoolSubjectsDTO.currentOperationStatus"/>
 
 	<s:if test="schoolSubjectsDTO.currentOperationStatus=='subjectCreateFail' || schoolSubjectsDTO.currentOperationStatus=='subjectModifyFail'">
 		<s:property value="schoolSubjectsDTO.existsSubjectList" />

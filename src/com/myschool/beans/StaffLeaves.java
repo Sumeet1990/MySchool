@@ -15,17 +15,23 @@ public class StaffLeaves implements Serializable{
 @Column(name="STAFFT_LEAVES_ID")
 private Integer stafftLeavesId;
 
-@Column(name="STAFF_LEAVE_TYPE")
-private String staffLeaveType;
+@Column(name="STAFF_ID")
+private Integer staffId;
 
-@Column(name="APPOINTMENT_TYPE_ID")
-private Integer appointmentTypeId;
+@Column(name="STAFFT_LEAVES_STRUCTURE_ID")
+private Integer stafftLeavesStructureId;
 
-@Column(name="MAX_LEAVE_DAYS")
-private Integer maxLeaveDays;
+@Column(name="REASON")
+private String reason;
 
-@Column(name="MAX_CONSECUTIVE_LEAVE_DAYS")
-private String maxConsecutiveLeaveDays;
+@Column(name="LEAVE_FROM")
+private String leaveFrom;
+
+@Column(name="LEAVE_TO")
+private String leaveTo;
+
+@Column(name="NO_OF_DAYS")
+private Integer noOfDays;
 
 @Column(name="CREATED_USER_ID")
 private String createdUserId;
@@ -46,30 +52,41 @@ public Integer getStafftLeavesId(){
 public void setStafftLeavesId(Integer stafftLeavesId){
  this.stafftLeavesId=stafftLeavesId;
 }
-public String getStaffLeaveType(){
- return staffLeaveType;
+public Integer getStaffId(){
+ return staffId;
 }
-public void setStaffLeaveType(String staffLeaveType){
- this.staffLeaveType=staffLeaveType;
+public void setStaffId(Integer staffId){
+ this.staffId=staffId;
 }
-
-public Integer getAppointmentTypeId() {
-	return appointmentTypeId;
+public Integer getStafftLeavesStructureId() {
+	return stafftLeavesStructureId;
 }
-public void setAppointmentTypeId(Integer appointmentTypeId) {
-	this.appointmentTypeId = appointmentTypeId;
+public void setStafftLeavesStructureId(Integer stafftLeavesStructureId) {
+	this.stafftLeavesStructureId = stafftLeavesStructureId;
 }
-public Integer getMaxLeaveDays(){
- return maxLeaveDays;
+public String getReason(){
+ return reason;
 }
-public void setMaxLeaveDays(Integer maxLeaveDays){
- this.maxLeaveDays=maxLeaveDays;
+public void setReason(String reason){
+ this.reason=reason;
 }
-public String getMaxConsecutiveLeaveDays(){
- return maxConsecutiveLeaveDays;
+public String getLeaveFrom(){
+ return leaveFrom;
 }
-public void setMaxConsecutiveLeaveDays(String maxConsecutiveLeaveDays){
- this.maxConsecutiveLeaveDays=maxConsecutiveLeaveDays;
+public void setLeaveFrom(String leaveFrom){
+ this.leaveFrom=leaveFrom;
+}
+public String getLeaveTo(){
+ return leaveTo;
+}
+public void setLeaveTo(String leaveTo){
+ this.leaveTo=leaveTo;
+}
+public Integer getNoOfDays(){
+ return noOfDays;
+}
+public void setNoOfDays(Integer noOfDays){
+ this.noOfDays=noOfDays;
 }
 public String getCreatedUserId(){
  return createdUserId;

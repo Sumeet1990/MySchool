@@ -65,7 +65,7 @@
   			<result name="globalError" type="tiles">/GlobalError.tiles</result>
   			<result name="sessionTimeout">jsp/Login.jsp</result>
 		</global-results> -->
-	<!--  -->	
+
 		<!-- <global-exception-mappings>
 			<exception-mapping exception="java.sql.SQLException" result="globalError"/>
 		  	<exception-mapping exception="java.lang.Exception" result="globalError"/>
@@ -132,7 +132,6 @@
 			<result name="failure">jsp/ForgotPassword.jsp</result>
 		</action>
 	
-		<!-- Subjects -->
 		<action name="schoolSubject*Action"  class="schoolSubjectsAction" method="perform{1}">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result name="success"  type="tiles">/SchoolSubjectPage.tiles</result>
@@ -140,7 +139,6 @@
 			<result name="input" type="tiles">/SchoolSubjectPage.tiles</result>
 		</action>
 		
-		<!-- functionalContent - configurationalContent hide div etc -->
 		<action name="functionalContent" class="forwardAction">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<param name="display">functionalContent</param>
@@ -153,32 +151,54 @@
 			<result type="tiles">/SchoolLandingPage.tiles</result>
 		</action>
 		
-		<!-- Class action -->
 		<action name="schoolClass*Action" class="schoolClassAction" method="perform{1}">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
-			<param name="errorMesage">1m</param>
+			<result name="success"  type="tiles">/SchoolClassPage.tiles</result>
+			<result name="failure" type="tiles">/SchoolClassPage.tiles</result>
 			<result type="tiles">/SchoolClassPage.tiles</result>
 		</action>
 		
-		<!-- Section action -->
 		<action name="classSection*Action" class="classSectionAction" method="perform{1}">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<param name="errorMesage">1m</param>
 			<result name="success" type="tiles">/ClassSectionPage.tiles</result>
+			
 		</action>
 		
 		<action name="studentRegistration*Action" class="studentRegistrationAction" method="perform{1}">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<param name="errorMesage">1m</param>
 			<result name="success" type="tiles">/StudentRegistrationPage.tiles</result>
+			<result name="failure" type="tiles">/StudentRegistrationPage.tiles</result>
+			<result name="input" type="tiles">/StudentRegistrationPage.tiles</result>
 		</action>
 		
 		<action name="subjectAction">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<param name="errorMesage">1m</param>
 			<result type="tiles">/SchoolSubjectPage.tiles</result>
+		</action>
+		<action name="staffLeavesStructure*Action" class="staffLeavesStructureAction" method="perform{1}">
+			<param name="actionTypeValue">{1}</param>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success" type="tiles">/StaffLeavesStructurePage.tiles</result>
+			<result name="failure" type="tiles">/StaffLeavesStructurePage.tiles</result>
+			<result name="input" type="tiles">/StaffLeavesStructurePage.tiles</result>
+		</action>
+		<action name="staffLeaves*Action" class="staffLeavesAction" method="perform{1}">
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<param name="errorMesage">1m</param>
+			<result name="success" type="tiles">/StaffLeavesPage.tiles</result>
+			<result name="failure" type="tiles">/StaffLeavesPage.tiles</result>
+			<result name="input" type="tiles">/StaffLeavesPage.tiles</result>
 		</action>	
-		
+		<action name="staffAppointment*Action" class="staffAppointmentTypeAction" method="perform{1}">
+			<param name="actionTypeValue">{1}</param>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success" type="tiles">/StaffAppointmentTypePage.tiles</result>
+			<result name="failure" type="tiles">/StaffAppointmentTypePage.tiles</result>
+			<result name="input" type="tiles">/StaffAppointmentTypePage.tiles</result>
+		</action>
 		<action name="staff*Action" class="staffAction" method="perform{1}">
 			<param name="staffActionType">{1}</param>
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
@@ -187,12 +207,101 @@
 			<result name="input" type="tiles">/StaffPage.tiles</result>
 		</action>
 		
-		<action name="staffLeavesCreateAction" class="staffLeavesAction">
+		<action name="schoolTiming*Action" class="schoolTimingAction" method="perform{1}">
+			<param name="actionTypeValue">{1}</param>
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
-			<result name="success" type="tiles">/StaffLeavesPage.tiles</result>
-			<result name="failure" type="tiles">/StaffLeavesPage.tiles</result>
-			<result name="input" type="tiles">/StaffLeavesPage.tiles</result>
+			<result name="success" type="tiles">/SchoolTimingPage.tiles</result>
+			<result name="failure" type="tiles">/SchoolTimingPage.tiles</result>
+			<result name="input" type="tiles">/SchoolTimingPage.tiles</result>
 		</action>
-			
+		
+		<action name="schoolGeneralHolidays*Action"  class="schoolGeneralHolidaysAction" method="perform{1}">
+			<param name="actionTypeValue">{1}</param>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success" type="tiles">/SchoolGeneralHolidaysPage.tiles</result>
+			<result name="failure" type="tiles">/SchoolGeneralHolidaysPage.tiles</result>
+			<result name="input" type="tiles">/SchoolGeneralHolidaysPage.tiles</result>
+		</action>
+		
+		<action name="schoolGeneralEvents*Action"  class="schoolGeneralEventsAction" method="perform{1}">
+			<param name="actionTypeValue">{1}</param>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success" type="tiles">/SchoolGeneralEventsPage.tiles</result>
+			<result name="failure" type="tiles">/SchoolGeneralEventsPage.tiles</result>
+			<result name="input" type="tiles">/SchoolGeneralEventsPage.tiles</result>
+		</action>
+		
+		<action name="classHolidays*Action"  class="classHolidaysAction" method="perform{1}">
+			<param name="actionTypeValue">{1}</param>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success" type="tiles">/ClassHolidaysPage.tiles</result>
+			<result name="failure" type="tiles">/ClassHolidaysPage.tiles</result>
+			<result name="input" type="tiles">/ClassHolidaysPage.tiles</result>
+		</action>
+		
+		<action name="classEvents*Action"  class="classEventsAction" method="perform{1}">
+			<param name="actionTypeValue">{1}</param>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success" type="tiles">/ClassEventsPage.tiles</result>
+			<result name="failure" type="tiles">/ClassEventsPage.tiles</result>
+			<result name="input" type="tiles">/ClassEventsPage.tiles</result>
+		</action>
+		
+		<action name="driver*Action"  class="driverAction" method="perform{1}">
+			<param name="actionTypeValue">{1}</param>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success" type="tiles">/DriverPage.tiles</result>
+			<result name="failure" type="tiles">/DriverPage.tiles</result>
+			<result name="input" type="tiles">/DriverPage.tiles</result>
+		</action>
+		
+		<action name="vehicle*Action"  class="vehicleAction" method="perform{1}">
+			<param name="actionTypeValue">{1}</param>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success" type="tiles">/VehiclePage.tiles</result>
+			<result name="failure" type="tiles">/VehiclePage.tiles</result>
+			<result name="input" type="tiles">/VehiclePage.tiles</result>
+		</action>
+		
+		<action name="transportRout*Action"  class="transportRoutAction" method="perform{1}">
+			<param name="actionTypeValue">{1}</param>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success" type="tiles">/TransportRoutPage.tiles</result>
+			<result name="failure" type="tiles">/TransportRoutPage.tiles</result>
+			<result name="input" type="tiles">/TransportRoutPage.tiles</result>
+		</action>
+		
+		<action name="tuitionFeeStructure*Action"  class="tuitionFeeStructureAction" method="perform{1}">
+			<param name="actionTypeValue">{1}</param>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success" type="tiles">/TuitionFeePage.tiles</result>
+			<result name="failure" type="tiles">/TuitionFeePage.tiles</result>
+			<result name="input" type="tiles">/TuitionFeePage.tiles</result>
+		</action>
+		
+		<action name="otherFeeStructure*Action"  class="otherFeeStructureAction" method="perform{1}">
+			<param name="actionTypeValue">{1}</param>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success" type="tiles">/OtherFeePage.tiles</result>
+			<result name="failure" type="tiles">/OtherFeePage.tiles</result>
+			<result name="input" type="tiles">/OtherFeePage.tiles</result>
+		</action>
+		
+		<action name="libraryBooks*Action"  class="libraryBooksAction" method="perform{1}">
+			<param name="actionTypeValue">{1}</param>
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success" type="tiles">/LibraryBooksPage.tiles</result>
+			<result name="failure" type="tiles">/LibraryBooksPage.tiles</result>
+			<result name="input" type="tiles">/LibraryBooksPage.tiles</result>
+		</action>
+		
+		<action name="studentLeaves*Action" class="studentLeavesAction" method="perform{1}">
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<param name="errorMesage">1m</param>
+			<result name="success" type="tiles">/StudentLeavesPage.tiles</result>
+			<result name="failure" type="tiles">/StudentLeavesPage.tiles</result>
+			<result name="input" type="tiles">/StudentLeavesPage.tiles</result>
+		</action>
+		
 	</package>
 </struts>

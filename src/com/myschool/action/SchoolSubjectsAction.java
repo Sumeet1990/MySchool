@@ -1,11 +1,13 @@
 package com.myschool.action;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.myschool.beans.SchoolSubjects;
 import com.myschool.dto.SchoolSubjectsDTO;
 import com.myschool.service.SchoolSubjectsService;
 import com.myschool.util.CommonConstants;
@@ -21,22 +23,27 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 	private SchoolSubjectsService schoolSubjectsService;
 	private String errorMessage;
 	private String actionType;
-	private SchoolSubjectsDTO schoolSubjectsDTO = new SchoolSubjectsDTO();
+	private SchoolSubjectsDTO schoolSubjectsDTO;
 	private java.util.Map<String, Object> session;
 	
 	public String performCreate() {
+		schoolSubjectsDTO = new SchoolSubjectsDTO();
 		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
 		schoolSubjectsDTO.setUserId(sessionUtils.getUserId());
-		boolean status = getSchoolSubjectsService().createSubjects(schoolSubjectsDTO);
-		
-		if(status) {
-			setErrorMessage(getText(CommonConstants.SUBJECTS_SUCCESSFULLY_CREATED));
-			schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_CREATE);			
+		schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_CREATE);
+		if(schoolSubjectsDTO.getExistsSubjectList() == null || schoolSubjectsDTO.getExistsSubjectList().size() == 0) {
+			schoolSubjectsDTO = getSchoolSubjectsService().getAllAvailableSubjects();
 			return SUCCESS;
 		} else {
-			setErrorMessage(getText(CommonConstants.SUBJECTS_ALREADY_EXISTS));
-			schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_CREATE_FAIL);			
-			return FAILURE;
+			boolean status = getSchoolSubjectsService().createSubjects(schoolSubjectsDTO);
+			if(status) {
+				setErrorMessage(getText(CommonConstants.SUBJECTS_SUCCESSFULLY_CREATED));
+				return SUCCESS;
+			} else {
+				setErrorMessage(getText(CommonConstants.SUBJECTS_ALREADY_EXISTS));
+				schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_CREATE_FAIL);			
+				return FAILURE;
+			}
 		}
 	}
 	

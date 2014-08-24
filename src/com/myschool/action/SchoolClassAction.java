@@ -8,34 +8,42 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.myschool.dto.SchoolClassDTO;
 import com.myschool.service.SchoolClassService;
+import com.myschool.service.SchoolSubjectsService;
 import com.myschool.util.CommonConstants;
 import com.myschool.util.SessionUtils;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class SchoolClassAction extends ActionSupport  implements SessionAware{	
+	private static final String FAILURE = "failure";
 	private static Logger log = Logger.getLogger(SchoolClassAction.class);
 	private SchoolClassService schoolClassService;
-	private List<String> subjectList;
+	private SchoolSubjectsService schoolSubjectsService;
+	private List<String> availableSubjectList = new ArrayList<String>();
+	private List<String> selectedSubjectList = new ArrayList<String>();
+	private String availableSubject;
+	private String selectedSubject;
 	private SchoolClassDTO schoolClassDTO;
 	private java.util.Map<String, Object> session;
 	
 	public String performCreate()
 	{
 		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
-		subjectList =  new ArrayList<>();
-		subjectList.add("Subject 1");
-		subjectList.add("Subject 2");
-		subjectList.add("Subject 3");
-		subjectList.add("Subject 4");
-		schoolClassDTO.setSelectedSubjectLst(new ArrayList<String>());
-		//getSchoolClassService().createClass(schoolClassDTO,sessionUtils.getUserId());
+		schoolClassDTO = new SchoolClassDTO();
+		getSchoolSubjectsService().getAllTheSubjectList(schoolClassDTO);
+		availableSubjectList.addAll(schoolClassDTO.getAllSubjectList());
 		return SUCCESS;
 	}
 	public String performCreateO()
 	{
 		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
+		schoolClassService.setSelectedSubjectCodes(schoolClassDTO,selectedSubject);
 		getSchoolClassService().createClass(schoolClassDTO,sessionUtils.getUserId());
-		return SUCCESS;
+		if(schoolClassDTO.isClassOperationStatus()){
+			return SUCCESS;
+		}else
+		{
+			return FAILURE;
+		}
 	}
 	
 	
@@ -45,27 +53,6 @@ public class SchoolClassAction extends ActionSupport  implements SessionAware{
 	public void setSchoolClassService(SchoolClassService schoolClassService) {
 		this.schoolClassService = schoolClassService;
 	}
-
-
-	public List<String> getSubjectList() {
-		return subjectList;
-	}
-
-
-	public void setSubjectList(List<String> subjectList) {
-		
-		if(subjectList == null)
-		{
-			subjectList = new ArrayList<>();
-			subjectList.add("a");
-			subjectList.add("a0");
-			subjectList.add("a1");
-			subjectList.add("a2");
-			subjectList.add("a3");
-		}
-		this.subjectList = subjectList;
-	}
-
 
 	public SchoolClassDTO getSchoolClassDTO() {
 		return schoolClassDTO;
@@ -79,5 +66,35 @@ public class SchoolClassAction extends ActionSupport  implements SessionAware{
 	public void setSession(java.util.Map<String, Object> session) {
 		this.session = session;
 		
+	}
+	public SchoolSubjectsService getSchoolSubjectsService() {
+		return schoolSubjectsService;
+	}
+	public void setSchoolSubjectsService(SchoolSubjectsService schoolSubjectsService) {
+		this.schoolSubjectsService = schoolSubjectsService;
+	}
+	public List<String> getSelectedSubjectList() {
+		return selectedSubjectList;
+	}
+	public void setSelectedSubjectList(List<String> selectedSubjectList) {
+		this.selectedSubjectList = selectedSubjectList;
+	}
+	public String getSelectedSubject() {
+		return selectedSubject;
+	}
+	public void setSelectedSubject(String selectedSubject) {
+		this.selectedSubject = selectedSubject;
+	}
+	public List<String> getAvailableSubjectList() {
+		return availableSubjectList;
+	}
+	public void setAvailableSubjectList(List<String> availableSubjectList) {
+		this.availableSubjectList = availableSubjectList;
+	}
+	public String getAvailableSubject() {
+		return availableSubject;
+	}
+	public void setAvailableSubject(String availableSubject) {
+		this.availableSubject = availableSubject;
 	}
 }

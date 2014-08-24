@@ -2,7 +2,6 @@ package com.myschool.action;
 
 import java.util.Map;
 
-import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang.xwork.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.struts2.interceptor.SessionAware;
@@ -24,7 +23,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 	private static Logger log = Logger.getLogger(LoginAction.class);
 	
-	private String username;
+	private String userName;
 	private String password;
 	private String errorMesage;
 	private java.util.Map<String, Object> session;
@@ -38,23 +37,21 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	 */
 	public String execute() {
 		log.debug("################# login Execute");
-		boolean valid = false;
 		userDetailsDTO = new UserDetailsDTO();
-		if(StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {
-			userDetailsDTO.setUserName(username);
-			boolean loginFlag = loginService.retrieveLoginCredentials(userDetailsDTO, password);			
+		if(StringUtils.isNotBlank(userName) && StringUtils.isNotBlank(password)) {
+			userDetailsDTO.setUserName(userName);
+			userDetailsDTO.setPassword(password);
+			loginService.retrieveLoginCredentials(userDetailsDTO, password);
 			
 			if(!userDetailsDTO.isLocked() && userDetailsDTO.isVerificationStatus()) {
-				
 				setErrorMesage(StringUtils.EMPTY);
 				SessionUtils sessionUtils = new SessionUtils();
-				CommonUtility.copyProperties(userDetailsDTO,sessionUtils, "userId userId", "userName userName",						
-																		  "userGivenFullName userGivenFullName",
-																		  "userRolesName userRolesName",
-																		  "userSurname userSurname",
-																		  "lastLogedinDateTime lastLogedinDateTime");
+				CommonUtility.copyProperties(userDetailsDTO, sessionUtils, "userId userId", "userName userName",						
+				  "userGivenFullName userGivenFullName", "userRolesName userRolesName",  "userSurname userSurname",
+				  "lastLogedinDateTime lastLogedinDateTime");
+				
 				session.put(CommonConstants.SESSION_UTILS, sessionUtils);
-				session.put(CommonConstants.USERNAME, getUsername());
+				session.put(CommonConstants.USERNAME, userName);
 				return SUCCESS;
 			} else {
 				if(session.containsKey(CommonConstants.USERNAME)) {
@@ -86,7 +83,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	public String home() {
 		if (StringUtils.isNotBlank((String) session.get(CommonConstants.USERNAME))) {
 			setErrorMesage(StringUtils.EMPTY);
-			username = (String) session.get(CommonConstants.USERNAME);
+			userName = (String) session.get(CommonConstants.USERNAME);
 			
 			return SUCCESS;
 		} else {
@@ -113,12 +110,12 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		return FAILURE;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {

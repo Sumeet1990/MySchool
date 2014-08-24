@@ -66,7 +66,59 @@
         <put-attribute name="body" value="/jsp/StudentRegistration.jsp" />
     </definition>
     
+    <definition name="/StaffAppointmentTypePage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/StaffAppointmentType.jsp" />
+    </definition>
+    
+    <definition name="/SchoolTimingPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/SchoolTiming.jsp" />
+    </definition>
+    
+    <definition name="/StaffLeavesStructurePage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/StaffLeavesStructure.jsp" />
+    </definition>
+    
+    <definition name="/SchoolGeneralHolidaysPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/SchoolGeneralHolidays.jsp" />
+    </definition>
+    
+    <definition name="/SchoolGeneralEventsPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/SchoolGeneralEvents.jsp" />
+    </definition>
+    
+    <definition name="/ClassHolidaysPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/ClassHolidays.jsp"/>
+    </definition>
+    
+    <definition name="/ClassEventsPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/ClassEvents.jsp"/>
+    </definition>
+    
+    <definition name="/DriverPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/Driver.jsp"/>
+    </definition>
+    
+    <definition name="/VehiclePage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/Vehicle.jsp"/>
+    </definition>
+    
+    <definition name="/TuitionFeePage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/TuitionFee.jsp"/>
+    </definition>
+    
+    <definition name="/OtherFeePage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/OtherFee.jsp"/>
+    </definition>
+    
+    <definition name="/LibraryBooksPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/LibraryBooks.jsp"/>
+    </definition>
+    
+    <definition name="/StudentLeavesPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/StudentLeaves.jsp"/>
+    </definition>
+    
     <definition name="/StaffLeavesPage.tiles" extends="baseLayout">
-        <put-attribute name="body" value="/jsp/StaffLeaves.jsp" />
+        <put-attribute name="body" value="/jsp/StaffLeaves.jsp"/>
     </definition>
 </tiles-definitions>

@@ -31,10 +31,24 @@ public class SchoolClassServiceImpl implements SchoolClassService{
 		schoolClassDTO.setClassOperationStatus(true);
 		getSchoolClassDAO().verifyClassExists(schoolClassDTO);
 
-		if(!schoolClassDTO.isClassOperationStatus())
+		if(schoolClassDTO.isClassOperationStatus())
 		{
-			
 			getSchoolClassDAO().createSchoolClass(schoolClassDTO,userId);
+		}
+	}
+
+	@Override
+	public void setSelectedSubjectCodes(SchoolClassDTO schoolClassDTO,
+			String selectedSubject) {
+		String[] selectedSubjects = selectedSubject.split(","); 
+		String subjectCodes ="";
+		for(String subject : selectedSubjects){
+			subjectCodes = subjectCodes + schoolClassDTO.getAllSubjectMap().get(subject.replace(" ", ""))+",";
+		}
+		if(subjectCodes.length()>0){
+			schoolClassDTO.setSelectedSubjectCodes(subjectCodes.substring(0,subjectCodes.length()-1));
+		}else{
+			schoolClassDTO.setSelectedSubjectCodes(subjectCodes);
 		}
 	} 
 

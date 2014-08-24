@@ -27,6 +27,7 @@
 						<fieldset>
 							<br/>
 							<h4>Personal Details</h4>
+							<br/>
 				            <div class="fieldgroup">
 				            	<label>Title</label>
 				                <s:select required="true" list="classesMap" name="className" autofocus="autofocus" theme="simple" tabindex="1"></s:select>&nbsp;

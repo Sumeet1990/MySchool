@@ -44,9 +44,9 @@
 				<value>com.myschool.beans.SchoolTimings</value>
 				<value>com.myschool.beans.StaffAddress</value>
 				<value>com.myschool.beans.StaffAppointment</value>
-				<value>com.myschool.beans.StaffAttendance</value>
-				<value>com.myschool.beans.StaffDetails</value>
 				<value>com.myschool.beans.StaffLeaves</value>
+				<value>com.myschool.beans.StaffDetails</value>
+				<value>com.myschool.beans.StaffLeavesStructure</value>
 				<value>com.myschool.beans.StudentAddress</value>
 				<value>com.myschool.beans.StudentAttendance</value>
 				<value>com.myschool.beans.StudentCurrentDetails</value>
@@ -54,8 +54,8 @@
 				<value>com.myschool.beans.StudentReport</value>
 				<value>com.myschool.beans.TransportationAllocation</value>
 				<value>com.myschool.beans.TransportRoutDetails</value>
-				<value>com.myschool.beans.TutionFeePayment</value>
-				<value>com.myschool.beans.TutionFeeStructure</value>
+				<value>com.myschool.beans.TuitionFeePayment</value>
+				<value>com.myschool.beans.TuitionFeeStructure</value>
 				<value>com.myschool.beans.UserDetails</value>
 				<value>com.myschool.beans.UserRole</value>
 				<value>com.myschool.beans.UserRoleAccess</value>
@@ -66,7 +66,7 @@
 			<props>
 				<prop key="hibernate.dialect">${db.hibernate.dialect}</prop>
 				<prop key="hibernate.current_session_context_class">thread</prop>
-				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.cache.use_query_cache">true</prop>
 				<prop key="hibernate.cache.use_second_level_cache">true</prop>
 				<prop key="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</prop>

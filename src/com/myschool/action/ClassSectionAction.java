@@ -5,20 +5,17 @@ import java.util.Map;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ClassSectionAction extends ActionSupport{
-	
-	/**
-	 * 
-	 */
+public class ClassSectionAction extends ActionSupport {
+
 	private static final long serialVersionUID = 1L;
+	
 	private String schoolClassName;
 	private String section;
 	private String actionType;
 	private Map<String,String> classTeacherMap;
 	private Map<String,String> classesMap;
 
-	public String performCreate()
-	{
+	public String performCreate() {
 		classTeacherMap = new HashMap<String,String>();
 		classesMap = new HashMap<String,String>();
 		return SUCCESS;
@@ -63,6 +60,4 @@ public class ClassSectionAction extends ActionSupport{
 	public void setClassesMap(Map<String, String> classesMap) {
 		this.classesMap = classesMap;
 	}
-	
-	
 }

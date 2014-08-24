@@ -8,9 +8,9 @@
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/script.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.validate.min.js"></script>
 		
-	 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap_common.css">
-		<%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/formElementsStyle.css">
-		 --%>
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap_common.css">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/formElementsStyle.css">
+		
 		<style>
 			* { margin: 0; padding: 0; } 
 			 body {background: #eee;  font-family: Arial;  font-size: 16px;} 
@@ -29,7 +29,6 @@
 				                <label>Class Name</label>
 				                <s:select required="true" list="classesMap" name="className" autofocus="autofocus" theme="simple" tabindex="1"></s:select>
 				            </div>
-						
 							<div class="fieldgroup">
 				                <label>Class Section</label>
 				                <s:select required="true" list="classesMap" name="className" autofocus="autofocus" theme="simple" tabindex="1"></s:select>
@@ -38,13 +37,18 @@
 						<fieldset>
 							<br/>
 							<h4>Personal Details</h4>
+							<br/>
 				            <div class="fieldgroup">
 				            	<label>Title</label>
-				                <s:select required="true" list="classesMap" name="className" autofocus="autofocus" theme="simple" tabindex="1"></s:select>&nbsp;
-				                
+				                <s:select required="true" list="classesMap" name="className" autofocus="autofocus" theme="simple" tabindex="1"></s:select>
+				             </div>  
+				            
+				             <div class="fieldgroup"> 
 				                <label>Given Full Name</label>
-				                <input type="text" name="studentGivenName"/>&nbsp;
-				                
+				                <input type="text" name="studentGivenName"/>
+				             </div>
+				            
+				             <div class="fieldgroup">   
 				                <label>Surname</label>
 				                <input type="text" name="studentSurname"/>
 				            </div>

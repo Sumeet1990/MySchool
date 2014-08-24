@@ -7,8 +7,8 @@
 		
 		<title></title>
     	
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
     	<meta name="description" content="My School Form"/>
     	<meta name="keywords" content="My School Form"/>
     	<meta name="author" content="Ishan"/>
@@ -62,7 +62,7 @@
     			</div>    			
     			<div class="content">
     				<s:property value="getText('login.username')"/>
-    				<s:textfield requiredLabel="true" cssClass="input username" placeholder="%{getText('login.username')}"  autofocus="autofocus" theme="simple" scope="page" name="username" onkeyup="upperCaseThetext('username')" tabindex="1"/> 
+    				<s:textfield requiredLabel="true" cssClass="input username" placeholder="%{getText('login.username')}"  autofocus="autofocus" theme="simple" scope="page" name="userName" onkeyup="upperCaseThetext('username')" tabindex="1"/> 
 					<br/>
 					<s:property value="getText('login.password')"/>
 					<s:password cssClass="input password" placeholder="%{getText('login.password')}" name="password" theme="simple"  scope="page" tabindex="2"/>
@@ -71,7 +71,7 @@
     			<div class="footer">
     				<s:submit id="button" value="%{getText('login.submit.login')}" theme="simple"  scope="page" onclick="showTransparentScreen()" tabindex="3"/>
     				<!--Register button-->
-    					<s:submit name="submit" value="%{getText('login.forgotpassword')}" theme="simple"  scope="page" cssClass="register" action="forgot"/>
+    				<s:submit name="submit" value="%{getText('login.forgotpassword')}" theme="simple"  scope="page" cssClass="register" action="forgot"/>
     			</div>
 			</s:form>
 		</div>

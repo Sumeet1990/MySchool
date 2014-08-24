@@ -3,6 +3,8 @@ package com.myschool.dto;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.apache.commons.lang.StringUtils;
+
 public class SchoolSubjectsDTO {
 
 	private String[] subjectName;
@@ -29,13 +31,17 @@ public class SchoolSubjectsDTO {
 	}
 
 	public String toDatabaseSubjectNameString() {
-		String returnResult = "";
-		for (int i = 0; i < getSubjectName().length; i++) {
-			returnResult = returnResult +"'"+getSubjectName()[i].trim().toString()+"'";
-			if(i < getSubjectName().length -1)
-				returnResult =  returnResult +",";
+		if(getSubjectName() != null) {
+			String returnResult = "";
+			for (int i = 0; i < getSubjectName().length; i++) {
+				returnResult = returnResult +"'"+getSubjectName()[i].trim().toString()+"'";
+				if(i < getSubjectName().length -1)
+					returnResult =  returnResult +",";
+			}
+			return returnResult;
+		} else {
+			return StringUtils.EMPTY;
 		}
-		return returnResult;
 	}
 
 	public String getUserId() {

@@ -27,16 +27,19 @@ public class SchoolClassDAOImpl extends HibernateDaoSupport implements SchoolCla
 	public void createSchoolClass(SchoolClassDTO schoolClassDTO, String userId) {
 
 		SchoolClass schoolClass = new SchoolClass();
-		CommonUtility.copyProperties(schoolClassDTO, schoolClass, "maxStrengthOfClass classMaximumStrength" +
-				"maxPeriodsPerteacher teacherPeriodsPerDay" +
-				"durationOfPeriod periodMinutesDuration" +
-				"periodsPerDay periodsPerDay" +
-				"maximumStudAge maxAgeCriteria" +
-				"minimumStudAge minAgeCriteria" +
+		CommonUtility.copyProperties(schoolClassDTO, schoolClass, "schoolClaassId schoolClassId",
+				"schoolClassName schoolClassName",
+				"minimumStudAge minAgeCriteria",
+				"maximumStudAge maxAgeCriteria",
+				"periodsPerDay periodsPerDay",
+				"durationOfPeriod periodMinutesDuration",
+				"maxPeriodsPerteacher teacherPeriodsPerDay",
+				"statusClass classStatus",
 				"schoolClassName schoolClassName");
-		
+		schoolClass.setSubjectCodesList(schoolClassDTO.getSelectedSubjectCodes());
 		schoolClass.setCreatedDateTime(CommonUtility.dateToString(new Date()));
 		schoolClass.setCreatedUserId(userId);
+		getHibernateTemplate().save(schoolClass);
 		
 	}
 

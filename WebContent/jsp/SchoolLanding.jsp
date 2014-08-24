@@ -28,7 +28,6 @@
 </head>
 <body class="home blog header-full-width content-sidebar magazine-home">
 
-
 	<s:set value="%{display}" name="displayValue" />
 	<s:if test="#displayValue == 'configurationalContent'">
 		<div id="configurationalContent">
@@ -44,11 +43,11 @@
 		<div id="paraCotent">
 			<p class="paraContentStyle">
 				<s:property value="getText('school.para1')" />
-				</br> </br>
+				<br/> <br/>
 				<s:property value="getText('school.quot1')" />
-				</br> </br>
+				<br/> <br/>
 				<s:property value="getText('school.quot2')" />
-				</br> </br>
+				<br/>
 			</p>
 		</div>
 	</s:else>

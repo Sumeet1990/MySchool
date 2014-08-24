@@ -19,16 +19,13 @@
 		</property>
 	</bean>
 
-	<!-- Login Action -->
 	<bean name="loginAction" class="com.myschool.action.LoginAction">
 		<property name="loginService" ref="loginService"></property>
 		<property name="schoolConfigurationMap" ref="schoolConfigurationMap"></property>
 	</bean>
 
-	<!-- Login Action -->
 	<bean name="configurationMenuAction" class="com.myschool.action.ConfigurationMenuAction"></bean>
 	
-	<!-- java.util.Map -->
 	<bean name="schoolConfigurationMap" class="java.util.HashMap">
 		<constructor-arg index="0" type="java.util.Map">
 		<map key-type="java.lang.String" value-type="java.lang.String">
@@ -38,22 +35,20 @@
 		</constructor-arg>
 	</bean>
 
-<!-- Forgot Password Action -->
 	<bean name="forgotPasswordAction" class="com.myschool.action.ForgotPasswordAction">
 		<property name="loginService" ref="loginService"></property>
 	</bean>
-<!-- School Subject Action -->
+
 	<bean name="schoolSubjectsAction" class="com.myschool.action.SchoolSubjectsAction">
 		<property name="schoolSubjectsService" ref="schoolSubjectsService"></property>
 	</bean>
 	
-	<!-- forward Action -->
 	<bean name="forwardAction" class="com.myschool.action.ForwardAction">
 	</bean>
 	
-	<!--  -->
 	<bean name="schoolClassAction" class="com.myschool.action.SchoolClassAction">
 		<property name="schoolClassService" ref="schoolClassService"></property>
+		<property name="schoolSubjectsService" ref="schoolSubjectsService"></property>
 	</bean>
 	
 	<bean name="classSectionAction" class="com.myschool.action.ClassSectionAction">
@@ -63,6 +58,48 @@
 	</bean>
 	
 	<bean name="staffAction" class="com.myschool.action.StaffAction">
+	</bean>
+	
+	<bean name="staffLeavesStructureAction" class="com.myschool.action.StaffLeavesStructureAction">
+	</bean>
+	
+	<bean name="staffAppointmentTypeAction" class="com.myschool.action.StaffAppointmentTypeAction">
+	</bean>
+	
+	<bean name="schoolTimingAction" class="com.myschool.action.SchoolTimingAction">
+	</bean>
+	
+	<bean name="schoolGeneralHolidaysAction" class="com.myschool.action.SchoolGeneralHolidaysAction">
+	</bean>
+	
+	<bean name="schoolGeneralEventsAction" class="com.myschool.action.SchoolGeneralEventsAction">
+	</bean>
+	
+	<bean name="classHolidaysAction" class="com.myschool.action.ClassHolidaysAction">
+	</bean>
+	
+	<bean name="classEventsAction" class="com.myschool.action.ClassEventsAction">
+	</bean>
+	
+	<bean name="driverAction" class="com.myschool.action.DriverAction">
+	</bean>
+	
+	<bean name="vehicleAction" class="com.myschool.action.VehicleAction">
+	</bean>
+	
+	<bean name="transportRoutAction" class="com.myschool.action.TransportRoutAction">
+	</bean>
+	
+	<bean name="tuitionFeeStructureAction" class="com.myschool.action.TuitionFeeStructureAction">
+	</bean>
+	
+	<bean name="otherFeeStructureAction" class="com.myschool.action.OtherFeeStructureAction">
+	</bean>
+	
+	<bean name="libraryBooksAction" class="com.myschool.action.LibraryBooksAction">
+	</bean>
+	
+	<bean name="studentLeavesAction" class="com.myschool.action.StudentLeavesAction">
 	</bean>
 	
 	<bean name="staffLeavesAction" class="com.myschool.action.StaffLeavesAction">

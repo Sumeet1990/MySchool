@@ -41,27 +41,28 @@ a { text-decoration: none;  }
 .blue { background-color: #56c6d9; }
 
 .user { background-color: #99dc30; }
-.staff { background-color: #ffd22e; }
-.student { background-color: #c5b8f6; }
-.rollNumber { background-color: 	#fe2192; }	
+.staff { background-color: #99dc30; }
+.student { background-color: #99dc30; }
+.rollNumber { background-color: #99dc30; }	
 
-.studentLeaves { background-color: #99dc30; }
+.studentLeaves { background-color: #ffd22e; }
 .staffLeaves { background-color: #ffd22e; }
 
-.mailrs { background-color: #99dc30; }
-.maileh { background-color: #99dc30; }
-.sms { background-color: #ffd22e; }			
+.mailrs { background-color: #56c6d9; }
+.maileh { background-color: #56c6d9; }
+.sms { background-color: #56c6d9; }			
 
-.transportationRoute { background-color: #99dc30; }
+.transportationRoute { background-color: #56c6d9; }
 
-.tuitionFee { background-color: #99dc30; }
-.otherFee { background-color: #ffd22e; }
+.tuitionFee { background-color: #C5B8F6; }
+.otherFee { background-color: #C5B8F6; }
 
 .books { background-color: #99dc30; }
 
-.studentReports { background-color: #99dc30; }
-.staffReports { background-color: #ffd22e; }
-.schoolReports { background-color: #c5b8f6; }
+.studentReports { background-color: #fe2192; }
+.staffReports { background-color: #fe2192; }
+.classReports { background-color: #fe2192; }
+.schoolReports { background-color: #fe2192; }
 
 .availabilityCheck { background-color: #99dc30; }
 
@@ -75,36 +76,36 @@ a { text-decoration: none;  }
 }
    
 .staff_grad {
-	background: url(../images/orange.png) repeat-x;	/*	For all browsers*/
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#FFD230');		/* Internet Explorer 6,7 and 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#FFD230')";	/*Internet Explorer 8 only*/
+	background: url(../images/green.png) repeat-x;	/*	For all browsers*/
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#99dc30');		/* Internet Explorer 6,7 and 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#99dc30')";	/*Internet Explorer 8 only*/
 	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,210,48,0.1)), to(rgba(255,210,48,1)));		/* for webkit browsers */
    background: -moz-linear-gradient(top, rgba(255,210,48,0.1), rgba(255,210,48,1));		/* for firefox 3.6+ */
    background: -o-linear-gradient(top,rgba(255,210,48,0.1),rgba(255,210,48,1)); /* For Opera Browsers */
 }
    
 .student_grad {
-	background: url(../images/section.png) repeat-x; 	/* For all browsers */
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#C5B8F6', endColorstr='#C5B8F6');	/* Internet Explorer 6,7 and 8*/
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#C5B8F6', endColorstr='#C5B8F6')";	/* Internet Explorer 8 only*/
+	background: url(../images/green.png) repeat-x; 	/* For all browsers */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#C5B8F6', endColorstr='#99dc30');	/* Internet Explorer 6,7 and 8*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#C5B8F6', endColorstr='#99dc30')";	/* Internet Explorer 8 only*/
    background: -webkit-gradient(linear, left top, left bottom, from(rgba(197,184,246,0.1)), to(rgba(197,184,246,1))); /* for webkit browsers */
    background: -moz-linear-gradient(top, rgba(197,184,246,0.1), rgba(197,184,246,1)); /* for firefox 3.6+ */
    background: -o-linear-gradient(top,rgba(197,184,246,0.1),rgba(197,184,246,1)); /* For Opera Browsers */
- }
+}
    
 .rollNumber_grad {
-	background: url(../images/pink.png) repeat-x;  /* For all browsers */
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FE2192', endColorstr='#FE2192');		/*Internet Explorer 6,7 and 8*/	
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FE2192', endColorstr='#FE2192')"; 	/* Internet Explorer 8 only */
+	background: url(../images/green.png) repeat-x;  /* For all browsers */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FE2192', endColorstr='#99dc30');		/*Internet Explorer 6,7 and 8*/	
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FE2192', endColorstr='#99dc30')"; 	/* Internet Explorer 8 only */
    	background: -webkit-gradient(linear, left top, left bottom, from(rgba(254,33,146,0.1)), to(rgba(254,33,146,1))); /* for webkit browsers */
    	background: -moz-linear-gradient(top, rgba(254,33,146,0.1), rgba(254,33,146,1)); /* for firefox 3.6+ */
    	background: -o-linear-gradient(top,rgba(254,33,146,0.1),rgba(254,33,146,1));  /* For Opera Browsers */
- }
+}
  
- .studentLeaves_grad {
-	background: url(../images/green.png) repeat-x;	/* for all browsers */
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30');		/* Internet Explorer 6,7 and 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30')";	/* Internet Explorer 8 only */
+.studentLeaves_grad {
+	background: url(../images/orange.png) repeat-x;	/* for all browsers */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#ffd22e');		/* Internet Explorer 6,7 and 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#ffd22e')";	/* Internet Explorer 8 only */
    background: -webkit-gradient(linear, left top, left bottom, from(rgba(153,220,48,0.1)), to(rgba(153,220,48,1))); /* for webkit browsers */
    background: -moz-linear-gradient(top, rgba(153,220,48,0.1), rgba(153,220,48,1)); /* for firefox 3.6+ */
    background: -o-linear-gradient(rgba(153,220,48,0.1),rgba(153,220,48,1));  /* For Opera Browsers */
@@ -112,62 +113,62 @@ a { text-decoration: none;  }
    
 .staffLeaves_grad {
 	background: url(../images/orange.png) repeat-x;	/*	For all browsers*/
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#FFD230');		/* Internet Explorer 6,7 and 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#FFD230')";	/*Internet Explorer 8 only*/
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#ffd22e');		/* Internet Explorer 6,7 and 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#ffd22e')";	/*Internet Explorer 8 only*/
 	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,210,48,0.1)), to(rgba(255,210,48,1)));		/* for webkit browsers */
    background: -moz-linear-gradient(top, rgba(255,210,48,0.1), rgba(255,210,48,1));		/* for firefox 3.6+ */
    background: -o-linear-gradient(top,rgba(255,210,48,0.1),rgba(255,210,48,1)); /* For Opera Browsers */
 }
    
 .mailrs_grad {
-	background: url(../images/green.png) repeat-x;	/* for all browsers */
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30');		/* Internet Explorer 6,7 and 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30')";	/* Internet Explorer 8 only */
+	background: url(../images/blue.png) repeat-x;	/* for all browsers */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#56c6d9');		/* Internet Explorer 6,7 and 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#56c6d9')";	/* Internet Explorer 8 only */
    background: -webkit-gradient(linear, left top, left bottom, from(rgba(153,220,48,0.1)), to(rgba(153,220,48,1))); /* for webkit browsers */
    background: -moz-linear-gradient(top, rgba(153,220,48,0.1), rgba(153,220,48,1)); /* for firefox 3.6+ */
    background: -o-linear-gradient(rgba(153,220,48,0.1),rgba(153,220,48,1));  /* For Opera Browsers */
 }
 
 .maileh_grad {
-	background: url(../images/green.png) repeat-x;	/* for all browsers */
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30');		/* Internet Explorer 6,7 and 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30')";	/* Internet Explorer 8 only */
+	background: url(../images/blue.png) repeat-x;	/* for all browsers */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#56c6d9');		/* Internet Explorer 6,7 and 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#56c6d9')";	/* Internet Explorer 8 only */
    background: -webkit-gradient(linear, left top, left bottom, from(rgba(153,220,48,0.1)), to(rgba(153,220,48,1))); /* for webkit browsers */
    background: -moz-linear-gradient(top, rgba(153,220,48,0.1), rgba(153,220,48,1)); /* for firefox 3.6+ */
    background: -o-linear-gradient(rgba(153,220,48,0.1),rgba(153,220,48,1));  /* For Opera Browsers */
 }
 
 .sms_grad {
-	background: url(../images/orange.png) repeat-x;	/*	For all browsers*/
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#FFD230');		/* Internet Explorer 6,7 and 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#FFD230')";	/*Internet Explorer 8 only*/
+	background: url(../images/blue.png) repeat-x;	/*	For all browsers*/
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#56c6d9');		/* Internet Explorer 6,7 and 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#56c6d9')";	/*Internet Explorer 8 only*/
 	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,210,48,0.1)), to(rgba(255,210,48,1)));		/* for webkit browsers */
    background: -moz-linear-gradient(top, rgba(255,210,48,0.1), rgba(255,210,48,1));		/* for firefox 3.6+ */
    background: -o-linear-gradient(top,rgba(255,210,48,0.1),rgba(255,210,48,1)); /* For Opera Browsers */
 }
 
 .transportationRoute_grad {
-	background: url(../images/green.png) repeat-x;	/* for all browsers */
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30');		/* Internet Explorer 6,7 and 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30')";	/* Internet Explorer 8 only */
+	background: url(../images/blue.png) repeat-x;	/* for all browsers */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#56c6d9');		/* Internet Explorer 6,7 and 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#56c6d9')";	/* Internet Explorer 8 only */
    background: -webkit-gradient(linear, left top, left bottom, from(rgba(153,220,48,0.1)), to(rgba(153,220,48,1))); /* for webkit browsers */
    background: -moz-linear-gradient(top, rgba(153,220,48,0.1), rgba(153,220,48,1)); /* for firefox 3.6+ */
    background: -o-linear-gradient(rgba(153,220,48,0.1),rgba(153,220,48,1));  /* For Opera Browsers */
 }
    
- .tuitionFee_grad {
-	background: url(../images/green.png) repeat-x;	/* for all browsers */
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30');		/* Internet Explorer 6,7 and 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30')";	/* Internet Explorer 8 only */
+.tuitionFee_grad {
+	background: url(../images/violet.png) repeat-x;	/* for all browsers */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#C5B8F6');		/* Internet Explorer 6,7 and 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#C5B8F6')";	/* Internet Explorer 8 only */
    background: -webkit-gradient(linear, left top, left bottom, from(rgba(153,220,48,0.1)), to(rgba(153,220,48,1))); /* for webkit browsers */
    background: -moz-linear-gradient(top, rgba(153,220,48,0.1), rgba(153,220,48,1)); /* for firefox 3.6+ */
    background: -o-linear-gradient(rgba(153,220,48,0.1),rgba(153,220,48,1));  /* For Opera Browsers */
 }
    			   
 .otherFee_grad {
-	background: url(../images/orange.png) repeat-x;	/*	For all browsers*/
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#FFD230');		/* Internet Explorer 6,7 and 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#FFD230')";	/*Internet Explorer 8 only*/
+	background: url(../images/violet.png) repeat-x;	/*	For all browsers*/
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#C5B8F6');		/* Internet Explorer 6,7 and 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#C5B8F6')";	/*Internet Explorer 8 only*/
 	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,210,48,0.1)), to(rgba(255,210,48,1)));		/* for webkit browsers */
    background: -moz-linear-gradient(top, rgba(255,210,48,0.1), rgba(255,210,48,1));		/* for firefox 3.6+ */
    background: -o-linear-gradient(top,rgba(255,210,48,0.1),rgba(255,210,48,1)); /* For Opera Browsers */
@@ -183,33 +184,42 @@ a { text-decoration: none;  }
 }   
 
 .studentReports_grad {
-	background: url(../images/green.png) repeat-x;	/* for all browsers */
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30');		/* Internet Explorer 6,7 and 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30')";	/* Internet Explorer 8 only */
+	background: url(../images/pink.png) repeat-x;	/* for all browsers */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#fe2192');		/* Internet Explorer 6,7 and 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#fe2192')";	/* Internet Explorer 8 only */
    background: -webkit-gradient(linear, left top, left bottom, from(rgba(153,220,48,0.1)), to(rgba(153,220,48,1))); /* for webkit browsers */
    background: -moz-linear-gradient(top, rgba(153,220,48,0.1), rgba(153,220,48,1)); /* for firefox 3.6+ */
    background: -o-linear-gradient(rgba(153,220,48,0.1),rgba(153,220,48,1));  /* For Opera Browsers */
 }
    
 .staffReports_grad {
-	background: url(../images/orange.png) repeat-x;	/*	For all browsers*/
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#FFD230');		/* Internet Explorer 6,7 and 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#FFD230')";	/*Internet Explorer 8 only*/
+	background: url(../images/pink.png) repeat-x;	/*	For all browsers*/
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#fe2192');		/* Internet Explorer 6,7 and 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD230', endColorstr='#fe2192')";	/*Internet Explorer 8 only*/
 	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,210,48,0.1)), to(rgba(255,210,48,1)));		/* for webkit browsers */
    background: -moz-linear-gradient(top, rgba(255,210,48,0.1), rgba(255,210,48,1));		/* for firefox 3.6+ */
    background: -o-linear-gradient(top,rgba(255,210,48,0.1),rgba(255,210,48,1)); /* For Opera Browsers */
 }
-   
-.schoolReports_grad {
-	background: url(../images/section.png) repeat-x; 	/* For all browsers */
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#C5B8F6', endColorstr='#C5B8F6');	/* Internet Explorer 6,7 and 8*/
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#C5B8F6', endColorstr='#C5B8F6')";	/* Internet Explorer 8 only*/
+
+.classReports_grad {
+	background: url(../images/pink.png) repeat-x; 	/* For all browsers */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#C5B8F6', endColorstr='#fe2192');	/* Internet Explorer 6,7 and 8*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#C5B8F6', endColorstr='#fe2192')";	/* Internet Explorer 8 only*/
    background: -webkit-gradient(linear, left top, left bottom, from(rgba(197,184,246,0.1)), to(rgba(197,184,246,1))); /* for webkit browsers */
    background: -moz-linear-gradient(top, rgba(197,184,246,0.1), rgba(197,184,246,1)); /* for firefox 3.6+ */
    background: -o-linear-gradient(top,rgba(197,184,246,0.1),rgba(197,184,246,1)); /* For Opera Browsers */
- }
+}
+
+.schoolReports_grad {
+	background: url(../images/pink.png) repeat-x; 	/* For all browsers */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#C5B8F6', endColorstr='#fe2192');	/* Internet Explorer 6,7 and 8*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#C5B8F6', endColorstr='#fe2192')";	/* Internet Explorer 8 only*/
+   background: -webkit-gradient(linear, left top, left bottom, from(rgba(197,184,246,0.1)), to(rgba(197,184,246,1))); /* for webkit browsers */
+   background: -moz-linear-gradient(top, rgba(197,184,246,0.1), rgba(197,184,246,1)); /* for firefox 3.6+ */
+   background: -o-linear-gradient(top,rgba(197,184,246,0.1),rgba(197,184,246,1)); /* For Opera Browsers */
+}
  
- .availabilityCheck_grad {
+.availabilityCheck_grad {
 	background: url(../images/green.png) repeat-x;	/* for all browsers */
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30');		/* Internet Explorer 6,7 and 8 */
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30')";	/* Internet Explorer 8 only */
@@ -221,22 +231,18 @@ a { text-decoration: none;  }
 .slider {
 	background-color: #fff;
 	width:172px;
-	height:auto;
-	line-height:28px;
+	height:200px;
+	line-height:40px;
 	text-align:center;
 	color: #555;
 	position: relative;
-	top: -234px;
+	top: -659px;
 	opacity:0.0;  
 	filter: alpha(opacity=0);
 	-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0); 
 }
-.slider a { display: block; color: #000;
-font-size: 18px;
-font-family: cursive;}
+.slider a { display: block; color: #000; }
 
-.slider a:hover { background: grey;
-color:white;
-}
+.slider a:hover { background: #f1f1f1; }
 #slide { width:736px; margin:auto; height: 330px;  }
 .column { float: left; margin-left: 12px; position: relative; }

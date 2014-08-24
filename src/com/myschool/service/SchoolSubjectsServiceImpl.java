@@ -3,33 +3,35 @@
  */
 package com.myschool.service;
 
+import java.util.List;
+
+import com.myschool.beans.SchoolSubjects;
 import com.myschool.dao.SchoolSubjectDAO;
+import com.myschool.dto.SchoolClassDTO;
 import com.myschool.dto.SchoolSubjectsDTO;
 
-/**
- * @author Sumeet
- *
- */
 public class SchoolSubjectsServiceImpl implements SchoolSubjectsService{
 	
 	private SchoolSubjectDAO schoolSubjectDAO;
-
+	
+	public SchoolSubjectsDTO getAllAvailableSubjects() {
+		 return getSchoolSubjectDAO().getAllAvailableSubjects();
+	}
+	
 	public boolean createSubjects(SchoolSubjectsDTO schoolSubjectsDTO) {
-		
 		boolean subjectsExists = getSchoolSubjectDAO().getAvailableSubjects(schoolSubjectsDTO);
-		if(subjectsExists)
-		{
+		if(subjectsExists) {
 			return false;
-		}else
-		{
+		} else {
 			 getSchoolSubjectDAO().createSubjects(schoolSubjectsDTO);
 			 SchoolSubjectsDTO schoolSubjectsDTOTemp = new SchoolSubjectsDTO();
 			 schoolSubjectsDTOTemp.setSubjectName(schoolSubjectsDTO.getSubjectName());
-			 getSchoolSubjectDAO().getAvailableSubjects(schoolSubjectsDTOTemp );
+			 getSchoolSubjectDAO().getAvailableSubjects(schoolSubjectsDTOTemp);
 			 schoolSubjectsDTO.setSubjectNameCodes(schoolSubjectsDTOTemp.getSubjectNameCodes());
 			 return true;
 		}
 	}
+	
 	public SchoolSubjectDAO getSchoolSubjectDAO() {
 		return schoolSubjectDAO;
 	}
@@ -48,5 +50,12 @@ public class SchoolSubjectsServiceImpl implements SchoolSubjectsService{
 		boolean status = getSchoolSubjectDAO().updateSubjects(schoolSubjectsDTO);
 			return true;
 		}
+	}
+
+	@Override
+	public void getAllTheSubjectList(SchoolClassDTO schoolClassDTO) {
+		SchoolSubjectsDTO dto = getAllAvailableSubjects();
+		schoolClassDTO.setAllSubjectMap(dto.getSubjectNameCodes());
+		schoolClassDTO.setAllSubjectList(dto.getExistsSubjectList());
 	}
 }
