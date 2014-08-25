@@ -30,7 +30,11 @@ public class SchoolClassAction extends ActionSupport  implements SessionAware{
 		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
 		schoolClassDTO = new SchoolClassDTO();
 		getSchoolSubjectsService().getAllTheSubjectList(schoolClassDTO);
-		availableSubjectList.addAll(schoolClassDTO.getAllSubjectList());
+		availableSubjectList = schoolClassDTO.getAllSubjectList();
+		if(availableSubjectList == null) {
+			availableSubjectList = new ArrayList<String>();
+		}
+		schoolClassDTO.setErrorMessage(null);
 		return SUCCESS;
 	}
 	public String performCreateO()
@@ -38,6 +42,7 @@ public class SchoolClassAction extends ActionSupport  implements SessionAware{
 		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
 		schoolClassService.setSelectedSubjectCodes(schoolClassDTO,selectedSubject);
 		getSchoolClassService().createClass(schoolClassDTO,sessionUtils.getUserId());
+		schoolClassDTO.setErrorMessage(getText(schoolClassDTO.getErrorMessage()));
 		if(schoolClassDTO.isClassOperationStatus()){
 			return SUCCESS;
 		}else

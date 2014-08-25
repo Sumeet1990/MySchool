@@ -94,7 +94,7 @@
 								<s:property value="getText('cm.section')" />
 							</div>
 							<div style="" class="classSection_grad slider">
-								<s:a action="classSectionCreateAction">
+								<s:a action="classSectionAction">
 									<s:property value="getText('cm.create')" />
 								</s:a>
 								<a href="#"><s:property value="getText('cm.modify')" /></a> <a
@@ -108,7 +108,7 @@
 								<s:property value="getText('cm.subjects')" />
 							</div>
 							<div style="" class="subject_grad slider">
-								<s:a action="schoolSubjectCreateAction">
+								<s:a action="schoolSubjectInitlizeAction">
 									<s:property value="getText('cm.create')" />
 								</s:a>
 								<a href="#"><s:property value="getText('cm.modify')" /></a> <a

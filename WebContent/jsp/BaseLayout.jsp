@@ -20,10 +20,11 @@
 			<tr style="background-color:gray height=600px">
 				<td><tiles:insertAttribute name="body" /></td>
 			</tr>
-			<tr style="height=100px">
-				<td colspan="2"><tiles:insertAttribute name="footer"/></td>
-			</tr>
+			<!-- <tr style="height=100px; position: bottom">
+				<td colspan="2"></td>
+			</tr> -->
 		</table>
+		<tiles:insertAttribute name="footer"/>
 	</body>
 </html>
 

@@ -26,24 +26,25 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 	private SchoolSubjectsDTO schoolSubjectsDTO;
 	private java.util.Map<String, Object> session;
 	
-	public String performCreate() {
-		schoolSubjectsDTO = new SchoolSubjectsDTO();
+	public String performInitlize() {
 		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
+		schoolSubjectsDTO = new SchoolSubjectsDTO();
+		schoolSubjectsDTO = getSchoolSubjectsService().getAllAvailableSubjects();
 		schoolSubjectsDTO.setUserId(sessionUtils.getUserId());
 		schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_CREATE);
-		if(schoolSubjectsDTO.getExistsSubjectList() == null || schoolSubjectsDTO.getExistsSubjectList().size() == 0) {
-			schoolSubjectsDTO = getSchoolSubjectsService().getAllAvailableSubjects();
+		return SUCCESS;
+	}
+	public String performCreate() {
+		
+		boolean status = getSchoolSubjectsService().createSubjects(schoolSubjectsDTO);
+		if(status) {
+			setErrorMessage(getText(CommonConstants.SUBJECTS_SUCCESSFULLY_CREATED));
+			schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_CREATE_SUCCESS);	
 			return SUCCESS;
 		} else {
-			boolean status = getSchoolSubjectsService().createSubjects(schoolSubjectsDTO);
-			if(status) {
-				setErrorMessage(getText(CommonConstants.SUBJECTS_SUCCESSFULLY_CREATED));
-				return SUCCESS;
-			} else {
-				setErrorMessage(getText(CommonConstants.SUBJECTS_ALREADY_EXISTS));
-				schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_CREATE_FAIL);			
-				return FAILURE;
-			}
+			setErrorMessage(getText(CommonConstants.SUBJECTS_ALREADY_EXISTS));
+			schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_CREATE_FAIL);			
+			return FAILURE;
 		}
 	}
 	

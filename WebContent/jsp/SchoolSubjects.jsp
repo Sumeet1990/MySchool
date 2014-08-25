@@ -9,13 +9,11 @@
 
 </head>
 <BODY>
-<s:property value="schoolSubjectsDTO.currentOperationStatus"/>
-
 	<s:if test="schoolSubjectsDTO.currentOperationStatus=='subjectCreateFail' || schoolSubjectsDTO.currentOperationStatus=='subjectModifyFail'">
 		<s:property value="schoolSubjectsDTO.existsSubjectList" />
 		<s:property value="errorMessage" />
 	</s:if>
-	<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectCreate' || schoolSubjectsDTO.currentOperationStatus == 'subjectModify'}">
+	<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectCreateSuccess' || schoolSubjectsDTO.currentOperationStatus == 'subjectModify'}">
 	<s:form action="schoolSubjectModifyAction" onsubmit="return keepSubjectsToModify('dataTableModfiy','submitButton')">
 		<s:property value="errorMessage" />
 		<table id="dataTableModfiy">
@@ -23,7 +21,7 @@
 				<tr>
 					<td><s:label value="Subject Name" theme="simple"></s:label></td>
 					<td><s:textfield disabled="true"  name="schoolSubjectsDTO.subjectName" onkeyup="upperCaseThetextById(this)" value="%{#element}" theme="simple" /></td>
-					<s:if test="schoolSubjectsDTO.currentOperationStatus != 'subjectModify'">
+					<s:if test="schoolSubjectsDTO.currentOperationStatus == 'subjectCreateSuccess'">
 						<td><s:checkbox name="checkBox" theme="simple"/></td>
 						<td><s:hidden name="schoolSubjectsDTO.subjectCodes" value="%{schoolSubjectsDTO.subjectNameCodes.get(#element)}"/></td>
 					</s:if>
@@ -36,7 +34,7 @@
 		</s:form>
 	</s:if>
 	<s:if
-		test="%{schoolSubjectsDTO==null || schoolSubjectsDTO.currentOperationStatus=='subjectCreateFail' || schoolSubjectsDTO.currentOperationStatus=='subjectModifyFail'}">
+		test="%{schoolSubjectsDTO.currentOperationStatus=='subjectCreate' || schoolSubjectsDTO.currentOperationStatus=='subjectCreateFail' || schoolSubjectsDTO.currentOperationStatus=='subjectModifyFail'}">
 		<s:form method="post" action="schoolSubjectCreateAction"
 			theme="simple">
 			<INPUT type="button" value="Add Row" onclick="addRow('dataTable')" />

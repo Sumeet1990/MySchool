@@ -193,7 +193,7 @@
 						<div class="column">
 							<div class='button transportationRoute'><s:property value="getText('fm.transportationRoute')"/></div>
 							<div style="" class="transportationRoute_grad slider">
-								<a href="#"><s:property value="getText('fm.allocation')"/></a>
+								<s:a action="transportationRouteAllocationAction"><s:property value="getText('fm.allocation')"/></s:a>
 							</div>
 						</div>					
 					</div>
@@ -211,13 +211,14 @@
 						<div class="column">
 							<div class='button tuitionFee'><s:property value="getText('fm.tuitionFee')"/></div>
 							<div style="" class="tuitionFee_grad slider">
-								<a href="#"><s:property value="getText('fm.collection')"/></a>
+								<s:a action="tutionfeeCollectionAction"><s:property value="getText('fm.collection')"/></s:a>
 								<a href="#"><s:property value="getText('fm.dueEnquiry')"/></a>
 							</div>
 						</div>
 						<div class="column">
 							<div class='button otherFee'><s:property value="getText('fm.otherFee')"/></div>
 							<div style="" class="otherFee_grad slider">
+								<s:a action="otherfeeCollectionAction"><s:property value="getText('fm.collection')"/></s:a>
 								<a href="#"><s:property value="getText('fm.collection')"/></a>
 								<a href="#"><s:property value="getText('fm.dueEnquiry')"/></a>
 							</div>

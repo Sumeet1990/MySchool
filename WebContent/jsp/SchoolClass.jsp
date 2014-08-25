@@ -18,8 +18,12 @@
 	<body>
 		<div id="page-wrap">
 			<div id="content">
+			<s:if test="schoolClassDTO.classOperationStatus == false">
 				<s:form action="" method="post" id="elements-form">
 	    			<h3>Create Class</h3>
+				    <s:if test="schoolClassDTO.classOperationStatus == false && schoolClassDTO.errorMessage != null" >
+						<h3 style="color:red"><s:property value="schoolClassDTO.errorMessage"/></h3>
+					</s:if>
 				    <div id="form-content">
 						<fieldset>
 							<br/>
@@ -61,10 +65,8 @@
 									     multiple="true"
 									     headerKey="-1"
 									     cssClass="form-control"
-									     addToLeftOnclick="true"
-									     addToRightOnclick="true"
-									     allowAddToLeft="false"
-									     allowAddToRight="false"
+									     allowAddToLeft="true"
+									     allowAddToRight="true"
 									     allowUpDownOnLeft="false"
 									     allowUpDownOnRight="false"
 									     allowSelectAll="false"
@@ -73,8 +75,7 @@
 									     doubleList="selectedSubjectList"
 									     doubleName="selectedSubject"
 									     doubleHeaderKey="-1"
-									     headerValue="--- Please Select ---"
-									     doubleHeaderValue="--- Please Select ---"
+									    
 									 />
 
 						<fieldset>
@@ -84,6 +85,10 @@
 				        </fieldset>
 		 			</div>
 				</s:form>
+				</s:if>
+				<s:else>
+					<h3 style="color:green"><s:property value="schoolClassDTO.errorMessage"/></h3>
+				</s:else>
 			</div>
 		</div>
 	</body>

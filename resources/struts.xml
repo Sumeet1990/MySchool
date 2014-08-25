@@ -303,5 +303,28 @@
 			<result name="input" type="tiles">/StudentLeavesPage.tiles</result>
 		</action>
 		
+		<action name="transportationRouteAllocationAction" class="transportationRouteAllocationAction">
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<param name="errorMesage">1m</param>
+			<result name="success" type="tiles">/TransportationRouteAllocationPage.tiles</result>
+			<result name="failure" type="tiles">/TransportationRouteAllocationPage.tiles</result>
+			<result name="input" type="tiles">/TransportationRouteAllocationPage.tiles</result>
+		</action>
+		
+		<action name="tutionfeeCollectionAction" class="tutionfeeCollectionAction">
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<param name="errorMesage">1m</param>
+			<result name="success" type="tiles">/TuitionfeeCollectionPage.tiles</result>
+			<result name="failure" type="tiles">/TuitionfeeCollectionPage.tiles</result>
+			<result name="input" type="tiles">/TuitionfeeCollectionPage.tiles</result>
+		</action>
+
+		<action name="otherfeeCollectionAction" class="otherfeeCollectionAction">
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<param name="errorMesage">1m</param>
+			<result name="success" type="tiles">/OtherfeeCollectionPage.tiles</result>
+			<result name="failure" type="tiles">/OtherfeeCollectionPage.tiles</result>
+			<result name="input" type="tiles">/OtherfeeCollectionPage.tiles</result>
+		</action>
 	</package>
 </struts>

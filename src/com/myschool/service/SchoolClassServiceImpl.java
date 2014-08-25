@@ -3,6 +3,7 @@ package com.myschool.service;
 import com.myschool.dao.SchoolClassDAO;
 import com.myschool.dao.SchoolSubjectDAO;
 import com.myschool.dto.SchoolClassDTO;
+import com.myschool.util.CommonConstants;
 
 public class SchoolClassServiceImpl implements SchoolClassService{
 	
@@ -32,8 +33,15 @@ public class SchoolClassServiceImpl implements SchoolClassService{
 		getSchoolClassDAO().verifyClassExists(schoolClassDTO);
 
 		if(schoolClassDTO.isClassOperationStatus())
-		{
-			getSchoolClassDAO().createSchoolClass(schoolClassDTO,userId);
+		{	
+			try{
+				getSchoolClassDAO().createSchoolClass(schoolClassDTO,userId);
+				schoolClassDTO.setErrorMessage(CommonConstants.CLASS_SUCCESSFULLY_CREATED);
+			}catch(Exception e){
+				schoolClassDTO.setErrorMessage(CommonConstants.CLASS_ERROR_OCCURED);
+			}
+		}else{
+			schoolClassDTO.setErrorMessage(CommonConstants.CLASS_ALREADY_EXISTS);
 		}
 	}
 

@@ -104,4 +104,13 @@
 	
 	<bean name="staffLeavesAction" class="com.myschool.action.StaffLeavesAction">
 	</bean>
+	
+	<bean name="transportationRouteAllocationAction" class="com.myschool.action.TransportationRouteAllocationAction">
+	</bean>
+	
+	<bean name="tutionfeeCollectionAction" class="com.myschool.action.TuitionfeeCollectionAction">
+	</bean>
+	
+	<bean name="otherfeeCollectionAction" class="com.myschool.action.OtherfeeCollectionAction">
+	</bean>
 </beans>

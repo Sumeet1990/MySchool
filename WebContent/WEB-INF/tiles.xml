@@ -121,4 +121,16 @@
     <definition name="/StaffLeavesPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/StaffLeaves.jsp"/>
     </definition>
+    
+    <definition name="/TransportationRouteAllocationPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/TransportationRouteAllocation.jsp"/>
+    </definition>
+    
+    <definition name="/TuitionfeeCollectionPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/TuitionfeeCollection.jsp"/>
+    </definition>
+    
+     <definition name="/OtherfeeCollectionPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/OtherfeeCollection.jsp"/>
+    </definition>
 </tiles-definitions>

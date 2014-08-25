@@ -16,6 +16,7 @@ public class SchoolClassDTO {
 	private String maxStrengthOfClass;
 	private String statusClass;
 	private String schoolClaassId;
+	private String errorMessage;
 	private boolean classOperationStatus;
 	private String maxPeriodsPerteacher;
 	
@@ -98,6 +99,12 @@ public class SchoolClassDTO {
 	}
 	public void setSelectedSubjectCodes(String selectedSubjectCodes) {
 		this.selectedSubjectCodes = selectedSubjectCodes;
+	}
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 	
 }
