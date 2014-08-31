@@ -27,11 +27,11 @@
 						</li>
 						<li id="menu-item-791" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-791"
 							style="float: right">
-								<s:a action="logout">Log out</s:a>
+								<s:a action="logout"><s:property value="getText('global.logout')"/></s:a>
 						  </li>
 						<li id="menu-item-791" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-791"
 							style="float: right">
-								<s:a href="%{helpAction}"> Help</s:a>
+								<s:a href="%{helpAction}"><s:property value="getText('header.help')"/></s:a>
 						</li>
 						<li id="menu-item-791" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-791"
 							style="float: right">
@@ -39,7 +39,7 @@
 								<s:property value="getText('header.welcome')"/>
 								<s:property value='#session.sessionUtils.userGivenFullName'/>
 								<s:property value='#session.sessionUtils.userSurname'/>, &nbsp;
-								<s:property value="getText('header.role')" />&nbsp;
+								<s:property value="getText('header.role')" /> : &nbsp;
 								<s:property value='#session.sessionUtils.userRolesName'/>
 							</a>
 						</li>

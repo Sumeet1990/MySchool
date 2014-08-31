@@ -37,7 +37,7 @@
 								<div class="fieldgroup">
 				                	<s:submit value="Reset password" action="resetPassword"></s:submit>
 				                	<s:reset name="reset"></s:reset>
-				                	<s:a style="color:aliceblue;" action="logout"><s:property value="getText('forgotPassword.logout')"/></s:a>
+				                	<s:a style="color:aliceblue;" action="logout"><s:property value="getText('global.logout')"/></s:a>
 				            	</div>	
 				            </s:if>	
 				            <s:else>
@@ -68,7 +68,7 @@
 					            	<div class="fieldgroup">
 				                		<s:submit value="Reset password" action="validateSecurityAnswers"></s:submit>
 				                		<s:reset name="reset"></s:reset>
-				                		<s:a style="color:aliceblue;" action="logout"><s:property value="getText('forgotPassword.logout')"/></s:a>
+				                		<s:a style="color:aliceblue;" action="logout"><s:property value="getText('global.logout')"/></s:a>
 				            		</div>
 								</s:if>
 								<s:else>
@@ -79,7 +79,7 @@
 					            	<div class="fieldgroup">
 				                		<s:submit value="Continue" action="verifyUser"></s:submit>
 				                		<s:reset name="reset"></s:reset>
-				                		<s:a style="color:aliceblue;" action="logout"><s:property value="getText('forgotPassword.logout')"/></s:a>
+				                		<s:a style="color:aliceblue;" action="logout"><s:property value="getText('global.logout')"/></s:a>
 				            		</div>
 								</s:else>
 				            </s:else>
