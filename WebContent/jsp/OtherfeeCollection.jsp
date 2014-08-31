@@ -21,7 +21,7 @@
 	<body>
 		<div id="page-wrap">
 			<div id="content">
-				<form action="" method="post" id="elements-form">
+				<s:form action="" method="post" id="elements-form">
 	    			<h3>Other Fee</h3>
 				    <div id="form-content">
 						<h4>Collection</h4>
@@ -54,9 +54,14 @@
 				            <div class="fieldgroup">    
 				                <label>Amount Payed</label>
 				            </div>
-				        </fieldset>				           	
+				        </fieldset>	
+				         <fieldset>
+							<div class="fieldgroup">
+				                <s:submit value="Sumbit"/>
+				            </div>				           	
+				        </fieldset>			           	
 				    </div>
-				</form>
+				</s:form>
 			</div>
 		</div>
 	</body>

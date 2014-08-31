@@ -2,7 +2,7 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<head>
-	<title></title>
+		<title></title>
 	</head>
 	<body>
 		<div class="site-container">
@@ -71,7 +71,6 @@
 			</header>
 		</div>
 	</body>
-	
 	<script type="text/javascript">
 		startTime();
 	</script>

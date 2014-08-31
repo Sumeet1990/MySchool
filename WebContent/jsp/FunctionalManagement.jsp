@@ -27,38 +27,46 @@
 	<body>
 		<div class="wrap">
 			<ul id="menu-category-menu" class="menu genesis-nav-menu menu-secondary">
-				<li id="menu-item-417"
-					class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-417"><s:a
-						href="#" id="sTop" cssClass="subNavBtn" onclick="goToHeight(this)">
-						<s:property value="getText('fm.administrator')" />&nbsp;|&nbsp;</s:a></li>
-				<li id="menu-item-418"
-					class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-418"><s:a
-						href="#" id="s1" onclick="goToHeight(this)" cssClass="subNavBtn">
-						<s:property value="getText('fm.leaves')" />&nbsp;|&nbsp;</s:a></li>
-				<li id="menu-item-419"
-					class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-419"><s:a
-						href="#" id="s2" onclick="goToHeight(this)" cssClass="subNavBtn">
-						<s:property value="getText('fm.communication')" />&nbsp;|&nbsp;</s:a></li>
-				<li id="menu-item-420"
-					class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-420"><s:a
-						href="#" id="s3" onclick="goToHeight(this)" cssClass="subNavBtn">
-						<s:property value="getText('fm.transportation')" />&nbsp;|&nbsp;</s:a></li>
-				<li id="menu-item-428"
-					class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-428"><s:a
-						href="#" id="s4" onclick="goToHeight(this)" cssClass="subNavBtn">
-						<s:property value="getText('fm.finance')" />&nbsp;|&nbsp;</s:a></li>
-				<li id="menu-item-421"
-					class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-421"><s:a
-						href="#" id="s5" onclick="goToHeight(this)" cssClass="subNavBtn end">
-						<s:property value="getText('fm.library')" />&nbsp;|&nbsp;</s:a></li>
-				<li id="menu-item-421"
-					class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-421"><s:a
-						href="#" id="s6" onclick="goToHeight(this)" cssClass="subNavBtn end">
-						<s:property value="getText('fm.reports')" />&nbsp;|&nbsp;</s:a></li>
-				<li id="menu-item-421"
-					class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-421"><s:a
-						href="#" id="s7" onclick="goToHeight(this)" cssClass="subNavBtn end">
-						<s:property value="getText('fm.availability')" />&nbsp;|&nbsp;</s:a></li>
+				<li id="menu-item-417" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-417">
+					<s:a href="#" id="sTop" cssClass="subNavBtn" onclick="goToHeight(this)">
+						<s:property value="getText('fm.administrator')" />&nbsp;|&nbsp;
+					</s:a>
+				</li>
+				<li id="menu-item-418" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-418">
+					<s:a href="#" id="s1" onclick="goToHeight(this)" cssClass="subNavBtn">
+						<s:property value="getText('fm.leaves')" />&nbsp;|&nbsp;
+					</s:a>
+				</li>
+				<li id="menu-item-419" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-419">
+					<s:a href="#" id="s2" onclick="goToHeight(this)" cssClass="subNavBtn">
+						<s:property value="getText('fm.communication')" />&nbsp;|&nbsp;
+					</s:a>
+				</li>
+				<li id="menu-item-420" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-420">
+					<s:a href="#" id="s3" onclick="goToHeight(this)" cssClass="subNavBtn">
+						<s:property value="getText('fm.transportation')" />&nbsp;|&nbsp;
+					</s:a>
+				</li>
+				<li id="menu-item-428" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-428">
+					<s:a href="#" id="s4" onclick="goToHeight(this)" cssClass="subNavBtn">
+						<s:property value="getText('fm.finance')" />&nbsp;|&nbsp;
+					</s:a>
+				</li>
+				<li id="menu-item-421" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-421">
+					<s:a href="#" id="s5" onclick="goToHeight(this)" cssClass="subNavBtn end">
+						<s:property value="getText('fm.library')" />&nbsp;|&nbsp;
+					</s:a>
+				</li>
+				<li id="menu-item-421" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-421">
+					<s:a href="#" id="s6" onclick="goToHeight(this)" cssClass="subNavBtn end">
+						<s:property value="getText('fm.reports')" />&nbsp;|&nbsp;
+					</s:a>
+				</li>
+				<li id="menu-item-421" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-421">
+					<s:a href="#" id="s7" onclick="goToHeight(this)" cssClass="subNavBtn end">
+						<s:property value="getText('fm.availability')" />&nbsp;|&nbsp;
+					</s:a>
+				</li>
 			</ul>
 		</div>
 	

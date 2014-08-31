@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<link rel='stylesheet' type='text/css' href='${pageContext.request.contextPath}/css/styles.css' />
-		
 		<script type="text/javascript" 	src="${pageContext.request.contextPath}/js/menu_jquery.js"></script>
+	</head>
 	<body>
 		<div id='cssmenu'>
 			<ul>

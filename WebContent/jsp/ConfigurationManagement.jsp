@@ -1,16 +1,13 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 	<head>
-		<link rel='stylesheet' id='magazine-pro-theme-css' href='css/common.css'
-			type='text/css' media='all' />
-		<link href="${pageContext.request.contextPath}/css/cmstyle.css"
-			rel="stylesheet" type="text/css">
+		<link rel='stylesheet' id='magazine-pro-theme-css' href='css/common.css' type='text/css' media='all' />
+		<link href="${pageContext.request.contextPath}/css/cmstyle.css" rel="stylesheet" type="text/css">
 		
-		<script type="text/javascript"
-			src="${pageContext.request.contextPath}/js/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript"
-			src="${pageContext.request.contextPath}/js/jquery.smint.js"></script>
-			<script type="text/javascript">
+		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.smint.js"></script>
+		
+		<script type="text/javascript">
 			$(document).ready(function(){
 				$(".button").toggle(
 				function(){
@@ -28,30 +25,36 @@
 		<div class="wrap">
 			<ul id="menu-category-menu"
 				class="menu genesis-nav-menu menu-secondary">
-				<li id="menu-item-417"
-					class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-417"><s:a
-						href="#" id="sTop" cssClass="subNavBtn" onclick="goToHeight(this)">
-						<s:property value="getText('cm.administrator')" />&nbsp;|&nbsp;</s:a></li>
-				<li id="menu-item-418"
-					class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-418"><s:a
-						href="#" id="s1" onclick="goToHeight(this)" cssClass="subNavBtn">
-						<s:property value="getText('cm.staff')" />&nbsp;|&nbsp;</s:a></li>
-				<li id="menu-item-419"
-					class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-419"><s:a
-						href="#" id="s2" onclick="goToHeight(this)" cssClass="subNavBtn">
-						<s:property value="getText('cm.calendar')" />&nbsp;|&nbsp;</s:a></li>
-				<li id="menu-item-420"
-					class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-420"><s:a
-						href="#" id="s3" onclick="goToHeight(this)" cssClass="subNavBtn">
-						<s:property value="getText('cm.transport')" />&nbsp;|&nbsp;</s:a></li>
-				<li id="menu-item-428"
-					class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-428"><s:a
-						href="#" id="s4" onclick="goToHeight(this)" cssClass="subNavBtn">
-						<s:property value="getText('cm.finance')" />&nbsp;|&nbsp;</s:a></li>
-				<li id="menu-item-421"
-					class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-421"><s:a
-						href="#" id="s5" onclick="goToHeight(this)" cssClass="subNavBtn end">
-						<s:property value="getText('cm.library')" />&nbsp;|&nbsp;</s:a></li>
+				<li id="menu-item-417" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-417">
+					<s:a href="#" id="sTop" cssClass="subNavBtn" onclick="goToHeight(this)">
+						<s:property value="getText('cm.administrator')" />&nbsp;|&nbsp;
+					</s:a>
+				</li>
+				<li id="menu-item-418" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-418">
+					<s:a href="#" id="s1" onclick="goToHeight(this)" cssClass="subNavBtn">
+						<s:property value="getText('cm.staff')" />&nbsp;|&nbsp;
+					</s:a>
+				</li>
+				<li id="menu-item-419" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-419">
+					<s:a href="#" id="s2" onclick="goToHeight(this)" cssClass="subNavBtn">
+						<s:property value="getText('cm.calendar')" />&nbsp;|&nbsp;
+					</s:a>
+				</li>
+				<li id="menu-item-420" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-420">
+					<s:a href="#" id="s3" onclick="goToHeight(this)" cssClass="subNavBtn">
+						<s:property value="getText('cm.transport')" />&nbsp;|&nbsp;
+					</s:a>
+				</li>
+				<li id="menu-item-428" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-428">
+					<s:a href="#" id="s4" onclick="goToHeight(this)" cssClass="subNavBtn">
+						<s:property value="getText('cm.finance')" />&nbsp;|&nbsp;
+					</s:a>
+				</li>
+				<li id="menu-item-421" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-421">
+					<s:a href="#" id="s5" onclick="goToHeight(this)" cssClass="subNavBtn end">
+						<s:property value="getText('cm.library')" />&nbsp;|&nbsp;
+					</s:a>
+				</li>
 			</ul>
 		</div>
 	
@@ -63,7 +66,6 @@
 					<div id="slide">
 						<br/>
 						<div style="clear: both"></div>
-	
 						<div class="column">
 							<div class='button user'>
 								<s:property value="getText('cm.user')" />
@@ -88,21 +90,17 @@
 									href="#"><s:property value="getText('cm.view')" /></a>
 							</div>
 						</div>
-	
 						<div class="column">
 							<div class='button classSection'>
 								<s:property value="getText('cm.section')" />
 							</div>
 							<div style="" class="classSection_grad slider">
-								<s:a action="classSectionAction">
-									<s:property value="getText('cm.create')" />
-								</s:a>
-								<a href="#"><s:property value="getText('cm.modify')" /></a> <a
-									href="#"><s:property value="getText('cm.delete')" /></a> <a
-									href="#"><s:property value="getText('cm.view')" /></a>
+								<s:a action="classSectionCreateAction"><s:property value="getText('cm.create')" /></s:a>
+								<a href="#"><s:property value="getText('cm.modify')" /></a> 
+								<a href="#"><s:property value="getText('cm.delete')" /></a>
+								<a href="#"><s:property value="getText('cm.view')" /></a>
 							</div>
 						</div>
-	
 						<div class="column">
 							<div class='button subject'>
 								<s:property value="getText('cm.subjects')" />
@@ -120,7 +118,6 @@
 				</div>
 				<br class="clear">
 			</div>
-	
 			<div class="s1" style="display: none">
 				<div class="inner">
 					<br/>
@@ -158,7 +155,6 @@
 	
 				</div>
 			</div>
-	
 			<div class="s2" style="display: none">
 				<div class="inner">
 					<br/>
@@ -199,7 +195,6 @@
 					</div>
 				</div>
 			</div>
-	
 			<div class="s3" style="display: none">
 				<div class="inner">
 					<br/>
@@ -249,7 +244,6 @@
 					</div>
 				</div>
 			</div>
-	
 			<div class="s4" style="display: none">
 				<div class="inner">
 					<br/>

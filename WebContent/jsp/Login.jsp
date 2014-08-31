@@ -76,8 +76,6 @@
 			</s:form>
 		</div>
 
-		<!--bg gradient-->
 		<div class="gradient"></div>
-		<!--END bg gradient-->
 	</body>
 </html>

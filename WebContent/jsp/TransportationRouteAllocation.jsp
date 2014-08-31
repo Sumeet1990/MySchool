@@ -21,7 +21,7 @@
 	<body>
 		<div id="page-wrap">
 			<div id="content">
-				<form action="" method="post" id="elements-form">
+				<s:form action="" method="post" id="elements-form">
 	    			<h3>Allocate Rout</h3>
 				    <div id="form-content">
 							<h4>Transport Route Allocation</h4>
@@ -63,8 +63,6 @@
 				                <label>Ending Point</label>
 				                <input type="text" name="staffSurname"/>
 				            </div>
-				            
-							
 							<div class="fieldgroup">
 				                <label>Starting Time</label>
 				                <input type="text" name="staffQualification"/>
@@ -72,11 +70,11 @@
 						</fieldset>
 				        <fieldset>
 							<div class="fieldgroup">
-				                <input type="submit" value="Submit" class="submit"/>
+				                <s:submit value="Sumbit"/>
 				            </div>				           	
 				        </fieldset>
 				    </div>
-				</form>
+				</s:form>
 			</div>
 		</div>
 	</body>

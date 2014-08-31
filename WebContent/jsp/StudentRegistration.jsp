@@ -21,7 +21,7 @@
 	<body>
 		<div id="page-wrap">
 			<div id="content">
-				<form action="" method="post" id="elements-form">
+				<s:form action="" method="post" id="elements-form">
 	    			<h3>Student Registration</h3>
 				    <div id="form-content">
 				        <fieldset>
@@ -183,11 +183,11 @@
 				        </fieldset>
 				        <fieldset>
 							<div class="fieldgroup">
-				                <input type="submit" value="Register" class="submit"/>
+				               <s:submit value="Sumbit"/>
 				            </div>				           	
 				        </fieldset>
 				    </div>
-				</form>
+				</s:form>
 			</div>
 		</div>
 	</body>

@@ -21,7 +21,7 @@
 	<body>
 		<div id="page-wrap">
 			<div id="content">
-				<form action="" method="post" id="elements-form">
+				<s:form action="" method="post" id="elements-form">
 	    			<h3>Create Rout</h3>
 				    <div id="form-content">
 							<h4>Transport Rout Details</h4>
@@ -89,11 +89,11 @@
 						</fieldset>
 				        <fieldset>
 							<div class="fieldgroup">
-				                <input type="submit" value="Submit" class="submit"/>
+				                <s:submit value="Sumbit"/>
 				            </div>				           	
 				        </fieldset>
 				    </div>
-				</form>
+				</s:form>
 			</div>
 		</div>
 	</body>

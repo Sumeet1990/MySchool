@@ -56,28 +56,27 @@
 				                <input type="text" name="schoolClassDTO.maxStrengthOfClass"/>
 				            </div>
 				        </fieldset>
-						
-									<s:optiontransferselect
-									     name="availableSubject"
-									     leftTitle="Left Antivirus Title"
-									     rightTitle="Right Antivirus Title"
-									     list="availableSubjectList"
-									     multiple="true"
-									     headerKey="-1"
-									     cssClass="form-control"
-									     allowAddToLeft="true"
-									     allowAddToRight="true"
-									     allowUpDownOnLeft="false"
-									     allowUpDownOnRight="false"
-									     allowSelectAll="false"
-									     labelposition="centre"
-									     doubleCssClass="form-control"
-									     doubleList="selectedSubjectList"
-									     doubleName="selectedSubject"
-									     doubleHeaderKey="-1"
-									    
-									 />
-
+				        <fieldset>
+							<div class="fieldgroup">
+								<s:optiontransferselect name="availableSubject"
+								     leftTitle="Left Antivirus Title"
+								     rightTitle="Right Antivirus Title"
+								     list="availableSubjectList"
+								     multiple="true"
+								     headerKey="-1"
+								     cssClass="form-control"
+								     allowAddToLeft="true"
+								     allowAddToRight="true"
+								     allowUpDownOnLeft="false"
+								     allowUpDownOnRight="false"
+								     allowSelectAll="false"
+								     labelposition="centre"
+								     doubleCssClass="form-control"
+								     doubleList="selectedSubjectList"
+								     doubleName="selectedSubject"
+								     doubleHeaderKey="-1"/>
+							</div>
+						</fieldset>
 						<fieldset>
 							<div class="fieldgroup">
 				                <s:submit action="schoolClassCreateOAction" value="Create Class"></s:submit>

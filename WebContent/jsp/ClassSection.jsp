@@ -21,7 +21,7 @@
 	<body>
 		<div id="page-wrap">
 			<div id="content">
-				<form action="" method="post" id="elements-form">
+				<s:form action="" method="post" id="elements-form">
 	    			<h3>Create Class Section</h3>
 				    <div id="form-content">
 				        <fieldset>
@@ -48,11 +48,11 @@
 						</fieldset>
 				        <fieldset>
 							<div class="fieldgroup">
-				                <input type="submit" value="Create" class="submit"/>
+				                <s:submit value="Create"/>
 				            </div>				           	
 				        </fieldset>
 				    </div>
-				</form>
+				</s:form>
 			</div>
 		</div>
 	</body>
