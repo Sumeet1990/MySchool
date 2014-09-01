@@ -1,4 +1,4 @@
-function addRow(tableID) {
+/*function addRow(tableID) {
 
 	var table = document.getElementById(tableID);
 	var rowCount = table.rows.length;
@@ -21,8 +21,53 @@ function addRow(tableID) {
 			break;
 		}
 	}
+}*/
+
+var noofSubjects=0;
+
+function addRow(tableID,mainID) {
+	  var count=0;
+	  var newdiv = document.createElement('div');
+	  var niold = document.getElementById(tableID+count);
+	  var mainIDObj = document.getElementById(mainID);
+	  var ni = niold;
+		while (typeof(ni) != 'undefined' && ni != null) {
+			try{
+				niold = ni;
+				count++;
+				ni = document.getElementById(tableID+count);
+				newdiv.setAttribute('id',tableID+count);
+			}catch (e) {
+				alert(e);
+				}
+			}
+	  newdiv.setAttribute('class','fieldgroupForCheckBox');
+	  newdiv.innerHTML = niold.innerHTML;
+	  mainIDObj.appendChild(newdiv);
+	  if(noofSubjects < count){
+		  noofSubjects = count; 
+	  }
 }
 function deleteRow(tableID) {
+	 var count=0;
+		var ni = document.getElementById(tableID+count);
+		while ((typeof(ni) != 'undefined' && ni != null) || noofSubjects>=count) {
+			try{
+				if((typeof(ni) != 'undefined' && ni != null) && (ni.childNodes[5].checked)){
+					if(count!=0){
+						$("#"+tableID+count).remove();
+					}else{
+						alert("Can't delete default row");
+					}
+				}
+				count++;
+				ni = document.getElementById(tableID+count);
+			}catch (e) {
+				alert(e);
+				}
+			}
+}
+/*function deleteRow(tableID) {
 	try {
 		var table = document.getElementById(tableID);
 		var rowCount = table.rows.length;
@@ -47,7 +92,7 @@ function deleteRow(tableID) {
 	} catch (e) {
 		alert(e);
 	}
-}
+}*/
 
 function keepSubjectsToModify(Id, buttonObj) {
 	try {

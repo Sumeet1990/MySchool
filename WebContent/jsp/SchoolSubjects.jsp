@@ -47,25 +47,25 @@
 		<s:if test="%{schoolSubjectsDTO.currentOperationStatus=='subjectCreate' || schoolSubjectsDTO.currentOperationStatus=='subjectCreateFail' || schoolSubjectsDTO.currentOperationStatus=='subjectModifyFail'}">
 			<div id="page-wrap">
 				<div id="content">
-					<s:form action="schoolSubjectCreateAction" method="post" id="elements-form">
+					<s:form action="schoolSubjectCreateAction" method="post" theme="simple" id="elements-form">
 						<h3>Subject</h3>
-						<input type="button" value="Add Row" onclick="addRow('dataTable')" />
+						<input type="button" value="Add Row" onclick="addRow('dataTable','divGroup')" />
 						<input type="button" value="Delete Row" onclick="deleteRow('dataTable')" />
 				    	<div id="form-content">
 							<s:if test="schoolSubjectsDTO.subjectName.length != 0">
-								<s:iterator value="schoolSubjectsDTO.subjectName" var="element">
+								<s:iterator value="schoolSubjectsDTO.subjectName"  var="element">
 									<fieldset>
-							            <div class="fieldgroup">
+							            <div class="fieldgroup" style="width: 400px;">
 							            	<label>Subject Name</label>
 							                <s:textfield name="schoolSubjectsDTO.subjectName" theme="simple" id="defaultText" onkeyup="upperCaseThetextById(this)" value="%{#element}" />
-							                <s:checkbox name="checkBox" />
+							                <s:checkbox name="checkBox" theme="simple" />
 							            </div>
 						            </fieldset>
 					            </s:iterator>
 					        </s:if>
 					        <s:else>
-					        	<fieldset>
-							            <div class="fieldgroup">
+					        	<fieldset id="divGroup">
+							            <div class="fieldgroupForCheckBox" id="dataTable0">
 							            	<label>Subject Name</label>
 							                <s:textfield name="schoolSubjectsDTO.subjectName" id="defaultText" onkeyup="upperCaseThetextById(this)" value="" />
 											<s:checkbox name="checkBox" />
@@ -73,7 +73,7 @@
 						            </fieldset>
 							</s:else>
 							<fieldset>
-								<div class="fieldgroup">
+								<div>
 				                	<s:submit value="Add Subjects"/>
 				            	</div>				           	
 				        	</fieldset>
