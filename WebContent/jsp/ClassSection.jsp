@@ -35,7 +35,7 @@
 				             </div>
 				             <div class="fieldgroup">   
 				                <label>Class Teacher Name</label>
-				                <s:select required="true" list="classesMap" name="className" autofocus="autofocus" theme="simple" tabindex="1"></s:select>
+				                <s:select required="true" list="classTeacherMap" name="className" autofocus="autofocus" theme="simple" tabindex="1"></s:select>
 				            </div>
 				            <div class="fieldgroup">
 				                <label>Maximum Section Strength</label>

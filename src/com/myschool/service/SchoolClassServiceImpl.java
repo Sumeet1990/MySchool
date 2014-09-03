@@ -1,5 +1,11 @@
 package com.myschool.service;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import com.myschool.beans.SchoolClass;
 import com.myschool.dao.SchoolClassDAO;
 import com.myschool.dao.SchoolSubjectDAO;
 import com.myschool.dto.SchoolClassDTO;
@@ -43,6 +49,19 @@ public class SchoolClassServiceImpl implements SchoolClassService{
 		}else{
 			schoolClassDTO.setErrorMessage(CommonConstants.CLASS_ALREADY_EXISTS);
 		}
+	}
+	
+	@Override
+	public Map<Integer,String> getAllClasses() {
+		Map<Integer,String> schoolClassMap = new HashMap<>();
+		List<SchoolClass> classes = getSchoolClassDAO().getAllClassesList();
+		if(classes != null){
+			for(SchoolClass classObj : classes){
+				schoolClassMap.put(classObj.getSchoolClassId(), classObj.getSchoolClassName());
+			}
+		}
+		return schoolClassMap;
+
 	}
 
 	@Override

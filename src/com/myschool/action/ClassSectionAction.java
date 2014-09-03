@@ -3,6 +3,7 @@ package com.myschool.action;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.myschool.service.SchoolClassService;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ClassSectionAction extends ActionSupport {
@@ -12,12 +13,14 @@ public class ClassSectionAction extends ActionSupport {
 	private String schoolClassName;
 	private String section;
 	private String actionType;
+	private SchoolClassService schoolClassService;
 	private Map<String,String> classTeacherMap;
-	private Map<String,String> classesMap;
+	private Map<Integer, String> classesMap;
 
 	public String performCreate() {
 		classTeacherMap = new HashMap<String,String>();
-		classesMap = new HashMap<String,String>();
+		//classesMap = new HashMap<String,String>();
+		classesMap = getSchoolClassService().getAllClasses();
 		return SUCCESS;
 	}
 
@@ -53,11 +56,19 @@ public class ClassSectionAction extends ActionSupport {
 		this.classTeacherMap = classTeacherMap;
 	}
 
-	public Map<String, String> getClassesMap() {
+	public Map<Integer, String> getClassesMap() {
 		return classesMap;
 	}
 
-	public void setClassesMap(Map<String, String> classesMap) {
+	public void setClassesMap(Map<Integer, String> classesMap) {
 		this.classesMap = classesMap;
+	}
+
+	public SchoolClassService getSchoolClassService() {
+		return schoolClassService;
+	}
+
+	public void setSchoolClassService(SchoolClassService schoolClassService) {
+		this.schoolClassService = schoolClassService;
 	}
 }

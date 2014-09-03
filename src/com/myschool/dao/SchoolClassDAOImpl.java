@@ -22,6 +22,14 @@ public class SchoolClassDAOImpl extends HibernateDaoSupport implements SchoolCla
 			schoolClassDTO.setClassOperationStatus(false);
 		}
 	}
+	
+	@Override
+	public List<SchoolClass> getAllClassesList() {
+		
+		List<SchoolClass> schoolClasses = getHibernateTemplate().find("from SchoolClass");
+		
+		return schoolClasses;
+	}
 
 	@Override
 	public void createSchoolClass(SchoolClassDTO schoolClassDTO, String userId) {

@@ -52,6 +52,7 @@
 	</bean>
 	
 	<bean name="classSectionAction" class="com.myschool.action.ClassSectionAction">
+	<property name="schoolClassService" ref="schoolClassService"></property>
 	</bean>
 	
 	<bean name="studentRegistrationAction" class="com.myschool.action.StudentRegistrationAction">

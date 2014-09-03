@@ -1,5 +1,7 @@
 package com.myschool.service;
 
+import java.util.Map;
+
 import com.myschool.dto.SchoolClassDTO;
 
 public interface SchoolClassService {
@@ -8,5 +10,7 @@ public interface SchoolClassService {
 
 	void setSelectedSubjectCodes(SchoolClassDTO schoolClassDTO,
 			String selectedSubject);
+
+	Map<Integer, String> getAllClasses();
 
 }
