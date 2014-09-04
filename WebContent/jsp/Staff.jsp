@@ -30,7 +30,7 @@
 							<br/>
 				            <div class="fieldgroup">
 				            	<label>Title</label>
-				                <s:select required="true" list="classesMap" name="className" autofocus="autofocus" theme="simple" tabindex="1"></s:select>&nbsp;
+				                <s:select required="true" list="tilesBeanStaff" name="className" autofocus="autofocus" theme="simple" tabindex="1"></s:select>&nbsp;
 				                
 				                <label>Given Full Name</label>
 				                <input type="text" name="staffGivenName"/>&nbsp;
@@ -46,7 +46,7 @@
 				
 				            <div class="fieldgroup">
 				                <label>Gender</label>
-				                <s:select required="true" list="classesMap" name="className"  theme="simple" tabindex="1"></s:select>
+				                <s:select required="true" list="genderBean" name="className"  theme="simple" tabindex="1"></s:select>
 				            </div>
 							
 							<div class="fieldgroup">
@@ -61,7 +61,7 @@
 				            
 				            <div class="fieldgroup">
 				               	<label>Staff Status</label>
-				               	<s:select required="true" list="classesMap" name="className"  theme="simple" tabindex="1"></s:select>
+				               	<s:select required="true" list="staffStatusBean" name="className"  theme="simple" tabindex="1"></s:select>
 				            </div>
 				            
 				            <div class="fieldgroup">

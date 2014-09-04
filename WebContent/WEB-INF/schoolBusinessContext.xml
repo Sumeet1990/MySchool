@@ -54,10 +54,24 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		</property>
 	</bean>
 	
+	<bean name="staffAppointmentTypeServiceTarget" class="com.myschool.service.StaffAppointmentTypeServiceImpl" >
+		<property name="staffAppointmentTypeDAO" ref="staffAppointmentTypeDAO"></property>		
+	</bean>
+		<bean id="staffAppointmentTypeService"
+			class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager" ref="myTxManager"/>
+		<property name="target" ref="staffAppointmentTypeServiceTarget"/>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	
 	<bean name="schoolSubjectsServiceTarget" class="com.myschool.service.SchoolSubjectsServiceImpl" >
 		<property name="schoolSubjectDAO" ref="schoolSubjectDAO"></property>		
 	</bean>
-	
 	<bean id="schoolSubjectsService"
 			class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
 		<property name="transactionManager" ref="myTxManager"/>
