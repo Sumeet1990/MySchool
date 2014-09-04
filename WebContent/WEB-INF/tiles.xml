@@ -133,4 +133,7 @@
      <definition name="/OtherfeeCollectionPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/OtherfeeCollection.jsp"/>
     </definition>
+        <definition name="/TransportRoutPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/TransportRout.jsp"/>
+    </definition>
 </tiles-definitions>
