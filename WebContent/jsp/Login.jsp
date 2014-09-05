@@ -39,20 +39,24 @@
 					$(".pass-icon").css("left","0px");
 				});
 			});
+			function changeLocale(value){
+				window.location="login.action?request_locale="+value;
+			}
 		</script>
 	</head>
 	
 	<body style="background-color:#555">
+	<s:select cssStyle="float:right"  list="#{ 'en':'English','hi':'Hindi', 'te':'Telgu', '4':'Apr'}"  onchange="changeLocale(this.value)"></s:select>
 		<div class="heading">
     		<s:property value="getText('global.schoolName')"/>
     	</div>
+    	
     
 		<div id="wrapper">
 			<!--Sliding icons-->
     		<div class="user-icon"></div>
     		<div class="pass-icon"></div>
     		<!--END Sliding icons-->
-			
 			<s:form name="login-form" id="login-form" action="login" method="post">
     			<div class="header">
     				<h1><s:property value="getText('login')"/></h1>
