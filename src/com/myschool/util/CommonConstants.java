@@ -31,4 +31,14 @@ public class CommonConstants {
 	public static final String CLASS_ALREADY_EXISTS = "class.alreadyExists";
 	public static final String CLASS_ERROR_OCCURED = "class.errorOccured";
 	public static final String CLASS_SUCCESSFULLY_CREATED = "class.successfullyCreated";
+	
+	public static final String STAFF_APOINTMENT_TYPE_CREATE = "staffAppointmentTypeCreate";
+	public static final String STAFF_APOINTMENT_TYPE_MODIFY = "staffAppointmentTypeModify";
+	public static final String STAFF_APOINTMENT_TYPE_CREATE_SUCCESS = "staffAppointmentTypeCreateSuccess";
+	public static final String STAFF_APOINTMENT_TYPE_MODIFY_SUCCESS = "staffAppointmentTypeModifySuccess";
+	public static final String STAFF_APOINTMENT_TYPE_CREATE_FAIL = "staffAppointmentTypeCreateFail";
+	public static final String STAFF_APOINTMENT_TYPE_MODIFY_FAIL = "staffAppointmentTypeModifyFail";
+	public static final String STAFF_APOINTMENT_TYPE_SUCCESSFULLY_CREATED = "staffAppointmentTypesuccessfullyCreaated";
+	public static final String STAFF_APOINTMENT_TYPE_ALREADY_EXISTS = "staffAppointmentType.alreadyExists";
+	public static final String STAFF_APOINTMENT_TYPE_SUCCESSFULLY_MODIFIED = "staffAppointmentType.successfullyModified";
 }

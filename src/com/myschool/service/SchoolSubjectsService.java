@@ -3,9 +3,6 @@
  */
 package com.myschool.service;
 
-import java.util.List;
-
-import com.myschool.beans.SchoolSubjects;
 import com.myschool.dto.SchoolClassDTO;
 import com.myschool.dto.SchoolSubjectsDTO;
 

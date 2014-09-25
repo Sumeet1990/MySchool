@@ -8,9 +8,7 @@ public interface SchoolClassService {
 
 	void createClass(SchoolClassDTO schoolClassDTO, String userId);
 
-	void setSelectedSubjectCodes(SchoolClassDTO schoolClassDTO,
-			String selectedSubject);
+	void setSelectedSubjectCodes(SchoolClassDTO schoolClassDTO, String selectedSubject);
 
 	Map<Integer, String> getAllClasses();
-
 }

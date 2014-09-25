@@ -59,17 +59,17 @@
 	</bean>
 	
 	<bean name="staffAction" class="com.myschool.action.StaffAction">
-	<property name="tilesBeanStaff" ref="tilesBeanStaff"/>
-	<property name="genderBean" ref="genderBean"/>
-	<property name="staffStatusBean" ref="staffStatusBean"/>
-	<property name="staffAppointmentTypeService" ref="staffAppointmentTypeService"/>
-	
+		<property name="tilesBeanStaff" ref="tilesBeanStaff"/>
+		<property name="genderBean" ref="genderBean"/>
+		<property name="staffStatusBean" ref="staffStatusBean"/>
+		<property name="staffAppointmentTypeService" ref="staffAppointmentTypeService"/>
 	</bean>
 	
 	<bean name="staffLeavesStructureAction" class="com.myschool.action.StaffLeavesStructureAction">
 	</bean>
 	
 	<bean name="staffAppointmentTypeAction" class="com.myschool.action.StaffAppointmentTypeAction">
+		<property name="staffAppointmentTypeService" ref="staffAppointmentTypeService"></property>
 	</bean>
 	
 	<bean name="schoolTimingAction" class="com.myschool.action.SchoolTimingAction">
@@ -119,19 +119,22 @@
 	
 	<bean name="otherfeeCollectionAction" class="com.myschool.action.OtherfeeCollectionAction">
 	</bean>
+	
 	<bean name="tilesBeanStaff" class="com.myschool.util.UtillArrayList">
-	<constructor-arg>
-		<value >${staff.titles}</value>
-	</constructor-arg>
+		<constructor-arg>
+			<value >${staff.titles}</value>
+		</constructor-arg>
 	</bean>
+	
 	<bean name="genderBean" class="com.myschool.util.UtillArrayList">
-	<constructor-arg>
-		<value >${genders}</value>
-	</constructor-arg>
+		<constructor-arg>
+			<value >${genders}</value>
+		</constructor-arg>
 	</bean>
+	
 	<bean name="staffStatusBean" class="com.myschool.util.UtillArrayList">
-	<constructor-arg>
-		<value >${staff.status}</value>
-	</constructor-arg>
+		<constructor-arg>
+			<value >${staff.status}</value>
+		</constructor-arg>
 	</bean>
 </beans>

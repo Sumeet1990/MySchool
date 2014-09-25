@@ -1,13 +1,10 @@
 package com.myschool.action;
 
-import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.myschool.beans.SchoolSubjects;
 import com.myschool.dto.SchoolSubjectsDTO;
 import com.myschool.service.SchoolSubjectsService;
 import com.myschool.util.CommonConstants;

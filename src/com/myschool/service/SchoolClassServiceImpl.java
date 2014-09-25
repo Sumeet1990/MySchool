@@ -1,7 +1,6 @@
 package com.myschool.service;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -51,11 +50,10 @@ public class SchoolClassServiceImpl implements SchoolClassService{
 		}
 	}
 	
-	@Override
 	public Map<Integer,String> getAllClasses() {
-		Map<Integer,String> schoolClassMap = new HashMap<>();
+		Map<Integer,String> schoolClassMap = new HashMap<Integer,String>();
 		List<SchoolClass> classes = getSchoolClassDAO().getAllClassesList();
-		if(classes != null){
+		if(classes != null) {
 			for(SchoolClass classObj : classes){
 				schoolClassMap.put(classObj.getSchoolClassId(), classObj.getSchoolClassName());
 			}

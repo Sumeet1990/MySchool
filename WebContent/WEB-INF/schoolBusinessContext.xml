@@ -3,7 +3,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
  
-  <bean name="schoolClassServiceTarget" class="com.myschool.service.SchoolClassServiceImpl" >
+  	<bean name="schoolClassServiceTarget" class="com.myschool.service.SchoolClassServiceImpl" >
 		<property name="schoolClassDAO" ref="schoolClassDAO"></property>
 		<property name="schoolSubjectDAO" ref="schoolSubjectDAO"></property>
 	</bean>
@@ -57,7 +57,8 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<bean name="staffAppointmentTypeServiceTarget" class="com.myschool.service.StaffAppointmentTypeServiceImpl" >
 		<property name="staffAppointmentTypeDAO" ref="staffAppointmentTypeDAO"></property>		
 	</bean>
-		<bean id="staffAppointmentTypeService"
+	
+	<bean id="staffAppointmentTypeService"
 			class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
 		<property name="transactionManager" ref="myTxManager"/>
 		<property name="target" ref="staffAppointmentTypeServiceTarget"/>
@@ -72,6 +73,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<bean name="schoolSubjectsServiceTarget" class="com.myschool.service.SchoolSubjectsServiceImpl" >
 		<property name="schoolSubjectDAO" ref="schoolSubjectDAO"></property>		
 	</bean>
+	
 	<bean id="schoolSubjectsService"
 			class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
 		<property name="transactionManager" ref="myTxManager"/>

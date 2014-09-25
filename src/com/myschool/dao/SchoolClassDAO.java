@@ -12,5 +12,4 @@ public interface SchoolClassDAO {
 	void createSchoolClass(SchoolClassDTO schoolClassDTO, String userId);
 
 	List<SchoolClass> getAllClassesList();
-
 }

@@ -3,14 +3,11 @@
  */
 package com.myschool.service;
 
-import java.util.List;
-
-import com.myschool.beans.SchoolSubjects;
 import com.myschool.dao.SchoolSubjectDAO;
 import com.myschool.dto.SchoolClassDTO;
 import com.myschool.dto.SchoolSubjectsDTO;
 
-public class SchoolSubjectsServiceImpl implements SchoolSubjectsService{
+public class SchoolSubjectsServiceImpl implements SchoolSubjectsService {
 	
 	private SchoolSubjectDAO schoolSubjectDAO;
 	
