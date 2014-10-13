@@ -1,5 +1,7 @@
 package com.myschool.dao;
 
+import java.util.Map;
+
 import com.myschool.dto.SchoolSubjectsDTO;
 
 public interface SchoolSubjectDAO {
@@ -11,5 +13,7 @@ public interface SchoolSubjectDAO {
 	void createSubjects(SchoolSubjectsDTO schoolSubjectsDTO);
 
 	boolean updateSubjects(SchoolSubjectsDTO schoolSubjectsDTO);
+
+	Map<String,String> getAllAvailableSubjectsMap();
 
 }

@@ -3,6 +3,8 @@
  */
 package com.myschool.service;
 
+import java.util.Map;
+
 import com.myschool.dao.SchoolSubjectDAO;
 import com.myschool.dto.SchoolClassDTO;
 import com.myschool.dto.SchoolSubjectsDTO;
@@ -54,5 +56,10 @@ public class SchoolSubjectsServiceImpl implements SchoolSubjectsService {
 		SchoolSubjectsDTO dto = getAllAvailableSubjects();
 		schoolClassDTO.setAllSubjectMap(dto.getSubjectNameCodes());
 		schoolClassDTO.setAllSubjectList(dto.getExistsSubjectList());
+	}
+
+	@Override
+	public Map<String, String> getAllSubjectsMap() {
+		return getSchoolSubjectDAO().getAllAvailableSubjectsMap();
 	}
 }

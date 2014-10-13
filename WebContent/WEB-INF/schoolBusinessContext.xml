@@ -3,6 +3,23 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
  
+ 
+ <bean name="staffServiceServiceTarget" class="com.myschool.service.StaffServiceImpl" >
+		<property name="staffDAO" ref="staffDAO"></property>
+	</bean>
+	
+	<bean id="staffService"
+			class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager" ref="myTxManager"/>
+		<property name="target" ref="staffServiceServiceTarget"/>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+ 
   	<bean name="schoolClassServiceTarget" class="com.myschool.service.SchoolClassServiceImpl" >
 		<property name="schoolClassDAO" ref="schoolClassDAO"></property>
 		<property name="schoolSubjectDAO" ref="schoolSubjectDAO"></property>

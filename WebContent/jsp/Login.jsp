@@ -46,7 +46,7 @@
 	</head>
 	
 	<body style="background-color:#555">
-	<s:select cssStyle="float:right"  list="#{ 'en':'English','hi':'Hindi', 'te':'Telgu', '4':'Apr'}"  onchange="changeLocale(this.value)"></s:select>
+	<s:select cssStyle="float:right"  value="%{#parameters.request_locale}" list="#{ 'en':'English','hi':'Hindi', 'te':'Telgu', '4':'Apr'}"  onchange="changeLocale(this.value)"></s:select>
 		<div class="heading">
     		<s:property value="getText('global.schoolName')"/>
     	</div>

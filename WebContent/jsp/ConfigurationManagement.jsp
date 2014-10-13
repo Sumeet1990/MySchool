@@ -95,7 +95,7 @@
 								<s:property value="getText('cm.section')" />
 							</div>
 							<div style="" class="classSection_grad slider">
-								<s:a action="classSectionCreateAction"><s:property value="getText('cm.create')" /></s:a>
+								<s:a action="classSectionInitAction"><s:property value="getText('cm.create')" /></s:a>
 								<a href="#"><s:property value="getText('cm.modify')" /></a> 
 								<a href="#"><s:property value="getText('cm.delete')" /></a>
 								<a href="#"><s:property value="getText('cm.view')" /></a>
@@ -130,7 +130,7 @@
 								<s:property value="getText('cm.appointmentType')" />
 							</div>
 							<div style="" class="appointmentType_grad slider">
-								<s:a action="staffAppointmentCreateAction">
+								<s:a action="staffAppointmentInitlizeAction">
 									<s:property value="getText('cm.create')" />
 								</s:a>
 								<a href="#"><s:property value="getText('cm.modify')" /></a> 

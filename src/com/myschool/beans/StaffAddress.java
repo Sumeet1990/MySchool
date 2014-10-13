@@ -4,14 +4,19 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="STAFF_ADDRESS")
 public class StaffAddress implements Serializable{
 
+@SequenceGenerator (name="seqSchoolClass", sequenceName="SEQ_STAFF_ADDRESS", allocationSize=1)
 @Id
+@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqSchoolClass")
 @Column(name="STAFF_ADDRESS_ID")
 private Integer staffAddressId;
 

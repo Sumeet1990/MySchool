@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
@@ -29,6 +30,18 @@ public class SchoolSubjectDAOImpl  extends HibernateDaoSupport implements School
 		}
 		
 		return schoolSubjectsDTO;
+	}
+	
+	public Map<String,String> getAllAvailableSubjectsMap() {
+		Map<String,String> subjetMap = new HashMap<>();
+		List<SchoolSubjects> allSchoolSubjectsLst = getHibernateTemplate().find("from SchoolSubjects where subjectStatus=?", SUBJECT_STATUS_ACTIVE);
+		if(allSchoolSubjectsLst != null && allSchoolSubjectsLst.size() > 0) {
+			for(SchoolSubjects schoolSubjects : allSchoolSubjectsLst) {
+				subjetMap.put(String.valueOf(schoolSubjects.getSubjectCode()),schoolSubjects.getSubjectName());
+			}
+		}
+		
+		return subjetMap;
 	}
 	
 	public boolean getAvailableSubjects(SchoolSubjectsDTO schoolSubjectsDTO) {

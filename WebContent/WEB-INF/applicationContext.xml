@@ -53,6 +53,8 @@
 	
 	<bean name="classSectionAction" class="com.myschool.action.ClassSectionAction">
 	<property name="schoolClassService" ref="schoolClassService"></property>
+	<property name="classSectionService" ref="classSectionService"></property>
+	<property name="staffStatusBean" ref="staffStatusBean"></property>
 	</bean>
 	
 	<bean name="studentRegistrationAction" class="com.myschool.action.StudentRegistrationAction">
@@ -63,6 +65,10 @@
 		<property name="genderBean" ref="genderBean"/>
 		<property name="staffStatusBean" ref="staffStatusBean"/>
 		<property name="staffAppointmentTypeService" ref="staffAppointmentTypeService"/>
+		<property name="commonYesOrNo" ref="commonYesOrNo"/>
+		<property name="schoolSubjectsService" ref="schoolSubjectsService"></property>
+		<property name="staffService" ref="staffService"></property>
+		
 	</bean>
 	
 	<bean name="staffLeavesStructureAction" class="com.myschool.action.StaffLeavesStructureAction">
@@ -135,6 +141,11 @@
 	<bean name="staffStatusBean" class="com.myschool.util.UtillArrayList">
 		<constructor-arg>
 			<value >${staff.status}</value>
+		</constructor-arg>
+	</bean>
+	<bean name="commonYesOrNo" class="com.myschool.util.UtillArrayList">
+		<constructor-arg>
+			<value >${common.yesorno}</value>
 		</constructor-arg>
 	</bean>
 </beans>

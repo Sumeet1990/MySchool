@@ -1,8 +1,10 @@
 package com.myschool.service;
 
+import com.myschool.dto.ClassSectionDTO;
+
 public interface ClassSectionService {
 
-	void createClassSection();	
+	boolean createClassSection(ClassSectionDTO classSectionDTO);	
 
 }
 

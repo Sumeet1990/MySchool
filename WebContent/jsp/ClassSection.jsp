@@ -27,28 +27,28 @@
 				        <fieldset>
 				            <div class="fieldgroup">
 				                <label>Class Name</label>
-				                <s:select required="true" list="classesMap" name="className" autofocus="autofocus" theme="simple" tabindex="1"></s:select>
+				                <s:select required="true" list="classesMap" name="classSectionDTO.schoolClassId" autofocus="autofocus" theme="simple" tabindex="1"></s:select>
 				            </div>
 						    <div class="fieldgroup"> 
 				                <label>Section Name</label>
-				                <input type="text" name="section"/>
+				                <input type="text" name="classSectionDTO.section"/>
 				             </div>
 				             <div class="fieldgroup">   
 				                <label>Class Teacher Name</label>
-				                <s:select required="true" list="classTeacherMap" name="className" autofocus="autofocus" theme="simple" tabindex="1"></s:select>
+				                <s:select required="true" list="classTeacherMap" name="classSectionDTO.staffId" autofocus="autofocus" theme="simple" tabindex="1"></s:select>
 				            </div>
 				            <div class="fieldgroup">
 				                <label>Maximum Section Strength</label>
-				                <input type="text" name="maxSectionStrength"/>
+				                <input type="text" name="classSectionDTO.sectionMaximumStrength"/>
 				            </div>
 				            <div class="fieldgroup">
 				                <label>Section Status</label>
-				                <input type="text" name="studentMotherFullName"/>
+				                <s:select required="true" list="staffStatusBean" name="classSectionDTO.sectionStatus"  theme="simple" tabindex="1"></s:select>
 				            </div>
 						</fieldset>
 				        <fieldset>
 							<div class="fieldgroup">
-				                <s:submit value="Create"/>
+				                <s:submit value="Create" action="classSectionCreateAction"/>
 				            </div>				           	
 				        </fieldset>
 				    </div>

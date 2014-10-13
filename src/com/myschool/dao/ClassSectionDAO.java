@@ -1,7 +1,9 @@
 package com.myschool.dao;
 
+import com.myschool.dto.ClassSectionDTO;
+
 public interface ClassSectionDAO {
 
-	void createClassSection();	
+	boolean createClassSection(ClassSectionDTO classSectionDTO);	
 	
 }

@@ -1,11 +1,14 @@
 package com.myschool.dao;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.myschool.beans.SchoolClass;
+import com.myschool.beans.StaffDetails;
 import com.myschool.dto.SchoolClassDTO;
 import com.myschool.util.CommonUtility;
 
@@ -44,5 +47,17 @@ public class SchoolClassDAOImpl extends HibernateDaoSupport implements SchoolCla
 		schoolClass.setCreatedUserId(userId);
 
 		getHibernateTemplate().save(schoolClass);
+	}
+
+	@Override
+	public Map<String, String> getClassTeacherMap() {
+		List<StaffDetails> staffDetails = getHibernateTemplate().find("from StaffDetails where classTeacherFlag='YES' and teacherStaffFlag='YES' and staffStatus='ACTIVE'");
+		HashMap<String, String> classTeacherMap = new HashMap<>();
+		
+		if (staffDetails != null && staffDetails.size() > 0) {
+			for(StaffDetails staffDetailsObj: staffDetails)
+			classTeacherMap.put(String.valueOf(staffDetailsObj.getStaffId()), staffDetailsObj.getStaffGivenFullName()+" "+staffDetailsObj.getStaffSurname());
+		}
+		return classTeacherMap;
 	}
 }

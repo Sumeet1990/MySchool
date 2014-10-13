@@ -42,7 +42,7 @@
 								</fieldset>
 							</s:iterator>
 							<s:if test="staffAppointmentTypeDTO.currentOperationStatus != 'staffAppointmentTypeModify'">
-								<s:submit value="Modify" id="submitButton" action="schoolSubjectModifyAction" theme="simple" />
+								<s:submit value="Modify" id="submitButton" action="staffAppointmentModifyAction" theme="simple" />
 							</s:if>
 					</s:form>
 				</div>
@@ -80,7 +80,7 @@
 							</s:else>
 							<fieldset>
 								<div>
-				                	<s:submit value="Create Appointment"/>
+				                	<s:submit value="Create Appointment" action="staffAppointmentCreateAction"/>
 				            	</div>				           	
 				        	</fieldset>
 			            </div>

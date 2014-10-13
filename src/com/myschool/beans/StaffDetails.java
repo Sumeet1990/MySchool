@@ -2,16 +2,24 @@ package com.myschool.beans;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="STAFF_DETAILS")
 public class StaffDetails implements Serializable{
 
+@SequenceGenerator (name="seqSchoolClass", sequenceName="SEQ_STAFF_DETAILS", allocationSize=1)
 @Id
+@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqSchoolClass")
 @Column(name="STAFF_ID")
 private Integer staffId;
 
@@ -48,8 +56,9 @@ private String subjectCodesList;
 @Column(name="APPOINTMENT_TYPE_ID")
 private Integer appointmentTypeId;
 
-@Column(name="STAFF_ADDRESS_ID")
-private Integer staffAddressId;
+@OneToOne(cascade=CascadeType.ALL)
+@JoinColumn(name = "STAFF_ADDRESS_ID")
+private StaffAddress staffAddress;
 
 @Column(name="PHOTO")
 private String photo;
@@ -148,11 +157,12 @@ public Integer getAppointmentTypeId(){
 public void setAppointmentTypeId(Integer appointmentTypeId){
  this.appointmentTypeId=appointmentTypeId;
 }
-public Integer getStaffAddressId(){
- return staffAddressId;
+
+public StaffAddress getStaffAddress() {
+	return staffAddress;
 }
-public void setStaffAddressId(Integer staffAddressId){
- this.staffAddressId=staffAddressId;
+public void setStaffAddress(StaffAddress staffAddress) {
+	this.staffAddress = staffAddress;
 }
 public String getPhoto(){
  return photo;

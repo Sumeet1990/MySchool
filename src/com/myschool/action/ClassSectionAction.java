@@ -1,12 +1,18 @@
 package com.myschool.action;
 
-import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.myschool.dto.ClassSectionDTO;
+import com.myschool.service.ClassSectionService;
 import com.myschool.service.SchoolClassService;
+import com.myschool.util.CommonConstants;
+import com.myschool.util.SessionUtils;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ClassSectionAction extends ActionSupport {
+public class ClassSectionAction extends ActionSupport implements SessionAware{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -14,13 +20,23 @@ public class ClassSectionAction extends ActionSupport {
 	private String section;
 	private String actionType;
 	private SchoolClassService schoolClassService;
+	private ClassSectionService classSectionService;
 	private Map<String,String> classTeacherMap;
 	private Map<Integer, String> classesMap;
+	private List<String> staffStatusBean;
+	private ClassSectionDTO classSectionDTO;
+	private java.util.Map<String, Object> session;
 
-	public String performCreate() {
-		classTeacherMap = new HashMap<String,String>();
-		//classesMap = new HashMap<String,String>();
+	public String performInit() {
+		classTeacherMap = getSchoolClassService().getAllClassTeachers();
 		classesMap = getSchoolClassService().getAllClasses();
+		return SUCCESS;
+	}
+	
+	public String performCreate() {
+		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
+		classSectionDTO.setCreatedUserId(sessionUtils.getUserId());
+		getClassSectionService().createClassSection(classSectionDTO);
 		return SUCCESS;
 	}
 
@@ -70,5 +86,34 @@ public class ClassSectionAction extends ActionSupport {
 
 	public void setSchoolClassService(SchoolClassService schoolClassService) {
 		this.schoolClassService = schoolClassService;
+	}
+
+	public List<String> getStaffStatusBean() {
+		return staffStatusBean;
+	}
+
+	public void setStaffStatusBean(List<String> staffStatusBean) {
+		this.staffStatusBean = staffStatusBean;
+	}
+
+	public ClassSectionDTO getClassSectionDTO() {
+		return classSectionDTO;
+	}
+
+	public void setClassSectionDTO(ClassSectionDTO classSectionDTO) {
+		this.classSectionDTO = classSectionDTO;
+	}
+
+	public ClassSectionService getClassSectionService() {
+		return classSectionService;
+	}
+
+	public void setClassSectionService(ClassSectionService classSectionService) {
+		this.classSectionService = classSectionService;
+	}
+	@Override
+	public void setSession(java.util.Map<String, Object> session) {
+		this.session = session;
+		
 	}
 }

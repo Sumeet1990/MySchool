@@ -30,5 +30,19 @@ public class StaffServiceImpl implements StaffService {
 	public void setStaffDAO(StaffDAO staffDAO) {
 		this.staffDAO = staffDAO;
 	}
+	@Override
+	public boolean createStaffMember(StaffDTO staffDTO) {
+		try{
+		boolean exists = getStaffDAO().checkStaffNameAlreadyExists(staffDTO.getStaffGivenFullName(),staffDTO.getStaffSurname());
+		
+		if(!exists){
+			getStaffDAO().addNewStaffMember(staffDTO);
+		}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
 	
 }

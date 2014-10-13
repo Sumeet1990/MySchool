@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 
 import com.myschool.dao.ClassSectionDAO;
 import com.myschool.dao.StaffDAO;
+import com.myschool.dto.ClassSectionDTO;
 
 public class ClassSectionServiceImpl implements ClassSectionService { 
 	private static Logger log = Logger.getLogger(ClassSectionServiceImpl.class);
@@ -11,8 +12,8 @@ public class ClassSectionServiceImpl implements ClassSectionService {
 	private ClassSectionDAO classSectionDAO;
 
 
-	public void createClassSection() {
-		getClassSectionDAO().createClassSection();		
+	public boolean createClassSection( ClassSectionDTO classSectionDTO) {
+		return getClassSectionDAO().createClassSection(classSectionDTO);		
 	}
 	public StaffDAO getStaffDAO() {
 		return staffDAO;

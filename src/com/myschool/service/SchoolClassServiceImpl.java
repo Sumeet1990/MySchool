@@ -75,6 +75,11 @@ public class SchoolClassServiceImpl implements SchoolClassService{
 		}else{
 			schoolClassDTO.setSelectedSubjectCodes(subjectCodes);
 		}
+	}
+
+	@Override
+	public Map<String, String> getAllClassTeachers() {
+		return getSchoolClassDAO().getClassTeacherMap();
 	} 
 
 }

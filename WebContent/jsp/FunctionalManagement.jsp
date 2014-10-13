@@ -91,7 +91,7 @@
 						<div class="column">
 							<div class='button staff'><s:property value="getText('fm.staff')"/></div>
 							<div style="" class="staff_grad slider">
-								<s:a action="staffAddAction"><s:property value="getText('fm.add')"/></s:a>
+								<s:a action="staffInitAction"><s:property value="getText('fm.add')"/></s:a>
 								<a href="#"><s:property value="getText('fm.edit')"/></a>
 								<a href="#"><s:property value="getText('fm.remove')"/></a>
 								<a href="#"><s:property value="getText('fm.show')"/></a>

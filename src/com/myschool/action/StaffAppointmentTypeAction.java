@@ -18,7 +18,7 @@ public class StaffAppointmentTypeAction extends ActionSupport implements Session
 	private StaffAppointmentTypeService staffAppointmentTypeService;
 	private String errorMessage;
 	private String actionType;
-	private StaffAppointmentTypeDTO staffAppointmentTypeDTO = new StaffAppointmentTypeDTO();
+	private StaffAppointmentTypeDTO staffAppointmentTypeDTO;
 	private Map<String,String> classSectionsMap;
 	private Map<String,String> classesMap;
 	private java.util.Map<String, Object> session;

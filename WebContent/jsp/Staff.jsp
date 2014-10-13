@@ -30,59 +30,60 @@
 							<br/>
 				            <div class="fieldgroup">
 				            	<label>Title</label>
-				                <s:select required="true" list="tilesBeanStaff" name="className" autofocus="autofocus" theme="simple" tabindex="1"></s:select>&nbsp;
+				                <s:select required="true" list="tilesBeanStaff" name="staffDTO.staffTitle" autofocus="autofocus" theme="simple" tabindex="1"></s:select>&nbsp;
 				                
 				                <label>Given Full Name</label>
-				                <input type="text" name="staffGivenName"/>&nbsp;
+				                <input type="text" name="staffDTO.staffGivenFullName"/>&nbsp;
 				                
 				                <label>Surname</label>
-				                <input type="text" name="staffSurname"/>
+				                <input type="text" name="staffDTO.staffSurname"/>
 				            </div>
 				
 				            <div class="fieldgroup">
 				                <label>Date Of Birth</label>
-				                <input type="text" name="staffDOB"/>
+				                <input type="text" name="staffDTO.staffDob"/>
 				            </div>
 				
 				            <div class="fieldgroup">
 				                <label>Gender</label>
-				                <s:select required="true" list="genderBean" name="className"  theme="simple" tabindex="1"></s:select>
+				                <s:select required="true" list="genderBean" name="staffDTO.staffGender"  theme="simple" tabindex="1"></s:select>
 				            </div>
 							
 							<div class="fieldgroup">
 				                <label>Qualification</label>
-				                <input type="text" name="staffQualification"/>
+				                <input type="text" name="staffDTO.staffQualification"/>
 				            </div>
 				            
 				            <div class="fieldgroup">
 				                <label>Designation</label>
-				                <input type="text" name="staffDesignation"/>
+				                <input type="text" name="staffDTO.staffDesignation"/>
 				            </div>
 				            
 				            <div class="fieldgroup">
 				               	<label>Staff Status</label>
-				               	<s:select required="true" list="staffStatusBean" name="className"  theme="simple" tabindex="1"></s:select>
+				               	<s:select required="true" list="staffStatusBean" name="staffDTO.staffStatus"  theme="simple" tabindex="1"></s:select>
 				            </div>
 				            
 				            <div class="fieldgroup">
 				               	<label>Teaching Staff</label>
-				               	<s:select required="true" list="classesMap" name="className"  theme="simple" tabindex="1"></s:select>
+				               	<s:select required="true" list="commonYesOrNo" name="staffDTO.teacherStaffFlag"  theme="simple" tabindex="1"></s:select>
 				            </div>
 				            
 				            <div class="fieldgroup">
 				               	<label>Is Staff Class Teacher</label>
-				               	<s:select required="true" list="classesMap" name="className"  theme="simple" tabindex="1"></s:select>
+				               	<s:select required="true" list="commonYesOrNo" name="staffDTO.classTeacherFlag"  theme="simple" tabindex="1"></s:select>
 				            </div>
 				            
 				            <div class="fieldgroup">
 				               	<label>Teaching Subjects</label>
 				               	<!-- Add Multi select text area -->
-				               <%-- <s:select required="true" list="classesMap" name="className"  theme="simple" tabindex="1"></s:select> --%>
+				                <s:select  cssStyle="height:30%" required="true" list="subjectListMap" name="staffDTO.subjectCodesList"  theme="simple" tabindex="1" multiple="true"></s:select>
+				               <%--  <s:checkboxlist  list="subjectListMap" name="className" theme="simple" tabindex="1"></s:checkboxlist> --%>
 				            </div>
 				            
 				            <div class="fieldgroup">
 				               	<label>Appointment Type</label>
-				               	<s:select required="true" list="classesMap" name="className"  theme="simple" tabindex="1"></s:select>
+				               	<s:select required="true" list="staffAppointmentTypes" name="staffDTO.appointmentTypeId"  theme="simple" tabindex="1"></s:select>
 				            </div>
 						</fieldset>
 						<fieldset>
@@ -91,50 +92,50 @@
 				            <div class="fieldgroup">
 				                <label>Address</label>
 				                <!-- Add Text Area -->
-				                 <s:textarea required="true" name="staffAddress" 
+				                 <s:textarea required="true" name="staffDTO.addressLine1" 
 				                 onkeyup="upperCaseThetext('staffAddress')" theme="simple" tabindex="9"></s:textarea>
 				            </div>
 				            
 				            <div class="fieldgroup">
 				                <label>Town OR District</label>
-				                <input type="text" name="staffTownDistrict"/>
+				                <input type="text" name="staffDTO.staffTownDistrict"/>
 				            </div>
 				            
 				            <div class="fieldgroup">
 				                <label>District OR City</label>
-				                <input type="text" name="staffDistrictCity"/>
+				                <input type="text" name="staffDTO.staffDistrictCity"/>
 				            </div>
 				            <div class="fieldgroup">
 				                <label>PIN</label>
-				                <input type="text" name="staffAreaPin"/>
+				                <input type="text" name="staffDTO.staffAreaPin"/>
 				            </div>
 				            <div class="fieldgroup">
 				                <label>State</label>
-				                <input type="text" name="staffState"/>
+				                <input type="text" name="staffDTO.staffState"/>
 				            </div>
 				            <div class="fieldgroup">
 				                <label>Country</label>
-				                <input type="text" name="staffCountry"/>
+				                <input type="text" name="staffDTO.staffCountry"/>
 				            </div>
 				            
 				             <div class="fieldgroup">
 				                <label>Personal Contact Number</label>
-				                <input type="text" name="staffPCNumber"/>
+				                <input type="text" name="staffDTO.staffPCNumber"/>
 				            </div>
 				            
 				             <div class="fieldgroup">
 				                <label>Personal Contact Number</label>
-				                <input type="text" name="staffECNumber"/>
+				                <input type="text" name="staffDTO.staffECNumber"/>
 				            </div>
 				            
 				             <div class="fieldgroup">
 				                <label>Email Id</label>
-				                <input type="text" name="staffEmailId"/>
+				                <input type="text" name="staffDTO.staffEmailId"/>
 				            </div>
 				        </fieldset>
 				        <fieldset>
 							<div class="fieldgroup">
-				                <s:submit value="Sumbit"/>
+				                <s:submit value="Sumbit" action="staffAddAction"/>
 				            </div>				           	
 				        </fieldset>
 				    </div>
