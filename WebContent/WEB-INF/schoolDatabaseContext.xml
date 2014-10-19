@@ -63,7 +63,6 @@
 				<value>com.myschool.beans.TuitionFeeStructure</value>
 				<value>com.myschool.beans.UserDetails</value>
 				<value>com.myschool.beans.UserRole</value>
-				<value>com.myschool.beans.UserRoleAccess</value>
 				<value>com.myschool.beans.VehicleDetails</value>
 			</list>
 		</property>	

@@ -44,6 +44,7 @@
 	</bean>
 	
 	<bean name="forwardAction" class="com.myschool.action.ForwardAction">
+		<property name="schoolCode" value="${school.code}" />
 	</bean>
 	
 	<bean name="schoolClassAction" class="com.myschool.action.SchoolClassAction">

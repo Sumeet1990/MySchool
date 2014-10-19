@@ -27,46 +27,62 @@
 	<body>
 		<div class="wrap">
 			<ul id="menu-category-menu" class="menu genesis-nav-menu menu-secondary">
-				<li id="menu-item-417" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-417">
-					<s:a href="#" id="sTop" cssClass="subNavBtn" onclick="goToHeight(this)">
-						<s:property value="getText('fm.administrator')" />&nbsp;|&nbsp;
-					</s:a>
-				</li>
-				<li id="menu-item-418" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-418">
-					<s:a href="#" id="s1" onclick="goToHeight(this)" cssClass="subNavBtn">
-						<s:property value="getText('fm.leaves')" />&nbsp;|&nbsp;
-					</s:a>
-				</li>
-				<li id="menu-item-419" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-419">
-					<s:a href="#" id="s2" onclick="goToHeight(this)" cssClass="subNavBtn">
-						<s:property value="getText('fm.communication')" />&nbsp;|&nbsp;
-					</s:a>
-				</li>
-				<li id="menu-item-420" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-420">
-					<s:a href="#" id="s3" onclick="goToHeight(this)" cssClass="subNavBtn">
-						<s:property value="getText('fm.transportation')" />&nbsp;|&nbsp;
-					</s:a>
-				</li>
-				<li id="menu-item-428" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-428">
-					<s:a href="#" id="s4" onclick="goToHeight(this)" cssClass="subNavBtn">
-						<s:property value="getText('fm.finance')" />&nbsp;|&nbsp;
-					</s:a>
-				</li>
-				<li id="menu-item-421" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-421">
-					<s:a href="#" id="s5" onclick="goToHeight(this)" cssClass="subNavBtn end">
-						<s:property value="getText('fm.library')" />&nbsp;|&nbsp;
-					</s:a>
-				</li>
-				<li id="menu-item-421" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-421">
-					<s:a href="#" id="s6" onclick="goToHeight(this)" cssClass="subNavBtn end">
-						<s:property value="getText('fm.reports')" />&nbsp;|&nbsp;
-					</s:a>
-				</li>
-				<li id="menu-item-421" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-421">
-					<s:a href="#" id="s7" onclick="goToHeight(this)" cssClass="subNavBtn end">
-						<s:property value="getText('fm.availability')" />&nbsp;|&nbsp;
-					</s:a>
-				</li>
+				<s:if test="schoolLevelAccessRequest.functionalManagement.fmAdministrator.cmAdministratorAcccess">
+					<li id="menu-item-417" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-417">
+						<s:a href="#" id="sTop" cssClass="subNavBtn" onclick="goToHeight(this)">
+							<s:property value="getText('fm.administrator')" />&nbsp;|&nbsp;
+						</s:a>
+					</li>
+				</s:if>
+				<s:if test="schoolLevelAccessRequest.functionalManagement.fmLeaves.fmLeavesAccess">
+					<li id="menu-item-418" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-418">
+						<s:a href="#" id="s1" onclick="goToHeight(this)" cssClass="subNavBtn">
+							<s:property value="getText('fm.leaves')" />&nbsp;|&nbsp;
+						</s:a>
+					</li>
+				</s:if>
+				<s:if test="schoolLevelAccessRequest.functionalManagement.fmCommunication.fmCommunicationAcccess">
+					<li id="menu-item-419" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-419">
+						<s:a href="#" id="s2" onclick="goToHeight(this)" cssClass="subNavBtn">
+							<s:property value="getText('fm.communication')" />&nbsp;|&nbsp;
+						</s:a>
+					</li>
+				</s:if>
+				<s:if test="schoolLevelAccessRequest.functionalManagement.fmTransportation.fmTransportationAcccess">
+					<li id="menu-item-420" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-420">
+						<s:a href="#" id="s3" onclick="goToHeight(this)" cssClass="subNavBtn">
+							<s:property value="getText('fm.transportation')" />&nbsp;|&nbsp;
+						</s:a>
+					</li>
+				</s:if>
+				<s:if test="schoolLevelAccessRequest.functionalManagement.fmFinance.fmFinanceAcccess">
+					<li id="menu-item-428" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-428">
+						<s:a href="#" id="s4" onclick="goToHeight(this)" cssClass="subNavBtn">
+							<s:property value="getText('fm.finance')" />&nbsp;|&nbsp;
+						</s:a>
+					</li>
+				</s:if>
+				<s:if test="schoolLevelAccessRequest.functionalManagement.fmLibrary.fmLibraryAcccess">
+					<li id="menu-item-421" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-421">
+						<s:a href="#" id="s5" onclick="goToHeight(this)" cssClass="subNavBtn end">
+							<s:property value="getText('fm.library')" />&nbsp;|&nbsp;
+						</s:a>
+					</li>
+				</s:if>
+				<s:if test="schoolLevelAccessRequest.functionalManagement.fmReports.fmReportsAcccess">
+					<li id="menu-item-421" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-421">
+						<s:a href="#" id="s6" onclick="goToHeight(this)" cssClass="subNavBtn end">
+							<s:property value="getText('fm.reports')" />&nbsp;|&nbsp;
+						</s:a>
+					</li>
+				</s:if>
+				<s:if test="schoolLevelAccessRequest.functionalManagement.fmAvailability.fmAvailabilityAcccess">
+					<li id="menu-item-421" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-421">
+						<s:a href="#" id="s7" onclick="goToHeight(this)" cssClass="subNavBtn end">
+							<s:property value="getText('fm.availability')" />&nbsp;|&nbsp;
+						</s:a>
+					</li>
+				</s:if>
 			</ul>
 		</div>
 	
@@ -78,45 +94,50 @@
 					<div id="slide">
 						<br/>
 						<div style="clear:both"></div>
-						<div class="column">
-							<div class='button user'><s:property value="getText('fm.user')"/></div>
-							<div style="" class="user_grad slider">
-								<a href="#"><s:property value="getText('fm.add')"/></a>
-								<a href="#"><s:property value="getText('fm.edit')"/></a>
-								<a href="#"><s:property value="getText('fm.remove')"/></a>
-								<a href="#"><s:property value="getText('fm.show')"/></a>
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmAdministrator.fmUser">
+							<div class="column">
+								<div class='button user'><s:property value="getText('fm.user')"/></div>
+								<div style="" class="user_grad slider">
+									<a href="#"><s:property value="getText('fm.add')"/></a>
+									<a href="#"><s:property value="getText('fm.edit')"/></a>
+									<a href="#"><s:property value="getText('fm.remove')"/></a>
+									<a href="#"><s:property value="getText('fm.show')"/></a>
+								</div>
 							</div>
-						</div>
-	
-						<div class="column">
-							<div class='button staff'><s:property value="getText('fm.staff')"/></div>
-							<div style="" class="staff_grad slider">
-								<s:a action="staffInitAction"><s:property value="getText('fm.add')"/></s:a>
-								<a href="#"><s:property value="getText('fm.edit')"/></a>
-								<a href="#"><s:property value="getText('fm.remove')"/></a>
-								<a href="#"><s:property value="getText('fm.show')"/></a>
+						</s:if>
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmAdministrator.fmStaff">
+							<div class="column">
+								<div class='button staff'><s:property value="getText('fm.staff')"/></div>
+								<div style="" class="staff_grad slider">
+									<s:a action="staffInitAction"><s:property value="getText('fm.add')"/></s:a>
+									<a href="#"><s:property value="getText('fm.edit')"/></a>
+									<a href="#"><s:property value="getText('fm.remove')"/></a>
+									<a href="#"><s:property value="getText('fm.show')"/></a>
+								</div>
 							</div>
-						</div>
-						
-						<div class="column">
-							<div class='button student'><s:property value="getText('fm.student')"/></div>
-							<div style="" class="student_grad slider">
-								<s:a action="studentRegistrationAddAction"><s:property value="getText('fm.registration')"/></s:a>
-								<a href="#"><s:property value="getText('fm.assignClass')"/></a>
-								<a href="#"><s:property value="getText('fm.edit')"/></a>
-								<a href="#"><s:property value="getText('fm.remove')"/></a>
-								<a href="#"><s:property value="getText('fm.show')"/></a>
-								<a href="#"><s:property value="getText('fm.migrate')"/></a>
+						</s:if>
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmAdministrator.fmStudent">
+							<div class="column">
+								<div class='button student'><s:property value="getText('fm.student')"/></div>
+								<div style="" class="student_grad slider">
+									<s:a action="studentRegistrationAddAction"><s:property value="getText('fm.registration')"/></s:a>
+									<a href="#"><s:property value="getText('fm.assignClass')"/></a>
+									<a href="#"><s:property value="getText('fm.edit')"/></a>
+									<a href="#"><s:property value="getText('fm.remove')"/></a>
+									<a href="#"><s:property value="getText('fm.show')"/></a>
+									<a href="#"><s:property value="getText('fm.migrate')"/></a>
+								</div>
 							</div>
-						</div>
-												
-						<div class="column">
-							<div class='button rollNumber'><s:property value="getText('fm.rollNumber')"/></div>
-							<div style="" class="rollNumber_grad slider">
-								<a href="#"><s:property value="getText('fm.generateForSingleStudent')"/></a>
-								<a href="#"><s:property value="getText('fm.generateForTotalClass')"/></a>
+						</s:if>
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmAdministrator.fmRollNumber">						
+							<div class="column">
+								<div class='button rollNumber'><s:property value="getText('fm.rollNumber')"/></div>
+								<div style="" class="rollNumber_grad slider">
+									<a href="#"><s:property value="getText('fm.generateForSingleStudent')"/></a>
+									<a href="#"><s:property value="getText('fm.generateForTotalClass')"/></a>
+								</div>
 							</div>
-						</div>
+						</s:if>
 					</div>
 				</div>
 				<br class="clear">
@@ -129,26 +150,28 @@
 					<div id="slide">
 						<br/>
 						<div style="clear:both"></div>
-	
-						<div class="column">
-							<div class='button studentLeaves'><s:property value="getText('fm.studentLeaves')"/></div>
-							<div style="" class="studentLeaves_grad slider">
-								<s:a action="studentLeavesAddAction"><s:property value="getText('fm.add')"/></s:a>
-								<a href="#"><s:property value="getText('fm.edit')"/></a>
-								<a href="#"><s:property value="getText('fm.remove')"/></a>
-								<a href="#"><s:property value="getText('fm.show')"/></a>
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmLeaves.fmStudentLeaves">
+							<div class="column">
+								<div class='button studentLeaves'><s:property value="getText('fm.studentLeaves')"/></div>
+								<div style="" class="studentLeaves_grad slider">
+									<s:a action="studentLeavesAddAction"><s:property value="getText('fm.add')"/></s:a>
+									<a href="#"><s:property value="getText('fm.edit')"/></a>
+									<a href="#"><s:property value="getText('fm.remove')"/></a>
+									<a href="#"><s:property value="getText('fm.show')"/></a>
+								</div>
 							</div>
-						</div>
-	
-						<div class="column">
-							<div class='button staffLeaves'><s:property value="getText('fm.staffLeaves')"/></div>
-							<div style="" class="staffLeaves_grad slider">
-								<s:a action="staffLeavesAddAction"><s:property value="getText('fm.add')"/></s:a>
-								<a href="#"><s:property value="getText('fm.edit')"/></a>
-								<a href="#"><s:property value="getText('fm.remove')"/></a>
-								<a href="#"><s:property value="getText('fm.show')"/></a>
-							</div>
-						</div>					
+						</s:if>
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmLeaves.fmStaffLeaves">
+							<div class="column">
+								<div class='button staffLeaves'><s:property value="getText('fm.staffLeaves')"/></div>
+								<div style="" class="staffLeaves_grad slider">
+									<s:a action="staffLeavesAddAction"><s:property value="getText('fm.add')"/></s:a>
+									<a href="#"><s:property value="getText('fm.edit')"/></a>
+									<a href="#"><s:property value="getText('fm.remove')"/></a>
+									<a href="#"><s:property value="getText('fm.show')"/></a>
+								</div>
+							</div>	
+						</s:if>				
 					</div>
 				</div>
 			</div>
@@ -160,33 +183,36 @@
 					<div id="slide">
 						<br/>
 						<div style="clear:both"></div>
-	
-						<div class="column">
-							<div class='button mailrs'><s:property value="getText('fm.mail.report.schedule')"/></div>
-							<div style="" class="mailrs_grad slider">
-								<a href="#"><s:property value="getText('fm.studentPogressReport')"/></a>
-								<a href="#"><s:property value="getText('fm.studentAttendanceReport')"/></a>
-								<a href="#"><s:property value="getText('fm.examSchedule')"/></a>
-								<a href="#"><s:property value="getText('fm.mailAlert')"/></a>								
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmCommunication.fmSchedule">
+							<div class="column">
+								<div class='button mailrs'><s:property value="getText('fm.mail.report.schedule')"/></div>
+								<div style="" class="mailrs_grad slider">
+									<a href="#"><s:property value="getText('fm.studentPogressReport')"/></a>
+									<a href="#"><s:property value="getText('fm.studentAttendanceReport')"/></a>
+									<a href="#"><s:property value="getText('fm.examSchedule')"/></a>
+									<a href="#"><s:property value="getText('fm.mailAlert')"/></a>								
+								</div>
 							</div>
-						</div>
-						
-						<div class="column">
-							<div class='button maileh'><s:property value="getText('fm.mail.events.holidays')"/></div>
-							<div style="" class="maileh_grad slider">
-								<a href="#"><s:property value="getText('fm.schoolEvents')"/></a>
-								<a href="#"><s:property value="getText('fm.classEvents')"/></a>
-								<a href="#"><s:property value="getText('fm.schoolHolidaysList')"/></a>
-								<a href="#"><s:property value="getText('fm.classHolidaysList')"/></a>									
+						</s:if>
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmCommunication.fmHolidays">
+							<div class="column">
+								<div class='button maileh'><s:property value="getText('fm.mail.events.holidays')"/></div>
+								<div style="" class="maileh_grad slider">
+									<a href="#"><s:property value="getText('fm.schoolEvents')"/></a>
+									<a href="#"><s:property value="getText('fm.classEvents')"/></a>
+									<a href="#"><s:property value="getText('fm.schoolHolidaysList')"/></a>
+									<a href="#"><s:property value="getText('fm.classHolidaysList')"/></a>									
+								</div>
 							</div>
-						</div>
-						
-						<div class="column">
-							<div class='button sms'><s:property value="getText('fm.sms')"/></div>
-							<div style="" class="sms_grad slider">
-								<a href="#"><s:property value="getText('fm.textMessage')"/></a>
-							</div>
-						</div>					
+						</s:if>
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmCommunication.fmSms">
+							<div class="column">
+								<div class='button sms'><s:property value="getText('fm.sms')"/></div>
+								<div style="" class="sms_grad slider">
+									<a href="#"><s:property value="getText('fm.textMessage')"/></a>
+								</div>
+							</div>		
+						</s:if>			
 					</div>
 				</div>
 			</div>
@@ -198,12 +224,14 @@
 					<div id="slide">
 						<br/>
 						<div style="clear:both"></div>
-						<div class="column">
-							<div class='button transportationRoute'><s:property value="getText('fm.transportationRoute')"/></div>
-							<div style="" class="transportationRoute_grad slider">
-								<s:a action="transportationRouteAllocationAction"><s:property value="getText('fm.allocation')"/></s:a>
-							</div>
-						</div>					
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmTransportation.fmTransportationRoute">
+							<div class="column">
+								<div class='button transportationRoute'><s:property value="getText('fm.transportationRoute')"/></div>
+								<div style="" class="transportationRoute_grad slider">
+									<s:a action="transportationRouteAllocationAction"><s:property value="getText('fm.allocation')"/></s:a>
+								</div>
+							</div>		
+						</s:if>			
 					</div>
 				</div>
 			</div>
@@ -215,22 +243,25 @@
 					<div id="slide">
 						<br/>
 						<div style="clear:both"></div>
-	
-						<div class="column">
-							<div class='button tuitionFee'><s:property value="getText('fm.tuitionFee')"/></div>
-							<div style="" class="tuitionFee_grad slider">
-								<s:a action="tutionfeeCollectionAction"><s:property value="getText('fm.collection')"/></s:a>
-								<a href="#"><s:property value="getText('fm.dueEnquiry')"/></a>
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmFinance.fmTuitionFee">
+							<div class="column">
+								<div class='button tuitionFee'><s:property value="getText('fm.tuitionFee')"/></div>
+								<div style="" class="tuitionFee_grad slider">
+									<s:a action="tutionfeeCollectionAction"><s:property value="getText('fm.collection')"/></s:a>
+									<a href="#"><s:property value="getText('fm.dueEnquiry')"/></a>
+								</div>
 							</div>
-						</div>
-						<div class="column">
-							<div class='button otherFee'><s:property value="getText('fm.otherFee')"/></div>
-							<div style="" class="otherFee_grad slider">
-								<s:a action="otherfeeCollectionAction"><s:property value="getText('fm.collection')"/></s:a>
-								<a href="#"><s:property value="getText('fm.collection')"/></a>
-								<a href="#"><s:property value="getText('fm.dueEnquiry')"/></a>
-							</div>
-						</div>						
+						</s:if>
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmFinance.fmOtherFee">
+							<div class="column">
+								<div class='button otherFee'><s:property value="getText('fm.otherFee')"/></div>
+								<div style="" class="otherFee_grad slider">
+									<s:a action="otherfeeCollectionAction"><s:property value="getText('fm.collection')"/></s:a>
+									<a href="#"><s:property value="getText('fm.collection')"/></a>
+									<a href="#"><s:property value="getText('fm.dueEnquiry')"/></a>
+								</div>
+							</div>	
+						</s:if>					
 					</div>
 				</div>
 			</div>
@@ -242,14 +273,16 @@
 					<div id="slide">
 						<br/>
 						<div style="clear:both"></div>
-						<div class="column">
-							<div class='button books'><s:property value="getText('fm.books')"/></div>
-							<div style="" class="books_grad slider">
-								<a href="#"><s:property value="getText('fm.assignBooks')"/></a>
-								<a href="#"><s:property value="getText('fm.collectBooks')"/></a>
-								<a href="#"><s:property value="getText('fm.viewAssignedBooks')"/></a>
-							</div>
-						</div>											
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmLibrary.fmBooks">
+							<div class="column">
+								<div class='button books'><s:property value="getText('fm.books')"/></div>
+								<div style="" class="books_grad slider">
+									<a href="#"><s:property value="getText('fm.assignBooks')"/></a>
+									<a href="#"><s:property value="getText('fm.collectBooks')"/></a>
+									<a href="#"><s:property value="getText('fm.viewAssignedBooks')"/></a>
+								</div>
+							</div>			
+						</s:if>								
 					</div>
 				</div>
 			</div>
@@ -261,39 +294,43 @@
 						<div id="slide">
 						<br/>
 						<div style="clear:both"></div>
-	
-						<div class="column">
-							<div class='button studentReports'><s:property value="getText('fm.studentReports')"/></div>
-							<div style="" class="studentReports_grad slider">
-								<a href="#"><s:property value="getText('fm.attendanceReport')"/></a>
-								<a href="#"><s:property value="getText('fm.progressReport')"/></a>
-								<a href="#"><s:property value="getText('fm.performanceReport')"/></a>
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmReports.fmStudentReports">
+							<div class="column">
+								<div class='button studentReports'><s:property value="getText('fm.studentReports')"/></div>
+								<div style="" class="studentReports_grad slider">
+									<a href="#"><s:property value="getText('fm.attendanceReport')"/></a>
+									<a href="#"><s:property value="getText('fm.progressReport')"/></a>
+									<a href="#"><s:property value="getText('fm.performanceReport')"/></a>
+								</div>
 							</div>
-						</div>
-	
-						<div class="column">
-							<div class='button staffReports'><s:property value="getText('fm.staffReports')"/></div>
-							<div style="" class="staffReports_grad slider">
-								<a href="#"><s:property value="getText('fm.attendanceReport')"/></a>
-								<a href="#"><s:property value="getText('fm.performanceReport')"/></a>
+						</s:if>
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmReports.fmStaffReports">
+							<div class="column">
+								<div class='button staffReports'><s:property value="getText('fm.staffReports')"/></div>
+								<div style="" class="staffReports_grad slider">
+									<a href="#"><s:property value="getText('fm.attendanceReport')"/></a>
+									<a href="#"><s:property value="getText('fm.performanceReport')"/></a>
+								</div>
 							</div>
-						</div>
-						
-						<div class="column">
-							<div class='button classReports'><s:property value="getText('fm.classReports')"/></div>
-							<div style="" class="classReports_grad slider">
-								<a href="#"><s:property value="getText('fm.attendanceReport')"/></a>
-								<a href="#"><s:property value="getText('fm.performanceReport')"/></a>
+						</s:if>
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmReports.fmClassReports">
+							<div class="column">
+								<div class='button classReports'><s:property value="getText('fm.classReports')"/></div>
+								<div style="" class="classReports_grad slider">
+									<a href="#"><s:property value="getText('fm.attendanceReport')"/></a>
+									<a href="#"><s:property value="getText('fm.performanceReport')"/></a>
+								</div>
 							</div>
-						</div>
-						
-						<div class="column">
-							<div class='button schoolReports'><s:property value="getText('fm.schoolReports')"/></div>
-							<div style="" class="schoolReports_grad slider">
-								<a href="#"><s:property value="getText('fm.admissionsReport')"/></a>
-								<a href="#"><s:property value="getText('fm.performanceReport')"/></a>
-							</div>
-						</div>			
+						</s:if>
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmReports.fmSchoolReports">
+							<div class="column">
+								<div class='button schoolReports'><s:property value="getText('fm.schoolReports')"/></div>
+								<div style="" class="schoolReports_grad slider">
+									<a href="#"><s:property value="getText('fm.admissionsReport')"/></a>
+									<a href="#"><s:property value="getText('fm.performanceReport')"/></a>
+								</div>
+							</div>		
+						</s:if>	
 					</div>
 				</div>
 			</div>
@@ -305,14 +342,15 @@
 					<div id="slide">
 						<br/>
 						<div style="clear:both"></div>
-	
-						<div class="column">
-							<div class='button availabilityCheck'><s:property value="getText('fm.availabilityCheck')"/></div>
-							<div style="" class="availabilityCheck_grad slider">
-								<a href="#"><s:property value="getText('fm.admissionsAvailability')"/></a>
-								<a href="#"><s:property value="getText('fm.transportAvailability')"/></a>
+						<s:if test="schoolLevelAccessRequest.functionalManagement.fmAvailability.fmAvailabilityCheck">
+							<div class="column">
+								<div class='button availabilityCheck'><s:property value="getText('fm.availabilityCheck')"/></div>
+								<div style="" class="availabilityCheck_grad slider">
+									<a href="#"><s:property value="getText('fm.admissionsAvailability')"/></a>
+									<a href="#"><s:property value="getText('fm.transportAvailability')"/></a>
+								</div>
 							</div>
-						</div>
+						</s:if>
 					</div>
 				</div>
 			</div>

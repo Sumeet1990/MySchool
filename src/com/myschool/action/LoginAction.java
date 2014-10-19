@@ -18,9 +18,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * 
  */
 public class LoginAction extends ActionSupport implements SessionAware {
-
 	private static final String FAILURE = "failure";
-
 	private static Logger log = Logger.getLogger(LoginAction.class);
 	
 	private String userName;
@@ -48,7 +46,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 				SessionUtils sessionUtils = new SessionUtils();
 				CommonUtility.copyProperties(userDetailsDTO, sessionUtils, "userId userId", "userName userName",						
 				  "userGivenFullName userGivenFullName", "userRolesName userRolesName",  "userSurname userSurname",
-				  "lastLogedinDateTime lastLogedinDateTime");
+				  "lastLogedinDateTime lastLogedinDateTime", "userAccessAsSchool userAccessAsSchool");
 				
 				session.put(CommonConstants.SESSION_UTILS, sessionUtils);
 				session.put(CommonConstants.USERNAME, userName);

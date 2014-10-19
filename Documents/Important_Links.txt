@@ -12,3 +12,5 @@
 3) DB Scripts Converter from One Language to Another Language
 
 	http://www.sqlines.com/online
+	
+4) Online XML to XSD Converter: http://www.freeformatter.com/xsd-generator.html#ad-output	

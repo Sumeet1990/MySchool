@@ -37,6 +37,8 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 						.getUserRolesName());
 				userDetailsDTO.setPersonalContactNumber(userDetails
 						.getStaffAddress().getPersonalContactNumber());
+				userDetailsDTO.setUserAccessAsSchool(userDetails.getUserRole().getUserAccessAsSchool() != null && 
+						userDetails.getUserRole().getUserAccessAsSchool() == 1 ? true : false);
 			}
 		}
 	}

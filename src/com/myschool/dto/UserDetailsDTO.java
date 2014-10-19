@@ -16,6 +16,7 @@ public class UserDetailsDTO {
     private String userRolesName;
     private String personalContactNumber;
     private String userDob;
+    private boolean userAccessAsSchool;
     
     public String getUserName() {
 		return userName;
@@ -48,8 +49,6 @@ public class UserDetailsDTO {
 	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
-
-
 
 	public String getLastLogedinDateTime() {
 		return lastLogedinDateTime;
@@ -137,6 +136,20 @@ public class UserDetailsDTO {
 
 	public void setUserDob(String userDob) {
 		this.userDob = userDob;
-	}	
+	}
+
+	/**
+	 * @return the userAccessAsSchool
+	 */
+	public boolean isUserAccessAsSchool() {
+		return userAccessAsSchool;
+	}
+
+	/**
+	 * @param userAccessAsSchool the userAccessAsSchool to set
+	 */
+	public void setUserAccessAsSchool(boolean userAccessAsSchool) {
+		this.userAccessAsSchool = userAccessAsSchool;
+	}
 }
 

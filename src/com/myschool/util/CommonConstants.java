@@ -41,4 +41,6 @@ public class CommonConstants {
 	public static final String STAFF_APOINTMENT_TYPE_SUCCESSFULLY_CREATED = "staffAppointmentTypesuccessfullyCreaated";
 	public static final String STAFF_APOINTMENT_TYPE_ALREADY_EXISTS = "staffAppointmentType.alreadyExists";
 	public static final String STAFF_APOINTMENT_TYPE_SUCCESSFULLY_MODIFIED = "staffAppointmentType.successfullyModified";
+
+	public static final String SCHOOL_ACCESS = "schoolAccess";
 }

@@ -1,0 +1,152 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="schoolLevelAccessRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="configurationManagment">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cmAdministrator">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmAdministratorAcccess"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmUserRole"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmUser"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmClass"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmSection"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmSubjects"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="cmStaff">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmStaffAccess"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmAppointmentType"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmLeaveSructure"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="cmCalendar">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmCalendarAccess"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmSchoolCalendar"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmClassCalendar"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="cmTransport">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmTransportAccess"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmDriver"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmVehicle"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmRoute"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="cmFinance">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmFinanceAccess"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmTuitionFeeStructure"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmOtherFeeStructure"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="cmLibrary">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmLibraryAccess"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmLibraryBooksCategory"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="cmLibraryBooksEntry"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="functionalManagement">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fmAdministrator">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmAdministratorAccess"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmUser"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmStaff"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmStudent"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmRollNumber"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="fmLeaves">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmLeavesAccess"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmStudentLeaves"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmStaffLeaves"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="fmCommunication">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmCommunicationAccess"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmSchedule"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmHolidays"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmSms"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="fmTransportation">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmTransportationAccess"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmTransportationRoute"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="fmFinance">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmFinanceAccess"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmTuitionFee"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmOtherFee"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="fmLibrary">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmLibraryAccess"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmBooks"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="fmReports">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmReportsAccess"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmStudentReports"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmStaffReports"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmClassReports"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmSchoolReports"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="fmAvailability">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmAvailabilityAccess"/>
+                    <xs:element type="xs:boolean" minOccurs="1" maxOccurs="1" name="fmAvailabilityCheck"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

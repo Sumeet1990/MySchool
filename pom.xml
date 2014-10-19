@@ -145,11 +145,46 @@
 		  	<artifactId>ehcache-core</artifactId>
 		  	<version>2.3.0</version>
 		</dependency>
+		
+		<!-- <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.1.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.activation</groupId>
+                    <artifactId>activation</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency> -->
+		
 	</dependencies>
 	
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
+			<!-- <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>schema1-xjc</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>/src/main/resources/</schemaDirectory>
+                            <packageName></packageName>
+                            <outputDirectory>/src/main/java/</outputDirectory>
+                            <clearOutputDir>false</clearOutputDir>
+                            <includeSchemas>
+                                <include></include>
+                            </includeSchemas>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin> -->
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.3</version>
