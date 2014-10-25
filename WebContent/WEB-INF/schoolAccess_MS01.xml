@@ -2,9 +2,8 @@
 <schoolLevelAccessRequest>
 	<configurationManagment>
 		<cmAdministrator>
-			<cmAdministratorAcccess>true</cmAdministratorAcccess>
+			<cmAdministratorAccess>true</cmAdministratorAccess>
 			<cmUserRole>true</cmUserRole>
-			<cmUser>true</cmUser>
 			<cmClass>true</cmClass>
 			<cmSection>true</cmSection>
 			<cmSubjects>true</cmSubjects>

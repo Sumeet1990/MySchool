@@ -40,7 +40,7 @@ a { text-decoration: none;  }
 			
 .blue { background-color: #56c6d9; }
 
-.user { background-color: #99dc30; }
+.userRole { background-color: #99dc30; }
 .schoolClass { background-color: #99dc30; }
 .classSection { background-color: #99dc30; }
 .subject { background-color: 	#99dc30; }	
@@ -61,7 +61,7 @@ a { text-decoration: none;  }
 .libraryBooksCategory { background-color: #99dc30; }
 .libraryBooksEntry { background-color: #99dc30; }
 
-.user_grad {
+.userRole_grad {
 	background: url(../images/green.png) repeat-x;	/* for all browsers */
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30');		/* Internet Explorer 6,7 and 8 */
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#99DC30', endColorstr='#99DC30')";	/* Internet Explorer 8 only */

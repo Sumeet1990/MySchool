@@ -10,23 +10,30 @@
         <put-attribute name="body" value="" />
         <put-attribute name="footer" value="/jsp/Footer.jsp" />
     </definition>
-     <definition name="/ConfigurationMenuPage.tile" extends="baseLayout">
+    
+    <definition name="/ConfigurationMenuPage.tile" extends="baseLayout">
         <put-attribute name="body" value="/jsp/ConfigurationMenu.jsp" />
     </definition>
+    
     <definition name="/FunctionalMenuPage.tile" extends="baseLayout">
         <put-attribute name="body" value="/jsp/FunctionalMenu.jsp" />
     </definition>
+    
     <definition name="/SchoolLandingPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/SchoolLanding.jsp" />
     </definition>
+    
     <definition name="/ClassSectionPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/ClassSection.jsp" />
     </definition>
-     <definition name="/ClassSectionCreateViewPage.tiles" extends="baseLayout">
+    
+    <definition name="/ClassSectionCreateViewPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/ClassSectionCreateView.jsp" />
     </definition>
+    
     <definition name="/StaffPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/Staff.jsp" />
+    
     </definition>
      <definition name="/GlobalErrorPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/GlobalError.jsp" />
@@ -76,6 +83,14 @@
     
     <definition name="/StaffLeavesStructurePage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/StaffLeavesStructure.jsp" />
+    </definition>
+    
+    <definition name="/UserRolePage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/UserRole.jsp" />
+    </definition>
+    
+    <definition name="/UserPage.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/jsp/User.jsp" />
     </definition>
     
     <definition name="/SchoolGeneralHolidaysPage.tiles" extends="baseLayout">
@@ -130,10 +145,11 @@
         <put-attribute name="body" value="/jsp/TuitionfeeCollection.jsp"/>
     </definition>
     
-     <definition name="/OtherfeeCollectionPage.tiles" extends="baseLayout">
+    <definition name="/OtherfeeCollectionPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/OtherfeeCollection.jsp"/>
     </definition>
-        <definition name="/TransportRoutPage.tiles" extends="baseLayout">
+    
+    <definition name="/TransportRoutPage.tiles" extends="baseLayout">
         <put-attribute name="body" value="/jsp/TransportRout.jsp"/>
     </definition>
 </tiles-definitions>

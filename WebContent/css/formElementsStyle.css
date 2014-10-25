@@ -67,12 +67,29 @@ h2 {
     padding: 25px 50px 10px;
     width: 550px;
 }
-
+#elements-form-ug {
+    background: url("../images/form-fieldset.gif") repeat-x scroll left bottom #F8FDEF;
+    border: 1px solid #DFDCDC;
+    border-radius: 15px 15px 15px 15px;
+    display: inline-block;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 25px 50px 10px;
+    width: 800px;
+}
 #elements-form .fieldgroup {
     background: url("jsp/../images/form-divider.gif") repeat-x scroll left top transparent;
     display: inline-block;
     /*padding: 8px 10px;*/
     width: 340px;
+}
+
+#elements-form-ug .fieldgroupug {
+    background: url("jsp/../images/form-divider.gif") repeat-x scroll left top transparent;
+    display: inline-block;
+    /*padding: 8px 10px;*/
+    width: 130px;
 }
 
 #elements-form .fieldgroupForCheckBox {
@@ -89,7 +106,19 @@ h2 {
     width: 110px;
 }
 
+#elements-form-ug .fieldgroupug label, #elements-form .fieldgroupForCheckBox label {
+    float: left;
+    padding: 15px 0 0;
+    text-align: right;
+    width: 110px;
+}
+
 #elements-form .fieldgroup input, #elements-form .fieldgroup textarea, #elements-form .fieldgroup select {
+    float: right;
+    margin: 10px 0;
+    height: 25px;
+}
+#elements-form-ug .fieldgroupug input, #elements-form .fieldgroupug textarea, #elements-form .fieldgroupug select {
     float: right;
     margin: 10px 0;
     height: 25px;
@@ -104,8 +133,20 @@ h2 {
     width: 220px;
     height: 40px !important;
 }
-
+#elements-form-ug .submit {
+    padding: 10px;
+    width: 220px;
+    height: 40px !important;
+}
 #elements-form .fieldgroup label.error, #elements-form .fieldgroupForCheckBox label.error {
+    color: #FB3A3A;
+    display: inline-block;
+    margin: 4px 0 5px 125px;
+    padding: 0;
+    text-align: left;
+    width: 220px;
+}
+#elements-form-ug .fieldgroupug label.error, #elements-form .fieldgroupForCheckBox label.error {
     color: #FB3A3A;
     display: inline-block;
     margin: 4px 0 5px 125px;

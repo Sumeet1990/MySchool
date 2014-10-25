@@ -25,42 +25,42 @@
 		<div class="wrap">
 			<ul id="menu-category-menu"
 				class="menu genesis-nav-menu menu-secondary">
-				<s:if test="schoolLevelAccessRequest.configurationManagment.cmAdministrator.cmAdministratorAcccess">
+				<s:if test="schoolLevelAccessRequest.configurationManagment.cmAdministrator.cmAdministratorAccess">
 					<li id="menu-item-417" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-417">
 						<s:a href="#" id="sTop" cssClass="subNavBtn" onclick="goToHeight(this)">
 							<s:property value="getText('cm.administrator')" />&nbsp;|&nbsp;
 						</s:a>
 					</li>
 				</s:if>
-				<s:if test="schoolLevelAccessRequest.configurationManagment.cmStaff.cmStaffAcccess">
+				<s:if test="schoolLevelAccessRequest.configurationManagment.cmStaff.cmStaffAccess">
 					<li id="menu-item-418" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-418">
 						<s:a href="#" id="s1" onclick="goToHeight(this)" cssClass="subNavBtn">
 							<s:property value="getText('cm.staff')" />&nbsp;|&nbsp;
 						</s:a>
 					</li>
 				</s:if>
-				<s:if test="schoolLevelAccessRequest.configurationManagment.cmCalendar.cmCalendarAcccess">
+				<s:if test="schoolLevelAccessRequest.configurationManagment.cmCalendar.cmCalendarAccess">
 					<li id="menu-item-419" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-419">
 						<s:a href="#" id="s2" onclick="goToHeight(this)" cssClass="subNavBtn">
 							<s:property value="getText('cm.calendar')" />&nbsp;|&nbsp;
 						</s:a>
 					</li>
 				</s:if>
-				<s:if test="schoolLevelAccessRequest.configurationManagment.cmTransport.cmTransportAcccess">
+				<s:if test="schoolLevelAccessRequest.configurationManagment.cmTransport.cmTransportAccess">
 					<li id="menu-item-420" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-420">
 						<s:a href="#" id="s3" onclick="goToHeight(this)" cssClass="subNavBtn">
 							<s:property value="getText('cm.transport')" />&nbsp;|&nbsp;
 						</s:a>
 					</li>
 				</s:if>
-				<s:if test="schoolLevelAccessRequest.configurationManagment.cmFinance.cmFinanceAcccess">
+				<s:if test="schoolLevelAccessRequest.configurationManagment.cmFinance.cmFinanceAccess">
 					<li id="menu-item-428" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-428">
 						<s:a href="#" id="s4" onclick="goToHeight(this)" cssClass="subNavBtn">
 							<s:property value="getText('cm.finance')" />&nbsp;|&nbsp;
 						</s:a>
 					</li>
 				</s:if>
-				<s:if test="schoolLevelAccessRequest.configurationManagment.cmLibrary.cmLibraryAcccess">
+				<s:if test="schoolLevelAccessRequest.configurationManagment.cmLibrary.cmLibraryAccess">
 					<li id="menu-item-421" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-421">
 						<s:a href="#" id="s5" onclick="goToHeight(this)" cssClass="subNavBtn end">
 							<s:property value="getText('cm.library')" />&nbsp;|&nbsp;
@@ -80,33 +80,18 @@
 						<div style="clear: both"></div>
 						<s:if test="schoolLevelAccessRequest.configurationManagment.cmAdministrator.cmUserRole">
 							<div class="column">
-								<div class='button user'>
+								<div class='button userRole'>
 									<s:property value="getText('cm.userRoleAccess')" />
 								</div>
-								<div style="" class="user_grad slider">
+								<div style="" class="userRole_grad slider">
 									<s:if test="userAccessAsSchool">
-										<s:a action="userRoleCreateAction">
+										<s:a action="userRoleInitializeAction">
 											<s:property value="getText('cm.create')" />
 										</s:a>
 										 <a href="#"><s:property value="getText('cm.modify')" /></a> 
 										 <a href="#"><s:property value="getText('cm.delete')" /></a> 
 										 <a href="#"><s:property value="getText('cm.view')" /></a>
 									 </s:if>
-								</div>
-							</div>
-						</s:if>
-						<s:if test="schoolLevelAccessRequest.configurationManagment.cmAdministrator.cmUser">
-							<div class="column">
-								<div class='button user'>
-									<s:property value="getText('cm.user')" />
-								</div>
-								<div style="" class="user_grad slider">
-									<s:if test="userAccessAsSchool">
-										<a href="#"><s:property value="getText('cm.create')" /></a> 
-										<a href="#"><s:property value="getText('cm.modify')" /></a> 
-										<a href="#"><s:property value="getText('cm.delete')" /></a> 
-										<a href="#"><s:property value="getText('cm.view')" /></a>
-									</s:if>
 								</div>
 							</div>
 						</s:if>

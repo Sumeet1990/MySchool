@@ -131,7 +131,21 @@
 			<result name="success">jsp/Login.jsp</result>
 			<result name="failure">jsp/ForgotPassword.jsp</result>
 		</action>
-	
+		
+		<action name="userRole*Action"  class="userRoleAction" method="perform{1}">
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success"  type="tiles">/UserRolePage.tiles</result>
+			<result name="failure" type="tiles">/UserRolePage.tiles</result>
+			<result name="input" type="tiles">/UserRolePage.tiles</result>
+		</action>
+		
+		<action name="user*Action"  class="userAction" method="perform{1}">
+			<interceptor-ref name="mySchoolCommonInterceptors"/>
+			<result name="success"  type="tiles">/UserPage.tiles</result>
+			<result name="failure" type="tiles">/UserPage.tiles</result>
+			<result name="input" type="tiles">/UserPage.tiles</result>
+		</action>
+		
 		<action name="schoolSubject*Action"  class="schoolSubjectsAction" method="perform{1}">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<result name="success"  type="tiles">/SchoolSubjectPage.tiles</result>
