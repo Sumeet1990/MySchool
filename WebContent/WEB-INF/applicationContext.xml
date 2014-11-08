@@ -26,6 +26,7 @@
 	
 	<bean name="userRoleAction" class="com.myschool.action.UserRoleAction">
 		<property name="schoolCode" value="${school.code}" />
+		<property name="userRoleService" ref="userRoleService" />
 	</bean>
 	
 	<bean name="userAction" class="com.myschool.action.UserAction">
@@ -52,6 +53,7 @@
 	
 	<bean name="forwardAction" class="com.myschool.action.ForwardAction">
 		<property name="schoolCode" value="${school.code}" />
+		<property name="userRoleService" ref="userRoleService" />
 	</bean>
 	
 	<bean name="schoolClassAction" class="com.myschool.action.SchoolClassAction">

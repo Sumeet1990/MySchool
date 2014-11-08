@@ -43,4 +43,5 @@ public class CommonConstants {
 	public static final String STAFF_APOINTMENT_TYPE_SUCCESSFULLY_MODIFIED = "staffAppointmentType.successfullyModified";
 
 	public static final String SCHOOL_ACCESS = "schoolAccess";
+	public static final String USER_LEVEL_ACCESS = "userLevelAccess";
 }

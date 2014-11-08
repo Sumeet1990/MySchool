@@ -34,7 +34,7 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 						"securityAnswer securityAnswer",
 						"lastLogedinDateTime lastLogedinDateTime");
 				userDetailsDTO.setUserRolesName(userDetails.getUserRole()
-						.getUserRolesName());
+						.getUserRoleName());
 				userDetailsDTO.setPersonalContactNumber(userDetails
 						.getStaffAddress().getPersonalContactNumber());
 				userDetailsDTO.setUserAccessAsSchool(userDetails.getUserRole().getUserAccessAsSchool() != null && 

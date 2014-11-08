@@ -26,7 +26,7 @@ public class SchoolClassDAOImpl extends HibernateDaoSupport implements SchoolCla
 	@Override
 	public List<SchoolClass> getAllClassesList() {
 		List<SchoolClass> schoolClasses = getHibernateTemplate().find("from SchoolClass");
-		
+		//TODO do not return pojo, set to DTO and return
 		return schoolClasses;
 	}
 

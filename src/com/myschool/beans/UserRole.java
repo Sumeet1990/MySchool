@@ -1,6 +1,7 @@
 package com.myschool.beans;
 
 import java.io.Serializable;
+import java.sql.Clob;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,15 +11,23 @@ import javax.persistence.Table;
 @Entity
 @Table(name="USER_ROLE")
 public class UserRole implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@Column(name="USER_ROLES_ID")
 	private Integer userRolesId;
 	
-	@Column(name="USER_ROLES_NAME")
-	private String userRolesName;
+	@Column(name="USER_ROLE_NAME")
+	private String userRoleName;
 	
 	@Column(name="USER_ACCESS_AS_SCHOOL")
 	private Integer userAccessAsSchool;	
+	
+	@Column(name="USER_ROLE_ACCESS")
+	private byte[] userRoleAccess;	
 	
 	@Column(name="CREATED_USER_ID")
 	private String createdUserId;
@@ -41,14 +50,34 @@ public class UserRole implements Serializable{
 	 this.userRolesId=userRolesId;
 	}
 	
-	public String getUserRolesName(){
-	 return userRolesName;
+	/**
+	 * @return the userRoleName
+	 */
+	public String getUserRoleName() {
+		return userRoleName;
 	}
-	
-	public void setUserRolesName(String userRolesName){
-	 this.userRolesName=userRolesName;
+
+	/**
+	 * @param userRoleName the userRoleName to set
+	 */
+	public void setUserRoleName(String userRoleName) {
+		this.userRoleName = userRoleName;
 	}
-	
+
+	/**
+	 * @return the userRoleAccess
+	 */
+	public  byte[] getUserRoleAccess() {
+		return userRoleAccess;
+	}
+
+	/**
+	 * @param userRoleAccess the userRoleAccess to set
+	 */
+	public void setUserRoleAccess(byte[] userRoleAccess) {
+		this.userRoleAccess = userRoleAccess;
+	}
+
 	/**
 	 * @return the userAccessAsSchool
 	 */

@@ -24,7 +24,10 @@
 	<bean name="staffAppointmentTypeDAO" class="com.myschool.dao.StaffAppointmentTypeDAOImpl" >
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
-
+	
+	<bean name="userRoleDAO" class="com.myschool.dao.UserRoleDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 	
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
@@ -76,6 +79,8 @@
 				<prop key="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</prop>
 				<prop key="hibernate.cache.region.factory_class">net.sf.ehcache.hibernate.EhCacheRegionFactory</prop>
 				<prop key="hibernate.generate_statistics">true</prop>
+				<prop key="hibernate.connection.SetBigStringTryClob">true</prop>
+				<prop key="hibernate.jdbc.batch_size">0</prop>
 			</props>
 		</property>
 	</bean>

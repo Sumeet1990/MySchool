@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schoolLevelAccessRequest>
-	<configurationManagment>
+<schoolAccess>
+	<configurationManagement>
 		<cmAdministrator>
 			<cmAdministratorAccess>true</cmAdministratorAccess>
 			<cmUserRole>true</cmUserRole>
@@ -34,7 +34,7 @@
 			<cmLibraryBooksCategory>true</cmLibraryBooksCategory>
 			<cmLibraryBooksEntry>true</cmLibraryBooksEntry>
 		</cmLibrary>
-	</configurationManagment>
+	</configurationManagement>
 	<functionalManagement>
 		<fmAdministrator>
 			<fmAdministratorAccess>true</fmAdministratorAccess>
@@ -79,4 +79,4 @@
 			<fmAvailabilityCheck>true</fmAvailabilityCheck>
 		</fmAvailability>
 	</functionalManagement>
-</schoolLevelAccessRequest>
+</schoolAccess>
