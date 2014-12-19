@@ -22,10 +22,8 @@
 		<div id="page-wrap">
 			<div id="content">
 				<s:form action="" method="post" id="elements-form">
-	    			<h3>Create Driver</h3>
+	    			<h3>Tuition Fee</h3>
 				    <div id="form-content">
-						<h4>Personal Details</h4>
-						<br/>
 						<fieldset>
 				        	<div class="fieldgroup">
 				            	<label>Class Name</label>

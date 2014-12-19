@@ -3,28 +3,35 @@ package com.myschool.dto;
 import java.util.List;
 import java.util.Map;
 
+import com.myschool.beans.SchoolClass;
+import com.myschool.beans.SchoolSubjects;
+
 public class SchoolClassDTO {
 	private Map<String,String> allSubjectMap;
-	private List<String>  allSubjectList;
+	private List<SchoolSubjects>  allSubjectList;
+	private List<SchoolClass>  allSchoolClassList;
+	Map<Integer,String> schoolClassMap;
 	private String selectedSubjectCodes;
 	private String schoolClassName;
-	private String minimumStudAge;
-	private String maximumStudAge;
-	private String periodsPerDay;
-	private String durationOfPeriod;
+	private String minAgeCriteriaInMin;
+	private String maxAgeCriteriaInMin;
+	private String teacherPeriodsPerDay;
+	private String periodMinutesDurationInMin;
 	private String maxStrengthOfClass;
 	private String statusClass;
-	private String schoolClaassId;
+	private String schoolClassId;
 	private String errorMessage;
 	private boolean classOperationStatus;
-	private String maxPeriodsPerteacher;
+	private String periodsPerDay;
+	private String classCurrentOperation;
+	private String classStatus;
 	
-	public String getSchoolClaassId() {
-		return schoolClaassId;
+	public String getSchoolClassId() {
+		return schoolClassId;
 	}
 	
-	public void setSchoolClaassId(String schoolClaassId) {
-		this.schoolClaassId = schoolClaassId;
+	public void setSchoolClassId(String schoolClassId) {
+		this.schoolClassId = schoolClassId;
 	}
 	
 	public boolean isClassOperationStatus() {
@@ -43,38 +50,62 @@ public class SchoolClassDTO {
 		this.schoolClassName = schoolClassName;
 	}
 	
-	public String getMinimumStudAge() {
-		return minimumStudAge;
+	/**
+	 * @return the teacherPeriodsPerDay
+	 */
+	public String getTeacherPeriodsPerDay() {
+		return teacherPeriodsPerDay;
 	}
-	
-	public void setMinimumStudAge(String minimumStudAge) {
-		this.minimumStudAge = minimumStudAge;
+
+	/**
+	 * @param teacherPeriodsPerDay the teacherPeriodsPerDay to set
+	 */
+	public void setTeacherPeriodsPerDay(String teacherPeriodsPerDay) {
+		this.teacherPeriodsPerDay = teacherPeriodsPerDay;
 	}
-	
-	public String getMaximumStudAge() {
-		return maximumStudAge;
+
+	/**
+	 * @return the minAgeCriteriaInMin
+	 */
+	public String getMinAgeCriteriaInMin() {
+		return minAgeCriteriaInMin;
 	}
-	
-	public void setMaximumStudAge(String maximumStudAge) {
-		this.maximumStudAge = maximumStudAge;
+
+	/**
+	 * @param minAgeCriteriaInMin the minAgeCriteriaInMin to set
+	 */
+	public void setMinAgeCriteriaInMin(String minAgeCriteriaInMin) {
+		this.minAgeCriteriaInMin = minAgeCriteriaInMin;
 	}
-	
-	public String getPeriodsPerDay() {
-		return periodsPerDay;
+
+	/**
+	 * @return the maxAgeCriteriaInMin
+	 */
+	public String getMaxAgeCriteriaInMin() {
+		return maxAgeCriteriaInMin;
 	}
-	
-	public void setPeriodsPerDay(String periodsPerDay) {
-		this.periodsPerDay = periodsPerDay;
+
+	/**
+	 * @param maxAgeCriteriaInMin the maxAgeCriteriaInMin to set
+	 */
+	public void setMaxAgeCriteriaInMin(String maxAgeCriteriaInMin) {
+		this.maxAgeCriteriaInMin = maxAgeCriteriaInMin;
 	}
-	
-	public String getDurationOfPeriod() {
-		return durationOfPeriod;
+
+	/**
+	 * @return the periodMinutesDurationInMin
+	 */
+	public String getPeriodMinutesDurationInMin() {
+		return periodMinutesDurationInMin;
 	}
-	
-	public void setDurationOfPeriod(String durationOfPeriod) {
-		this.durationOfPeriod = durationOfPeriod;
+
+	/**
+	 * @param periodMinutesDurationInMin the periodMinutesDurationInMin to set
+	 */
+	public void setPeriodMinutesDurationInMin(String periodMinutesDurationInMin) {
+		this.periodMinutesDurationInMin = periodMinutesDurationInMin;
 	}
-	
+
 	public String getMaxStrengthOfClass() {
 		return maxStrengthOfClass;
 	}
@@ -91,14 +122,20 @@ public class SchoolClassDTO {
 		this.statusClass = statusClass;
 	}
 	
-	public String getMaxPeriodsPerteacher() {
-		return maxPeriodsPerteacher;
+	/**
+	 * @return the periodsPerDay
+	 */
+	public String getPeriodsPerDay() {
+		return periodsPerDay;
 	}
-	
-	public void setMaxPeriodsPerteacher(String maxPeriodsPerteacher) {
-		this.maxPeriodsPerteacher = maxPeriodsPerteacher;
+
+	/**
+	 * @param periodsPerDay the periodsPerDay to set
+	 */
+	public void setPeriodsPerDay(String periodsPerDay) {
+		this.periodsPerDay = periodsPerDay;
 	}
-	
+
 	public Map<String,String> getAllSubjectMap() {
 		return allSubjectMap;
 	}
@@ -107,11 +144,11 @@ public class SchoolClassDTO {
 		this.allSubjectMap = allSubjectMap;
 	}
 	
-	public List<String> getAllSubjectList() {
+	public List<SchoolSubjects> getAllSubjectList() {
 		return allSubjectList;
 	}
 	
-	public void setAllSubjectList(List<String> allSubjectList) {
+	public void setAllSubjectList(List<SchoolSubjects> allSubjectList) {
 		this.allSubjectList = allSubjectList;
 	}
 	
@@ -129,5 +166,61 @@ public class SchoolClassDTO {
 	
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	/**
+	 * @return the classCurrentOperation
+	 */
+	public String getClassCurrentOperation() {
+		return classCurrentOperation;
+	}
+
+	/**
+	 * @param classCurrentOperation the classCurrentOperation to set
+	 */
+	public void setClassCurrentOperation(String classCurrentOperation) {
+		this.classCurrentOperation = classCurrentOperation;
+	}
+
+	/**
+	 * @return the allSchoolClassList
+	 */
+	public List<SchoolClass> getAllSchoolClassList() {
+		return allSchoolClassList;
+	}
+
+	/**
+	 * @param allSchoolClassList the allSchoolClassList to set
+	 */
+	public void setAllSchoolClassList(List<SchoolClass> allSchoolClassList) {
+		this.allSchoolClassList = allSchoolClassList;
+	}
+
+	/**
+	 * @return the schoolClassMap
+	 */
+	public Map<Integer, String> getSchoolClassMap() {
+		return schoolClassMap;
+	}
+
+	/**
+	 * @param schoolClassMap the schoolClassMap to set
+	 */
+	public void setSchoolClassMap(Map<Integer, String> schoolClassMap) {
+		this.schoolClassMap = schoolClassMap;
+	}
+
+	/**
+	 * @return the classStatus
+	 */
+	public String getClassStatus() {
+		return classStatus;
+	}
+
+	/**
+	 * @param classStatus the classStatus to set
+	 */
+	public void setClassStatus(String classStatus) {
+		this.classStatus = classStatus;
 	}
 }

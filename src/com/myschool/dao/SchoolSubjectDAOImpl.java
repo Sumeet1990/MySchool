@@ -21,10 +21,10 @@ public class SchoolSubjectDAOImpl  extends HibernateDaoSupport implements School
 		SchoolSubjectsDTO schoolSubjectsDTO = new SchoolSubjectsDTO();
 		List<SchoolSubjects> allSchoolSubjectsLst = getHibernateTemplate().find("from SchoolSubjects where subjectStatus=?", SUBJECT_STATUS_ACTIVE);
 		if(allSchoolSubjectsLst != null && allSchoolSubjectsLst.size() > 0) {
-			schoolSubjectsDTO.setExistsSubjectList(new ArrayList<String>());
+			schoolSubjectsDTO.setExistsSubjectList(new ArrayList<SchoolSubjects>());
 			schoolSubjectsDTO.setSubjectNameCodes(new HashMap<String,String>());
 			for(SchoolSubjects schoolSubjects : allSchoolSubjectsLst) {
-				schoolSubjectsDTO.getExistsSubjectList().add(schoolSubjects.getSubjectName());
+				schoolSubjectsDTO.getExistsSubjectList().add(schoolSubjects);
 				schoolSubjectsDTO.getSubjectNameCodes().put(schoolSubjects.getSubjectName(), String.valueOf(schoolSubjects.getSubjectCode()));
 			}
 		}
@@ -48,10 +48,10 @@ public class SchoolSubjectDAOImpl  extends HibernateDaoSupport implements School
 		if(StringUtils.isNotBlank(schoolSubjectsDTO.toDatabaseSubjectNameString())) {
 			List<SchoolSubjects> schoolSubjectsLst = getHibernateTemplate().find("from SchoolSubjects where subjectName in ("+schoolSubjectsDTO.toDatabaseSubjectNameString()+")");
 			if(schoolSubjectsLst != null && schoolSubjectsLst.size() > 0) {
-				schoolSubjectsDTO.setExistsSubjectList(new ArrayList<String>());
+				schoolSubjectsDTO.setExistsSubjectList(new ArrayList<SchoolSubjects>());
 				schoolSubjectsDTO.setSubjectNameCodes(new HashMap<String,String>());
 				for(SchoolSubjects schoolSubjects : schoolSubjectsLst) {
-					schoolSubjectsDTO.getExistsSubjectList().add(schoolSubjects.getSubjectName());
+					schoolSubjectsDTO.getExistsSubjectList().add(schoolSubjects);
 					schoolSubjectsDTO.getSubjectNameCodes().put(schoolSubjects.getSubjectName(), String.valueOf(schoolSubjects.getSubjectCode()));
 				}
 				return true;

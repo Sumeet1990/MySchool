@@ -18,50 +18,24 @@
 		</style>
 	</head>
 	<body>
-		<s:if test="schoolSubjectsDTO.currentOperationStatus=='subjectCreateFail' || schoolSubjectsDTO.currentOperationStatus=='subjectModifyFail'">
-			<s:property value="schoolSubjectsDTO.existsSubjectList" />
-			<s:property value="errorMessage" />
-		</s:if>
-		
-		<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectCreateSuccess' || schoolSubjectsDTO.currentOperationStatus == 'subjectModify'}">
-			<div id="page-wrap">
-				<div id="content">
-					<s:form action="schoolSubjectModifyAction" onsubmit="return keepSubjectsToModify('dataTableModfiy','submitButton')" method="post" theme="simple" id="elements-form">
-						<h3>Subject</h3>
-						<s:property value="errorMessage" />
-							<s:iterator value="schoolSubjectsDTO.subjectName" var="element">
-								<fieldset id="divGroup">
-									<div class="fieldgroup" style="width: 400px;">
-										<label>Subject Name</label>
-										<s:textfield disabled="true"  name="schoolSubjectsDTO.subjectName" onkeyup="upperCaseThetextById(this)" value="%{#element}" theme="simple" />
-										<s:if test="schoolSubjectsDTO.currentOperationStatus == 'subjectCreateSuccess'">
-											 <s:checkbox name="checkBox" theme="simple" />
-											 <s:hidden name="schoolSubjectsDTO.subjectCodes" value="%{schoolSubjectsDTO.subjectNameCodes.get(#element)}"/>
-										</s:if>
-									</div>
-								</fieldset>
-							</s:iterator>
-							<s:if test="schoolSubjectsDTO.currentOperationStatus != 'subjectModify'">
-								<s:submit value="Modify" id="submitButton" action="schoolSubjectModifyAction" theme="simple" />
-							</s:if>
-					</s:form>
-				</div>
-            </div>
-		</s:if>
-		
-		<s:if test="%{schoolSubjectsDTO.currentOperationStatus=='subjectCreate' || schoolSubjectsDTO.currentOperationStatus=='subjectCreateFail' || schoolSubjectsDTO.currentOperationStatus=='subjectModifyFail'}">
+		<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectCreate'}">
 			<div id="page-wrap">
 				<div id="content">
 					<s:form action="schoolSubjectCreateAction" method="post" theme="simple" id="elements-form">
-						<h3>Subject</h3>
+						<h3><s:property value="getText('subject.subjects')"/></h3>
+						<br/>
+						<s:if test="schoolSubjectsDTO.errorMessage != null" >
+							<h3 style="color:red"><s:property value="schoolSubjectsDTO.errorMessage"/></h3>
+						</s:if>
+						
 						<input type="button" value="Add Row" onclick="addRow('dataTable','divGroup')"/>
-						<input type="button" value="Delete Row" onclick="deleteRow('dataTable')"/>
+						<input type="button" value="Delete Row" onclick="deleteRow('dataTable')"/><br/><br/>
 				    	<div id="form-content">
 							<s:if test="schoolSubjectsDTO.subjectName.length != 0">
 								<s:iterator value="schoolSubjectsDTO.subjectName"  var="element">
 									<fieldset id="divGroup">
-							            <div class="fieldgroup" style="width: 400px;">
-							            	<label>Subject Name</label>
+							            <div class="fieldgroup" style="width:400px;">
+							            	<label><s:property value="getText('subject.subjectName')"/></label>
 							                <s:textfield name="schoolSubjectsDTO.subjectName" theme="simple" id="defaultText" onkeyup="upperCaseThetextById(this)" value="%{#element}"/>
 							                <s:checkbox name="checkBox" theme="simple"/>
 							            </div>
@@ -71,13 +45,14 @@
 					        <s:else>
 					        	<fieldset id="divGroup">
 						            <div class="fieldgroupForCheckBox" id="dataTable0">
-						            	<label>Subject Name</label>
+						            	<label><s:property value="getText('subject.subjectName')"/></label>
 						                <s:textfield name="schoolSubjectsDTO.subjectName" id="defaultText" onkeyup="upperCaseThetextById(this)" value=""/>
-										<s:checkbox name="checkBox" />
+										<s:checkbox name="checkBox"/>
 						            </div>
 					            </fieldset>
 							</s:else>
 							<fieldset>
+								<br/>	
 								<div>
 				                	<s:submit value="Create Subjects"/>
 				            	</div>				           	
@@ -86,6 +61,64 @@
 		            </s:form>
 	            </div>
             </div>
+		</s:if>
+		
+		<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectModify'}">
+			<div id="page-wrap">
+				<div id="content">
+					<s:form action="schoolSubjectModifyAction" method="post" theme="simple" id="elements-form">
+						<h3><s:property value="getText('subject.subjects')" /></h3>
+						<br/>
+						Click the check box and modify the subject
+						<br/>
+						<s:property value="errorMessage" />
+							<s:iterator value="schoolSubjectsDTO.existsSubjectList" var="element">
+								<fieldset id="divGroup">
+									<div class="fieldgroup" style="width:400px;">
+										<label><s:property value="getText('subject.subjectName')"/></label>
+										<s:textfield name="schoolSubjectsDTO.subjectName" onkeyup="upperCaseThetextById(this)" value="%{#element.subjectName}" theme="simple"/>
+										<s:checkbox name="checkBox" theme="simple"/>
+										<s:hidden name="schoolSubjectsDTO.subjectCodes" value="%{schoolSubjectsDTO.subjectNameCodes.get(#element)}"/>
+									</div>
+								</fieldset>
+							</s:iterator>
+							<s:submit value="Modify" id="submitButton" action="schoolSubjectModifyAction" theme="simple"/>
+					</s:form>
+				</div>
+            </div>
+		</s:if>
+		
+		<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectDelete'}">
+			<div id="page-wrap">
+				<div id="content">
+					<s:form action="schoolSubjectDeleteAction" method="post" theme="simple" id="elements-form">
+						<h3><s:property value="getText('subject.subjects')" /></h3>
+						Click the check box to delete the subject
+						<br/>
+						<s:property value="errorMessage" />
+							<s:iterator value="schoolSubjectsDTO.existsSubjectList" var="element">
+								<fieldset id="divGroup">
+									<div class="fieldgroup" style="width:400px;">
+										<label><s:property value="getText('subject.subjectName')"/></label>
+										<s:textfield disabled="true" name="schoolSubjectsDTO.subjectName" onkeyup="upperCaseThetextById(this)" value="%{#element.subjectName}" theme="simple"/>
+										<s:checkbox name="checkBox" theme="simple"/>
+										<s:hidden name="schoolSubjectsDTO.subjectCodes" value="%{schoolSubjectsDTO.subjectNameCodes.get(#element)}"/>
+									</div>
+								</fieldset>
+							</s:iterator>
+							<s:submit value="Delete" id="submitButton" action="schoolSubjectDeleteAction" theme="simple"/>
+					</s:form>
+				</div>
+            </div>
+		</s:if>
+		
+		<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectsView'}">
+			<s:property value="getText('subjects.availableSubjects')"/>
+			<s:iterator value="schoolSubjectsDTO.existsSubjectList">
+				<div id="form-content">
+					<s:property value="subjectName"/>
+				</div>
+			</s:iterator>
 		</s:if>
 	</body>
 </html>

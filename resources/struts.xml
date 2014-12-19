@@ -61,15 +61,15 @@
             </interceptor-stack>        	
 		</interceptors>
 						
- 		<!-- <global-results>
-  			<result name="globalError" type="tiles">/GlobalError.tiles</result>
+ 		<global-results>
+  			<result name="globalError" type="tiles">/GlobalErrorPage.tiles</result>
   			<result name="sessionTimeout">jsp/Login.jsp</result>
-		</global-results> -->
+		</global-results>
 
 		<!-- <global-exception-mappings>
 			<exception-mapping exception="java.sql.SQLException" result="globalError"/>
 		  	<exception-mapping exception="java.lang.Exception" result="globalError"/>
-		</global-exception-mappings>  -->
+		</global-exception-mappings> -->
 				
 		<action name="login" class="loginAction">
 			<interceptor-ref name="allYourParamsAreBelongToUsStack"></interceptor-ref>

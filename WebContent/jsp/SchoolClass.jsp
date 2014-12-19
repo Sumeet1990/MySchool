@@ -18,76 +18,88 @@
 	<body>
 		<div id="page-wrap">
 			<div id="content">
-			<s:if test="schoolClassDTO.classOperationStatus == false">
-				<s:form action="" method="post" id="elements-form">
-	    			<h3>Create Class</h3>
-				    <s:if test="schoolClassDTO.classOperationStatus == false && schoolClassDTO.errorMessage != null" >
-						<h3 style="color:red"><s:property value="schoolClassDTO.errorMessage"/></h3>
-					</s:if>
-				    <div id="form-content">
-						<fieldset>
-							<br/>
-				            <div class="fieldgroup">
-				                <label>Class Name</label>
-				                 <input type="text" name="schoolClassDTO.schoolClassName"/>
-				            </div>
-				            <div class="fieldgroup">
-				                <label>Minimum Student age</label>
-				                <input type="text" name="schoolClassDTO.minimumStudAge"/>
-				            </div>
-				            <div class="fieldgroup">
-				                <label>Maximum Student age</label>
-				                <input type="text" name="schoolClassDTO.maximumStudAge"/>
-				            </div>
-				            <div class="fieldgroup">
-				                <label>Periods per Day</label>
-				                <input type="text" name="schoolClassDTO.periodsPerDay"/>
-				            </div>
-				            <div class="fieldgroup">
-				                <label>Duration of each Period</label>
-				                <input type="text" name="schoolClassDTO.durationOfPeriod"/>
-				            </div>
-				            <div class="fieldgroup">
-				                <label>Max Periods per Teacher</label>
-				                <input type="text" name="schoolClassDTO.maxPeriodsPerteacher"/>
-				            </div>
-				            <div class="fieldgroup">
-				                <label>Maximum Strength of class including all sections</label>
-				                <input type="text" name="schoolClassDTO.maxStrengthOfClass"/>
-				            </div>
-				        </fieldset>
-				        <fieldset>
-							<div class="fieldgroup">
-								<s:optiontransferselect name="availableSubject"
-								     leftTitle="Left Antivirus Title"
-								     rightTitle="Right Antivirus Title"
-								     list="availableSubjectList"
-								     multiple="true"
-								     headerKey="-1"
-								     cssClass="form-control"
-								     allowAddToLeft="true"
-								     allowAddToRight="true"
-								     allowUpDownOnLeft="false"
-								     allowUpDownOnRight="false"
-								     allowSelectAll="false"
-								     labelposition="centre"
-								     doubleCssClass="form-control"
-								     doubleList="selectedSubjectList"
-								     doubleName="selectedSubject"
-								     doubleHeaderKey="-1"/>
-							</div>
-						</fieldset>
-						<fieldset>
-							<div class="fieldgroup">
-				                <s:submit action="schoolClassCreateOAction" value="Create Class"></s:submit>
-				            </div>				           	
-				        </fieldset>
-		 			</div>
-				</s:form>
+				<s:if test="schoolClassDTO.ClassCurrentOperation == 'classCreate'">
+					<s:form action="" method="post" id="elements-form" autocomplete="off">
+	    				<h3><s:property value="getText('class.createClass')"/></h3>
+				    	<s:if test="schoolClassDTO.errorMessage != null" >
+							<h3 style="color:red"><s:property value="schoolClassDTO.errorMessage"/></h3>
+						</s:if>
+				    	<div id="form-content">
+							<fieldset>
+								<br/>
+				            	<div class="fieldgroup">
+				                	<label><s:property value="getText('class.className')"/></label>
+				                 	<input type="text" name="schoolClassDTO.schoolClassName" onkeyup="upperCaseThetextById(this)" autofocus required/>
+				            	</div>
+				            	<div class="fieldgroup">
+				                	<label><s:property value="getText('class.minStudentAgeInMonths')"/></label>
+				                	<input type="text" name="schoolClassDTO.minAgeCriteriaInMin" maxlength="3" onKeyPress="return onlyNumbers(event)" required/>
+				            	</div>
+				            	<div class="fieldgroup">
+				                	<label><s:property value="getText('class.maxStudentAgeInMonths')"/></label>
+				                	<input type="text" name="schoolClassDTO.maxAgeCriteriaInMin" maxlength="3" onKeyPress="return onlyNumbers(event)" required/>
+				            	</div>
+				            	<div class="fieldgroup">
+				                	<label><s:property value="getText('class.periodsPerDay')"/></label>
+				                	<input type="text" name="schoolClassDTO.periodsPerDay" maxlength="2" onKeyPress="return onlyNumbers(event)"/>
+				            	</div>
+				            	<div class="fieldgroup">
+				                	<label><s:property value="getText('class.periodDurationInMin')"/></label>
+				                	<input type="text" name="schoolClassDTO.periodMinutesDurationInMin" maxlength="3" onKeyPress="return onlyNumbers(event)" required/>
+				            	</div>
+				            	<div class="fieldgroup">
+				                	<label><s:property value="getText('class.maxTeacherPeriods')"/></label>
+				                	<input type="text" name="schoolClassDTO.teacherPeriodsPerDay" maxlength="2" onKeyPress="return onlyNumbers(event)"/>
+				            	</div>
+				            	<div class="fieldgroup">
+				                	<label><s:property value="getText('class.maxStrength')"/></label>
+				                	<input type="text" name="schoolClassDTO.maxStrengthOfClass" maxlength="3" onKeyPress="return onlyNumbers(event)" required/>
+				            	</div>
+				            	<div class="fieldgroup">
+				                	<label>Section Status</label>
+				                	<s:select list="classStatusBean" name="schoolClassDTO.classStatus"  theme="simple"></s:select>
+				            	</div>
+				        	</fieldset>
+					        <fieldset>
+								<div class="fieldgroup">
+									<s:optiontransferselect 
+										name="availableSubject"
+									    leftTitle="Avaliable subjects"
+									    rightTitle="Selected Subjects"
+									    list="availableSubjectList"
+									    multiple="true"
+									    headerKey="-1"
+									    cssClass="form-control"
+									    allowAddToLeft="true"
+									    allowAddToRight="true"
+									    allowUpDownOnLeft="false"
+									    allowUpDownOnRight="false"
+									    allowSelectAll="false"
+									    labelposition="centre"
+									    doubleCssClass="form-control"
+									    doubleList="selectedSubjectList"
+									    doubleName="selectedSubject"
+									    doubleHeaderKey="-1"
+									/>
+								</div>
+							</fieldset>
+							<fieldset>
+								<div class="fieldgroup">
+					                <s:submit action="schoolClassCreateAction" value="Create Class"></s:submit>
+					            </div>				           	
+					        </fieldset>
+			 			</div>
+					</s:form>
 				</s:if>
-				<s:else>
-					<h3 style="color:green"><s:property value="schoolClassDTO.errorMessage"/></h3>
-				</s:else>
+				<s:if test="schoolClassDTO.ClassCurrentOperation == 'classView'">
+					<s:property value="getText('calss.availableClasses')"/>
+					<s:iterator value="availableClassList">
+						<s:property value="schoolClassName"/> - <s:property value="minAgeCriteriaInMin"/> - <s:property value="maxAgeCriteriaInMin"/> 
+							- <s:property value="periodsPerDay"/> - <s:property value="periodMinutesDurationInMin"/> - <s:property value="teacherPeriodsPerDay"/>
+							- <s:property value="classMaximumStrength"/> - <s:property value="subjectCodesList"/> - <s:property value="classStatus"/>
+				
+					</s:iterator>
+				</s:if>
 			</div>
 		</div>
 	</body>

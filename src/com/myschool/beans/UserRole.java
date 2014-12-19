@@ -1,12 +1,11 @@
 package com.myschool.beans;
 
 import java.io.Serializable;
-import java.sql.Clob;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name="USER_ROLE")
@@ -67,7 +66,7 @@ public class UserRole implements Serializable{
 	/**
 	 * @return the userRoleAccess
 	 */
-	public  byte[] getUserRoleAccess() {
+	public byte[] getUserRoleAccess() {
 		return userRoleAccess;
 	}
 
@@ -124,3 +123,4 @@ public class UserRole implements Serializable{
 	 this.modifiedDateTime=modifiedDateTime;
 	}
 }
+

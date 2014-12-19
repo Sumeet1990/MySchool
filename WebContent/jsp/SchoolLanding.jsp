@@ -21,7 +21,7 @@
 			}
 		</style>
 	</head>
-	<body class="home blog header-full-width content-sidebar magazine-home">
+	<body>
 		<s:set value="%{display}" name="displayValue" />
 		<s:if test="#displayValue == 'configurationalContent'">
 			<div id="configurationalContent">

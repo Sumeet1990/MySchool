@@ -96,6 +96,42 @@ function deleteRow(tableID) {
 
 function keepSubjectsToModify(Id, buttonObj) {
 	try {
+		if(document.getElementById(buttonObj).value=="Update") {
+			return true;
+		} else {
+			alert('Id : '+Id);
+			alert('buttonObj : '+buttonObj);
+			var table = document.getElementById(Id);
+			
+			alert('table : '+table);
+			alert('table.rows.length : '+table.rows.length);
+			
+			var rowCount = table.rows.length;
+			var count = 0;
+			for(var i = 0; i < rowCount; i++) {
+				var row = table.rows[i];
+				var chkbox = row.cells[2].childNodes[0];
+				if (null != chkbox && true == chkbox.checked) {
+					count++;
+					row.removeChild(row.cells[2]);
+					document.getElementById(buttonObj).value = "Update";
+				} else {
+					table.deleteRow(i);
+					rowCount--;
+					i--;
+				}
+			}
+			
+			return false;
+		} 
+	} catch(e) {
+		alert(e);
+		return false;
+	}
+}
+
+function keepSubjectsToDelete(Id, buttonObj) {
+	try {
 		if(document.getElementById(buttonObj).value=="Update")
 		{
 		return true;

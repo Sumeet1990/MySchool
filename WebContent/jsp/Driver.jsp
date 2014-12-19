@@ -24,9 +24,9 @@
 				<s:form action="" method="post" id="elements-form">
 	    			<h3>Create Driver</h3>
 				    <div id="form-content">
-							<h4>Personal Details</h4>
-							<br/>
-							<fieldset>
+						<h4>Personal Details</h4>
+						<br/>
+						<fieldset>
 				            <div class="fieldgroup">
 				            	<label>Title</label>
 				                 <s:select required="true" list="classesMap" name="className" autofocus="autofocus" theme="simple" tabindex="1"></s:select>

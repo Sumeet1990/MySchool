@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="SCHOOL_CLASS")
-public class SchoolClass implements Serializable{
+public class SchoolClass implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@SequenceGenerator (name="seqSchoolClass", sequenceName="SEQ_SCHOOL_CLASS", allocationSize=1)
@@ -24,17 +24,17 @@ public class SchoolClass implements Serializable{
 	@Column(name="SCHOOL_CLASS_NAME")
 	private String schoolClassName;
 	
-	@Column(name="MIN_AGE_CRITERIA")
-	private Integer minAgeCriteria;
+	@Column(name="MIN_AGE_CRITERIA_IN_MONTHS")
+	private Integer minAgeCriteriaInMin;
 	
-	@Column(name="MAX_AGE_CRITERIA")
-	private Integer maxAgeCriteria;
+	@Column(name="MAX_AGE_CRITERIA_IN_MONTHS")
+	private Integer maxAgeCriteriaInMin;
 	
 	@Column(name="PERIODS_PER_DAY")
 	private Integer periodsPerDay;
 	
-	@Column(name="PERIOD_MINUTES_DURATION")
-	private Integer periodMinutesDuration;
+	@Column(name="PERIOD_DURATION_IN_MINUTES")
+	private Integer periodMinutesDurationInMin;
 	
 	@Column(name="TEACHER_PERIODS_PER_DAY")
 	private Integer teacherPeriodsPerDay;
@@ -76,22 +76,34 @@ public class SchoolClass implements Serializable{
 	 this.schoolClassName=schoolClassName;
 	}
 	
-	public Integer getMinAgeCriteria(){
-	 return minAgeCriteria;
+	/**
+	 * @return the minAgeCriteriaInMin
+	 */
+	public Integer getMinAgeCriteriaInMin() {
+		return minAgeCriteriaInMin;
 	}
-	
-	public void setMinAgeCriteria(Integer minAgeCriteria){
-	 this.minAgeCriteria=minAgeCriteria;
+
+	/**
+	 * @param minAgeCriteriaInMin the minAgeCriteriaInMin to set
+	 */
+	public void setMinAgeCriteriaInMin(Integer minAgeCriteriaInMin) {
+		this.minAgeCriteriaInMin = minAgeCriteriaInMin;
 	}
-	
-	public Integer getMaxAgeCriteria(){
-	 return maxAgeCriteria;
+
+	/**
+	 * @return the maxAgeCriteriaInMin
+	 */
+	public Integer getMaxAgeCriteriaInMin() {
+		return maxAgeCriteriaInMin;
 	}
-	
-	public void setMaxAgeCriteria(Integer maxAgeCriteria){
-	 this.maxAgeCriteria=maxAgeCriteria;
+
+	/**
+	 * @param maxAgeCriteriaInMin the maxAgeCriteriaInMin to set
+	 */
+	public void setMaxAgeCriteriaInMin(Integer maxAgeCriteriaInMin) {
+		this.maxAgeCriteriaInMin = maxAgeCriteriaInMin;
 	}
-	
+
 	public Integer getPeriodsPerDay(){
 	 return periodsPerDay;
 	}
@@ -100,20 +112,26 @@ public class SchoolClass implements Serializable{
 	 this.periodsPerDay=periodsPerDay;
 	}
 	
-	public Integer getPeriodMinutesDuration(){
-	 return periodMinutesDuration;
+	/**
+	 * @return the periodMinutesDurationInMin
+	 */
+	public Integer getPeriodMinutesDurationInMin() {
+		return periodMinutesDurationInMin;
 	}
-	
-	public void setPeriodMinutesDuration(Integer periodMinutesDuration){
-	 this.periodMinutesDuration=periodMinutesDuration;
+
+	/**
+	 * @param periodMinutesDurationInMin the periodMinutesDurationInMin to set
+	 */
+	public void setPeriodMinutesDurationInMin(Integer periodMinutesDurationInMin) {
+		this.periodMinutesDurationInMin = periodMinutesDurationInMin;
 	}
-	
+
 	public Integer getTeacherPeriodsPerDay(){
 	 return teacherPeriodsPerDay;
 	}
 	
 	public void setTeacherPeriodsPerDay(Integer teacherPeriodsPerDay){
-	 this.teacherPeriodsPerDay=teacherPeriodsPerDay;
+	 this.teacherPeriodsPerDay = teacherPeriodsPerDay;
 	}
 	
 	public String getSubjectCodesList(){

@@ -5,14 +5,17 @@ import java.util.HashMap;
 
 import org.apache.commons.lang.StringUtils;
 
+import com.myschool.beans.SchoolSubjects;
+
 public class SchoolSubjectsDTO {
 
 	private String[] subjectName;
 	private String[] subjectCodes;
 	private HashMap<String, String> subjectNameCodes;
-	private ArrayList<String> existsSubjectList;
+	private ArrayList<SchoolSubjects> existsSubjectList;
 	private String currentOperationStatus;
 	private String userId;
+	private String errorMessage;
 
 	public String[] getSubjectName() {
 		return subjectName;
@@ -22,11 +25,11 @@ public class SchoolSubjectsDTO {
 		this.subjectName = subjectName;
 	}
 
-	public ArrayList<String> getExistsSubjectList() {
+	public ArrayList<SchoolSubjects> getExistsSubjectList() {
 		return existsSubjectList;
 	}
 
-	public void setExistsSubjectList(ArrayList<String> existsSubjectList) {
+	public void setExistsSubjectList(ArrayList<SchoolSubjects> existsSubjectList) {
 		this.existsSubjectList = existsSubjectList;
 	}
 
@@ -75,5 +78,18 @@ public class SchoolSubjectsDTO {
 	public void setCurrentOperationStatus(String currentOperationStatus) {
 		this.currentOperationStatus = currentOperationStatus;
 	}
-	
+
+	/**
+	 * @return the errorMessage
+	 */
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	/**
+	 * @param errorMessage the errorMessage to set
+	 */
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 }

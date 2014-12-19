@@ -363,7 +363,7 @@ input[type="reset"],
 input[type="submit"],
 .button,
 .entry-content .button {
-	background-color: #222;
+	background-color: grey;
 	border: none;
 	color: #fff;
 	cursor: pointer;
@@ -402,7 +402,7 @@ input[type="search"]::-webkit-search-results-button {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	line-height: 2;
+	line-height: 1.2;
 	margin-bottom: 40px;
 	margin-bottom: 4rem;
 	width: 100%;

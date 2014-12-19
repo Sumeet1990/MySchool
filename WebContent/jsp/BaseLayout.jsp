@@ -13,18 +13,17 @@
 	</head>
 
 	<body class="home blog header-full-width content-sidebar magazine-home">
-		<table style="height=900px width=900px">
-			<tr style="height=200px">
-				<td colspan="2"><tiles:insertAttribute name="header" /></td>
+		<table style="height:100% width:100%">
+			<tr style="height:20%">
+				<td><tiles:insertAttribute name="header" /></td>
 			</tr>
-			<tr style="background-color:gray height=600px">
-				<td><tiles:insertAttribute name="body" /></td>
+			<tr style="height:70%">
+				<td><tiles:insertAttribute name="body"/></td>
 			</tr>
-			<!-- <tr style="height=100px; position: bottom">
-				<td colspan="2"></td>
-			</tr> -->
+			<tr style="height:10%" >
+				<td><tiles:insertAttribute name="footer"/></td>
+			</tr>
 		</table>
-		<tiles:insertAttribute name="footer"/>
 	</body>
 </html>
 

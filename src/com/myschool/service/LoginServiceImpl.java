@@ -19,9 +19,9 @@ public class LoginServiceImpl implements LoginService {
 	 */
 	public boolean retrieveLoginCredentials(UserDetailsDTO userDetailsDTO, final String password) {
 		boolean retFlag = true;
-		userDAO.retrieveLoginCredentials(userDetailsDTO);
+		UserDetailsDTO availableUserDetailsDTO = userDAO.retrieveLoginCredentials(userDetailsDTO);
 		
-		if (StringUtils.equals(userDetailsDTO.getPassword(), password)) {
+		if (availableUserDetailsDTO != null && StringUtils.equals(userDetailsDTO.getPassword(), password)) {
 			if(userDetailsDTO.getInvalidAttempts() < Integer.valueOf(schoolConfigurationMap
 					.get(CommonConstants.MAX_INVALID_LOGIN_ATTEMPTS).toString())) {				
 				userDAO.updateSuccessLoginDetails(userDetailsDTO);

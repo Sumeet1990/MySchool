@@ -50,7 +50,7 @@ public class ForwardAction extends ActionSupport implements SessionAware {
 				 UserRoleDTO userRoleDTO = new UserRoleDTO();
 				 userRoleDTO.setUserRoleName(sessionUtils.getUserRolesName());
 				 String userLevelAccessConfigurationXml = userRoleService.getUserRoleAccessDetails(userRoleDTO);
-				 
+				 System.out.println("!!!!!!!!!!!! userLevelAccessConfigurationXml :"+userLevelAccessConfigurationXml);
 				 JAXBContext userLevelAccessAsSchoolJC = JAXBContext.newInstance(UserLevelAccess.class);
 				 javax.xml.bind.Unmarshaller userLevelAccessAsSchoolUnmarshaller = userLevelAccessAsSchoolJC.createUnmarshaller();
 				 StringReader reader = new StringReader(userLevelAccessConfigurationXml);

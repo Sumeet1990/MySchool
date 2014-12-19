@@ -18,12 +18,14 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 	private Map schoolConfigurationMap;
 	private static final String USER_STATUS = "'ACTIVE'";
 
-	public void retrieveLoginCredentials(UserDetailsDTO userDetailsDTO) {
+	public UserDetailsDTO retrieveLoginCredentials(UserDetailsDTO userDetailsDTO) {
+		UserDetailsDTO availableUserDetailsDTO = null;
 		// TODO ADD userStatus as ACTIVE in the where clause
 		List<UserDetails> userDetailsList = getHibernateTemplate().find(
 				"from UserDetails where userName = ? and userStatus="
 						+ USER_STATUS, userDetailsDTO.getUserName().toUpperCase());
-		if (userDetailsList != null && userDetailsList.size() > 0) {
+		if (userDetailsList != null && userDetailsList.size() == 1) {
+			availableUserDetailsDTO = new UserDetailsDTO();
 			for (UserDetails userDetails : userDetailsList) {
 				CommonUtility.copyProperties(userDetails, userDetailsDTO,
 						"userId userId", "userName userName", "password password",
@@ -39,8 +41,12 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 						.getStaffAddress().getPersonalContactNumber());
 				userDetailsDTO.setUserAccessAsSchool(userDetails.getUserRole().getUserAccessAsSchool() != null && 
 						userDetails.getUserRole().getUserAccessAsSchool() == 1 ? true : false);
+				
+				availableUserDetailsDTO = userDetailsDTO;
 			}
 		}
+		
+		return availableUserDetailsDTO;
 	}
 
 	@Override

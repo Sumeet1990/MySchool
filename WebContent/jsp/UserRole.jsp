@@ -26,16 +26,16 @@
 				    <div id="form-content">
 				    	<div id="horizonal"></div>
 				    	<fieldset>
-				            <div class="fieldgroupug">
+				            <div class="fieldgroup">
 				            	<label>Available Roles : </label>
 							</div>
 							<br/>
-							<div class="fieldgroupug">
+							<div class="fieldgroup">
 				            	<label>New Role</label>
 				            	<input type="text" name="userRoleName"/>&nbsp;
 							</div>
 							<br/>			                
-							<div class="fieldgroupug">
+							<div class="fieldgroup">
 			                	<label>Is Role Access Same As School Access</label>
 			                 	<s:checkbox name="roleAccessAsSchool" theme="simple" />
 				             </div>		                
@@ -184,6 +184,7 @@
 				                	<label>Events</label>
 				                 	<s:checkbox name="userLevelAccess.configurationManagement.cmCalendar.cmSchoolCalendar.events" theme="simple" />
 				                </div>
+				                <div class="fieldgroupug"></div>
 				                <div id="horizonal"></div>
 							</s:if>
 							<s:if test="schoolAccess.configurationManagement.cmCalendar.cmClassCalendar">
@@ -200,6 +201,7 @@
 				                	<label>Events</label>
 				                 	<s:checkbox name="userLevelAccess.configurationManagement.cmCalendar.cmClassCalendar.events" theme="simple" />
 				                </div>
+				                <div class="fieldgroupug"></div>
 				                <div id="horizonal"></div>
 							</s:if>
 							<s:if test="schoolAccess.configurationManagement.cmTransport.cmDriver">
@@ -423,6 +425,8 @@
 				                	<label>Generate For Total Class</label>
 				                 	<s:checkbox name="userLevelAccess.functionalManagement.fmAdministrator.fmRollNumber.generateForTotalClass" theme="simple" />
 				                </div>
+				                <div class="fieldgroupug"></div>
+				                <div class="fieldgroupug"></div>
 				                <div id="horizonal"></div>
 							</s:if>
 							<s:if test="schoolAccess.functionalManagement.fmLeaves.fmStudentLeaves">
@@ -471,6 +475,9 @@
 				                	<label>Exam Schedule</label>
 				                 	<s:checkbox name="userLevelAccess.functionalManagement.fmCommunication.fmSchedule.examSchedule" theme="simple" />
 				                </div>
+				                <div class="fieldgroupug"></div>
+				                <div class="fieldgroupug"></div>
+				                <div class="fieldgroupug"></div>
 				                <div id="horizonal"></div>
 							</s:if>
 							<s:if test="schoolAccess.functionalManagement.fmCommunication.fmHolidays">
@@ -483,6 +490,8 @@
 				                	<label>Class Holidays List</label>
 				                 	<s:checkbox name="userLevelAccess.functionalManagement.fmCommunication.fmHolidays.classHolidaysList" theme="simple" />
 				                </div>
+				                <div class="fieldgroupug"></div>
+				                <div class="fieldgroupug"></div>
 				                <div id="horizonal"></div>
 							</s:if>
 							<s:if test="schoolAccess.functionalManagement.fmCommunication.fmSms">
@@ -491,6 +500,9 @@
 				                	<label>Text Message</label>
 				                 	<s:checkbox name="userLevelAccess.functionalManagement.fmCommunication.fmSms.textMessage" theme="simple" />
 				                </div>
+				                <div class="fieldgroupug"></div>
+				                <div class="fieldgroupug"></div>
+				                <div class="fieldgroupug"></div>
 				                <div id="horizonal"></div>
 							</s:if>			
 							<s:if test="schoolAccess.functionalManagement.fmTransportation.fmTransportationRoute">
@@ -499,6 +511,9 @@
 				                	<label>Alocation</label>
 				                 	<s:checkbox name="userLevelAccess.functionalManagement.fmTransportation.fmTransportationRoute.allocation" theme="simple" />
 				                </div>
+				                <div class="fieldgroupug"></div>
+				                <div class="fieldgroupug"></div>
+				                <div class="fieldgroupug"></div>
 				                <div id="horizonal"></div>
 							</s:if>			
 							<s:if test="schoolAccess.functionalManagement.fmFinance.fmTuitionFee">
@@ -507,6 +522,9 @@
 				                	<label>Collection</label>
 				                 	<s:checkbox name="userLevelAccess.functionalManagement.fmFinance.fmTuitionFee.collection" theme="simple" />
 				                </div>
+				                <div class="fieldgroupug"></div>
+				                <div class="fieldgroupug"></div>
+				                <div class="fieldgroupug"></div>
 				                <div id="horizonal"></div>
 							</s:if>
 							<s:if test="schoolAccess.functionalManagement.fmFinance.fmOtherFee">
@@ -515,6 +533,9 @@
 				                	<label>Collection</label>
 				                 	<s:checkbox name="userLevelAccess.functionalManagement.fmFinance.fmOtherFee.collection" theme="simple" />
 				                </div>
+				                <div class="fieldgroupug"></div>
+				                <div class="fieldgroupug"></div>
+				                <div class="fieldgroupug"></div>
 				                <div id="horizonal"></div>
 							</s:if>					
 							<s:if test="schoolAccess.functionalManagement.fmLibrary.fmBooks">
@@ -531,6 +552,7 @@
 				                	<label>View Assigned Books</label>
 				                 	<s:checkbox name="userLevelAccess.functionalManagement.fmLibrary.fmBooks.viewAssignedBooks" theme="simple" />
 				                </div>
+				                <div class="fieldgroupug"></div>
 				                <div id="horizonal"></div>
 							</s:if>						
 							<s:if test="schoolAccess.functionalManagement.fmReports.fmStudentReports">
@@ -548,6 +570,7 @@
 				                	<label>Performance Report</label>
 				                 	<s:checkbox name="userLevelAccess.functionalManagement.fmReports.fmStudentReports.performanceReport" theme="simple" />
 				                </div>
+				                <div class="fieldgroupug"></div>
 				                <div id="horizonal"></div>
 							</s:if>
 							<s:if test="schoolAccess.functionalManagement.fmReports.fmStaffReports">
@@ -560,6 +583,8 @@
 				                	<label>Performance Report</label>
 				                 	<s:checkbox name="userLevelAccess.functionalManagement.fmReports.fmStaffReports.performanceReport" theme="simple" />
 				                </div>
+				                <div class="fieldgroupug"></div>
+				                <div class="fieldgroupug"></div>
 				                <div id="horizonal"></div>
 							</s:if>
 							<s:if test="schoolAccess.functionalManagement.fmReports.fmClassReports">
@@ -573,6 +598,8 @@
 				                	<label>Performance Report</label>
 				                 	<s:checkbox name="userLevelAccess.functionalManagement.fmReports.fmClassReports.performanceReport" theme="simple" />
 				                </div>
+				                <div class="fieldgroupug"></div>
+				                <div class="fieldgroupug"></div>
 				                <div id="horizonal"></div>
 							</s:if>
 							<s:if test="schoolAccess.functionalManagement.fmReports.fmSchoolReports">
@@ -585,6 +612,8 @@
 				                	<label>Performance Report</label>
 				                 	<s:checkbox name="userLevelAccess.functionalManagement.fmReports.fmSchoolReports.performanceReport" theme="simple" />
 				                </div>
+				                <div class="fieldgroupug"></div>
+				                <div class="fieldgroupug"></div>
 				                <div id="horizonal"></div>
 							</s:if>	
 							<s:if test="schoolAccess.functionalManagement.fmAvailability.fmAvailabilityCheck">
@@ -597,6 +626,8 @@
 				                	<label>Transport Availability</label>
 				                 	<s:checkbox name="userLevelAccess.functionalManagement.fmAvailability.fmAvailabilityCheck.transportAvailability" theme="simple" />
 				                </div>
+				                <div class="fieldgroupug"></div>
+				                <div class="fieldgroupug"></div>
 				                <div id="horizonal"></div>
 							</s:if>
 				        </fieldset>

@@ -5,7 +5,9 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.myschool.beans.SchoolClass;
 import com.myschool.dto.ClassSectionDTO;
+import com.myschool.dto.SchoolClassDTO;
 import com.myschool.service.ClassSectionService;
 import com.myschool.service.SchoolClassService;
 import com.myschool.util.CommonConstants;
@@ -26,10 +28,21 @@ public class ClassSectionAction extends ActionSupport implements SessionAware{
 	private List<String> staffStatusBean;
 	private ClassSectionDTO classSectionDTO;
 	private java.util.Map<String, Object> session;
-
+	private List<SchoolClassDTO> availableClassList;
+	
+	/**
+	 * 
+	 */
 	public String performInit() {
 		classTeacherMap = getSchoolClassService().getAllClassTeachers();
-		classesMap = getSchoolClassService().getAllClasses();
+		
+		availableClassList = getSchoolClassService().getAllSchoolClasses();
+		if(availableClassList != null && availableClassList.size() > 0) {
+			for(SchoolClassDTO schoolClassDTO : availableClassList) {
+				classesMap = schoolClassDTO.getSchoolClassMap();
+			}
+		}
+		
 		return SUCCESS;
 	}
 	

@@ -20,14 +20,18 @@ public class CommonConstants {
 	
 	public static final String SUBJECTS_CREATE = "subjectCreate";
 	public static final String SUBJECTS_MODIFY = "subjectModify";
+	public static final String SUBJECTS_DELETE = "subjectDelete";
+	public static final String SUBJECTS_VIEW = "subjectsView";
 	public static final String SUBJECTS_CREATE_SUCCESS = "subjectCreateSuccess";
 	public static final String SUBJECTS_MODIFY_SUCCESS = "subjectModifySuccess";
 	public static final String SUBJECTS_CREATE_FAIL = "subjectCreateFail";
 	public static final String SUBJECTS_MODIFY_FAIL = "subjectModifyFail";
-	public static final String SUBJECTS_SUCCESSFULLY_CREATED = "subjects.successfullyCreaated";
+	public static final String SUBJECTS_CREATED = "subjects.created";
 	public static final String SUBJECTS_ALREADY_EXISTS = "subjects.alreadyExists";
-	public static final String SUBJECTS_SUCCESSFULLY_MODIFIED = "subjects.successfullyModified";
-	
+	public static final String SUBJECTS_MODIFIED = "subjects.modified";
+
+	public static final String CLASS_CREATE = "classCreate";
+	public static final String CLASS_VIEW = "classView";
 	public static final String CLASS_ALREADY_EXISTS = "class.alreadyExists";
 	public static final String CLASS_ERROR_OCCURED = "class.errorOccured";
 	public static final String CLASS_SUCCESSFULLY_CREATED = "class.successfullyCreated";

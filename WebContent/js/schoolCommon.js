@@ -14,6 +14,7 @@ function startTime() {
 		startTime();
 	}, 500);
 }
+
 function checkTime(i) {
 	if (i < 10) {
 		i = "0" + i;
@@ -21,16 +22,13 @@ function checkTime(i) {
 	return i;
 }
 
-function showToolTip(desc,righPosition)
-{
-
+function showToolTip(desc,righPosition) {
 	document.getElementById("tooltipId").innerHTML= desc;
 	document.getElementById("tooltipId").style.right=righPosition;
 	document.getElementById("tooltipId").style.display="block";
 }
 
-function hideToolTip()
-{
+function hideToolTip() {
 	document.getElementById("tooltipId").style.display="none";
 }
 
@@ -41,11 +39,21 @@ function showTransparentScreen() {
 function hideTransparentScreen() {
 	document.getElementById("pleaseWaitScreen").style.display="none";
 }
-function upperCaseThetext(nameTextBx){
-	var value = $("[name='"+nameTextBx+"']").val();
 
-		$("[name='"+nameTextBx+"']").val(value.toUpperCase());
+function upperCaseThetext(nameTextBx) {
+	var value = $("[name='"+nameTextBx+"']").val();
+	$("[name='"+nameTextBx+"']").val(value.toUpperCase());
 }
-function upperCaseThetextById(thisObj){
+
+function upperCaseThetextById(thisObj) {
 	thisObj.value = thisObj.value.toUpperCase();
+}
+
+function onlyNumbers(evt) {
+    var e = (window.event) ? event : evt; // for cross browser compatibility
+    var charCode = e.which || e.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)){
+        return false;
+    }
+    return true;
 }

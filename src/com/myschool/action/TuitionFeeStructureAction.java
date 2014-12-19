@@ -8,7 +8,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class TuitionFeeStructureAction extends ActionSupport  implements SessionAware {
+public class TuitionFeeStructureAction extends ActionSupport implements SessionAware {
 	
 	private static final long serialVersionUID = 1L;
 

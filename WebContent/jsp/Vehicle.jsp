@@ -22,11 +22,10 @@
 		<div id="page-wrap">
 			<div id="content">
 				<s:form action="" method="post" id="elements-form">
-	    			<h3>Create Driver</h3>
+	    			<h3>Vehicle Details</h3>
 				    <div id="form-content">
-						<h4>Vehicle Details</h4>
-						<br/>
-							<fieldset>
+				    	<br/>
+						<fieldset>
 				            <div class="fieldgroup">
 				            	<label>Make</label>
 				                <input type="text" name="staffGivenName"/>&nbsp;
