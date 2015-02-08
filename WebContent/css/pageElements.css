@@ -119,11 +119,11 @@
      text-align: right;
 }
 
-.odd
-{
-background-color: silver;
+.odd {
+	background-color: silver;
+	font: 12px Arial, Helvetica, sans-serif;
 }
-.even
-{
-background-color: grey;
+.even {
+	background-color: lightblue;
+	font: 12px Arial, Helvetica, sans-serif;
 }

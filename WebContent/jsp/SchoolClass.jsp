@@ -67,34 +67,34 @@
 			</div>
 		</s:if>
 		<s:if test="schoolClassDTO.ClassCurrentOperation == 'classView'">
-		<div class="form-style-10">
+		<div class="form-style-10" style="width:1050px">
 			<h4><s:property value="getText('calss.availableClasses')"/></h4>
-			<table border='1' width="50%">
+			<table border='1' width="100%">
 				<tr>
 				    <td style="text-align:center" width="5%">So No</td>
-				    <td style="text-align:center" width="5%">Class Name</td>
-				    <td style="text-align:center" width="5%">Min Age Criteria</td>
-				    <td style="text-align:center" width="5%">Max Age Criteria</td>
-				    <td style="text-align:center" width="5%">Periods Per Day</td>
-				    <td style="text-align:center" width="5%">Period Duration in Min</td>
-				    <td style="text-align:center" width="5%">Teacher Periods Per Day</td>
-				    <td style="text-align:center" width="5%">Class Max Strength</td>
-				    <td style="text-align:center" width="5%">Class Subjects</td>
-				    <td style="text-align:center" width="5%">Class Status</td>
+				    <td style="text-align:center" width="10%">Class Name</td>
+				    <td style="text-align:center" width="10%">Min Age Criteria</td>
+				    <td style="text-align:center" width="10%">Max Age Criteria</td>
+				    <td style="text-align:center" width="10%">Periods Per Day</td>
+				    <td style="text-align:center" width="10%">Period Duration in Min</td>
+				    <td style="text-align:center" width="10%">Teacher Periods Per Day</td>
+				    <td style="text-align:center" width="10%">Class Max Strength</td>
+				    <td style="text-align:center" width="15%">Class Subjects</td>
+				    <td style="text-align:center" width="10%">Class Status</td>
 				</tr>
 				
 				<s:iterator value="availableClassList" status="rowstatus">
 					<tr class="<s:if test="#rowstatus.odd == true ">odd</s:if><s:else>even</s:else>">
 					    <td style="text-align:center" width="5%"><s:property value="#rowstatus.count"/></td>
-					    <td style="text-align:center" width="5%"><s:property value="schoolClassName"/></td>
-					    <td style="text-align:center" width="5%" ><s:property value="minAgeCriteriaInMonths"/></td>
-					    <td style="text-align:center" width="5%"><s:property value="maxAgeCriteriaInMonths"/></td>
-					    <td style="text-align:center" width="5%"><s:property value="periodsPerDay"/></td>
-					    <td style="text-align:center" width="5%"><s:property value="periodDurationInMin"/></td>
-					    <td style="text-align:center" width="5%"><s:property value="teacherPeriodsPerDay"/></td>
-					    <td style="text-align:center" width="5%" ><s:property value="classMaxStrength"/></td>
-					    <td style="text-align:center" width="5%"><s:property value="calssSubjects"/></td>
-					    <td style="text-align:center" width="5%"><s:property value="classStatus"/></td>
+					    <td style="text-align:center" width="10%"><s:property value="schoolClassName"/></td>
+					    <td style="text-align:center" width="10%" ><s:property value="minAgeCriteriaInMonths"/></td>
+					    <td style="text-align:center" width="10%"><s:property value="maxAgeCriteriaInMonths"/></td>
+					    <td style="text-align:center" width="10%"><s:property value="periodsPerDay"/></td>
+					    <td style="text-align:center" width="10%"><s:property value="periodDurationInMin"/></td>
+					    <td style="text-align:center" width="10%"><s:property value="teacherPeriodsPerDay"/></td>
+					    <td style="text-align:center" width="10%" ><s:property value="classMaxStrength"/></td>
+					    <td style="text-align:center" width="15%"><s:property value="calssSubjects"/></td>
+					    <td style="text-align:center" width="10%"><s:property value="classStatus"/></td>
 					</tr>
 				</s:iterator>
 			</table>

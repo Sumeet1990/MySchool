@@ -6,6 +6,8 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap_common.css">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/formElementsStyle.css">
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/pageElements.css">
 
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/add_removerow.js"></script>
@@ -21,25 +23,31 @@
 	</head>
 	<body>
 		<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectCreate'}">
-			<div class="form-style-10">
-				<s:form action="schoolSubjectCreateAction" method="post" theme="simple" id="elements-form">
-					<br/>
-					<s:if test="schoolSubjectsDTO.errorMessage != null" >
-						<h3 style="color:red"><s:property value="schoolSubjectsDTO.errorMessage"/></h3>
-					</s:if>
-					<div class="section"><span></span><s:property value="getText('subject.subjects')"/></div>
-               		<br/>
-					<input type="button" value="Add Row" onclick="addRow('dataTable','divGroup')"/>
-					<input type="button" value="Delete Row" onclick="deleteRow('dataTable')"/><br/><br/>
-				    	<div id="dataTable0">
-				            <s:textfield name="schoolSubjectsDTO.schoolSubjectNames" key="subject.subjectName" id="defaultText" style="text-transform:uppercase;" value=""/>
-							<s:checkbox name="checkBox"/>
-				        </div>
-						<br/>	
-						<div class="button-section">
-		                	<s:submit value="Create Subjects"/>
-		            	</div>				           	
-	            </s:form>
+			<div id="page-wrap">
+				<div id="content">
+					<s:form action="schoolSubjectCreateAction" method="post" theme="simple" id="elements-form">
+						<br/>
+						<s:if test="schoolSubjectsDTO.errorMessage != null" >
+							<h3 style="color:red"><s:property value="schoolSubjectsDTO.errorMessage"/></h3>
+						</s:if>
+						<s:property value="getText('subject.subjects')"/>
+	               		<br/>
+						<input type="button" value="Add Row" onclick="addRow('dataTable','divGroup')"/>
+						<input type="button" value="Delete Row" onclick="deleteRow('dataTable')"/><br/><br/>
+				    	<fieldset id="divGroup">
+				            <div class="fieldgroupForCheckBox" id="dataTable0">
+								<label>Subject</label>
+				            	<s:textfield name="schoolSubjectsDTO.schoolSubjectNames" key="subject.subjectName" id="defaultText" style="text-transform:uppercase;" value=""/>
+								<s:checkbox name="checkBox"/>
+				        	</div>
+						</fieldset>
+						<fieldset>
+							<div>	
+	                			<s:submit value="Create Subjects"/>
+	                		</div>
+	                	</fieldset>
+		            </s:form>
+		        </div>
 	        </div>
 		</s:if>
 		
@@ -84,7 +92,7 @@
 		
 		<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectsView'}">
 			<div class="form-style-10">
-				<s:property value="getText('subjects.availableSubjects')"/>
+				<h4><s:property value="getText('subjects.availableSubjects')"/></h4>
 				<table border='1' width="50%">
 					<tr>
 					    <td style="text-align:center" width="10%">So No</td>
