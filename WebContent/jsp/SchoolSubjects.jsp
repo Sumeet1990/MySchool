@@ -1,15 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-
+<%@ page isELIgnored="false" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/add_removerow.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/pageElements.css">
+
+		<script type="text/javascript" src="${pageContext.request.contextPath}/js/add_removerow.js"></script>
 		<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/script.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.validate.min.js"></script>
-		
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap_common.css">
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/formElementsStyle.css">
 		
 		<style>
 			* { margin: 0; padding: 0; }
@@ -19,93 +21,86 @@
 	</head>
 	<body>
 		<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectCreate'}">
-			<div id="page-wrap">
-				<div id="content">
-					<s:form action="schoolSubjectCreateAction" method="post" theme="simple" id="elements-form">
-						<h3><s:property value="getText('subject.subjects')"/></h3>
-						<br/>
-						<s:if test="schoolSubjectsDTO.errorMessage != null" >
-							<h3 style="color:red"><s:property value="schoolSubjectsDTO.errorMessage"/></h3>
-						</s:if>
-						
-						<input type="button" value="Add Row" onclick="addRow('dataTable','divGroup')"/>
-						<input type="button" value="Delete Row" onclick="deleteRow('dataTable')"/><br/><br/>
-				    	<div id="form-content">
-					    	<fieldset id="divGroup">
-						    	<div class="fieldgroupForCheckBox" id="dataTable0">
-						        	<label><s:property value="getText('subject.subjectName')"/></label>
-						            <s:textfield name="schoolSubjectsDTO.schoolSubjectNames" id="defaultText" onkeyup="upperCaseThetextById(this)" value=""/>
-									<s:checkbox name="checkBox"/>
-						        </div>
-					       	</fieldset>
-							<fieldset>
-								<br/>	
-								<div>
-				                	<s:submit value="Create Subjects"/>
-				            	</div>				           	
-				        	</fieldset>
-			            </div>
-		            </s:form>
-	            </div>
-            </div>
+			<div class="form-style-10">
+				<s:form action="schoolSubjectCreateAction" method="post" theme="simple" id="elements-form">
+					<br/>
+					<s:if test="schoolSubjectsDTO.errorMessage != null" >
+						<h3 style="color:red"><s:property value="schoolSubjectsDTO.errorMessage"/></h3>
+					</s:if>
+					<div class="section"><span></span><s:property value="getText('subject.subjects')"/></div>
+               		<br/>
+					<input type="button" value="Add Row" onclick="addRow('dataTable','divGroup')"/>
+					<input type="button" value="Delete Row" onclick="deleteRow('dataTable')"/><br/><br/>
+				    	<div id="dataTable0">
+				            <s:textfield name="schoolSubjectsDTO.schoolSubjectNames" key="subject.subjectName" id="defaultText" style="text-transform:uppercase;" value=""/>
+							<s:checkbox name="checkBox"/>
+				        </div>
+						<br/>	
+						<div class="button-section">
+		                	<s:submit value="Create Subjects"/>
+		            	</div>				           	
+	            </s:form>
+	        </div>
 		</s:if>
 		
 		<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectModify'}">
-			<div id="page-wrap">
-				<div id="content">
-					<s:form action="schoolSubjectModifyAction" method="post" theme="simple" id="elements-form">
-						<h3><s:property value="getText('subject.subjects')" /></h3>
-						<br/>
-						Click the check box and modify the subject
-						<br/>
-						<s:property value="errorMessage" />
-							<s:iterator value="schoolSubjectsDTOList">
-								<fieldset id="divGroup">
-									<div class="fieldgroup" style="width:400px;">
-										<label><s:property value="getText('subject.subjectName')"/></label>
-										<s:textfield name="schoolSubjectsDTO.schoolSubjectNames" onkeyup="upperCaseThetextById(this)" value="%{subjectName}" theme="simple"/>
-										<s:checkbox name="checkBox" theme="simple"/>
-										<s:hidden name="schoolSubjectsDTO.schoolSubjectCodes" value="%{subjectCode"/>
-									</div>
-								</fieldset>
-							</s:iterator>
-							<s:submit value="Modify" id="submitButton" action="schoolSubjectModifyAction" theme="simple"/>
-					</s:form>
-				</div>
-            </div>
+			<div class="form-style-10">		
+				<s:form action="schoolSubjectModifyAction" method="post" theme="simple" id="elements-form">
+					<div class="section"><span></span><s:property value="getText('subject.subjects')" /></div>
+					<br/>
+					<span class="required"></span>Click the check box and modify the subject<br/>
+					<br/>
+					<s:property value="errorMessage" />
+					<br/>
+					<s:iterator value="schoolSubjectsDTOList">
+						<s:textfield name="schoolSubjectsDTO.schoolSubjectNames" key="subject.subjectName" style="text-transform:uppercase;" value="%{subjectName}" theme="simple"/>
+						<s:checkbox name="checkBox" theme="simple"/>
+						<s:hidden name="schoolSubjectsDTO.schoolSubjectCodes" value="%{subjectCode"/>
+					</s:iterator>
+					<div class="button-section">
+						<s:submit value="Modify" id="submitButton" action="schoolSubjectModifyAction"/>
+					</div>
+				</s:form>
+			</div>
 		</s:if>
 		
 		<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectDelete'}">
-			<div id="page-wrap">
-				<div id="content">
-					<s:form action="schoolSubjectDeleteAction" method="post" theme="simple" id="elements-form">
-						<h3><s:property value="getText('subject.subjects')" /></h3>
-						Click the check box to delete the subject
-						<br/>
-						<s:property value="errorMessage" />
-							<s:iterator value="schoolSubjectsDTO.existsSubjectList" var="element">
-								<fieldset id="divGroup">
-									<div class="fieldgroup" style="width:400px;">
-										<label><s:property value="getText('subject.subjectName')"/></label>
-										<s:textfield disabled="true" name="schoolSubjectsDTO.subjectName" onkeyup="upperCaseThetextById(this)" value="%{#element.subjectName}" theme="simple"/>
-										<s:checkbox name="checkBox" theme="simple"/>
-										<s:hidden name="schoolSubjectsDTO.subjectCodes" value="%{schoolSubjectsDTO.subjectNameCodes.get(#element)}"/>
-									</div>
-								</fieldset>
-							</s:iterator>
-							<s:submit value="Delete" id="submitButton" action="schoolSubjectDeleteAction" theme="simple"/>
-					</s:form>
-				</div>
-            </div>
+			<div class="form-style-10">	
+				<s:form action="schoolSubjectDeleteAction" method="post" theme="simple" id="elements-form">
+					<div class="section"><span></span><s:property value="getText('subject.subjects')" /></div>
+					<br/>
+					<span class="required"></span>Click the check box and delete the subject<br/>
+					<br/>
+					<s:property value="errorMessage" />
+						<s:iterator value="schoolSubjectsDTO.existsSubjectList" var="element">
+							<s:textfield disabled="true" name="schoolSubjectsDTO.subjectName" key="subject.subjectName" style="text-transform:uppercase;" value="%{#element.subjectName}" theme="simple"/>
+							<s:checkbox name="checkBox" theme="simple"/>
+							<s:hidden name="schoolSubjectsDTO.subjectCodes" value="%{schoolSubjectsDTO.subjectNameCodes.get(#element)}"/>
+						</s:iterator>
+						<s:submit value="Delete" id="submitButton" action="schoolSubjectDeleteAction" theme="simple"/>
+				</s:form>
+			</div>
 		</s:if>
 		
 		<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectsView'}">
-			<s:property value="getText('subjects.availableSubjects')"/>
-			<s:iterator value="schoolSubjectsDTOList">
-				<div id="form-content">
-					<s:property value="subjectName"/> - <s:property value="subjectStatus"/>
-				</div>
-			</s:iterator>
+			<div class="form-style-10">
+				<s:property value="getText('subjects.availableSubjects')"/>
+				<table border='1' width="50%">
+					<tr>
+					    <td style="text-align:center" width="10%">So No</td>
+					    <td style="text-align:center" width="20%">Subject Name</td>
+					    <td style="text-align:center" width="20%">Subject Status</td>
+					</tr>
+					
+					<s:iterator value="schoolSubjectsDTOList" status="rowstatus">
+						<tr class="<s:if test="#rowstatus.odd == true ">odd</s:if><s:else>even</s:else>">
+						    <td style="text-align:center" width="10%"><s:property value="#rowstatus.count"/></td>
+						    <td style="text-align:center" width="20%"><s:property value="subjectName"/></td>
+						    <td style="text-align:center" width="20%"><s:property value="subjectStatus"/></td>
+						</tr>
+					</s:iterator>
+				</table>
+			</div>
 		</s:if>
 	</body>
 </html>

@@ -8,7 +8,7 @@ import com.myschool.dto.SchoolSubjectsDTO;
 
 public interface SchoolClassService {
 
-	SchoolClassDTO createClass(List<SchoolSubjectsDTO> schoolSubjectsDTOList, List<String> selectedSubjectList, 
+	SchoolClassDTO createSchoolClass(List<SchoolSubjectsDTO> schoolSubjectsDTOList, String selectedSubject, 
 			SchoolClassDTO schoolClassDTO, String userId);
 
 	void setSelectedSubjectCodes(SchoolClassDTO schoolClassDTO, String selectedSubject);

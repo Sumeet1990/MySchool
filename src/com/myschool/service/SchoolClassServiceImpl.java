@@ -25,21 +25,24 @@ public class SchoolClassServiceImpl implements SchoolClassService {
 	/**
 	 * 
 	 */
-	public SchoolClassDTO createClass(List<SchoolSubjectsDTO> schoolSubjectsDTOList, List<String> selectedSubjectList, 
+	public SchoolClassDTO createSchoolClass(List<SchoolSubjectsDTO> schoolSubjectsDTOList, String selectedSubject, 
 			SchoolClassDTO schoolClassDTO, String userId) {
 		boolean classAlreadyExists = getSchoolClassDAO().verifyClassExists(schoolClassDTO);
 
 		if(!classAlreadyExists) {
 			StringBuilder sculoolSubjectodes = new StringBuilder();
+			String[] selectdSubjectsList = selectedSubject.split(CommonConstants.COMMA_WITH_BACK_SPACE);
 			for(SchoolSubjectsDTO schoolSubjectsDTO : schoolSubjectsDTOList) {
-				for(String schoolSubject : selectedSubjectList) {
-					if(StringUtils.equalsIgnoreCase(schoolSubject, schoolSubjectsDTO.getSubjectName())) {
+				for(int i=0; i<selectdSubjectsList.length; i++) {
+					if(StringUtils.equalsIgnoreCase(selectdSubjectsList[i], schoolSubjectsDTO.getSubjectName())) {
 						sculoolSubjectodes.append(schoolSubjectsDTO.getSubjectCode()).append(CommonConstants.COMMA);
 					}
 				}
 			}
 			
 			if(sculoolSubjectodes.length() > 0) {
+				sculoolSubjectodes = new StringBuilder(sculoolSubjectodes.substring(0, sculoolSubjectodes.lastIndexOf(CommonConstants.COMMA)));
+				
 				schoolClassDTO.setSelectedSubjectCodes(sculoolSubjectodes.toString());
 			}
 			

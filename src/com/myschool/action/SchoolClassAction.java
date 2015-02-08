@@ -68,7 +68,7 @@ public class SchoolClassAction extends ActionSupport  implements SessionAware {
 	public String performCreate() {
 		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
 		
-		SchoolClassDTO returnSchoolClassDTO = getSchoolClassService().createClass(schoolSubjectsDTOList, selectedSubjectList, schoolClassDTO, sessionUtils.getUserId());
+		SchoolClassDTO returnSchoolClassDTO = getSchoolClassService().createSchoolClass(schoolSubjectsDTOList, selectedSubject, schoolClassDTO, sessionUtils.getUserId());
 		
 		if(StringUtils.equalsIgnoreCase(returnSchoolClassDTO.getErrorMessage(), 
 				CommonConstants.CLASS_SUCCESSFULLY_CREATED)) {
