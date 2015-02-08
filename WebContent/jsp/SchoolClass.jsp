@@ -11,55 +11,59 @@
 		<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/script.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.validate.min.js"></script>
-
+		<style>
+			* { margin: 0; padding: 0; } 
+			 body {background: #eee;  font-family: Arial;  font-size: 16px;} 
+			 a { text-decoration: none;  }  
+		</style>
 		<s:head/>
 	</head>
 	<body>
 		<s:if test="schoolClassDTO.ClassCurrentOperation == 'classCreate'">
 			<div class="form-style-10">
+				<h1><s:property value="getText('class.createClass')"/></span></h1>
+				<br/>
+				<s:if test="schoolClassDTO.errorMessage != null" >
+					<h3 style="color:red"><s:property value="schoolClassDTO.errorMessage"/></h3>
+				</s:if>
 				<s:form action="" method="post" id="elements-form" focusElement="cName">
-			    	<s:if test="schoolClassDTO.errorMessage != null" >
-						<h3 style="color:red"><s:property value="schoolClassDTO.errorMessage"/></h3>
-					</s:if>
-					<br/>
-	               	<div class="section"><span></span><s:property value="getText('class.createClass')"/></div>
-	               		<br/><span class="required">* </span>are Mandatory fields<br/>
-	               		<br/>
-		                <s:textfield name="schoolClassDTO.schoolClassName" id="cName" key="class.className" style="text-transform:uppercase;" required="true"/>
-		               	
-		               	<s:textfield name="schoolClassDTO.minAgeCriteriaInMonths" maxlength="3" key="class.minStudentAgeInMonths" onKeyPress="return onlyNumbers(event)" required="true"/>
-		               	
-		               	<s:textfield name="schoolClassDTO.maxAgeCriteriaInMonths" maxlength="3" key="class.maxStudentAgeInMonths" onKeyPress="return onlyNumbers(event)" required="true"/>
-		               	
-		               	<s:textfield name="schoolClassDTO.periodsPerDay" maxlength="2" key="class.periodsPerDay" onKeyPress="return onlyNumbers(event)" required="true"/>
-		               	
-		               	<s:textfield name="schoolClassDTO.periodDurationInMin" key="class.periodDurationInMin" maxlength="3" onKeyPress="return onlyNumbers(event)" required="true"/>
-		               	
-		               	<s:textfield name="schoolClassDTO.teacherPeriodsPerDay" key="class.maxTeacherPeriods" maxlength="2" onKeyPress="return onlyNumbers(event)"/>
-		               	
-		               	<s:textfield name="schoolClassDTO.classMaxStrength" key="class.maxStrength" maxlength="3" onKeyPress="return onlyNumbers(event)" required="true"/>
-		               	
-		               	<s:select list="classStatusBean" name="schoolClassDTO.classStatus" key="class.maxStrength"></s:select>
-					
-						<s:optiontransferselect 
-							name="availableSubject"
-						    leftTitle="Avaliable subjects"
-						    rightTitle="Selected Subjects"
-						    list="availableSubjectList"
-						    multiple="true"
-						    headerKey="-1"
-						    cssClass="form-control"
-						    allowAddToLeft="true"
-						    allowAddToRight="true"
-						    allowUpDownOnLeft="false"
-						    allowUpDownOnRight="false"
-						    allowSelectAll="false"
-						    labelposition="centre"
-						    doubleCssClass="form-control"
-						    doubleList="selectedSubjectList"
-						    doubleName="selectedSubject"
-						    doubleHeaderKey="-1"
-						/>
+					<div class="section"><span></span>Enter Class Details</div>
+					<br/><span class="required">* </span>are Mandatory fields<br/><br/>
+	                <s:textfield name="schoolClassDTO.schoolClassName" id="cName" key="class.className" style="text-transform:uppercase;" required="true"/>
+	               	
+	               	<s:textfield name="schoolClassDTO.minAgeCriteriaInMonths" maxlength="3" key="class.minStudentAgeInMonths" onKeyPress="return onlyNumbers(event)" required="true"/>
+	               	
+	               	<s:textfield name="schoolClassDTO.maxAgeCriteriaInMonths" maxlength="3" key="class.maxStudentAgeInMonths" onKeyPress="return onlyNumbers(event)" required="true"/>
+	               	
+	               	<s:textfield name="schoolClassDTO.periodsPerDay" maxlength="2" key="class.periodsPerDay" onKeyPress="return onlyNumbers(event)" required="true"/>
+	               	
+	               	<s:textfield name="schoolClassDTO.periodDurationInMin" key="class.periodDurationInMin" maxlength="3" onKeyPress="return onlyNumbers(event)" required="true"/>
+	               	
+	               	<s:textfield name="schoolClassDTO.teacherPeriodsPerDay" key="class.maxTeacherPeriods" maxlength="2" onKeyPress="return onlyNumbers(event)"/>
+	               	
+	               	<s:textfield name="schoolClassDTO.classMaxStrength" key="class.maxStrength" maxlength="3" onKeyPress="return onlyNumbers(event)" required="true"/>
+	               	
+	               	<s:select list="classStatusBean" name="schoolClassDTO.classStatus" key="class.maxStrength"></s:select>
+				
+					<s:optiontransferselect 
+						name="availableSubject"
+					    leftTitle="Avaliable subjects"
+					    rightTitle="Selected Subjects"
+					    list="availableSubjectList"
+					    multiple="true"
+					    headerKey="-1"
+					    cssClass="form-control"
+					    allowAddToLeft="true"
+					    allowAddToRight="true"
+					    allowUpDownOnLeft="false"
+					    allowUpDownOnRight="false"
+					    allowSelectAll="false"
+					    labelposition="centre"
+					    doubleCssClass="form-control"
+					    doubleList="selectedSubjectList"
+					    doubleName="selectedSubject"
+					    doubleHeaderKey="-1"
+					/>
 					<div class="button-section">
 	                	<s:submit action="schoolClassCreateAction" value="Create Class"></s:submit>
 	                </div>
