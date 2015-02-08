@@ -8,6 +8,7 @@ import org.apache.commons.lang.StringUtils;
 import com.myschool.dao.SchoolClassDAO;
 import com.myschool.dao.SchoolSubjectDAO;
 import com.myschool.dto.SchoolClassDTO;
+import com.myschool.dto.SchoolSubjectsDTO;
 import com.myschool.util.CommonConstants;
 
 public class SchoolClassServiceImpl implements SchoolClassService {
@@ -24,10 +25,24 @@ public class SchoolClassServiceImpl implements SchoolClassService {
 	/**
 	 * 
 	 */
-	public SchoolClassDTO createClass(SchoolClassDTO schoolClassDTO, String userId) {
+	public SchoolClassDTO createClass(List<SchoolSubjectsDTO> schoolSubjectsDTOList, List<String> selectedSubjectList, 
+			SchoolClassDTO schoolClassDTO, String userId) {
 		boolean classAlreadyExists = getSchoolClassDAO().verifyClassExists(schoolClassDTO);
 
-		if(!classAlreadyExists) {	
+		if(!classAlreadyExists) {
+			StringBuilder sculoolSubjectodes = new StringBuilder();
+			for(SchoolSubjectsDTO schoolSubjectsDTO : schoolSubjectsDTOList) {
+				for(String schoolSubject : selectedSubjectList) {
+					if(StringUtils.equalsIgnoreCase(schoolSubject, schoolSubjectsDTO.getSubjectName())) {
+						sculoolSubjectodes.append(schoolSubjectsDTO.getSubjectCode()).append(CommonConstants.COMMA);
+					}
+				}
+			}
+			
+			if(sculoolSubjectodes.length() > 0) {
+				schoolClassDTO.setSelectedSubjectCodes(sculoolSubjectodes.toString());
+			}
+			
 			getSchoolClassDAO().createSchoolClass(schoolClassDTO, userId);
 			schoolClassDTO.setErrorMessage(CommonConstants.CLASS_SUCCESSFULLY_CREATED);
 		} else {
@@ -42,10 +57,10 @@ public class SchoolClassServiceImpl implements SchoolClassService {
 	 */
 	public void setSelectedSubjectCodes(SchoolClassDTO schoolClassDTO,
 			String selectedSubject) {
-		String[] selectedSubjects = selectedSubject.split(","); 
+		String[] selectedSubjects = selectedSubject.split(CommonConstants.COMMA); 
 		String subjectCodes = StringUtils.EMPTY;
-		for(String subject : selectedSubjects){
-			subjectCodes = subjectCodes + schoolClassDTO.getAllSubjectMap().get(subject.replace(" ", ""))+",";
+		for(String subject : selectedSubjects) {
+			subjectCodes = subjectCodes + schoolClassDTO.getAllSubjectMap().get(subject.replace(" ", ""))+CommonConstants.COMMA;
 		}
 		if(subjectCodes.length()>0){
 			schoolClassDTO.setSelectedSubjectCodes(subjectCodes.substring(0,subjectCodes.length()-1));

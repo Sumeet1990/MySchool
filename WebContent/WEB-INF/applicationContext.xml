@@ -59,12 +59,13 @@
 	<bean name="schoolClassAction" class="com.myschool.action.SchoolClassAction">
 		<property name="schoolClassService" ref="schoolClassService"></property>
 		<property name="schoolSubjectsService" ref="schoolSubjectsService"></property>
+		<property name="classStatusBean" ref="classStatusBean"></property>
 	</bean>
 	
 	<bean name="classSectionAction" class="com.myschool.action.ClassSectionAction">
-	<property name="schoolClassService" ref="schoolClassService"></property>
-	<property name="classSectionService" ref="classSectionService"></property>
-	<property name="staffStatusBean" ref="staffStatusBean"></property>
+		<property name="schoolClassService" ref="schoolClassService"></property>
+		<property name="classSectionService" ref="classSectionService"></property>
+		<property name="staffStatusBean" ref="staffStatusBean"></property>
 	</bean>
 	
 	<bean name="studentRegistrationAction" class="com.myschool.action.StudentRegistrationAction">
@@ -153,7 +154,13 @@
 			<value >${staff.status}</value>
 		</constructor-arg>
 	</bean>
-
+	
+	<bean name="classStatusBean" class="com.myschool.util.UtillArrayList">
+		<constructor-arg>
+			<value >${class.status}</value>
+		</constructor-arg>
+	</bean>
+	
 	<bean name="commonYesOrNo" class="com.myschool.util.UtillArrayList">
 		<constructor-arg>
 			<value >${common.yesorno}</value>

@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.myschool.beans.SchoolClass;
@@ -14,6 +15,7 @@ import com.myschool.dto.SchoolClassDTO;
 import com.myschool.util.CommonUtility;
 
 public class SchoolClassDAOImpl extends HibernateDaoSupport implements SchoolClassDAO {
+	private SchoolSubjectDAO schoolSubjectDAO;
 	
 	/**
 	 * 
@@ -29,16 +31,20 @@ public class SchoolClassDAOImpl extends HibernateDaoSupport implements SchoolCla
 			for(SchoolClass schoolClass: schoolClassesList) {
 				schoolClassDTO = new SchoolClassDTO();
 				CommonUtility.copyProperties(schoolClass, schoolClassDTO, 
-						"schoolClassId schoolClassId",
 						"schoolClassName schoolClassName",
-						"minAgeCriteriaInMin minAgeCriteriaInMin",
-						"maxAgeCriteriaInMin maxAgeCriteriaInMin",
+						"minAgeCriteriaInMonths minAgeCriteriaInMonths",
+						"maxAgeCriteriaInMonths maxAgeCriteriaInMonths",
 						"periodsPerDay periodsPerDay",
-						"periodMinutesDurationInMin periodMinutesDurationInMin",
+						"periodDurationInMin periodDurationInMin",
 						"teacherPeriodsPerDay teacherPeriodsPerDay",
+						"classMaxStrength classMaxStrength",
 						"classStatus classStatus");
 				
 				schoolClassDTO.setSchoolClassId(String.valueOf(schoolClass.getSchoolClassId()));
+				if(StringUtils.isNotBlank(schoolClass.getSubjectCodesList())) {
+					schoolClassDTO.setCalssSubjects(schoolSubjectDAO.getSubjectsFromSubjectCodes(schoolClass.getSubjectCodesList()));
+				}
+				
 				allSchoolClassList.add(schoolClassDTO);
 			}
 		}
@@ -67,14 +73,15 @@ public class SchoolClassDAOImpl extends HibernateDaoSupport implements SchoolCla
 		SchoolClass schoolClass = new SchoolClass();
 		CommonUtility.copyProperties(schoolClassDTO, schoolClass, 
 				"schoolClassName schoolClassName",
-				"minAgeCriteriaInMin minAgeCriteriaInMin",
-				"maxAgeCriteriaInMin maxAgeCriteriaInMin",
+				"minAgeCriteriaInMonths minAgeCriteriaInMonths",
+				"maxAgeCriteriaInMonths maxAgeCriteriaInMonths",
 				"periodsPerDay periodsPerDay",
-				"periodMinutesDurationInMin periodMinutesDurationInMin",
+				"selectedSubjectCodes subjectCodesList",
+				"periodDurationInMin periodDurationInMin",
 				"teacherPeriodsPerDay teacherPeriodsPerDay",
-				"statusClass classStatus");
+				"classMaxStrength classMaxStrength",
+				"classStatus classStatus");
 		
-		schoolClass.setSubjectCodesList(schoolClassDTO.getSelectedSubjectCodes());
 		schoolClass.setCreatedDateTime(CommonUtility.dateToString(new Date()));
 		schoolClass.setCreatedUserId(userId);
 
@@ -97,4 +104,20 @@ public class SchoolClassDAOImpl extends HibernateDaoSupport implements SchoolCla
 		}
 		return classTeacherMap;
 	}
+
+	/**
+	 * @return the schoolSubjectDAO
+	 */
+	public SchoolSubjectDAO getSchoolSubjectDAO() {
+		return schoolSubjectDAO;
+	}
+
+	/**
+	 * @param schoolSubjectDAO the schoolSubjectDAO to set
+	 */
+	public void setSchoolSubjectDAO(SchoolSubjectDAO schoolSubjectDAO) {
+		this.schoolSubjectDAO = schoolSubjectDAO;
+	}
+	
+	
 }

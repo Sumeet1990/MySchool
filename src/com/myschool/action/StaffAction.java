@@ -1,11 +1,13 @@
 package com.myschool.action;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.myschool.dto.SchoolSubjectsDTO;
 import com.myschool.dto.StaffDTO;
 import com.myschool.service.SchoolSubjectsService;
 import com.myschool.service.StaffAppointmentTypeService;
@@ -22,28 +24,46 @@ public class StaffAction extends ActionSupport implements SessionAware{
 	private Map<String,String> subjectListMap;
 	private Map<Integer,String> staffAppointmentTypes;
 	private SchoolSubjectsService schoolSubjectsService;
-	private ArrayList<String> tilesBeanStaff,genderBean,staffStatusBean,commonYesOrNo;
+	private ArrayList<String> tilesBeanStaff, genderBean, staffStatusBean, commonYesOrNo;
 	private StaffAppointmentTypeService staffAppointmentTypeService;
 	private StaffService staffService;
 	private StaffDTO staffDTO;
 	private java.util.Map<String, Object> session;
-
-	public String performInit()
-	{
+	List<SchoolSubjectsDTO> schoolSubjectsDTOList;
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public String performInit() {
 		staffDTO = new StaffDTO();
+		
 		staffAppointmentTypes = getStaffAppointmentTypeService().getApoinmentTypes();
-		subjectListMap = getSchoolSubjectsService().getAllSubjectsMap();
+		schoolSubjectsDTOList = getSchoolSubjectsService().getAllActiveAvailableSubjects();
+
+		for(SchoolSubjectsDTO schoolSubjectsDTO : schoolSubjectsDTOList) {
+			subjectListMap.put(schoolSubjectsDTO.getSubjectCode(), schoolSubjectsDTO.getSubjectName());
+		}
+		
 		return SUCCESS;
 	}
 	
-	public String performAdd()
-	{   
+	/**
+	 * 
+	 * @return
+	 */
+	public String performAdd() {   
 		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
 		staffDTO.setCreatedUserId(sessionUtils.getUserId());
 		getStaffService().createStaffMember(staffDTO);
 		return SUCCESS;
 	}
-
+	
+	@Override
+	public void setSession(java.util.Map<String, Object> session) {
+		this.session = session;
+	}
+	
 	public String getSchoolClassName() {
 		return schoolClassName;
 	}
@@ -59,7 +79,6 @@ public class StaffAction extends ActionSupport implements SessionAware{
 	public void setActionType(String actionType) {
 		this.actionType = actionType;
 	}
-
 
 	public ArrayList<String> getTilesBeanStaff() {
 		return tilesBeanStaff;
@@ -134,12 +153,6 @@ public class StaffAction extends ActionSupport implements SessionAware{
 		this.staffService = staffService;
 	}
 
-	@Override
-	public void setSession(java.util.Map<String, Object> session) {
-		this.session = session;
-		
-	}
-
 	public StaffDTO getStaffDTO() {
 		return staffDTO;
 	}
@@ -147,5 +160,19 @@ public class StaffAction extends ActionSupport implements SessionAware{
 	public void setStaffDTO(StaffDTO staffDTO) {
 		this.staffDTO = staffDTO;
 	}
-	
+
+	/**
+	 * @return the schoolSubjectsDTOList
+	 */
+	public List<SchoolSubjectsDTO> getSchoolSubjectsDTOList() {
+		return schoolSubjectsDTOList;
+	}
+
+	/**
+	 * @param schoolSubjectsDTOList the schoolSubjectsDTOList to set
+	 */
+	public void setSchoolSubjectsDTOList(
+			List<SchoolSubjectsDTO> schoolSubjectsDTOList) {
+		this.schoolSubjectsDTOList = schoolSubjectsDTOList;
+	}
 }

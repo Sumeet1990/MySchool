@@ -31,26 +31,13 @@
 						<input type="button" value="Add Row" onclick="addRow('dataTable','divGroup')"/>
 						<input type="button" value="Delete Row" onclick="deleteRow('dataTable')"/><br/><br/>
 				    	<div id="form-content">
-							<s:if test="schoolSubjectsDTO.subjectName.length != 0">
-								<s:iterator value="schoolSubjectsDTO.subjectName"  var="element">
-									<fieldset id="divGroup">
-							            <div class="fieldgroup" style="width:400px;">
-							            	<label><s:property value="getText('subject.subjectName')"/></label>
-							                <s:textfield name="schoolSubjectsDTO.subjectName" theme="simple" id="defaultText" onkeyup="upperCaseThetextById(this)" value="%{#element}"/>
-							                <s:checkbox name="checkBox" theme="simple"/>
-							            </div>
-						            </fieldset>
-					            </s:iterator>
-					        </s:if>
-					        <s:else>
-					        	<fieldset id="divGroup">
-						            <div class="fieldgroupForCheckBox" id="dataTable0">
-						            	<label><s:property value="getText('subject.subjectName')"/></label>
-						                <s:textfield name="schoolSubjectsDTO.subjectName" id="defaultText" onkeyup="upperCaseThetextById(this)" value=""/>
-										<s:checkbox name="checkBox"/>
-						            </div>
-					            </fieldset>
-							</s:else>
+					    	<fieldset id="divGroup">
+						    	<div class="fieldgroupForCheckBox" id="dataTable0">
+						        	<label><s:property value="getText('subject.subjectName')"/></label>
+						            <s:textfield name="schoolSubjectsDTO.schoolSubjectNames" id="defaultText" onkeyup="upperCaseThetextById(this)" value=""/>
+									<s:checkbox name="checkBox"/>
+						        </div>
+					       	</fieldset>
 							<fieldset>
 								<br/>	
 								<div>
@@ -72,13 +59,13 @@
 						Click the check box and modify the subject
 						<br/>
 						<s:property value="errorMessage" />
-							<s:iterator value="schoolSubjectsDTO.existsSubjectList" var="element">
+							<s:iterator value="schoolSubjectsDTOList">
 								<fieldset id="divGroup">
 									<div class="fieldgroup" style="width:400px;">
 										<label><s:property value="getText('subject.subjectName')"/></label>
-										<s:textfield name="schoolSubjectsDTO.subjectName" onkeyup="upperCaseThetextById(this)" value="%{#element.subjectName}" theme="simple"/>
+										<s:textfield name="schoolSubjectsDTO.schoolSubjectNames" onkeyup="upperCaseThetextById(this)" value="%{subjectName}" theme="simple"/>
 										<s:checkbox name="checkBox" theme="simple"/>
-										<s:hidden name="schoolSubjectsDTO.subjectCodes" value="%{schoolSubjectsDTO.subjectNameCodes.get(#element)}"/>
+										<s:hidden name="schoolSubjectsDTO.schoolSubjectCodes" value="%{subjectCode"/>
 									</div>
 								</fieldset>
 							</s:iterator>
@@ -114,9 +101,9 @@
 		
 		<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectsView'}">
 			<s:property value="getText('subjects.availableSubjects')"/>
-			<s:iterator value="schoolSubjectsDTO.existsSubjectList">
+			<s:iterator value="schoolSubjectsDTOList">
 				<div id="form-content">
-					<s:property value="subjectName"/>
+					<s:property value="subjectName"/> - <s:property value="subjectStatus"/>
 				</div>
 			</s:iterator>
 		</s:if>

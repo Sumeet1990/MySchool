@@ -48,4 +48,7 @@ public class CommonConstants {
 
 	public static final String SCHOOL_ACCESS = "schoolAccess";
 	public static final String USER_LEVEL_ACCESS = "userLevelAccess";
+	
+	public static final String COMMA = ",";
+	public static final String COMMA_WITH_BACK_SPACE = ", ";
 }

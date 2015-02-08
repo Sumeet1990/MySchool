@@ -25,16 +25,16 @@ public class SchoolClass implements Serializable {
 	private String schoolClassName;
 	
 	@Column(name="MIN_AGE_CRITERIA_IN_MONTHS")
-	private Integer minAgeCriteriaInMin;
+	private Integer minAgeCriteriaInMonths;
 	
 	@Column(name="MAX_AGE_CRITERIA_IN_MONTHS")
-	private Integer maxAgeCriteriaInMin;
+	private Integer maxAgeCriteriaInMonths;
 	
 	@Column(name="PERIODS_PER_DAY")
 	private Integer periodsPerDay;
 	
 	@Column(name="PERIOD_DURATION_IN_MINUTES")
-	private Integer periodMinutesDurationInMin;
+	private Integer periodDurationInMin;
 	
 	@Column(name="TEACHER_PERIODS_PER_DAY")
 	private Integer teacherPeriodsPerDay;
@@ -43,7 +43,7 @@ public class SchoolClass implements Serializable {
 	private String subjectCodesList;
 	
 	@Column(name="CLASS_MAXIMUM_STRENGTH")
-	private Integer classMaximumStrength;
+	private Integer classMaxStrength;
 	
 	@Column(name="CLASS_STATUS")
 	private String classStatus;
@@ -59,134 +59,200 @@ public class SchoolClass implements Serializable {
 	
 	@Column(name="MODIFIED_DATE_TIME")
 	private String modifiedDateTime;
-	
-	public Integer getSchoolClassId(){
-	 return schoolClassId;
-	}
-	
-	public void setSchoolClassId(Integer schoolClassId){
-	 this.schoolClassId=schoolClassId;
-	}
-	
-	public String getSchoolClassName(){
-	 return schoolClassName;
-	}
-	
-	public void setSchoolClassName(String schoolClassName){
-	 this.schoolClassName=schoolClassName;
-	}
-	
+
 	/**
-	 * @return the minAgeCriteriaInMin
+	 * @return the schoolClassId
 	 */
-	public Integer getMinAgeCriteriaInMin() {
-		return minAgeCriteriaInMin;
+	public Integer getSchoolClassId() {
+		return schoolClassId;
 	}
 
 	/**
-	 * @param minAgeCriteriaInMin the minAgeCriteriaInMin to set
+	 * @param schoolClassId the schoolClassId to set
 	 */
-	public void setMinAgeCriteriaInMin(Integer minAgeCriteriaInMin) {
-		this.minAgeCriteriaInMin = minAgeCriteriaInMin;
+	public void setSchoolClassId(Integer schoolClassId) {
+		this.schoolClassId = schoolClassId;
 	}
 
 	/**
-	 * @return the maxAgeCriteriaInMin
+	 * @return the schoolClassName
 	 */
-	public Integer getMaxAgeCriteriaInMin() {
-		return maxAgeCriteriaInMin;
+	public String getSchoolClassName() {
+		return schoolClassName;
 	}
 
 	/**
-	 * @param maxAgeCriteriaInMin the maxAgeCriteriaInMin to set
+	 * @param schoolClassName the schoolClassName to set
 	 */
-	public void setMaxAgeCriteriaInMin(Integer maxAgeCriteriaInMin) {
-		this.maxAgeCriteriaInMin = maxAgeCriteriaInMin;
-	}
-
-	public Integer getPeriodsPerDay(){
-	 return periodsPerDay;
-	}
-	
-	public void setPeriodsPerDay(Integer periodsPerDay){
-	 this.periodsPerDay=periodsPerDay;
-	}
-	
-	/**
-	 * @return the periodMinutesDurationInMin
-	 */
-	public Integer getPeriodMinutesDurationInMin() {
-		return periodMinutesDurationInMin;
+	public void setSchoolClassName(String schoolClassName) {
+		this.schoolClassName = schoolClassName;
 	}
 
 	/**
-	 * @param periodMinutesDurationInMin the periodMinutesDurationInMin to set
+	 * @return the minAgeCriteriaInMonths
 	 */
-	public void setPeriodMinutesDurationInMin(Integer periodMinutesDurationInMin) {
-		this.periodMinutesDurationInMin = periodMinutesDurationInMin;
+	public Integer getMinAgeCriteriaInMonths() {
+		return minAgeCriteriaInMonths;
 	}
 
-	public Integer getTeacherPeriodsPerDay(){
-	 return teacherPeriodsPerDay;
+	/**
+	 * @param minAgeCriteriaInMonths the minAgeCriteriaInMonths to set
+	 */
+	public void setMinAgeCriteriaInMonths(Integer minAgeCriteriaInMonths) {
+		this.minAgeCriteriaInMonths = minAgeCriteriaInMonths;
 	}
-	
-	public void setTeacherPeriodsPerDay(Integer teacherPeriodsPerDay){
-	 this.teacherPeriodsPerDay = teacherPeriodsPerDay;
+
+	/**
+	 * @return the maxAgeCriteriaInMonths
+	 */
+	public Integer getMaxAgeCriteriaInMonths() {
+		return maxAgeCriteriaInMonths;
 	}
-	
-	public String getSubjectCodesList(){
-	 return subjectCodesList;
+
+	/**
+	 * @param maxAgeCriteriaInMonths the maxAgeCriteriaInMonths to set
+	 */
+	public void setMaxAgeCriteriaInMonths(Integer maxAgeCriteriaInMonths) {
+		this.maxAgeCriteriaInMonths = maxAgeCriteriaInMonths;
 	}
-	
-	public void setSubjectCodesList(String subjectCodesList){
-	 this.subjectCodesList=subjectCodesList;
+
+	/**
+	 * @return the periodsPerDay
+	 */
+	public Integer getPeriodsPerDay() {
+		return periodsPerDay;
 	}
-	
-	public Integer getClassMaximumStrength(){
-	 return classMaximumStrength;
+
+	/**
+	 * @param periodsPerDay the periodsPerDay to set
+	 */
+	public void setPeriodsPerDay(Integer periodsPerDay) {
+		this.periodsPerDay = periodsPerDay;
 	}
-	
-	public void setClassMaximumStrength(Integer classMaximumStrength){
-	 this.classMaximumStrength=classMaximumStrength;
+
+	/**
+	 * @return the periodDurationInMin
+	 */
+	public Integer getPeriodDurationInMin() {
+		return periodDurationInMin;
 	}
-	
-	public String getClassStatus(){
-	 return classStatus;
+
+	/**
+	 * @param periodDurationInMin the periodDurationInMin to set
+	 */
+	public void setPeriodDurationInMin(Integer periodDurationInMin) {
+		this.periodDurationInMin = periodDurationInMin;
 	}
-	
-	public void setClassStatus(String classStatus){
-	 this.classStatus=classStatus;
+
+	/**
+	 * @return the teacherPeriodsPerDay
+	 */
+	public Integer getTeacherPeriodsPerDay() {
+		return teacherPeriodsPerDay;
 	}
-	
-	public String getCreatedUserId(){
-	 return createdUserId;
+
+	/**
+	 * @param teacherPeriodsPerDay the teacherPeriodsPerDay to set
+	 */
+	public void setTeacherPeriodsPerDay(Integer teacherPeriodsPerDay) {
+		this.teacherPeriodsPerDay = teacherPeriodsPerDay;
 	}
-	
-	public void setCreatedUserId(String createdUserId){
-	 this.createdUserId=createdUserId;
+
+	/**
+	 * @return the subjectCodesList
+	 */
+	public String getSubjectCodesList() {
+		return subjectCodesList;
 	}
-	
-	public String getModifiedUserId(){
-	 return modifiedUserId;
+
+	/**
+	 * @param subjectCodesList the subjectCodesList to set
+	 */
+	public void setSubjectCodesList(String subjectCodesList) {
+		this.subjectCodesList = subjectCodesList;
 	}
-	
-	public void setModifiedUserId(String modifiedUserId){
-	 this.modifiedUserId=modifiedUserId;
+
+	/**
+	 * @return the classMaxStrength
+	 */
+	public Integer getClassMaxStrength() {
+		return classMaxStrength;
 	}
-	
-	public String getCreatedDateTime(){
-	 return createdDateTime;
+
+	/**
+	 * @param classMaxStrength the classMaxStrength to set
+	 */
+	public void setClassMaxStrength(Integer classMaxStrength) {
+		this.classMaxStrength = classMaxStrength;
 	}
-	
-	public void setCreatedDateTime(String createdDateTime){
-	 this.createdDateTime=createdDateTime;
+
+	/**
+	 * @return the classStatus
+	 */
+	public String getClassStatus() {
+		return classStatus;
 	}
-	
-	public String getModifiedDateTime(){
-	 return modifiedDateTime;
+
+	/**
+	 * @param classStatus the classStatus to set
+	 */
+	public void setClassStatus(String classStatus) {
+		this.classStatus = classStatus;
 	}
-	
-	public void setModifiedDateTime(String modifiedDateTime){
-	 this.modifiedDateTime=modifiedDateTime;
+
+	/**
+	 * @return the createdUserId
+	 */
+	public String getCreatedUserId() {
+		return createdUserId;
+	}
+
+	/**
+	 * @param createdUserId the createdUserId to set
+	 */
+	public void setCreatedUserId(String createdUserId) {
+		this.createdUserId = createdUserId;
+	}
+
+	/**
+	 * @return the modifiedUserId
+	 */
+	public String getModifiedUserId() {
+		return modifiedUserId;
+	}
+
+	/**
+	 * @param modifiedUserId the modifiedUserId to set
+	 */
+	public void setModifiedUserId(String modifiedUserId) {
+		this.modifiedUserId = modifiedUserId;
+	}
+
+	/**
+	 * @return the createdDateTime
+	 */
+	public String getCreatedDateTime() {
+		return createdDateTime;
+	}
+
+	/**
+	 * @param createdDateTime the createdDateTime to set
+	 */
+	public void setCreatedDateTime(String createdDateTime) {
+		this.createdDateTime = createdDateTime;
+	}
+
+	/**
+	 * @return the modifiedDateTime
+	 */
+	public String getModifiedDateTime() {
+		return modifiedDateTime;
+	}
+
+	/**
+	 * @param modifiedDateTime the modifiedDateTime to set
+	 */
+	public void setModifiedDateTime(String modifiedDateTime) {
+		this.modifiedDateTime = modifiedDateTime;
 	}
 }

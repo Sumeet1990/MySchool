@@ -1,5 +1,6 @@
 package com.myschool.action;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
@@ -22,6 +23,7 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 	private String actionType;
 	private SchoolSubjectsDTO schoolSubjectsDTO;
 	private java.util.Map<String, Object> session;
+	List<SchoolSubjectsDTO> schoolSubjectsDTOList;
 	
 	/**
 	 * 
@@ -35,7 +37,7 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
 		
 		schoolSubjectsDTO = new SchoolSubjectsDTO();
-		schoolSubjectsDTO = getSchoolSubjectsService().getAllAvailableSubjects();
+		schoolSubjectsDTOList = getSchoolSubjectsService().getAllAvailableSubjects();
 		schoolSubjectsDTO.setUserId(sessionUtils.getUserId());
 		schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_CREATE);
 		
@@ -76,7 +78,8 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 	 */
 	public String performModifyload() {
 		schoolSubjectsDTO = new SchoolSubjectsDTO();
-		schoolSubjectsDTO = getSchoolSubjectsService().getAllAvailableSubjects();
+		
+		schoolSubjectsDTOList = getSchoolSubjectsService().getAllAvailableSubjects();
 		schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_MODIFY);
 		
 		return SUCCESS;
@@ -88,6 +91,7 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 	 */
 	public String performModify() {
 		boolean  status = getSchoolSubjectsService().updateSubjects(schoolSubjectsDTO);		
+		
 		if(status) {
 			schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_VIEW);	
 			String returnString = performView();
@@ -107,7 +111,8 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 	 */
 	public String performDeleteload() {
 		schoolSubjectsDTO = new SchoolSubjectsDTO();
-		schoolSubjectsDTO = getSchoolSubjectsService().getAllAvailableSubjects();
+		
+		schoolSubjectsDTOList = getSchoolSubjectsService().getAllAvailableSubjects();
 		schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_DELETE);
 		
 		return SUCCESS;
@@ -142,9 +147,9 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 		schoolSubjectsDTO = new SchoolSubjectsDTO();
 		schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_VIEW);
 		
-		schoolSubjectsDTO = getSchoolSubjectsService().getAllAvailableSubjects();
+		schoolSubjectsDTOList = getSchoolSubjectsService().getAllAvailableSubjects();
 		
-		if(schoolSubjectsDTO == null || schoolSubjectsDTO.getExistsSubjectList() == null && schoolSubjectsDTO.getExistsSubjectList().size() == 0) {
+		if(schoolSubjectsDTOList == null || schoolSubjectsDTOList.size() == 0) {
 			schoolSubjectsDTO.setErrorMessage("Subjects Not Available");
 		}
 		
@@ -185,5 +190,20 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 
 	public void setSession(Map<String, Object> session) {		
 		this.session = session;
+	}
+
+	/**
+	 * @return the schoolSubjectsDTOList
+	 */
+	public List<SchoolSubjectsDTO> getSchoolSubjectsDTOList() {
+		return schoolSubjectsDTOList;
+	}
+
+	/**
+	 * @param schoolSubjectsDTOList the schoolSubjectsDTOList to set
+	 */
+	public void setSchoolSubjectsDTOList(
+			List<SchoolSubjectsDTO> schoolSubjectsDTOList) {
+		this.schoolSubjectsDTOList = schoolSubjectsDTOList;
 	}
 }

@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Map;
 
 import com.myschool.dto.SchoolClassDTO;
+import com.myschool.dto.SchoolSubjectsDTO;
 
 public interface SchoolClassService {
 
-	SchoolClassDTO createClass(SchoolClassDTO schoolClassDTO, String userId);
+	SchoolClassDTO createClass(List<SchoolSubjectsDTO> schoolSubjectsDTOList, List<String> selectedSubjectList, 
+			SchoolClassDTO schoolClassDTO, String userId);
 
 	void setSelectedSubjectCodes(SchoolClassDTO schoolClassDTO, String selectedSubject);
 

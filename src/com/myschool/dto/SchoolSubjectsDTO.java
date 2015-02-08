@@ -8,22 +8,137 @@ import org.apache.commons.lang.StringUtils;
 import com.myschool.beans.SchoolSubjects;
 
 public class SchoolSubjectsDTO {
-
-	private String[] subjectName;
-	private String[] subjectCodes;
+	
+	private String subjectName;
+	private String subjectCode;
+	private String subjectStatus;
+	private String subjectInactiveReason;
+	private String subjectInactiveDateTime;
+	private String[] schoolSubjectNames;
+	private String[] schoolSubjectCodes;
 	private HashMap<String, String> subjectNameCodes;
 	private ArrayList<SchoolSubjects> existsSubjectList;
 	private String currentOperationStatus;
 	private String userId;
 	private String errorMessage;
 
-	public String[] getSubjectName() {
+	public String toDatabaseSubjectNameString() {
+		if(getSchoolSubjectNames() != null) {
+			String returnResult = "";
+			for (int i = 0; i < getSchoolSubjectNames().length; i++) {
+				returnResult = returnResult +"'"+getSchoolSubjectNames()[i].trim().toString()+"'";
+				if(i < getSchoolSubjectNames().length -1)
+					returnResult =  returnResult +",";
+			}
+			return returnResult;
+		} else {
+			return StringUtils.EMPTY;
+		}
+	}
+	
+	/**
+	 * @return the schoolSubjectNames
+	 */
+	public String[] getSchoolSubjectNames() {
+		return schoolSubjectNames;
+	}
+
+	/**
+	 * @return the subjectName
+	 */
+	public String getSubjectName() {
 		return subjectName;
 	}
 
-	public void setSubjectName(String[] subjectName) {
+	/**
+	 * @param subjectName the subjectName to set
+	 */
+	public void setSubjectName(String subjectName) {
 		this.subjectName = subjectName;
 	}
+
+	/**
+	 * @return the subjectCode
+	 */
+	public String getSubjectCode() {
+		return subjectCode;
+	}
+
+	/**
+	 * @return the subjectStatus
+	 */
+	public String getSubjectStatus() {
+		return subjectStatus;
+	}
+
+	/**
+	 * @param subjectStatus the subjectStatus to set
+	 */
+	public void setSubjectStatus(String subjectStatus) {
+		this.subjectStatus = subjectStatus;
+	}
+
+	/**
+	 * @return the subjectInactiveReason
+	 */
+	public String getSubjectInactiveReason() {
+		return subjectInactiveReason;
+	}
+
+	/**
+	 * @param subjectInactiveReason the subjectInactiveReason to set
+	 */
+	public void setSubjectInactiveReason(String subjectInactiveReason) {
+		this.subjectInactiveReason = subjectInactiveReason;
+	}
+
+	/**
+	 * @return the subjectInactiveDateTime
+	 */
+	public String getSubjectInactiveDateTime() {
+		return subjectInactiveDateTime;
+	}
+
+	/**
+	 * @param subjectInactiveDateTime the subjectInactiveDateTime to set
+	 */
+	public void setSubjectInactiveDateTime(String subjectInactiveDateTime) {
+		this.subjectInactiveDateTime = subjectInactiveDateTime;
+	}
+
+	/**
+	 * @param subjectCode the subjectCode to set
+	 */
+	public void setSubjectCode(String subjectCode) {
+		this.subjectCode = subjectCode;
+	}
+
+	/**
+	 * @param schoolSubjectNames the schoolSubjectNames to set
+	 */
+	public void setSchoolSubjectNames(String[] schoolSubjectNames) {
+		this.schoolSubjectNames = schoolSubjectNames;
+	}
+
+
+
+	/**
+	 * @return the schoolSubjectCodes
+	 */
+	public String[] getSchoolSubjectCodes() {
+		return schoolSubjectCodes;
+	}
+
+
+
+	/**
+	 * @param schoolSubjectCodes the schoolSubjectCodes to set
+	 */
+	public void setSchoolSubjectCodes(String[] schoolSubjectCodes) {
+		this.schoolSubjectCodes = schoolSubjectCodes;
+	}
+
+
 
 	public ArrayList<SchoolSubjects> getExistsSubjectList() {
 		return existsSubjectList;
@@ -32,21 +147,7 @@ public class SchoolSubjectsDTO {
 	public void setExistsSubjectList(ArrayList<SchoolSubjects> existsSubjectList) {
 		this.existsSubjectList = existsSubjectList;
 	}
-
-	public String toDatabaseSubjectNameString() {
-		if(getSubjectName() != null) {
-			String returnResult = "";
-			for (int i = 0; i < getSubjectName().length; i++) {
-				returnResult = returnResult +"'"+getSubjectName()[i].trim().toString()+"'";
-				if(i < getSubjectName().length -1)
-					returnResult =  returnResult +",";
-			}
-			return returnResult;
-		} else {
-			return StringUtils.EMPTY;
-		}
-	}
-
+	
 	public String getUserId() {
 		return userId;
 	}
@@ -61,14 +162,6 @@ public class SchoolSubjectsDTO {
 
 	public void setSubjectNameCodes(HashMap<String, String> subjectNameCodes) {
 		this.subjectNameCodes = subjectNameCodes;
-	}
-
-	public String[] getSubjectCodes() {
-		return subjectCodes;
-	}
-
-	public void setSubjectCodes(String[] subjectCodes) {
-		this.subjectCodes = subjectCodes;
 	}
 
 	public String getCurrentOperationStatus() {

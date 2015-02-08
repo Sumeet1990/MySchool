@@ -3,6 +3,7 @@
  */
 package com.myschool.service;
 
+import java.util.List;
 import java.util.Map;
 
 import com.myschool.dao.SchoolSubjectDAO;
@@ -13,10 +14,23 @@ public class SchoolSubjectsServiceImpl implements SchoolSubjectsService {
 	
 	private SchoolSubjectDAO schoolSubjectDAO;
 	
-	public SchoolSubjectsDTO getAllAvailableSubjects() {
+	/**
+	 * 
+	 */
+	public List<SchoolSubjectsDTO> getAllAvailableSubjects() {
 		 return getSchoolSubjectDAO().getAllAvailableSubjects();
 	}
 	
+	/**
+	 * 
+	 */
+	public List<SchoolSubjectsDTO> getAllActiveAvailableSubjects() {
+		 return getSchoolSubjectDAO().getAllActiveAvailableSubjects();
+	}
+	
+	/**
+	 * 
+	 */
 	public boolean createSubjects(SchoolSubjectsDTO schoolSubjectsDTO) {
 		boolean subjectsExists = getSchoolSubjectDAO().getAvailableSubjects(schoolSubjectsDTO);
 		if(subjectsExists) {
@@ -24,10 +38,22 @@ public class SchoolSubjectsServiceImpl implements SchoolSubjectsService {
 		} else {
 			 getSchoolSubjectDAO().createSubjects(schoolSubjectsDTO);
 			 SchoolSubjectsDTO schoolSubjectsDTOTemp = new SchoolSubjectsDTO();
-			 schoolSubjectsDTOTemp.setSubjectName(schoolSubjectsDTO.getSubjectName());
+			 schoolSubjectsDTOTemp.setSchoolSubjectNames(schoolSubjectsDTO.getSchoolSubjectNames());
 			 getSchoolSubjectDAO().getAvailableSubjects(schoolSubjectsDTOTemp);
 			 schoolSubjectsDTO.setSubjectNameCodes(schoolSubjectsDTOTemp.getSubjectNameCodes());
 			 return true;
+		}
+	}
+	
+	/**
+	 * 
+	 */
+	public boolean updateSubjects(SchoolSubjectsDTO schoolSubjectsDTO) {
+		boolean subjectsExists = getSchoolSubjectDAO().getAvailableSubjects(schoolSubjectsDTO);
+		if(subjectsExists) {
+			return false;
+		} else	{
+			return true;
 		}
 	}
 	
@@ -37,29 +63,5 @@ public class SchoolSubjectsServiceImpl implements SchoolSubjectsService {
 
 	public void setSchoolSubjectDAO(SchoolSubjectDAO schoolSubjectDAO) {
 		this.schoolSubjectDAO = schoolSubjectDAO;
-	}
-	@Override
-	public boolean updateSubjects(SchoolSubjectsDTO schoolSubjectsDTO) {
-		boolean subjectsExists = getSchoolSubjectDAO().getAvailableSubjects(schoolSubjectsDTO);
-		if(subjectsExists)
-		{
-			return false;
-		}else
-		{
-		boolean status = getSchoolSubjectDAO().updateSubjects(schoolSubjectsDTO);
-			return true;
-		}
-	}
-
-	@Override
-	public void getAllTheSubjectList(SchoolClassDTO schoolClassDTO) {
-		SchoolSubjectsDTO dto = getAllAvailableSubjects();
-		schoolClassDTO.setAllSubjectMap(dto.getSubjectNameCodes());
-		schoolClassDTO.setAllSubjectList(dto.getExistsSubjectList());
-	}
-
-	@Override
-	public Map<String, String> getAllSubjectsMap() {
-		return getSchoolSubjectDAO().getAllAvailableSubjectsMap();
 	}
 }

@@ -7,220 +7,241 @@ import com.myschool.beans.SchoolClass;
 import com.myschool.beans.SchoolSubjects;
 
 public class SchoolClassDTO {
+	
+	private String schoolClassId;
+	private String schoolClassName;
+	private String minAgeCriteriaInMonths;
+	private String maxAgeCriteriaInMonths;
+	private String periodsPerDay;
+	private String periodDurationInMin;
+	private String teacherPeriodsPerDay;
+	private String classMaxStrength;
+	private String classStatus;
+	
 	private Map<String,String> allSubjectMap;
-	private List<SchoolSubjects>  allSubjectList;
+	private List<SchoolSubjects> allSubjectList;
 	private List<SchoolClass>  allSchoolClassList;
 	Map<Integer,String> schoolClassMap;
 	private String selectedSubjectCodes;
-	private String schoolClassName;
-	private String minAgeCriteriaInMin;
-	private String maxAgeCriteriaInMin;
-	private String teacherPeriodsPerDay;
-	private String periodMinutesDurationInMin;
-	private String maxStrengthOfClass;
-	private String statusClass;
-	private String schoolClassId;
+	private String calssSubjects;
 	private String errorMessage;
 	private boolean classOperationStatus;
-	private String periodsPerDay;
 	private String classCurrentOperation;
-	private String classStatus;
-	
+	/**
+	 * @return the schoolClassId
+	 */
 	public String getSchoolClassId() {
 		return schoolClassId;
 	}
-	
+	/**
+	 * @param schoolClassId the schoolClassId to set
+	 */
 	public void setSchoolClassId(String schoolClassId) {
 		this.schoolClassId = schoolClassId;
 	}
-	
-	public boolean isClassOperationStatus() {
-		return classOperationStatus;
-	}
-	
-	public void setClassOperationStatus(boolean classOperationStatus) {
-		this.classOperationStatus = classOperationStatus;
-	}
-	
+	/**
+	 * @return the schoolClassName
+	 */
 	public String getSchoolClassName() {
 		return schoolClassName;
 	}
-	
+	/**
+	 * @param schoolClassName the schoolClassName to set
+	 */
 	public void setSchoolClassName(String schoolClassName) {
 		this.schoolClassName = schoolClassName;
 	}
-	
 	/**
-	 * @return the teacherPeriodsPerDay
+	 * @return the minAgeCriteriaInMonths
 	 */
-	public String getTeacherPeriodsPerDay() {
-		return teacherPeriodsPerDay;
+	public String getMinAgeCriteriaInMonths() {
+		return minAgeCriteriaInMonths;
 	}
-
 	/**
-	 * @param teacherPeriodsPerDay the teacherPeriodsPerDay to set
+	 * @param minAgeCriteriaInMonths the minAgeCriteriaInMonths to set
 	 */
-	public void setTeacherPeriodsPerDay(String teacherPeriodsPerDay) {
-		this.teacherPeriodsPerDay = teacherPeriodsPerDay;
+	public void setMinAgeCriteriaInMonths(String minAgeCriteriaInMonths) {
+		this.minAgeCriteriaInMonths = minAgeCriteriaInMonths;
 	}
-
 	/**
-	 * @return the minAgeCriteriaInMin
+	 * @return the maxAgeCriteriaInMonths
 	 */
-	public String getMinAgeCriteriaInMin() {
-		return minAgeCriteriaInMin;
+	public String getMaxAgeCriteriaInMonths() {
+		return maxAgeCriteriaInMonths;
 	}
-
 	/**
-	 * @param minAgeCriteriaInMin the minAgeCriteriaInMin to set
+	 * @param maxAgeCriteriaInMonths the maxAgeCriteriaInMonths to set
 	 */
-	public void setMinAgeCriteriaInMin(String minAgeCriteriaInMin) {
-		this.minAgeCriteriaInMin = minAgeCriteriaInMin;
+	public void setMaxAgeCriteriaInMonths(String maxAgeCriteriaInMonths) {
+		this.maxAgeCriteriaInMonths = maxAgeCriteriaInMonths;
 	}
-
-	/**
-	 * @return the maxAgeCriteriaInMin
-	 */
-	public String getMaxAgeCriteriaInMin() {
-		return maxAgeCriteriaInMin;
-	}
-
-	/**
-	 * @param maxAgeCriteriaInMin the maxAgeCriteriaInMin to set
-	 */
-	public void setMaxAgeCriteriaInMin(String maxAgeCriteriaInMin) {
-		this.maxAgeCriteriaInMin = maxAgeCriteriaInMin;
-	}
-
-	/**
-	 * @return the periodMinutesDurationInMin
-	 */
-	public String getPeriodMinutesDurationInMin() {
-		return periodMinutesDurationInMin;
-	}
-
-	/**
-	 * @param periodMinutesDurationInMin the periodMinutesDurationInMin to set
-	 */
-	public void setPeriodMinutesDurationInMin(String periodMinutesDurationInMin) {
-		this.periodMinutesDurationInMin = periodMinutesDurationInMin;
-	}
-
-	public String getMaxStrengthOfClass() {
-		return maxStrengthOfClass;
-	}
-	
-	public void setMaxStrengthOfClass(String maxStrengthOfClass) {
-		this.maxStrengthOfClass = maxStrengthOfClass;
-	}
-	
-	public String getStatusClass() {
-		return statusClass;
-	}
-	
-	public void setStatusClass(String statusClass) {
-		this.statusClass = statusClass;
-	}
-	
 	/**
 	 * @return the periodsPerDay
 	 */
 	public String getPeriodsPerDay() {
 		return periodsPerDay;
 	}
-
 	/**
 	 * @param periodsPerDay the periodsPerDay to set
 	 */
 	public void setPeriodsPerDay(String periodsPerDay) {
 		this.periodsPerDay = periodsPerDay;
 	}
-
-	public Map<String,String> getAllSubjectMap() {
-		return allSubjectMap;
-	}
-	
-	public void setAllSubjectMap(Map<String,String> allSubjectMap) {
-		this.allSubjectMap = allSubjectMap;
-	}
-	
-	public List<SchoolSubjects> getAllSubjectList() {
-		return allSubjectList;
-	}
-	
-	public void setAllSubjectList(List<SchoolSubjects> allSubjectList) {
-		this.allSubjectList = allSubjectList;
-	}
-	
-	public String getSelectedSubjectCodes() {
-		return selectedSubjectCodes;
-	}
-	
-	public void setSelectedSubjectCodes(String selectedSubjectCodes) {
-		this.selectedSubjectCodes = selectedSubjectCodes;
-	}
-	
-	public String getErrorMessage() {
-		return errorMessage;
-	}
-	
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	/**
-	 * @return the classCurrentOperation
+	 * @return the periodDurationInMin
 	 */
-	public String getClassCurrentOperation() {
-		return classCurrentOperation;
+	public String getPeriodDurationInMin() {
+		return periodDurationInMin;
 	}
-
 	/**
-	 * @param classCurrentOperation the classCurrentOperation to set
+	 * @param periodDurationInMin the periodDurationInMin to set
 	 */
-	public void setClassCurrentOperation(String classCurrentOperation) {
-		this.classCurrentOperation = classCurrentOperation;
+	public void setPeriodDurationInMin(String periodDurationInMin) {
+		this.periodDurationInMin = periodDurationInMin;
 	}
-
 	/**
-	 * @return the allSchoolClassList
+	 * @return the teacherPeriodsPerDay
 	 */
-	public List<SchoolClass> getAllSchoolClassList() {
-		return allSchoolClassList;
+	public String getTeacherPeriodsPerDay() {
+		return teacherPeriodsPerDay;
 	}
-
 	/**
-	 * @param allSchoolClassList the allSchoolClassList to set
+	 * @param teacherPeriodsPerDay the teacherPeriodsPerDay to set
 	 */
-	public void setAllSchoolClassList(List<SchoolClass> allSchoolClassList) {
-		this.allSchoolClassList = allSchoolClassList;
+	public void setTeacherPeriodsPerDay(String teacherPeriodsPerDay) {
+		this.teacherPeriodsPerDay = teacherPeriodsPerDay;
 	}
-
 	/**
-	 * @return the schoolClassMap
+	 * @return the classMaxStrength
 	 */
-	public Map<Integer, String> getSchoolClassMap() {
-		return schoolClassMap;
+	public String getClassMaxStrength() {
+		return classMaxStrength;
 	}
-
 	/**
-	 * @param schoolClassMap the schoolClassMap to set
+	 * @param classMaxStrength the classMaxStrength to set
 	 */
-	public void setSchoolClassMap(Map<Integer, String> schoolClassMap) {
-		this.schoolClassMap = schoolClassMap;
+	public void setClassMaxStrength(String classMaxStrength) {
+		this.classMaxStrength = classMaxStrength;
 	}
-
 	/**
 	 * @return the classStatus
 	 */
 	public String getClassStatus() {
 		return classStatus;
 	}
-
 	/**
 	 * @param classStatus the classStatus to set
 	 */
 	public void setClassStatus(String classStatus) {
 		this.classStatus = classStatus;
+	}
+	/**
+	 * @return the allSubjectMap
+	 */
+	public Map<String, String> getAllSubjectMap() {
+		return allSubjectMap;
+	}
+	/**
+	 * @param allSubjectMap the allSubjectMap to set
+	 */
+	public void setAllSubjectMap(Map<String, String> allSubjectMap) {
+		this.allSubjectMap = allSubjectMap;
+	}
+	/**
+	 * @return the allSubjectList
+	 */
+	public List<SchoolSubjects> getAllSubjectList() {
+		return allSubjectList;
+	}
+	/**
+	 * @param allSubjectList the allSubjectList to set
+	 */
+	public void setAllSubjectList(List<SchoolSubjects> allSubjectList) {
+		this.allSubjectList = allSubjectList;
+	}
+	/**
+	 * @return the allSchoolClassList
+	 */
+	public List<SchoolClass> getAllSchoolClassList() {
+		return allSchoolClassList;
+	}
+	/**
+	 * @param allSchoolClassList the allSchoolClassList to set
+	 */
+	public void setAllSchoolClassList(List<SchoolClass> allSchoolClassList) {
+		this.allSchoolClassList = allSchoolClassList;
+	}
+	/**
+	 * @return the schoolClassMap
+	 */
+	public Map<Integer, String> getSchoolClassMap() {
+		return schoolClassMap;
+	}
+	/**
+	 * @param schoolClassMap the schoolClassMap to set
+	 */
+	public void setSchoolClassMap(Map<Integer, String> schoolClassMap) {
+		this.schoolClassMap = schoolClassMap;
+	}
+	/**
+	 * @return the selectedSubjectCodes
+	 */
+	public String getSelectedSubjectCodes() {
+		return selectedSubjectCodes;
+	}
+	/**
+	 * @param selectedSubjectCodes the selectedSubjectCodes to set
+	 */
+	public void setSelectedSubjectCodes(String selectedSubjectCodes) {
+		this.selectedSubjectCodes = selectedSubjectCodes;
+	}
+	
+	/**
+	 * @return the calssSubjects
+	 */
+	public String getCalssSubjects() {
+		return calssSubjects;
+	}
+	/**
+	 * @param calssSubjects the calssSubjects to set
+	 */
+	public void setCalssSubjects(String calssSubjects) {
+		this.calssSubjects = calssSubjects;
+	}
+	/**
+	 * @return the errorMessage
+	 */
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+	/**
+	 * @param errorMessage the errorMessage to set
+	 */
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+	/**
+	 * @return the classOperationStatus
+	 */
+	public boolean isClassOperationStatus() {
+		return classOperationStatus;
+	}
+	/**
+	 * @param classOperationStatus the classOperationStatus to set
+	 */
+	public void setClassOperationStatus(boolean classOperationStatus) {
+		this.classOperationStatus = classOperationStatus;
+	}
+	/**
+	 * @return the classCurrentOperation
+	 */
+	public String getClassCurrentOperation() {
+		return classCurrentOperation;
+	}
+	/**
+	 * @param classCurrentOperation the classCurrentOperation to set
+	 */
+	public void setClassCurrentOperation(String classCurrentOperation) {
+		this.classCurrentOperation = classCurrentOperation;
 	}
 }

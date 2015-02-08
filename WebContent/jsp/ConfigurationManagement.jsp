@@ -28,42 +28,42 @@
 				<s:if test="schoolAccess.configurationManagement.cmAdministrator.cmAdministratorAccess">
 					<li id="menu-item-417" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-417">
 						<s:a href="#" id="sTop" cssClass="subNavBtn" onclick="goToHeight(this)">
-							<s:property value="getText('cm.administrator')" />&nbsp;|&nbsp;
+							<s:property value="getText('cm.administrator')"/>&nbsp;|&nbsp;
 						</s:a>
 					</li>
 				</s:if>
 				<s:if test="schoolAccess.configurationManagement.cmStaff.cmStaffAccess">
 					<li id="menu-item-418" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-418">
 						<s:a href="#" id="s1" onclick="goToHeight(this)" cssClass="subNavBtn">
-							<s:property value="getText('cm.staff')" />&nbsp;|&nbsp;
+							<s:property value="getText('cm.staff')"/>&nbsp;|&nbsp;
 						</s:a>
 					</li>
 				</s:if>
 				<s:if test="schoolAccess.configurationManagement.cmCalendar.cmCalendarAccess">
 					<li id="menu-item-419" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-419">
 						<s:a href="#" id="s2" onclick="goToHeight(this)" cssClass="subNavBtn">
-							<s:property value="getText('cm.calendar')" />&nbsp;|&nbsp;
+							<s:property value="getText('cm.calendar')"/>&nbsp;|&nbsp;
 						</s:a>
 					</li>
 				</s:if>
 				<s:if test="schoolAccess.configurationManagement.cmTransport.cmTransportAccess">
 					<li id="menu-item-420" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-420">
 						<s:a href="#" id="s3" onclick="goToHeight(this)" cssClass="subNavBtn">
-							<s:property value="getText('cm.transport')" />&nbsp;|&nbsp;
+							<s:property value="getText('cm.transport')"/>&nbsp;|&nbsp;
 						</s:a>
 					</li>
 				</s:if>
 				<s:if test="schoolAccess.configurationManagement.cmFinance.cmFinanceAccess">
 					<li id="menu-item-428" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-428">
 						<s:a href="#" id="s4" onclick="goToHeight(this)" cssClass="subNavBtn">
-							<s:property value="getText('cm.finance')" />&nbsp;|&nbsp;
+							<s:property value="getText('cm.finance')"/>&nbsp;|&nbsp;
 						</s:a>
 					</li>
 				</s:if>
 				<s:if test="schoolAccess.configurationManagement.cmLibrary.cmLibraryAccess">
 					<li id="menu-item-421" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-421">
 						<s:a href="#" id="s5" onclick="goToHeight(this)" cssClass="subNavBtn end">
-							<s:property value="getText('cm.library')" />&nbsp;|&nbsp;
+							<s:property value="getText('cm.library')"/>&nbsp;|&nbsp;
 						</s:a>
 					</li>
 				</s:if>
@@ -74,29 +74,29 @@
 			<s:if test="schoolAccess.configurationManagement.cmAdministrator.cmAdministratorAccess">
 				<div class="sTop" style="display: none">
 					<div class="inner">
-						<h2 align="center"><s:property value="getText('cm.administrator')" /></h2>
+						<h2 align="center"><s:property value="getText('cm.administrator')"/></h2>
 						<div id="slide">
 							<br/>
 							<div style="clear: both"></div>
 							<s:if test="schoolAccess.configurationManagement.cmAdministrator.cmUserRole">
 								<div class="column">
 									<div class='button userRole'>
-										<s:property value="getText('cm.userRoleAccess')" />
+										<s:property value="getText('cm.userRoleAccess')"/>
 									</div>
 									<div style="" class="userRole_grad slider">
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmUserRole.create">
 											<s:a action="userRoleInitializeAction">
-												<s:property value="getText('cm.create')" />
+												<s:property value="getText('cm.create')"/>
 											</s:a>
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmUserRole.modify">
-											 <a href="#"><s:property value="getText('cm.modify')" /></a> 
+											 <a href="#"><s:property value="getText('cm.modify')"/></a> 
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmUserRole.delete">
-											 <a href="#"><s:property value="getText('cm.delete')" /></a> 
+											 <a href="#"><s:property value="getText('cm.delete')"/></a> 
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmUserRole.view">
-											 <a href="#"><s:property value="getText('cm.view')" /></a>
+											 <a href="#"><s:property value="getText('cm.view')"/></a>
 										</s:if>
 									</div>
 								</div>
@@ -109,22 +109,22 @@
 									<div style="" class="subject_grad slider">
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmSubjects.create">
 											<s:a action="schoolSubjectCreateloadAction">
-												<s:property value="getText('cm.create')" />
+												<s:property value="getText('cm.create')"/>
 											</s:a>
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmSubjects.modify">
 											 <s:a action="schoolSubjectModifyloadAction">
-												<s:property value="getText('cm.modify')" />
+												<s:property value="getText('cm.modify')"/>
 											</s:a> 
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmSubjects.delete">
 											 <s:a action="schoolSubjectDeleteloadAction">
-												<s:property value="getText('cm.delete')" />
+												<s:property value="getText('cm.delete')"/>
 											</s:a>
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmSubjects.view">
 											 <s:a action="schoolSubjectViewAction">
-												<s:property value="getText('cm.view')" />
+												<s:property value="getText('cm.view')"/>
 											</s:a>
 										</s:if>
 									</div>
@@ -133,23 +133,23 @@
 							<s:if test="schoolAccess.configurationManagement.cmAdministrator.cmClass">
 								<div class="column">
 									<div class='button schoolClass'>
-										<s:property value="getText('cm.class')" />
+										<s:property value="getText('cm.class')"/>
 									</div>
 									<div style="" class="schoolClass_grad slider">
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmClass.create">
 											<s:a action="schoolClassCreateloadAction">
-												<s:property value="getText('cm.create')" />
+												<s:property value="getText('cm.create')"/>
 											</s:a>
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmClass.modify">
-											<a href="#"><s:property value="getText('cm.modify')" /></a> 
+											<a href="#"><s:property value="getText('cm.modify')"/></a> 
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmClass.delete">
-											 <a href="#"><s:property value="getText('cm.delete')" /></a> 
+											 <a href="#"><s:property value="getText('cm.delete')"/></a> 
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmClass.view">
 											<s:a action="schoolClassViewAction">
-												<s:property value="getText('cm.view')" />
+												<s:property value="getText('cm.view')"/>
 											</s:a>
 										</s:if>
 									</div>
@@ -162,16 +162,16 @@
 									</div>
 									<div style="" class="classSection_grad slider">
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmSection.create">
-											<s:a action="classSectionInitAction"><s:property value="getText('cm.create')" /></s:a>
+											<s:a action="classSectionInitAction"><s:property value="getText('cm.create')"/></s:a>
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmSection.modify">
-											 <a href="#"><s:property value="getText('cm.modify')" /></a> 
+											 <a href="#"><s:property value="getText('cm.modify')"/></a> 
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmSection.delete">
-											 <a href="#"><s:property value="getText('cm.delete')" /></a> 
+											 <a href="#"><s:property value="getText('cm.delete')"/></a> 
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmSection.view">
-											 <a href="#"><s:property value="getText('cm.view')" /></a>
+											 <a href="#"><s:property value="getText('cm.view')"/></a>
 										</s:if>
 									</div>
 								</div>
@@ -184,29 +184,29 @@
 			<s:if test="schoolAccess.configurationManagement.cmStaff.cmStaffAccess">
 				<div class="s1" style="display: none">
 					<div class="inner">
-						<h2 align="center"><s:property value="getText('cm.staff')" /></h2>
+						<h2 align="center"><s:property value="getText('cm.staff')"/></h2>
 						<div id="slide">
 							<br/>
 							<div style="clear: both"></div>
 							<s:if test="schoolAccess.configurationManagement.cmStaff.cmAppointmentType">
 							<div class="column">
 								<div class='button appointmentType'>
-									<s:property value="getText('cm.appointmentType')" />
+									<s:property value="getText('cm.appointmentType')"/>
 								</div>
 								<div style="" class="appointmentType_grad slider">
 									<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmStaff.cmAppointmentType.create">
 										<s:a action="staffAppointmentInitlizeAction">
-											<s:property value="getText('cm.create')" />
+											<s:property value="getText('cm.create')"/>
 										</s:a>
 									</s:if>
 									<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmStaff.cmAppointmentType.modify">
-										 <a href="#"><s:property value="getText('cm.modify')" /></a> 
+										 <a href="#"><s:property value="getText('cm.modify')"/></a> 
 									</s:if>
 									<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmStaff.cmAppointmentType.delete">
-										 <a href="#"><s:property value="getText('cm.delete')" /></a> 
+										 <a href="#"><s:property value="getText('cm.delete')"/></a> 
 									</s:if>
 									<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmStaff.cmAppointmentType.view">
-										 <a href="#"><s:property value="getText('cm.view')" /></a>
+										 <a href="#"><s:property value="getText('cm.view')"/></a>
 									</s:if>
 								</div>
 							</div>
@@ -214,22 +214,22 @@
 							<s:if test="schoolAccess.configurationManagement.cmStaff.cmLeaveStructure">
 								<div class="column">
 									<div class='button leaveSructure'>
-										<s:property value="getText('cm.leaveStructure')" />
+										<s:property value="getText('cm.leaveStructure')"/>
 									</div>
 									<div style="" class="leaveSructure_grad slider">
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmStaff.cmLeaveStructure.create">
 											<s:a action="staffLeavesStructureCreateAction">
-												<s:property value="getText('cm.create')" />
+												<s:property value="getText('cm.create')"/>
 											</s:a>
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmStaff.cmLeaveStructure.modify">
-											 <a href="#"><s:property value="getText('cm.modify')" /></a> 
+											 <a href="#"><s:property value="getText('cm.modify')"/></a> 
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmStaff.cmLeaveStructure.delete">
-											 <a href="#"><s:property value="getText('cm.delete')" /></a> 
+											 <a href="#"><s:property value="getText('cm.delete')"/></a> 
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmStaff.cmLeaveStructure.view">
-											 <a href="#"><s:property value="getText('cm.view')" /></a>
+											 <a href="#"><s:property value="getText('cm.view')"/></a>
 										</s:if>
 									</div>
 								</div>
@@ -241,29 +241,29 @@
 			<s:if test="schoolAccess.configurationManagement.cmCalendar.cmCalendarAccess">
 				<div class="s2" style="display: none">
 					<div class="inner">
-						<h2 align="center"><s:property value="getText('cm.calendar')" /></h2>
+						<h2 align="center"><s:property value="getText('cm.calendar')"/></h2>
 						<div id="slide">
 							<br/>
 							<div style="clear: both"></div>
 							<s:if test="schoolAccess.configurationManagement.cmCalendar.cmSchoolCalendar">
 								<div class="column">
 									<div class='button schoolCalendar'>
-										<s:property value="getText('cm.schoolCalendar')" />
+										<s:property value="getText('cm.schoolCalendar')"/>
 									</div>
 									<div style="" class="schoolCalendar_grad slider">
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmCalendar.cmSchoolCalendar.timing">
 											<s:a action="schoolTimingCreateAction">
-												<s:property value="getText('cm.timing')" />
+												<s:property value="getText('cm.timing')"/>
 											</s:a>
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmCalendar.cmSchoolCalendar.holidays">
 											<s:a action="schoolGeneralHolidaysCreateAction">
-												<s:property value="getText('cm.holidays')" />
+												<s:property value="getText('cm.holidays')"/>
 											</s:a>
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmCalendar.cmSchoolCalendar.events">
 											<s:a action="schoolGeneralEventsCreateAction">
-												<s:property value="getText('cm.events')" />
+												<s:property value="getText('cm.events')"/>
 											</s:a>
 										</s:if>
 									</div>
@@ -272,20 +272,20 @@
 								<s:if test="schoolAccess.configurationManagement.cmCalendar.cmClassCalendar">
 								<div class="column">
 									<div class='button classCalendar'>
-										<s:property value="getText('cm.classCalendar')" />
+										<s:property value="getText('cm.classCalendar')"/>
 									</div>
 									<div style="" class="classCalendar_grad slider">
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmCalendar.cmClassCalendar.timeTable">
-											<a href="#"><s:property value="getText('cm.timeTable')" /></a> 
+											<a href="#"><s:property value="getText('cm.timeTable')"/></a> 
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmCalendar.cmClassCalendar.holidays">
 											<s:a action="classHolidaysCreateAction">
-												<s:property value="getText('cm.holidays')" />
+												<s:property value="getText('cm.holidays')"/>
 											</s:a>
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmCalendar.cmClassCalendar.events">
 											<s:a action="classEventsCreateAction">
-												<s:property value="getText('cm.events')" />
+												<s:property value="getText('cm.events')"/>
 											</s:a>
 										</s:if>
 									</div>
@@ -298,29 +298,29 @@
 			<s:if test="schoolAccess.configurationManagement.cmTransport.cmTransportAccess">
 				<div class="s3" style="display: none">
 					<div class="inner">
-						<h2 align="center"><s:property value="getText('cm.transport')" /></h2>
+						<h2 align="center"><s:property value="getText('cm.transport')"/></h2>
 						<div id="slide">
 							<br/>
 							<div style="clear: both"></div>
 							<s:if test="schoolAccess.configurationManagement.cmTransport.cmDriver">
 							<div class="column">
 								<div class='button driver'>
-									<s:property value="getText('cm.driver')" />
+									<s:property value="getText('cm.driver')"/>
 								</div>
 								<div style="" class="driver_grad slider">
 									<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmTransport.cmDriver.create">
 										<s:a action="driverCreateAction">
-											<s:property value="getText('cm.create')" />
+											<s:property value="getText('cm.create')"/>
 										</s:a> 
 									</s:if>
 									<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmTransport.cmDriver.modify">
-										 <a href="#"><s:property value="getText('cm.modify')" /></a> 
+										 <a href="#"><s:property value="getText('cm.modify')"/></a> 
 									</s:if>
 									<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmTransport.cmDriver.delete">
-										 <a href="#"><s:property value="getText('cm.delete')" /></a> 
+										 <a href="#"><s:property value="getText('cm.delete')"/></a> 
 									</s:if>
 									<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmTransport.cmDriver.view">
-										 <a href="#"><s:property value="getText('cm.view')" /></a>
+										 <a href="#"><s:property value="getText('cm.view')"/></a>
 									</s:if>
 								</div>
 							</div>

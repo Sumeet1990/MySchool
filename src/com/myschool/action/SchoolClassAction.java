@@ -9,6 +9,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.myschool.beans.SchoolSubjects;
 import com.myschool.dto.SchoolClassDTO;
+import com.myschool.dto.SchoolSubjectsDTO;
 import com.myschool.service.SchoolClassService;
 import com.myschool.service.SchoolSubjectsService;
 import com.myschool.util.CommonConstants;
@@ -33,6 +34,7 @@ public class SchoolClassAction extends ActionSupport  implements SessionAware {
 	
 	private SchoolClassDTO schoolClassDTO;
 	private java.util.Map<String, Object> session;
+	List<SchoolSubjectsDTO> schoolSubjectsDTOList;
 	
 	/**
 	 * 
@@ -44,19 +46,13 @@ public class SchoolClassAction extends ActionSupport  implements SessionAware {
 		schoolClassDTO = new SchoolClassDTO();
 		selectedSubjectList = new ArrayList<String>();
 		
-		classStatusBean = new ArrayList<String>();
-		classStatusBean.add("ACTIVE");
-		classStatusBean.add("INACTIVE");
-		
 		schoolClassDTO.setClassCurrentOperation(CommonConstants.CLASS_CREATE);
 		
-		getSchoolSubjectsService().getAllTheSubjectList(schoolClassDTO);
-		List<SchoolSubjects> allSchoolSubjectsList = schoolClassDTO.getAllSubjectList();
-		
-		availableSubjectList = new ArrayList<String>();
-		if(allSchoolSubjectsList != null) {
-			for(SchoolSubjects schoolSubjects : allSchoolSubjectsList) {
-				availableSubjectList.add(schoolSubjects.getSubjectName());
+		schoolSubjectsDTOList = getSchoolSubjectsService().getAllActiveAvailableSubjects();
+		if(schoolSubjectsDTOList != null) {
+			availableSubjectList = new ArrayList<String>();
+			for(SchoolSubjectsDTO schoolSubjectsDTO : schoolSubjectsDTOList) {
+				availableSubjectList.add(schoolSubjectsDTO.getSubjectName());
 			}
 		} 
 		
@@ -72,8 +68,7 @@ public class SchoolClassAction extends ActionSupport  implements SessionAware {
 	public String performCreate() {
 		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
 		
-		schoolClassService.setSelectedSubjectCodes(schoolClassDTO, selectedSubject);
-		SchoolClassDTO returnSchoolClassDTO = getSchoolClassService().createClass(schoolClassDTO, sessionUtils.getUserId());
+		SchoolClassDTO returnSchoolClassDTO = getSchoolClassService().createClass(schoolSubjectsDTOList, selectedSubjectList, schoolClassDTO, sessionUtils.getUserId());
 		
 		if(StringUtils.equalsIgnoreCase(returnSchoolClassDTO.getErrorMessage(), 
 				CommonConstants.CLASS_SUCCESSFULLY_CREATED)) {
@@ -192,5 +187,20 @@ public class SchoolClassAction extends ActionSupport  implements SessionAware {
 	 */
 	public void setAvailableClassList(List<SchoolClassDTO> availableClassList) {
 		this.availableClassList = availableClassList;
+	}
+
+	/**
+	 * @return the schoolSubjectsDTOList
+	 */
+	public List<SchoolSubjectsDTO> getSchoolSubjectsDTOList() {
+		return schoolSubjectsDTOList;
+	}
+
+	/**
+	 * @param schoolSubjectsDTOList the schoolSubjectsDTOList to set
+	 */
+	public void setSchoolSubjectsDTOList(
+			List<SchoolSubjectsDTO> schoolSubjectsDTOList) {
+		this.schoolSubjectsDTOList = schoolSubjectsDTOList;
 	}
 }
