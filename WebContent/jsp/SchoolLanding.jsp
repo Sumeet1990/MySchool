@@ -5,8 +5,12 @@
 		<title></title>
 		<meta charset="UTF-8" />
 		<link rel='stylesheet' id='magazine-pro-theme-css' href='css/common.css' type='text/css' media='all' />
-
-		<style type="text/css" media="screen">
+		<style>
+			* { margin: 0; padding: 0; } 
+			 body {background: #eee;  font-family: Arial;  font-size: 16px;} 
+			 a { text-decoration: none;  }  
+		</style>
+		<%-- <style type="text/css" media="screen">
 			.simple-social-icons ul li a,.simple-social-icons ul li a:hover {
 				background-color: #fff !important;
 				border-radius: 0px;
@@ -19,7 +23,7 @@
 				background-color: #fff !important;
 				color: #15ad9f !important;
 			}
-		</style>
+		</style> --%>
 	</head>
 	<body>
 		<s:set value="%{display}" name="displayValue" />

@@ -19,15 +19,16 @@
 		<s:head/>
 	</head>
 	<body>
-		<s:if test="schoolClassDTO.ClassCurrentOperation == 'classCreate'">
+		<s:if test="schoolClassDTO.currentOperation == 'create'">
 			<div class="form-style-10">
-				<h1><s:property value="getText('class.createClass')"/></span></h1>
+				<h1>Class</h1>
 				<br/>
-				<s:if test="schoolClassDTO.errorMessage != null" >
-					<h3 style="color:red"><s:property value="schoolClassDTO.errorMessage"/></h3>
+				<s:if test="schoolClassDTO.displayMessage != null" >
+					<h3 style="color:red"><s:property value="schoolClassDTO.displayMessage"/></h3>
 				</s:if>
-				<s:form action="" method="post" id="elements-form" focusElement="cName">
-					<div class="section"><span></span>Enter Class Details</div>
+				<br/>
+				<s:form action="" method="post" focusElement="cName">
+					<div class="section"><span></span>Create Class</div>
 					<br/><span class="required">* </span>are Mandatory fields<br/><br/>
 	                <s:textfield name="schoolClassDTO.schoolClassName" id="cName" key="class.className" style="text-transform:uppercase;" required="true"/>
 	               	
@@ -70,38 +71,42 @@
 				</s:form>
 			</div>
 		</s:if>
-		<s:if test="schoolClassDTO.ClassCurrentOperation == 'classView'">
-		<div class="form-style-10" style="width:1050px">
-			<h4><s:property value="getText('calss.availableClasses')"/></h4>
-			<table border='1' width="100%">
-				<tr>
-				    <td style="text-align:center" width="5%">So No</td>
-				    <td style="text-align:center" width="10%">Class Name</td>
-				    <td style="text-align:center" width="10%">Min Age Criteria</td>
-				    <td style="text-align:center" width="10%">Max Age Criteria</td>
-				    <td style="text-align:center" width="10%">Periods Per Day</td>
-				    <td style="text-align:center" width="10%">Period Duration in Min</td>
-				    <td style="text-align:center" width="10%">Teacher Periods Per Day</td>
-				    <td style="text-align:center" width="10%">Class Max Strength</td>
-				    <td style="text-align:center" width="15%">Class Subjects</td>
-				    <td style="text-align:center" width="10%">Class Status</td>
-				</tr>
-				
-				<s:iterator value="availableClassList" status="rowstatus">
-					<tr class="<s:if test="#rowstatus.odd == true ">odd</s:if><s:else>even</s:else>">
-					    <td style="text-align:center" width="5%"><s:property value="#rowstatus.count"/></td>
-					    <td style="text-align:center" width="10%"><s:property value="schoolClassName"/></td>
-					    <td style="text-align:center" width="10%" ><s:property value="minAgeCriteriaInMonths"/></td>
-					    <td style="text-align:center" width="10%"><s:property value="maxAgeCriteriaInMonths"/></td>
-					    <td style="text-align:center" width="10%"><s:property value="periodsPerDay"/></td>
-					    <td style="text-align:center" width="10%"><s:property value="periodDurationInMin"/></td>
-					    <td style="text-align:center" width="10%"><s:property value="teacherPeriodsPerDay"/></td>
-					    <td style="text-align:center" width="10%" ><s:property value="classMaxStrength"/></td>
-					    <td style="text-align:center" width="15%"><s:property value="calssSubjects"/></td>
-					    <td style="text-align:center" width="10%"><s:property value="classStatus"/></td>
+		<s:if test="schoolClassDTO.currentOperation == 'view'">
+			<div class="form-style-10" style="width:1050px">
+				<h4><s:property value="getText('calss.availableClasses')"/></h4>
+				<table border='1' width="100%">
+					<tr>
+					    <td style="text-align:center" width="5%">So No</td>
+					    <td style="text-align:center" width="8%">Class Name</td>
+					    <td style="text-align:center" width="8%">Min Age Criteria</td>
+					    <td style="text-align:center" width="8%">Max Age Criteria</td>
+					    <td style="text-align:center" width="8%">Periods Per Day</td>
+					    <td style="text-align:center" width="8%">Period Duration in Min</td>
+					    <td style="text-align:center" width="8%">Teacher Periods Per Day</td>
+					    <td style="text-align:center" width="8%">Class Max Strength</td>
+					    <td style="text-align:center" width="8%">Class Subjects</td>
+					    <td style="text-align:center" width="8%">Class Status</td>
+					    <td style="text-align:center" width="15%">Inactive Reason</td>
+					    <td style="text-align:center" width="8%">Inactive Date & Time</td>
 					</tr>
-				</s:iterator>
-			</table>
+				
+					<s:iterator value="availableClassList" status="rowstatus">
+						<tr class="<s:if test="#rowstatus.odd == true ">odd</s:if><s:else>even</s:else>">
+						    <td style="text-align:center" width="5%"><s:property value="#rowstatus.count"/></td>
+						    <td style="text-align:center" width="8%"><s:property value="schoolClassName"/></td>
+						    <td style="text-align:center" width="8%" ><s:property value="minAgeCriteriaInMonths"/></td>
+						    <td style="text-align:center" width="8%"><s:property value="maxAgeCriteriaInMonths"/></td>
+						    <td style="text-align:center" width="8%"><s:property value="periodsPerDay"/></td>
+						    <td style="text-align:center" width="8%"><s:property value="periodDurationInMin"/></td>
+						    <td style="text-align:center" width="8%"><s:property value="teacherPeriodsPerDay"/></td>
+						    <td style="text-align:center" width="8%" ><s:property value="classMaxStrength"/></td>
+						    <td style="text-align:center" width="8%"><s:property value="calssSubjects"/></td>
+						    <td style="text-align:center" width="8%"><s:property value="classStatus"/></td>
+						    <td style="text-align:center" width="15%"><s:property value="classInactiveReason"/></td>
+						    <td style="text-align:center" width="8%"></td>
+						</tr>
+					</s:iterator>
+				</table>
 			</div>
 		</s:if>
 	</body>

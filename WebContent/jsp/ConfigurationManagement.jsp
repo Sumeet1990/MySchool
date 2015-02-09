@@ -162,7 +162,7 @@
 									</div>
 									<div style="" class="classSection_grad slider">
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmSection.create">
-											<s:a action="classSectionInitAction"><s:property value="getText('cm.create')"/></s:a>
+											<s:a action="classSectionCreateloadAction"><s:property value="getText('cm.create')"/></s:a>
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmSection.modify">
 											 <a href="#"><s:property value="getText('cm.modify')"/></a> 
@@ -171,7 +171,7 @@
 											 <a href="#"><s:property value="getText('cm.delete')"/></a> 
 										</s:if>
 										<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmAdministrator.cmSection.view">
-											 <a href="#"><s:property value="getText('cm.view')"/></a>
+											 <s:a action="classSectionViewAction"><s:property value="getText('cm.view')"/></s:a>
 										</s:if>
 									</div>
 								</div>

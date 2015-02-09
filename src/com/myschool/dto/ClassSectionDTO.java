@@ -1,5 +1,7 @@
 package com.myschool.dto;
 
+import java.util.Map;
+
 import javax.persistence.Column;
 
 
@@ -29,7 +31,17 @@ public class ClassSectionDTO {
 	private String createdDateTime;
 
 	private String modifiedDateTime;
-
+	
+	private String currentOperation;
+	
+	private String schoolClassName;
+	
+	private String classTeacherName;
+	
+	private Map messageMap;
+	
+	private String displayMessage;
+	
 
 	public Integer getClassSectionId(){
 	 return classSectionId;
@@ -108,5 +120,70 @@ public class ClassSectionDTO {
 	}
 	public void setModifiedDateTime(String modifiedDateTime){
 	 this.modifiedDateTime=modifiedDateTime;
+	}
+	
+	/**
+	 * @return the currentOperation
+	 */
+	public String getCurrentOperation() {
+		return currentOperation;
+	}
+	/**
+	 * @param currentOperation the currentOperation to set
+	 */
+	public void setCurrentOperation(String currentOperation) {
+		this.currentOperation = currentOperation;
+	}
+	/**
+	 * @return the messageMap
+	 */
+	public Map getMessageMap() {
+		return messageMap;
+	}
+	/**
+	 * @param messageMap the messageMap to set
+	 */
+	public void setMessageMap(Map messageMap) {
+		this.messageMap = messageMap;
+	}
+	
+	/**
+	 * @return the schoolClassName
+	 */
+	public String getSchoolClassName() {
+		return schoolClassName;
+	}
+	
+	/**
+	 * @param schoolClassName the schoolClassName to set
+	 */
+	public void setSchoolClassName(String schoolClassName) {
+		this.schoolClassName = schoolClassName;
+	}
+	
+	/**
+	 * @return the classTeacherName
+	 */
+	public String getClassTeacherName() {
+		return classTeacherName;
+	}
+	
+	/**
+	 * @param classTeacherName the classTeacherName to set
+	 */
+	public void setClassTeacherName(String classTeacherName) {
+		this.classTeacherName = classTeacherName;
+	}
+	/**
+	 * @return the displayMessage
+	 */
+	public String getDisplayMessage() {
+		return displayMessage;
+	}
+	/**
+	 * @param displayMessage the displayMessage to set
+	 */
+	public void setDisplayMessage(String displayMessage) {
+		this.displayMessage = displayMessage;
 	}
 }

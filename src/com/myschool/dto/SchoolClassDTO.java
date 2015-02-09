@@ -17,16 +17,19 @@ public class SchoolClassDTO {
 	private String teacherPeriodsPerDay;
 	private String classMaxStrength;
 	private String classStatus;
+	private String classInactiveReason;
 	
 	private Map<String,String> allSubjectMap;
 	private List<SchoolSubjects> allSubjectList;
 	private List<SchoolClass>  allSchoolClassList;
 	Map<Integer,String> schoolClassMap;
 	private String selectedSubjectCodes;
-	private String calssSubjects;
-	private String errorMessage;
+	private String classSubjects;
+	private String displayMessage;
 	private boolean classOperationStatus;
-	private String classCurrentOperation;
+	private String currentOperation;
+	private Map MessageMap;
+	
 	/**
 	 * @return the schoolClassId
 	 */
@@ -135,6 +138,19 @@ public class SchoolClassDTO {
 	public void setClassStatus(String classStatus) {
 		this.classStatus = classStatus;
 	}
+	
+	/**
+	 * @return the classInactiveReason
+	 */
+	public String getClassInactiveReason() {
+		return classInactiveReason;
+	}
+	/**
+	 * @param classInactiveReason the classInactiveReason to set
+	 */
+	public void setClassInactiveReason(String classInactiveReason) {
+		this.classInactiveReason = classInactiveReason;
+	}
 	/**
 	 * @return the allSubjectMap
 	 */
@@ -199,26 +215,27 @@ public class SchoolClassDTO {
 	/**
 	 * @return the calssSubjects
 	 */
-	public String getCalssSubjects() {
-		return calssSubjects;
+	public String getClassSubjects() {
+		return classSubjects;
 	}
 	/**
 	 * @param calssSubjects the calssSubjects to set
 	 */
-	public void setCalssSubjects(String calssSubjects) {
-		this.calssSubjects = calssSubjects;
+	public void setClassSubjects(String classSubjects) {
+		this.classSubjects = classSubjects;
+	}
+	
+	/**
+	 * @return the displayMessage
+	 */
+	public String getDisplayMessage() {
+		return displayMessage;
 	}
 	/**
-	 * @return the errorMessage
+	 * @param displayMessage the displayMessage to set
 	 */
-	public String getErrorMessage() {
-		return errorMessage;
-	}
-	/**
-	 * @param errorMessage the errorMessage to set
-	 */
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setDisplayMessage(String displayMessage) {
+		this.displayMessage = displayMessage;
 	}
 	/**
 	 * @return the classOperationStatus
@@ -232,16 +249,29 @@ public class SchoolClassDTO {
 	public void setClassOperationStatus(boolean classOperationStatus) {
 		this.classOperationStatus = classOperationStatus;
 	}
+	
 	/**
-	 * @return the classCurrentOperation
+	 * @return the currentOperation
 	 */
-	public String getClassCurrentOperation() {
-		return classCurrentOperation;
+	public String getCurrentOperation() {
+		return currentOperation;
 	}
 	/**
-	 * @param classCurrentOperation the classCurrentOperation to set
+	 * @param currentOperation the currentOperation to set
 	 */
-	public void setClassCurrentOperation(String classCurrentOperation) {
-		this.classCurrentOperation = classCurrentOperation;
+	public void setCurrentOperation(String currentOperation) {
+		this.currentOperation = currentOperation;
+	}
+	/**
+	 * @return the messageMap
+	 */
+	public Map getMessageMap() {
+		return MessageMap;
+	}
+	/**
+	 * @param messageMap the messageMap to set
+	 */
+	public void setMessageMap(Map messageMap) {
+		MessageMap = messageMap;
 	}
 }

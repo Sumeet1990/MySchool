@@ -1,11 +1,11 @@
 package com.myschool.action;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.myschool.beans.SchoolClass;
 import com.myschool.dto.ClassSectionDTO;
 import com.myschool.dto.SchoolClassDTO;
 import com.myschool.service.ClassSectionService;
@@ -18,6 +18,8 @@ public class ClassSectionAction extends ActionSupport implements SessionAware{
 
 	private static final long serialVersionUID = 1L;
 	
+	private static final String FAILURE = "failure";
+	
 	private String schoolClassName;
 	private String section;
 	private String actionType;
@@ -29,17 +31,23 @@ public class ClassSectionAction extends ActionSupport implements SessionAware{
 	private ClassSectionDTO classSectionDTO;
 	private java.util.Map<String, Object> session;
 	private List<SchoolClassDTO> availableClassList;
+	private List<ClassSectionDTO> availableClassSectionsList;
 	
 	/**
 	 * 
 	 */
-	public String performInit() {
-		classTeacherMap = getSchoolClassService().getAllClassTeachers();
+	public String performCreateload() {
+		classesMap = new HashMap<Integer, String>();
+		classSectionDTO = new ClassSectionDTO();
 		
-		availableClassList = getSchoolClassService().getAllSchoolClasses();
+		classSectionDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_CREATE);
+
+		availableClassList = getSchoolClassService().getAllActiveSchoolClasses();
+		classTeacherMap = getSchoolClassService().getAllClassTeachers();
+
 		if(availableClassList != null && availableClassList.size() > 0) {
-			for(SchoolClassDTO schoolClassDTO : availableClassList) {
-				classesMap = schoolClassDTO.getSchoolClassMap();
+			for(SchoolClassDTO schoolClassDTOList : availableClassList) {
+				classesMap.put(Integer.valueOf(schoolClassDTOList.getSchoolClassId()), schoolClassDTOList.getSchoolClassName());
 			}
 		}
 		
@@ -47,9 +55,33 @@ public class ClassSectionAction extends ActionSupport implements SessionAware{
 	}
 	
 	public String performCreate() {
+		classSectionDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_CREATE);
+		classSectionDTO.setDisplayMessage(null);
+		
 		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
+		
 		classSectionDTO.setCreatedUserId(sessionUtils.getUserId());
-		getClassSectionService().createClassSection(classSectionDTO);
+		ClassSectionDTO returnClassSectionDTO = getClassSectionService().createClassSection(classSectionDTO);
+		
+		if(returnClassSectionDTO.getMessageMap().containsKey("SUCCESS")) {
+			classSectionDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_VIEW);
+			String returnString = performView();
+			
+			return returnString;
+		} else {
+			classSectionDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_CREATE);
+			classSectionDTO.setDisplayMessage("Section "+classSectionDTO.getSection()+" For the selected class already exists");	
+			
+			return FAILURE;
+		}
+	}
+	
+	public String performView() {
+		classSectionDTO = new ClassSectionDTO();
+		
+		classSectionDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_VIEW);
+		availableClassSectionsList = getClassSectionService().getAllClassSections();
+		
 		return SUCCESS;
 	}
 
@@ -124,6 +156,36 @@ public class ClassSectionAction extends ActionSupport implements SessionAware{
 	public void setClassSectionService(ClassSectionService classSectionService) {
 		this.classSectionService = classSectionService;
 	}
+	
+	/**
+	 * @return the availableClassList
+	 */
+	public List<SchoolClassDTO> getAvailableClassList() {
+		return availableClassList;
+	}
+
+	/**
+	 * @param availableClassList the availableClassList to set
+	 */
+	public void setAvailableClassList(List<SchoolClassDTO> availableClassList) {
+		this.availableClassList = availableClassList;
+	}
+
+	/**
+	 * @return the availableClassSectionsList
+	 */
+	public List<ClassSectionDTO> getAvailableClassSectionsList() {
+		return availableClassSectionsList;
+	}
+
+	/**
+	 * @param availableClassSectionsList the availableClassSectionsList to set
+	 */
+	public void setAvailableClassSectionsList(
+			List<ClassSectionDTO> availableClassSectionsList) {
+		this.availableClassSectionsList = availableClassSectionsList;
+	}
+
 	@Override
 	public void setSession(java.util.Map<String, Object> session) {
 		this.session = session;

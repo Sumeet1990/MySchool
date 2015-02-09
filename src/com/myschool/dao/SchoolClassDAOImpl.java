@@ -23,7 +23,6 @@ public class SchoolClassDAOImpl extends HibernateDaoSupport implements SchoolCla
 	public List<SchoolClassDTO> getAllSchoolClasses() {
 		SchoolClassDTO schoolClassDTO;
 		List<SchoolClassDTO>  allSchoolClassList = new ArrayList<SchoolClassDTO>();
-		SchoolClassDTO returnSchoolClassDTO = new SchoolClassDTO();
 		
 		List<SchoolClass> schoolClassesList = getHibernateTemplate().find("from SchoolClass");
 		
@@ -38,11 +37,47 @@ public class SchoolClassDAOImpl extends HibernateDaoSupport implements SchoolCla
 						"periodDurationInMin periodDurationInMin",
 						"teacherPeriodsPerDay teacherPeriodsPerDay",
 						"classMaxStrength classMaxStrength",
-						"classStatus classStatus");
+						"classStatus classStatus",
+						"classInactiveReason classInactiveReason");
 				
 				schoolClassDTO.setSchoolClassId(String.valueOf(schoolClass.getSchoolClassId()));
 				if(StringUtils.isNotBlank(schoolClass.getSubjectCodesList())) {
-					schoolClassDTO.setCalssSubjects(schoolSubjectDAO.getSubjectsFromSubjectCodes(schoolClass.getSubjectCodesList()));
+					schoolClassDTO.setClassSubjects(schoolSubjectDAO.getSubjectsFromSubjectCodes(schoolClass.getSubjectCodesList()));
+				}
+				
+				allSchoolClassList.add(schoolClassDTO);
+			}
+		}
+		
+		return allSchoolClassList;
+	}
+	
+	/**
+	 * 
+	 */
+	public List<SchoolClassDTO> getAllActiveSchoolClasses() {
+		SchoolClassDTO schoolClassDTO;
+		List<SchoolClassDTO>  allSchoolClassList = new ArrayList<SchoolClassDTO>();
+		
+		List<SchoolClass> schoolClassesList = getHibernateTemplate().find("from SchoolClass where classStatus=?", "ACTIVE");
+		
+		if (schoolClassesList != null && schoolClassesList.size() > 0) {
+			for(SchoolClass schoolClass: schoolClassesList) {
+				schoolClassDTO = new SchoolClassDTO();
+				CommonUtility.copyProperties(schoolClass, schoolClassDTO, 
+						"schoolClassName schoolClassName",
+						"minAgeCriteriaInMonths minAgeCriteriaInMonths",
+						"maxAgeCriteriaInMonths maxAgeCriteriaInMonths",
+						"periodsPerDay periodsPerDay",
+						"periodDurationInMin periodDurationInMin",
+						"teacherPeriodsPerDay teacherPeriodsPerDay",
+						"classMaxStrength classMaxStrength",
+						"classStatus classStatus",
+						"classInactiveReason classInactiveReason");
+				
+				schoolClassDTO.setSchoolClassId(String.valueOf(schoolClass.getSchoolClassId()));
+				if(StringUtils.isNotBlank(schoolClass.getSubjectCodesList())) {
+					schoolClassDTO.setClassSubjects(schoolSubjectDAO.getSubjectsFromSubjectCodes(schoolClass.getSubjectCodesList()));
 				}
 				
 				allSchoolClassList.add(schoolClassDTO);

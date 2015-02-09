@@ -14,6 +14,8 @@ public interface SchoolClassService {
 	void setSelectedSubjectCodes(SchoolClassDTO schoolClassDTO, String selectedSubject);
 
 	Map<String, String> getAllClassTeachers();
-
+	
 	List<SchoolClassDTO> getAllSchoolClasses();
+	
+	List<SchoolClassDTO> getAllActiveSchoolClasses();
 }

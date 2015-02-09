@@ -167,16 +167,17 @@
 		
 		<action name="schoolClass*Action" class="schoolClassAction" method="perform{1}">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
-			<result name="success"  type="tiles">/SchoolClassPage.tiles</result>
+			<result name="success" type="tiles">/SchoolClassPage.tiles</result>
 			<result name="failure" type="tiles">/SchoolClassPage.tiles</result>
-			<result type="tiles">/SchoolClassPage.tiles</result>
+			<result name="input" type="tiles">/SchoolClassPage.tiles</result>
 		</action>
 		
 		<action name="classSection*Action" class="classSectionAction" method="perform{1}">
 			<interceptor-ref name="mySchoolCommonInterceptors"/>
 			<param name="errorMesage">1m</param>
 			<result name="success" type="tiles">/ClassSectionPage.tiles</result>
-			
+			<result name="failure" type="tiles">/ClassSectionPage.tiles</result>
+			<result name="input" type="tiles">/ClassSectionPage.tiles</result>
 		</action>
 		
 		<action name="studentRegistration*Action" class="studentRegistrationAction" method="perform{1}">

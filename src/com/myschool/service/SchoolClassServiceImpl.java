@@ -1,5 +1,6 @@
 package com.myschool.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -16,6 +17,10 @@ public class SchoolClassServiceImpl implements SchoolClassService {
 	private SchoolClassDAO schoolClassDAO;
 	private SchoolSubjectDAO schoolSubjectDAO;
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public List<SchoolClassDTO> getAllSchoolClasses() {
 		List<SchoolClassDTO> schoolClassDTOList = schoolClassDAO.getAllSchoolClasses();
 		
@@ -25,8 +30,18 @@ public class SchoolClassServiceImpl implements SchoolClassService {
 	/**
 	 * 
 	 */
+	public List<SchoolClassDTO> getAllActiveSchoolClasses() {
+		List<SchoolClassDTO> schoolClassDTOList = schoolClassDAO.getAllActiveSchoolClasses();
+		
+		return schoolClassDTOList;
+	}
+	
+	/**
+	 * 
+	 */
 	public SchoolClassDTO createSchoolClass(List<SchoolSubjectsDTO> schoolSubjectsDTOList, String selectedSubject, 
 			SchoolClassDTO schoolClassDTO, String userId) {
+		Map<String, String> messageMap = new HashMap<String, String>();
 		boolean classAlreadyExists = getSchoolClassDAO().verifyClassExists(schoolClassDTO);
 
 		if(!classAlreadyExists) {
@@ -47,10 +62,13 @@ public class SchoolClassServiceImpl implements SchoolClassService {
 			}
 			
 			getSchoolClassDAO().createSchoolClass(schoolClassDTO, userId);
-			schoolClassDTO.setErrorMessage(CommonConstants.CLASS_SUCCESSFULLY_CREATED);
+			
+			messageMap.put("SUCCESS", "CLASS_CREATE_SUCCESS");
 		} else {
-			schoolClassDTO.setErrorMessage(CommonConstants.CLASS_ALREADY_EXISTS);
+			messageMap.put("FAILURE", "CLASS_ALREADY_EXISTS");
 		}
+		
+		schoolClassDTO.setMessageMap(messageMap);
 		
 		return schoolClassDTO;
 	}

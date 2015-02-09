@@ -41,13 +41,12 @@ public class SchoolClassAction extends ActionSupport  implements SessionAware {
 	 * @return
 	 */
 	public String performCreateload() {
-		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
-		
 		schoolClassDTO = new SchoolClassDTO();
 		selectedSubjectList = new ArrayList<String>();
 		
-		schoolClassDTO.setClassCurrentOperation(CommonConstants.CLASS_CREATE);
-		
+		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
+		schoolClassDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_CREATE);
+
 		schoolSubjectsDTOList = getSchoolSubjectsService().getAllActiveAvailableSubjects();
 		if(schoolSubjectsDTOList != null) {
 			availableSubjectList = new ArrayList<String>();
@@ -55,8 +54,6 @@ public class SchoolClassAction extends ActionSupport  implements SessionAware {
 				availableSubjectList.add(schoolSubjectsDTO.getSubjectName());
 			}
 		} 
-		
-		schoolClassDTO.setErrorMessage(null);
 		
 		return SUCCESS;
 	}
@@ -67,17 +64,21 @@ public class SchoolClassAction extends ActionSupport  implements SessionAware {
 	 */
 	public String performCreate() {
 		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
+		schoolClassDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_CREATE);
+		schoolClassDTO.setDisplayMessage(null);
 		
 		SchoolClassDTO returnSchoolClassDTO = getSchoolClassService().createSchoolClass(schoolSubjectsDTOList, selectedSubject, schoolClassDTO, sessionUtils.getUserId());
 		
-		if(StringUtils.equalsIgnoreCase(returnSchoolClassDTO.getErrorMessage(), 
-				CommonConstants.CLASS_SUCCESSFULLY_CREATED)) {
-			schoolClassDTO.setClassCurrentOperation(CommonConstants.CLASS_VIEW);
+		if(returnSchoolClassDTO.getMessageMap().containsKey("SUCCESS")) {
+			schoolClassDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_VIEW);
 			
 			String returnString = performView(); 
+			
 			return returnString;
 		} else {
-			schoolClassDTO.setClassCurrentOperation(CommonConstants.CLASS_CREATE);
+			schoolClassDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_CREATE);
+			schoolClassDTO.setDisplayMessage("Class With Name " + schoolClassDTO.getSchoolClassName() + " Already Exists");
+			
 			return FAILURE;
 		}
 	}
@@ -88,13 +89,14 @@ public class SchoolClassAction extends ActionSupport  implements SessionAware {
 	 */
 	public String performView() {
 		schoolClassDTO = new SchoolClassDTO();
+		
+		schoolClassDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_VIEW);
 		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
-		schoolClassDTO.setClassCurrentOperation(CommonConstants.CLASS_VIEW);
 		
 		availableClassList = schoolClassService.getAllSchoolClasses();
 		
 		if(availableClassList == null || availableClassList.size() == 0) {
-			schoolClassDTO.setErrorMessage("Classes Not Available");
+			//TODO
 		}
 		
 		return SUCCESS;

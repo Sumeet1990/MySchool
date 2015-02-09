@@ -7,7 +7,9 @@ import com.myschool.dto.SchoolClassDTO;
 
 public interface SchoolClassDAO {
 
-	public List<SchoolClassDTO> getAllSchoolClasses();
+	List<SchoolClassDTO> getAllSchoolClasses();
+	
+	List<SchoolClassDTO> getAllActiveSchoolClasses(); 
 	
 	boolean verifyClassExists(SchoolClassDTO schoolClassDTO);
 

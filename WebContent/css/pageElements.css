@@ -20,7 +20,7 @@
 .form-style-10 h1{
      background: #2A88AD;
      padding: 20px 30px 15px 30px;
-     margin: -30px -30px 30px -30px;
+     margin: -50px -30px 30px -30px;
      border-radius: 10px 10px 0 0;
      -webkit-border-radius: 10px 10px 0 0;
      -moz-border-radius: 10px 10px 0 0;
@@ -116,7 +116,7 @@
      font: 12px Arial, Helvetica, sans-serif;
      color: #4D4D4D;
      margin-top: 10px;
-     text-align: right;
+     text-align: left;
 }
 
 .odd {

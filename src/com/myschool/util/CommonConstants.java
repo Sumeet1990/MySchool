@@ -30,11 +30,13 @@ public class CommonConstants {
 	public static final String SUBJECTS_ALREADY_EXISTS = "subjects.alreadyExists";
 	public static final String SUBJECTS_MODIFIED = "subjects.modified";
 
-	public static final String CLASS_CREATE = "classCreate";
-	public static final String CLASS_VIEW = "classView";
-	public static final String CLASS_ALREADY_EXISTS = "class.alreadyExists";
-	public static final String CLASS_ERROR_OCCURED = "class.errorOccured";
-	public static final String CLASS_SUCCESSFULLY_CREATED = "class.successfullyCreated";
+	public static final String CURRENT_OPERATION_CREATE = "create";
+	public static final String CURRENT_OPERATION_VIEW = "view";
+	public static final String CURRENT_OPERATION_DELETE = "delete";
+	public static final String CURRENT_OPERATION_MODIFY = "modify";
+	
+	public static final String ALREADY_EXISTS = "alreadyExists";
+	public static final String SUCCESSFULLY_CREATED = "successfullyCreated";
 	
 	public static final String STAFF_APOINTMENT_TYPE_CREATE = "staffAppointmentTypeCreate";
 	public static final String STAFF_APOINTMENT_TYPE_MODIFY = "staffAppointmentTypeModify";
@@ -49,6 +51,8 @@ public class CommonConstants {
 	public static final String SCHOOL_ACCESS = "schoolAccess";
 	public static final String USER_LEVEL_ACCESS = "userLevelAccess";
 	
+	public static final String DOT = ".";
+	public static final String SINGLE_BLANK_SPAACE = " ";
 	public static final String COMMA = ",";
 	public static final String COMMA_WITH_BACK_SPACE = ", ";
 }

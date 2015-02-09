@@ -48,6 +48,9 @@ public class SchoolClass implements Serializable {
 	@Column(name="CLASS_STATUS")
 	private String classStatus;
 	
+	@Column(name="CLASS_INACTIVE_REASON")
+	private String classInactiveReason;
+	
 	@Column(name="CREATED_USER_ID")
 	private String createdUserId;
 	
@@ -198,6 +201,20 @@ public class SchoolClass implements Serializable {
 	 */
 	public void setClassStatus(String classStatus) {
 		this.classStatus = classStatus;
+	}
+	
+	/**
+	 * @return the classInactiveReason
+	 */
+	public String getClassInactiveReason() {
+		return classInactiveReason;
+	}
+
+	/**
+	 * @param classInactiveReason the classInactiveReason to set
+	 */
+	public void setClassInactiveReason(String classInactiveReason) {
+		this.classInactiveReason = classInactiveReason;
 	}
 
 	/**
