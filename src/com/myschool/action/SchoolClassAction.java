@@ -77,7 +77,10 @@ public class SchoolClassAction extends ActionSupport  implements SessionAware {
 			return returnString;
 		} else {
 			schoolClassDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_CREATE);
-			schoolClassDTO.setDisplayMessage("Class With Name " + schoolClassDTO.getSchoolClassName() + " Already Exists");
+			
+			String displayMessage = getText(CommonConstants.CLASS_ALREADY_EXISTS);
+			displayMessage = displayMessage.replace("*", schoolClassDTO.getSchoolClassName());
+			schoolClassDTO.setDisplayMessage(displayMessage);
 			
 			return FAILURE;
 		}
@@ -96,7 +99,7 @@ public class SchoolClassAction extends ActionSupport  implements SessionAware {
 		availableClassList = schoolClassService.getAllSchoolClasses();
 		
 		if(availableClassList == null || availableClassList.size() == 0) {
-			//TODO
+			schoolClassDTO.setDisplayMessage("Classes does not exists");
 		}
 		
 		return SUCCESS;

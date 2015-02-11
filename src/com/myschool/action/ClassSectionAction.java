@@ -70,7 +70,10 @@ public class ClassSectionAction extends ActionSupport implements SessionAware{
 			return returnString;
 		} else {
 			classSectionDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_CREATE);
-			classSectionDTO.setDisplayMessage("Section "+classSectionDTO.getSection()+" For the selected class already exists");	
+			
+			String displayMessage = getText(CommonConstants.SECTION_ALREADY_EXISTS);
+			displayMessage = displayMessage.replace("*", classSectionDTO.getSection());
+			classSectionDTO.setDisplayMessage(displayMessage);	
 			
 			return FAILURE;
 		}
@@ -81,6 +84,10 @@ public class ClassSectionAction extends ActionSupport implements SessionAware{
 		
 		classSectionDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_VIEW);
 		availableClassSectionsList = getClassSectionService().getAllClassSections();
+		
+		if(availableClassSectionsList == null || availableClassSectionsList.size() == 0) {
+			classSectionDTO.setDisplayMessage("Sections for any class does not exists");	
+		}
 		
 		return SUCCESS;
 	}

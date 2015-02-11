@@ -2,6 +2,7 @@ package com.myschool.dto;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
 
@@ -18,9 +19,10 @@ public class SchoolSubjectsDTO {
 	private String[] schoolSubjectCodes;
 	private HashMap<String, String> subjectNameCodes;
 	private ArrayList<SchoolSubjects> existsSubjectList;
-	private String currentOperationStatus;
+	private String currentOperation;
+	private Map MessageMap;
 	private String userId;
-	private String errorMessage;
+	private String displayMessage;
 
 	public String toDatabaseSubjectNameString() {
 		if(getSchoolSubjectNames() != null) {
@@ -164,25 +166,45 @@ public class SchoolSubjectsDTO {
 		this.subjectNameCodes = subjectNameCodes;
 	}
 
-	public String getCurrentOperationStatus() {
-		return currentOperationStatus;
-	}
-
-	public void setCurrentOperationStatus(String currentOperationStatus) {
-		this.currentOperationStatus = currentOperationStatus;
-	}
-
 	/**
-	 * @return the errorMessage
+	 * @return the displayMessage
 	 */
-	public String getErrorMessage() {
-		return errorMessage;
+	public String getDisplayMessage() {
+		return displayMessage;
 	}
 
 	/**
 	 * @param errorMessage the errorMessage to set
 	 */
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setDisplayMessage(String displayMessage) {
+		this.displayMessage = displayMessage;
+	}
+
+	/**
+	 * @return the currentOperation
+	 */
+	public String getCurrentOperation() {
+		return currentOperation;
+	}
+
+	/**
+	 * @param currentOperation the currentOperation to set
+	 */
+	public void setCurrentOperation(String currentOperation) {
+		this.currentOperation = currentOperation;
+	}
+
+	/**
+	 * @return the messageMap
+	 */
+	public Map getMessageMap() {
+		return MessageMap;
+	}
+
+	/**
+	 * @param messageMap the messageMap to set
+	 */
+	public void setMessageMap(Map messageMap) {
+		MessageMap = messageMap;
 	}
 }

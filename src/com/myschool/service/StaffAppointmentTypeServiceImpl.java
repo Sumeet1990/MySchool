@@ -3,6 +3,8 @@
  */
 package com.myschool.service;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.myschool.dao.SchoolSubjectDAO;
@@ -25,18 +27,32 @@ public class StaffAppointmentTypeServiceImpl implements StaffAppointmentTypeServ
 		 return getStaffAppointmentTypeDAO().getAllAvailableAppointmentTypes();
 	}
 	
-	public boolean createAppointmentType(StaffAppointmentTypeDTO staffAppointmentTypeDTO) {
-		boolean subjectsExists = getStaffAppointmentTypeDAO().getAvailableAppointmentTypes(staffAppointmentTypeDTO);
+	public StaffAppointmentTypeDTO createAppointmentType(StaffAppointmentTypeDTO staffAppointmentTypeDTO) {
+		Map<String, String> messageMap = new HashMap<String, String>();
+		
+		boolean subjectsExists = getStaffAppointmentTypeDAO().verifyAppointmentTypes(staffAppointmentTypeDTO);
+		
 		if(subjectsExists) {
-			return false;
+			messageMap.put("FAILURE", "APPOINTMENT_TYPE_ALREADY_EXISTS");
 		} else {
 			getStaffAppointmentTypeDAO().createAppointmentType(staffAppointmentTypeDTO);
-			StaffAppointmentTypeDTO staffAppointmentTypeDTOTemp = new StaffAppointmentTypeDTO();
+
+			/*StaffAppointmentTypeDTO staffAppointmentTypeDTOTemp = new StaffAppointmentTypeDTO();
 			staffAppointmentTypeDTOTemp.setAppointmentType(staffAppointmentTypeDTO.getAppointmentType());
 			getStaffAppointmentTypeDAO().getAvailableAppointmentTypes(staffAppointmentTypeDTOTemp);
 			staffAppointmentTypeDTO.setAppointmentTypeCodes(staffAppointmentTypeDTOTemp.getAppointmentTypeCodes());
-			return true;
+			return true;*/
+			
+			messageMap.put("SUCCESS", "APPOINTMENT_TYPE_CREATE_SUCCESS");
 		}
+		
+		staffAppointmentTypeDTO.setMessageMap(messageMap);
+		
+		return staffAppointmentTypeDTO;
+	}
+	
+	public List<StaffAppointmentTypeDTO> getAvailableAppointmentTypeList() {
+		return getStaffAppointmentTypeDAO().getAvailableAppointmentTypeList();
 	}
 	
 	public StaffAppointmentTypeDAO getStaffAppointmentTypeDAO() {

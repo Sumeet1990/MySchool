@@ -1,10 +1,13 @@
 package com.myschool.action;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.ActionSupport;
+import com.myschool.beans.StaffAppointment;
+import com.myschool.dto.ClassSectionDTO;
 import com.myschool.dto.StaffAppointmentTypeDTO;
 import com.myschool.service.StaffAppointmentTypeService;
 import com.myschool.util.CommonConstants;
@@ -22,17 +25,20 @@ public class StaffAppointmentTypeAction extends ActionSupport implements Session
 	private Map<String,String> classSectionsMap;
 	private Map<String,String> classesMap;
 	private java.util.Map<String, Object> session;
+	private List<StaffAppointmentTypeDTO> availableStaffAppointmentTypeList;
 	
 	/**
 	 * 
 	 * @return
 	 */
-	public String performInitlize() {
-		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
+	public String performCeateload() {
 		staffAppointmentTypeDTO = new StaffAppointmentTypeDTO();
-		staffAppointmentTypeDTO = getStaffAppointmentTypeService().getAllAvailableAppointmentTypes();
+		staffAppointmentTypeDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_CREATE);
+		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
+		
+		//staffAppointmentTypeDTO = getStaffAppointmentTypeService().getAllAvailableAppointmentTypes();
 		staffAppointmentTypeDTO.setUserId(sessionUtils.getUserId());
-		staffAppointmentTypeDTO.setCurrentOperationStatus(CommonConstants.STAFF_APOINTMENT_TYPE_CREATE);
+		
 		return SUCCESS;
 	}
 	
@@ -41,14 +47,23 @@ public class StaffAppointmentTypeAction extends ActionSupport implements Session
 	 * @return
 	 */
 	public String performCreate() {
-		boolean status = getStaffAppointmentTypeService().createAppointmentType(staffAppointmentTypeDTO);
-		if(status) {
-			setErrorMessage(getText(CommonConstants.STAFF_APOINTMENT_TYPE_SUCCESSFULLY_CREATED));
-			staffAppointmentTypeDTO.setCurrentOperationStatus(CommonConstants.STAFF_APOINTMENT_TYPE_CREATE_SUCCESS);	
-			return SUCCESS;
+		staffAppointmentTypeDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_CREATE);
+		
+		StaffAppointmentTypeDTO returnedSaffAppointmentTypeDTO = getStaffAppointmentTypeService().createAppointmentType(staffAppointmentTypeDTO);
+		
+		if(returnedSaffAppointmentTypeDTO.getMessageMap().containsKey("SUCCESS")) {
+			staffAppointmentTypeDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_VIEW);
+
+			String returnString = performView();
+			
+			return returnString;
 		} else {
-			setErrorMessage(getText(CommonConstants.STAFF_APOINTMENT_TYPE_ALREADY_EXISTS));
-			staffAppointmentTypeDTO.setCurrentOperationStatus(CommonConstants.STAFF_APOINTMENT_TYPE_CREATE_FAIL);			
+			staffAppointmentTypeDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_CREATE);
+			
+			String displayMessage = getText(CommonConstants.SUBJECT_ALREADY_EXISTS);
+			displayMessage = displayMessage.replace("*", staffAppointmentTypeDTO.getAppointmentTypes().toString());
+			staffAppointmentTypeDTO.setDisplayMessage(displayMessage);		
+			
 			return FAILURE;
 		}
 	}
@@ -60,14 +75,26 @@ public class StaffAppointmentTypeAction extends ActionSupport implements Session
 	public String performModify() {
 		boolean  status = getStaffAppointmentTypeService().updateAppointmentType(staffAppointmentTypeDTO);		
 		if(status) {
-			staffAppointmentTypeDTO.setCurrentOperationStatus(CommonConstants.STAFF_APOINTMENT_TYPE_MODIFY);
-			setErrorMessage(getText(CommonConstants.STAFF_APOINTMENT_TYPE_SUCCESSFULLY_MODIFIED));
+			//staffAppointmentTypeDTO.setCurrentOperationStatus(CommonConstants.STAFF_APOINTMENT_TYPE_MODIFY);
+			//setErrorMessage(getText(CommonConstants.STAFF_APOINTMENT_TYPE_SUCCESSFULLY_MODIFIED));
 			return SUCCESS;
 		} else {
-			setErrorMessage(getText(CommonConstants.SUBJECTS_ALREADY_EXISTS));
-			staffAppointmentTypeDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_MODIFY_FAIL);
+			//setErrorMessage(getText(CommonConstants.SUBJECTS_ALREADY_EXISTS));
+			//staffAppointmentTypeDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_MODIFY_FAIL);
 			return FAILURE;
 		}		
+	}
+	
+	public String performView() {
+		staffAppointmentTypeDTO = new StaffAppointmentTypeDTO();
+		staffAppointmentTypeDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_VIEW);
+		
+		availableStaffAppointmentTypeList = getStaffAppointmentTypeService().getAvailableAppointmentTypeList();
+		
+		if(availableStaffAppointmentTypeList == null && availableStaffAppointmentTypeList.size() == 0) {
+			staffAppointmentTypeDTO.setDisplayMessage("Appointment types does not exists");	
+		}
+		return SUCCESS;
 	}
 	
 	public String getActionType() {
@@ -110,8 +137,6 @@ public class StaffAppointmentTypeAction extends ActionSupport implements Session
 		this.staffAppointmentTypeService = staffAppointmentTypeService;
 	}
 
-	
-
 	public StaffAppointmentTypeDTO getStaffAppointmentTypeDTO() {
 		return staffAppointmentTypeDTO;
 	}
@@ -123,5 +148,20 @@ public class StaffAppointmentTypeAction extends ActionSupport implements Session
 
 	public void setSession(Map<String, Object> session) {		
 		this.session = session;
+	}
+
+	/**
+	 * @return the availableStaffAppointmentTypeList
+	 */
+	public List<StaffAppointmentTypeDTO> getAvailableStaffAppointmentTypeList() {
+		return availableStaffAppointmentTypeList;
+	}
+
+	/**
+	 * @param availableStaffAppointmentTypeList the availableStaffAppointmentTypeList to set
+	 */
+	public void setAvailableStaffAppointmentTypeList(
+			List<StaffAppointmentTypeDTO> availableStaffAppointmentTypeList) {
+		this.availableStaffAppointmentTypeList = availableStaffAppointmentTypeList;
 	}
 }

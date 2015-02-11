@@ -18,22 +18,21 @@ public class CommonConstants {
 	public static final String LOGIN_FAIL_INVALID_CREDENTIALS = "login.error.invalid.credentials";
 	public static final String LOGIN_FAIL_LOCKED = "login.error.locked";	
 	
-	public static final String SUBJECTS_CREATE = "subjectCreate";
-	public static final String SUBJECTS_MODIFY = "subjectModify";
-	public static final String SUBJECTS_DELETE = "subjectDelete";
-	public static final String SUBJECTS_VIEW = "subjectsView";
-	public static final String SUBJECTS_CREATE_SUCCESS = "subjectCreateSuccess";
-	public static final String SUBJECTS_MODIFY_SUCCESS = "subjectModifySuccess";
-	public static final String SUBJECTS_CREATE_FAIL = "subjectCreateFail";
-	public static final String SUBJECTS_MODIFY_FAIL = "subjectModifyFail";
-	public static final String SUBJECTS_CREATED = "subjects.created";
-	public static final String SUBJECTS_ALREADY_EXISTS = "subjects.alreadyExists";
-	public static final String SUBJECTS_MODIFIED = "subjects.modified";
-
+	public static final String CREATE_SUCCESS = "global.createSuccess";
+	public static final String MODIFY_SUCCESS = "global.modifySuccess";
+	public static final String DELETE_SUCCESS = "global.deleteSuccess";
+	public static final String CREATE_FAIL = "global.createFail";
+	public static final String MODIFY_FAIL = "global.modifyFail";
+	public static final String DELETE_FAIL = "global.deleteFail";
+	
+	public static final String SUBJECT_ALREADY_EXISTS = "subject.alreadyExists";
+	public static final String CLASS_ALREADY_EXISTS = "class.alreadyExists";
+	public static final String SECTION_ALREADY_EXISTS = "section.alreadyExists";
+	public static final String APPOINTMENT_TYPE_ALREADY_EXISTS = "staff.appointmentType.alreadyExists";
 	public static final String CURRENT_OPERATION_CREATE = "create";
 	public static final String CURRENT_OPERATION_VIEW = "view";
 	public static final String CURRENT_OPERATION_DELETE = "delete";
-	public static final String CURRENT_OPERATION_MODIFY = "modify";
+
 	
 	public static final String ALREADY_EXISTS = "alreadyExists";
 	public static final String SUCCESSFULLY_CREATED = "successfullyCreated";

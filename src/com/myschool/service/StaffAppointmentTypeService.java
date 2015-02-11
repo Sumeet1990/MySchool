@@ -3,6 +3,7 @@
  */
 package com.myschool.service;
 
+import java.util.List;
 import java.util.Map;
 
 import com.myschool.dto.StaffAppointmentTypeDTO;
@@ -12,7 +13,9 @@ public interface StaffAppointmentTypeService {
 	
 	StaffAppointmentTypeDTO getAllAvailableAppointmentTypes();
 	
-	boolean createAppointmentType(StaffAppointmentTypeDTO staffAppointmentTypeDTO);
+	StaffAppointmentTypeDTO createAppointmentType(StaffAppointmentTypeDTO staffAppointmentTypeDTO);
 
+	List<StaffAppointmentTypeDTO> getAvailableAppointmentTypeList();
+	
 	boolean updateAppointmentType(StaffAppointmentTypeDTO staffAppointmentTypeDTO);
 }

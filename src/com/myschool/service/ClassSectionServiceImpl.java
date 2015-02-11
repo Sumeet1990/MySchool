@@ -23,12 +23,12 @@ public class ClassSectionServiceImpl implements ClassSectionService {
 		Map<String, String> messageMap = new HashMap<String, String>();
 		boolean sectionExists = getClassSectionDAO().verifyClassSectionExists(classSectionDTO);
 		
-		if(!sectionExists) {
+		if(sectionExists) {
+			messageMap.put("FAILURE", "SECTION_ALREADY_EXISTS");
+		} else {
 			getClassSectionDAO().createClassSection(classSectionDTO);
 
 			messageMap.put("SUCCESS", "SECTION_CREATE_SUCCESS");
-		} else {
-			messageMap.put("FAILURE", "SECTION_ALREADY_EXISTS");
 		}
 		
 		classSectionDTO.setMessageMap(messageMap);

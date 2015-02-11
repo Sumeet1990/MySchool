@@ -30,7 +30,7 @@
 				<s:form action="" method="post" focusElement="cName">
 					<div class="section"><span></span>Create Class</div>
 					<br/><span class="required">* </span>are Mandatory fields<br/><br/>
-	                <s:textfield name="schoolClassDTO.schoolClassName" id="cName" key="class.className" style="text-transform:uppercase;" required="true"/>
+	                <s:textfield name="schoolClassDTO.schoolClassName" id="cName" key="class.className" maxlength="30" style="text-transform:uppercase;" required="true"/>
 	               	
 	               	<s:textfield name="schoolClassDTO.minAgeCriteriaInMonths" maxlength="3" key="class.minStudentAgeInMonths" onKeyPress="return onlyNumbers(event)" required="true"/>
 	               	
@@ -72,6 +72,9 @@
 			</div>
 		</s:if>
 		<s:if test="schoolClassDTO.currentOperation == 'view'">
+			<s:if test="schoolClassDTO.displayMessage != null" >
+				<h3 style="color:red"><s:property value="schoolClassDTO.displayMessage"/></h3>
+			</s:if>
 			<div class="form-style-10" style="width:1050px">
 				<h4><s:property value="getText('calss.availableClasses')"/></h4>
 				<table border='1' width="100%">

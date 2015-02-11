@@ -31,16 +31,17 @@
 					<div class="section"><span></span>Create Class Section</div>
 					<br/><span class="required">* </span>are Mandatory fields<br/><br/>
 		        
-	                <s:select required="true" label="Class Name" id="cName" list="classesMap" name="classSectionDTO.schoolClassId" tabindex="1"></s:select>
+	                <s:select label="Class Name" id="cName" headerKey="-1" headerValue="---Please Select---"
+	                list="classesMap" name="classSectionDTO.schoolClassId" tabindex="1" required="true"></s:select>
 	        
-	                <s:textfield label="Section Name" name="classSectionDTO.section"></s:textfield>
+	                <s:textfield label="Section Name" name="classSectionDTO.section" style="text-transform:uppercase;" maxlength="30" required="true"></s:textfield>
 	        
-	                <s:select label="Class Teacher Name" required="true" list="classTeacherMap" name="classSectionDTO.staffId" tabindex="1"></s:select>
+	                <s:select label="Class Teacher Name" required="true" headerKey="-1" headerValue="---Please Select---" list="classTeacherMap" name="classSectionDTO.staffId" tabindex="1"></s:select>
 	        
-	                <s:textfield label="Maximum Section Strength" name="classSectionDTO.sectionMaximumStrength"/>
+	                <s:textfield label="Maximum Section Strength" name="classSectionDTO.sectionMaximumStrength" maxlength="3" required="true"/>
 	        
 	                <s:select label="Section Status" required="true" list="staffStatusBean" name="classSectionDTO.sectionStatus" tabindex="1"></s:select>
-	        
+	        		
 	        		<div class="button-section">
 	                	<s:submit value="Create" action="classSectionCreateAction"/>
 					</div>

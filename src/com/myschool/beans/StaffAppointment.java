@@ -14,9 +14,9 @@ import javax.persistence.Table;
 @Table(name="STAFF_APPOINTMENT")
 public class StaffAppointment implements Serializable{
 
-@SequenceGenerator (name="seqSchoolClass", sequenceName="SEQ_STAFF_APPOINTMENT", allocationSize=1)
+@SequenceGenerator (name="seqStaffAppointment", sequenceName="SEQ_STAFF_APPOINTMENT", allocationSize=1)
 @Id
-@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqSchoolClass")
+@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqStaffAppointment")
 @Column(name="APPOINTMENT_TYPE_ID")
 private Integer appointmentTypeId;
 

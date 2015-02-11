@@ -195,7 +195,7 @@
 								</div>
 								<div style="" class="appointmentType_grad slider">
 									<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmStaff.cmAppointmentType.create">
-										<s:a action="staffAppointmentInitlizeAction">
+										<s:a action="staffAppointmentCeateloadAction">
 											<s:property value="getText('cm.create')"/>
 										</s:a>
 									</s:if>
@@ -206,7 +206,7 @@
 										 <a href="#"><s:property value="getText('cm.delete')"/></a> 
 									</s:if>
 									<s:if test="userAccessAsSchool || userLevelAccess.configurationManagement.cmStaff.cmAppointmentType.view">
-										 <a href="#"><s:property value="getText('cm.view')"/></a>
+										 <s:a action="staffAppointmentViewAction"><s:property value="getText('cm.view')"/></s:a>
 									</s:if>
 								</div>
 							</div>

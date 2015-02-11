@@ -30,16 +30,16 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 	 * @return
 	 */
 	public String performCreateload() {
+		schoolSubjectsDTO = new SchoolSubjectsDTO();
+		schoolSubjectsDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_CREATE);
 		if(log.isDebugEnabled()) {
 			log.debug("Entered performInitlize method of SchoolSubjectsAction");
 		}
 		
 		SessionUtils sessionUtils = (SessionUtils) session.get(CommonConstants.SESSION_UTILS);
 		
-		schoolSubjectsDTO = new SchoolSubjectsDTO();
 		schoolSubjectsDTOList = getSchoolSubjectsService().getAllAvailableSubjects();
 		schoolSubjectsDTO.setUserId(sessionUtils.getUserId());
-		schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_CREATE);
 		
 		return SUCCESS;
 	}
@@ -49,7 +49,7 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 	 * @return
 	 */
 	public String performCreate() {
-		schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_CREATE);
+		schoolSubjectsDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_CREATE);
 		if(log.isDebugEnabled()) {
 			log.debug("Entered performCreate method of SchoolSubjectsAction");
 		}
@@ -60,13 +60,14 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 		}
 		
 		if(status) {
-			schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_VIEW);	
+			schoolSubjectsDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_VIEW);
 			String returnString = performView();
 			
 			return returnString;
 		} else {
-			setErrorMessage(getText(CommonConstants.SUBJECTS_ALREADY_EXISTS));
-			schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_CREATE_FAIL);			
+			String displayMessage = getText(CommonConstants.SUBJECT_ALREADY_EXISTS);
+			displayMessage = displayMessage.replace("*", schoolSubjectsDTO.getSchoolSubjectNames().toString());
+			schoolSubjectsDTO.setDisplayMessage(displayMessage);		
 			
 			return FAILURE;
 		}
@@ -80,7 +81,7 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 		schoolSubjectsDTO = new SchoolSubjectsDTO();
 		
 		schoolSubjectsDTOList = getSchoolSubjectsService().getAllAvailableSubjects();
-		schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_MODIFY);
+		//schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_MODIFY);
 		
 		return SUCCESS;
 	}
@@ -93,13 +94,13 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 		boolean  status = getSchoolSubjectsService().updateSubjects(schoolSubjectsDTO);		
 		
 		if(status) {
-			schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_VIEW);	
+			//schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_VIEW);	
 			String returnString = performView();
 			
 			return returnString;
 		} else {
-			setErrorMessage(getText(CommonConstants.SUBJECTS_ALREADY_EXISTS));
-			schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_MODIFY_FAIL);
+			//setErrorMessage(getText(CommonConstants.SUBJECTS_ALREADY_EXISTS));
+			//schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_MODIFY_FAIL);
 			
 			return FAILURE;
 		}	
@@ -110,10 +111,10 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 	 * @return
 	 */
 	public String performDeleteload() {
-		schoolSubjectsDTO = new SchoolSubjectsDTO();
+		/*schoolSubjectsDTO = new SchoolSubjectsDTO();
 		
 		schoolSubjectsDTOList = getSchoolSubjectsService().getAllAvailableSubjects();
-		schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_DELETE);
+		schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_DELETE);*/
 		
 		return SUCCESS;
 	}
@@ -145,12 +146,12 @@ public class SchoolSubjectsAction extends ActionSupport implements SessionAware{
 	 */
 	public String performView() {
 		schoolSubjectsDTO = new SchoolSubjectsDTO();
-		schoolSubjectsDTO.setCurrentOperationStatus(CommonConstants.SUBJECTS_VIEW);
+		schoolSubjectsDTO.setCurrentOperation(CommonConstants.CURRENT_OPERATION_VIEW);
 		
 		schoolSubjectsDTOList = getSchoolSubjectsService().getAllAvailableSubjects();
 		
 		if(schoolSubjectsDTOList == null || schoolSubjectsDTOList.size() == 0) {
-			schoolSubjectsDTO.setErrorMessage("Subjects Not Available");
+			schoolSubjectsDTO.setDisplayMessage("Subjects Not Available");
 		}
 		
 		return SUCCESS;

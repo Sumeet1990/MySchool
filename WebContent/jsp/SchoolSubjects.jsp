@@ -22,18 +22,21 @@
 		</style>
 	</head>
 	<body>
-		<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectCreate'}">
+		<s:if test="%{schoolSubjectsDTO.currentOperation == 'create'}">
 			<div id="page-wrap">
 				<div id="content">
 					<s:form action="schoolSubjectCreateAction" method="post" theme="simple" id="elements-form">
 						<br/>
 						<s:if test="schoolSubjectsDTO.errorMessage != null" >
-							<h3 style="color:red"><s:property value="schoolSubjectsDTO.errorMessage"/></h3>
+							<h3 style="color:red"><s:property value="schoolSubjectsDTO.errodisplayMessage"/></h3>
 						</s:if>
+						
 						<s:property value="getText('subject.subjects')"/>
 	               		<br/>
+						
 						<input type="button" value="Add Row" onclick="addRow('dataTable','divGroup')"/>
 						<input type="button" value="Delete Row" onclick="deleteRow('dataTable')"/><br/><br/>
+				    	
 				    	<fieldset id="divGroup">
 				            <div class="fieldgroupForCheckBox" id="dataTable0">
 								<label>Subject</label>
@@ -51,7 +54,7 @@
 	        </div>
 		</s:if>
 		
-		<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectModify'}">
+		<s:if test="%{schoolSubjectsDTO.currentOperation == 'modify'}">
 			<div class="form-style-10">		
 				<s:form action="schoolSubjectModifyAction" method="post" theme="simple" id="elements-form">
 					<div class="section"><span></span><s:property value="getText('subject.subjects')" /></div>
@@ -72,7 +75,7 @@
 			</div>
 		</s:if>
 		
-		<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectDelete'}">
+		<s:if test="%{schoolSubjectsDTO.currentOperation == 'delete'}">
 			<div class="form-style-10">	
 				<s:form action="schoolSubjectDeleteAction" method="post" theme="simple" id="elements-form">
 					<div class="section"><span></span><s:property value="getText('subject.subjects')" /></div>
@@ -90,7 +93,10 @@
 			</div>
 		</s:if>
 		
-		<s:if test="%{schoolSubjectsDTO.currentOperationStatus == 'subjectsView'}">
+		<s:if test="%{schoolSubjectsDTO.currentOperation == 'view'}">
+			<s:if test="schoolSubjectsDTO.errorMessage != null" >
+				<h3 style="color:red"><s:property value="schoolSubjectsDTO.displayMessage"/></h3>
+			</s:if>
 			<div class="form-style-10">
 				<h4><s:property value="getText('subjects.availableSubjects')"/></h4>
 				<table border='1' width="50%">
